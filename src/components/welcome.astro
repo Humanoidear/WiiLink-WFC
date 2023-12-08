@@ -6,13 +6,28 @@
       A service that lets you go back online and play your favorite games with your friends on the Nintendo Wii. Blah blah blah placeholder text this needs to be filled in with actual stuff at some point.
   </h2>
   <div class="grid">
-  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1;">Item 1<div class="blur"></div></div>
-  <div class="grid-item">Item 2<div class="blur"></div></div>
-  <div class="grid-item">Item 3<div class="blur"></div></div>
-  <!-- Add more items as needed -->
-  <div id="follower"></div>
+  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1; background-color:rgba(112, 112, 234, 0.078); border-color:rgba(115, 115, 167, 0.285);"><div class="explain"><b style="color:white;">Join your friends online</b> and parttake in online races, strategy games, or even just hanging out!</div>
+  <div class="games">
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+    <div class="game"></div>
+  </div>
+  <div class="blur"></div></div>
+  <div class="grid-item"><div class="explain"><b style="color:white;">Participate in worldwide tournaments</b> and fight for your place at the leaderboard!</div>
+  <img src="/img/competition.png" alt="Mii leaderboard" style="transform:translate(-200px, -250px); width:110%; position:relative;">
+  <div class="blur"></div></div>
+  <div class="grid-item"><div class="explain"><b style="color:white;">Meet new people</b> and form new friendships!</div><div class="blur"></div></div>
+  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1; "><div class="explain"><b style="color:white;">Our service stats,</b> at a glance:</div><div class="blur"></div></div>
 </div>
-
 
 <script is:inline>
    const gridItems = document.querySelectorAll('.grid-item');
@@ -26,7 +41,7 @@ gridItems.forEach(item => {
     blur.style.top = e.clientY - rect.top - 50 + 'px';
     blur.style.display = 'block';
     const x = e.clientX - rect.left;
-    const skew = ((x / rect.width * 50) - 25)/50; // Calculate skew based on mouse position
+    const skew = ((x / rect.width * 50) - 25)/80;
     this.style.transform = `skewY(${skew}deg)`;
   });
 
@@ -38,39 +53,88 @@ gridItems.forEach(item => {
 </script>
 
 <style>
-    .blur {
-  position: relative;
+.blur {
+  position: absolute;
   top:0;
   left:0;
   width: 100px;
   height: 100px;
-  transform: translate(-20%, -40%) scale(200%);
-  filter: blur(180px) opacity(0.1);
+  transform: translate(-20%, -40%) scale(400%);
+  filter: blur(80px) opacity(0.05);
   background: rgb(255, 255, 255);
   border-radius: 50%;
   pointer-events: none;
+  z-index: 0;
+  display: none;
 }
 
-    .grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(345px,1fr));
+  grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
   margin-top:30px;
   gap: 10px;
 }
 
+.grid-item:hover .games{
+    transform: translate(0, 0px) rotate(-8deg);
+    transition: 0.3s;
+}
+
+.games {
+  left:-30px;
+  width:120%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  transform: translate(0, 20px) rotate(-8deg);
+  gap: 10px;
+  z-index: 1000;
+  transition: 0.3s;
+  position: relative;
+}
+
+.game {
+  background: rgba(204, 204, 204, 0.255);
+  border:2px solid rgba(255, 255, 255, 0.183);
+  box-shadow: 0px 0px 38px rgba(237, 237, 237, 0.038);
+  border-radius:8px;
+  aspect-ratio: 1 / 1; /* Make the items square */
+  transition: 0.1s;
+}
+
+.explain{
+    width:60%;
+    top:0;
+    left:0;
+    color:rgba(255, 255, 255, 0.584);
+    font-family: inter;
+    text-align: left;
+    line-height:40px;
+    font-size: 30px;
+    z-index: 1;
+    position: relative;
+}
+
 .grid-item {
-  background: rgba(32, 32, 32, 0.477);
   height:500px;
   padding: 20px;
-  border:1px solid #2d2d2d;
+  border:2px solid #36363677;
   border-radius:8px;
+  box-shadow:0px 0px 20px #0f0f0f64;
+  color:white;
+  border-radius: 15px;
   text-align: center;
   overflow: hidden;
   transition: 0.1s;
 }
 
 .grid-item:hover {
-  background: rgba(57, 57, 57, 0.525);
+  background: rgba(57, 57, 57, 0.159);
+}
+
+.game:hover{
+    transform: scale(101%);
+    transition: 0.1s;
 }
 
   .title {
@@ -94,8 +158,8 @@ gridItems.forEach(item => {
   .subtitle {
     color: white;
     left: 0px;
-    width: 70%;
-    font-size: 25px;
+    width: 90%;
+    font-size: 30px;
     position: relative;
   }
 
