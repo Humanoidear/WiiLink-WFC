@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Welcome from "../components/welcome.astro";
 ---
 
 <Layout title="WiiLink WFC" description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!" image="/temp.png">
@@ -27,7 +28,9 @@ import Layout from "../layouts/Layout.astro";
 			<button type="button" style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"><i class="fa fa-heart"></i></button><button type="button" style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"><i class="fa-brands fa-github"></i></button><button type="button" class="btn btn-primary btn-lg" style="margin-top:15px; right:0; position:relative;"><i class="fa-brands fa-discord"></i> Keep me posted!</button>
 		</div>
 	</div>
-  <div style="top:180px; left:-650px; width:50%; scale:120%; z-index:0; position:absolute;" id="globeViz"></div>
+  <div style="top:180px; left:-650px; width:50%; scale:120%; z-index:1; position:absolute;" id="globeViz"></div>
+
+  <Welcome />
 
   <script is:inline>
 	window.addEventListener('scroll', function() {
@@ -80,10 +83,10 @@ let gData = cities.map((city, i) => {
     startLat: city.lat,
     startLng: city.lng,
     name: ['Jess', 'Alex', 'Alex', 'Giustino', 'Pablo', 'oscie', 'Luna', 'diego', 'Sketch', 'Palapeli', 'Nova', 'Kouacc', 'Philemax', 'Jau', 'Matthe815'][i % 14],
-    game: ['Mario Kart Wii', 'UNO WiiWare', 'Tetris Party', 'Inazuma Eleven Go', 'Samba de Amigo', 'Wii Chess', 'Super Smash Bros. Brawl'][i % 7],
+    game: ['Samba de Amigo', 'UNO WiiWare', 'Tetris Party', 'Inazuma Eleven Go', 'Mario Kart Wii', 'Wii Chess', 'Super Smash Bros. Brawl'][i % 7],
     isOpen: [false, true, false, true, false, false, true, false][i % 8],
     faces: ['jess.png', 'alexb.png', 'alexv.png', 'idk.png', 'pablo.png', 'idk.png', 'luna.png', 'diego.png', 'idk.png', 'palapeli.png', 'nova.png', 'kouacc.png', 'idk.png', 'idk.png', 'matthe.png'][i % 14],
-	icons: ['mkw.png','uno.png', 'tetrisparty.png', 'inazuma.png', 'samba.png', 'chess.png', 'smash.png'][i % 7]
+	icons: ['samba.png','uno.png', 'tetrisparty.png', 'inazuma.png', 'mkw.png', 'chess.png', 'smash.png'][i % 7]
   };
 });
 

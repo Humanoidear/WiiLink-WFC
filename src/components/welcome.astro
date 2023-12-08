@@ -1,0 +1,240 @@
+<div id="intro" class="svc-holder">
+  <h1 class="title">
+      This is <b style="font-family:Rubik;">WiiLink WFC</b>!
+  </h1>
+  <h2 class="subtitle">
+      A service that lets you go back online and play your favorite games with your friends on the Nintendo Wii. Blah blah blah placeholder text this needs to be filled in with actual stuff at some point.
+  </h2>
+  <div class="grid">
+  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1;">Item 1<div class="blur"></div></div>
+  <div class="grid-item">Item 2<div class="blur"></div></div>
+  <div class="grid-item">Item 3<div class="blur"></div></div>
+  <!-- Add more items as needed -->
+  <div id="follower"></div>
+</div>
+
+
+<script is:inline>
+   const gridItems = document.querySelectorAll('.grid-item');
+
+gridItems.forEach(item => {
+  const blur = item.querySelector('.blur');
+
+  item.addEventListener('mousemove', function(e) {
+    const rect = this.getBoundingClientRect();
+    blur.style.left = e.clientX - rect.left - 50 + 'px';
+    blur.style.top = e.clientY - rect.top - 50 + 'px';
+    blur.style.display = 'block';
+    const x = e.clientX - rect.left;
+    const skew = ((x / rect.width * 50) - 25)/50; // Calculate skew based on mouse position
+    this.style.transform = `skewY(${skew}deg)`;
+  });
+
+  item.addEventListener('mouseleave', function() {
+    blur.style.display = 'none';
+    this.style.transform = 'none';
+  });
+});
+</script>
+
+<style>
+    .blur {
+  position: relative;
+  top:0;
+  left:0;
+  width: 100px;
+  height: 100px;
+  transform: translate(-20%, -40%) scale(200%);
+  filter: blur(180px) opacity(0.1);
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(345px,1fr));
+  margin-top:30px;
+  gap: 10px;
+}
+
+.grid-item {
+  background: rgba(32, 32, 32, 0.477);
+  height:500px;
+  padding: 20px;
+  border:1px solid #2d2d2d;
+  border-radius:8px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.1s;
+}
+
+.grid-item:hover {
+  background: rgba(57, 57, 57, 0.525);
+}
+
+  .title {
+    left: 0px;
+    width: calc(100% - 50px);
+    background: url(/img/header_bg.png) 0 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
+    font-size: 60px;
+    font-family: Gilroy;
+    position: relative;
+  }
+
+  .slide {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+  }
+
+  .subtitle {
+    color: white;
+    left: 0px;
+    width: 70%;
+    font-size: 25px;
+    position: relative;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-450px * 5.35));
+    }
+  }
+
+  @keyframes scrollback {
+    0% {
+      transform: translateX(calc(-450px * 5.35));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .svc-holder {
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1500px;
+    z-index: 0;
+    position: relative;
+  }
+
+  .slider {
+    height: auto;
+    margin: auto;
+    top: 30px;
+    overflow-x: hidden;
+    position: relative;
+    rotate: -2deg;
+    z-index: 1;
+    width: 1500px;
+  }
+
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(
+      to right,
+      var(--bg-color) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll 80s linear infinite;
+    display: flex;
+    width: calc(450px * 14);
+  }
+
+  .back {
+    animation: scrollback 80s linear infinite;
+    transform: translate(0, 100px);
+    display: flex;
+    flex-direction: row;
+    width: calc(450px * 14);
+  }
+
+  img {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    .title {
+      left: 20px;
+    }
+    .subtitle {
+      left: 20px;
+      width: 95%;
+    }
+
+    .slider {
+      display: none;
+    }
+
+    .slide-track {
+      animation: none;
+    }
+
+    .back {
+      transform: translate(0, 0px);
+      animation: none;
+    }
+    .svc-holder {
+      top: 100px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      max-width: 1500px;
+      z-index: 1;
+      position: relative;
+    }
+    .slider {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 110%;
+    }
+    .slider::before,
+    .slider::after {
+      background: linear-gradient(
+        to right,
+        #ffffff80 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .svc-holder {
+      margin-top: 100px;
+    }
+  }
+</style>
