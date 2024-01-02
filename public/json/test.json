@@ -1,0 +1,24 @@
+[
+    {
+        "id":"PFRUTQ",
+        "gamename":"mariokartwii",
+        "type":"anybody",
+        "suspend":false,
+        "rk":"vs",
+        "players":
+        [
+            {
+                "eb":"5000",
+                "ev":"4998",
+                "name":"",
+                "pid":"54"
+            },
+            {
+                "eb":"5000",
+                "ev":"4975",
+                "name":"",
+                "pid":"85"
+            }
+        ]
+    }
+]

@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Welcome from "../components/welcome.astro";
+import Loading from "../components/Loading.astro";
 ---
 
 <Layout title="WiiLink WFC" description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!" image="/temp.png">
+<Loading />
 
 <head>
-	<style> body { background-color: rgb(11, 0, 0); margin: 0; } </style>
+	<style> body { height:50000px; background-color: rgb(11, 0, 0); margin: 0; } </style>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script is:inline src="//unpkg.com/three"></script>
 	<script is:inline src="//unpkg.com/globe.gl"></script>
