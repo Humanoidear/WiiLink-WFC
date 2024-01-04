@@ -1,0 +1,48 @@
+[
+    {
+        "id":"HAHVGF",
+        "game":"mariokartwii",
+        "type":"anybody",
+        "suspend":true,
+        "host":"0",
+        "rk":"vs",
+        "players":
+        {"0":{
+            "count":"1",
+            "eb":"5000",
+            "ev":"5000",
+            "fc":"0601-2954-2197",
+            "name":"no name",
+            "pid":"53"
+            },
+        "1":{
+            "count":"1",
+            "eb":"5000",
+            "ev":"5000",
+            "fc":"5325-7594-4927",
+            "name":"no name",
+            "pid":"223"
+            }
+        }
+    },
+    {
+        "id":"OFRQQR",
+        "game":"smashbrosxwii",
+        "type":"anybody",
+        "suspend":false,
+        "host":"0",
+        "players":
+        {"0":{
+            "count":"",
+            "name":"",
+            "pid":"121"
+            },
+        "1":{
+            "count":"",
+            "name":"",
+            "pid":"84"
+            }
+            
+        }
+    }
+]

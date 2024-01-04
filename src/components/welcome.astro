@@ -14,8 +14,57 @@
   <img src="/img/competition.png" alt="Mii leaderboard" style="transform:translate(-200px, -250px); width:110%; position:relative;">
   <div class="blur"></div></div>
   <div class="grid-item"><div class="explain"><b style="color:white;">Meet new people</b> and form new friendships!</div><div class="blur"></div></div>
-  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1; "><div class="explain"><b style="color:white;">Our service stats,</b> at a glance:</div><div class="blur"></div></div>
+  <div class="grid-item" style="grid-column: auto / span 2; grid-row: auto / span 1; "><div class="explain"><b style="color:white;">Our service stats,</b> at a glance:</div>
+    <div id="data"></div>
+    <div id="games2"></div>
+  <div class="blur"></div></div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async function () {
+    const url = 'http://violet.wiilink24.com/api/stats';
+    fetch(url)
+      .then(response => response.json())
+      .then(json => showService(json[0])); // General stats
+
+    function showService(json) {
+      let data = document.getElementById("data");
+      data.innerHTML = `
+        <div style="display:flex; flex-direction:row; justify-content:space-between; width:100%;">
+          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.online}</div>
+            <div style="font-size: 20px; font-family: Rubik; color:white;">users online</div>
+          </div>
+          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.active}</div>
+            <div style="font-size: 20px; font-family: Rubik; color:white;">active users</div>
+          </div>
+          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.groups}</div>
+            <div style="font-size: 20px; font-family: Rubik; color:white;">groups</div>
+          </div>
+        </div>
+      `;
+
+      // Loop through specific games
+      for (let i = 1; i <= 2; i++) {
+        const gameName = Object.keys(json)[i];
+        const gameData = json[gameName];
+
+        data.innerHTML += `
+          <div>
+            <h2>${gameName}</h2>
+            <p>Online users: ${gameData.online}</p>
+            <p>Active users: ${gameData.active}</p>
+            <p>Groups: ${gameData.groups}</p>
+          </div>
+        `;
+      }
+    }
+  });
+</script>
+
+
 
 <script is:inline>
 const gridItems = document.querySelectorAll('.grid-item');

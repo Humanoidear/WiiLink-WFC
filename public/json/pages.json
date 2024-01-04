@@ -1,190 +1,4011 @@
 [
-      {
-        "gameId": "RSBE01",
-        "gameName": "Super Smash Bros. Brawl"
-      },
-      {
-        "gameId": "RMCE01",
-        "gameName": "Mario Kart Wii"
-      },
-      {
-        "gameId": "RZDE01",
-        "gameName": "The Legend of Zelda: Twilight Princess"
-      },
-      {
-        "gameId": "RVL-SM8E01",
-        "gameName": "Super Mario Galaxy"
-      },
-      {
-        "gameId": "RSPE01",
-        "gameName": "Super Paper Mario"
-      },
-      {
-        "gameId": "RQME01",
-        "gameName": "Metroid Prime 3: Corruption"
-      },
-      {
-        "gameId": "RM8E01",
-        "gameName": "Wii Sports"
-      },
-      {
-        "gameId": "R9WE01",
-        "gameName": "Wii Play"
-      },
-      {
-        "gameId": "R2DE01",
-        "gameName": "The Legend of Zelda: Skyward Sword"
-      },
-      {
-        "gameId": "RMCJ01",
-        "gameName": "Mario Party 8"
-      },
-      {
-        "gameId": "RODE01",
-        "gameName": "Okami"
-      },
-      {
-        "gameId": "RVL-RZDE-0A-0",
-        "gameName": "Resident Evil 4: Wii Edition"
-      },
-      {
-        "gameId": "R2DE01",
-        "gameName": "The Legend of Zelda: The Wind Waker"
-      },
-      {
-        "gameId": "RMCP01",
-        "gameName": "Super Mario Galaxy 2"
-      },
-      {
-        "gameId": "RZTE01",
-        "gameName": "The Legend of Zelda: Twilight Princess (HD)"
-      },
-      {
-        "gameId": "RDSE01",
-        "gameName": "Donkey Kong Country Returns"
-      },
-      {
-        "gameId": "RCKE01",
-        "gameName": "Kirby's Epic Yarn"
-      },
-      {
-        "gameId": "RM2E01",
-        "gameName": "Wii Fit"
-      },
-      {
-        "gameId": "RDOE01",
-        "gameName": "Dead Space: Extraction"
-      },
-      {
-        "gameId": "RMFE01",
-        "gameName": "Mario & Sonic at the Olympic Games"
-      },
-      {
-        "gameId": "RUYE01",
-        "gameName": "New Super Mario Bros. Wii"
-      },
-      {
-        "gameId": "RD2E01",
-        "gameName": "Donkey Kong Jungle Beat"
-      },
-      {
-        "gameId": "REDE01",
-        "gameName": "Excite Truck"
-      },
-      {
-        "gameId": "RCKP01",
-        "gameName": "Cooking Mama: Cook Off"
-      },
-      {
-        "gameId": "RHXE01",
-        "gameName": "Harvest Moon: Tree of Tranquility"
-      },
-      {
-        "gameId": "RJOE01",
-        "gameName": "Super Mario Sunshine"
-      },
-      {
-        "gameId": "RZAE01",
-        "gameName": "Animal Crossing: City Folk"
-      },
-      {
-        "gameId": "RR9E01",
-        "gameName": "Rabbids Go Home"
-      },
-      {
-        "gameId": "RJ4E01",
-        "gameName": "The Legend of Zelda: Ocarina of Time"
-      },
-      {
-        "gameId": "RROE01",
-        "gameName": "Rayman Origins"
-      },
-      {
-        "gameId": "R8WE01",
-        "gameName": "WarioWare: Smooth Moves"
-      },
-      {
-        "gameId": "RZDEA4",
-        "gameName": "The Legend of Zelda: Collector's Edition"
-      },
-      {
-        "gameId": "RUUE01",
-        "gameName": "Punch-Out!!"
-      },
-      {
-        "gameId": "R2DEA4",
-        "gameName": "The Legend of Zelda: Four Swords Adventures"
-      },
-      {
-        "gameId": "R9AE01",
-        "gameName": "Wario Land: Shake It!"
-      },
-      {
-        "gameId": "RCAE01",
-        "gameName": "Carnival Games"
-      },
-      {
-        "gameId": "RW5E01",
-        "gameName": "Wii Sports Resort"
-      },
-      {
-        "gameId": "RKYP01",
-        "gameName": "Mario Strikers Charged"
-      },
-      {
-        "gameId": "R9IE01",
-        "gameName": "Fire Emblem: Radiant Dawn"
-      },
-      {
-        "gameId": "RSWE01",
-        "gameName": "Super Mario All-Stars"
-      },
-      {
-        "gameId": "R39E01",
-        "gameName": "Super Mario 64"
-      },
-      {
-        "gameId": "R29E01",
-        "gameName": "Paper Mario: The Thousand-Year Door"
-      },
-      {
-      "gameId": "SSQP01",
-      "gameName": "Mario Party 9",
-      "gameDesc": "Test"
-    },
-    {
-      "gameId": "RMCE01",
-      "gameName": "Mario Kart Wii",
-      "gameDesc": "Test"
-    },
-    {
-      "gameId": "ST7E01",
-      "gameName": "Fortune Street",
-      "gameDesc": "Test"
-    },
-    {
-        "gameId": "RM8P01",
-        "gameName": "Mario Party 8",
-        "gameDesc": "Test"
-    }
+  {
+    "gameId": "CTKP00",
+    "gameName": "StarSing : Pop Hits v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTLP00",
+    "gameName": "StarSing : Britney Spears v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTMP00",
+    "gameName": "StarSing : Shakira v1.2 (PAL)"
+  },
+  {
+    "gameId": "CTNP00",
+    "gameName": "StarSing : Pop Hits 10 v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTOP00",
+    "gameName": "StarSing : The Beatles Volume 2 v2.1 (PAL)"
+  },
+  {
+    "gameId": "CTPP00",
+    "gameName": "StarSing : Motown v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTQP00",
+    "gameName": "StarSing : Glee Volume 2 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTRP00",
+    "gameName": "StarSing : International Volume 1 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTSP00",
+    "gameName": "StarSing : International Volume 2 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTTP00",
+    "gameName": "StarSing : '80s Volume 4 v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTUP00",
+    "gameName": "StarSing : Rihanna v2.0 (PAL)"
+  },
+  {
+    "gameId": "CTVP00",
+    "gameName": "StarSing : Lady GaGa v1.1 (PAL)"
+  },
+  {
+    "gameId": "CTWP00",
+    "gameName": "StarSing : '90s Volume 3 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTXP00",
+    "gameName": "StarSing : Retro Volume 1 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTYP00",
+    "gameName": "StarSing : Retro Volume 2 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CTZP00",
+    "gameName": "StarSing : Volume 3 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU0P00",
+    "gameName": "StarSing : Retro Volume 3 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU1P00",
+    "gameName": "StarSing : Girls v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU2P00",
+    "gameName": "StarSing : Volume 4 v1.1 (PAL)"
+  },
+  {
+    "gameId": "CU3P00",
+    "gameName": "StarSing : Retro Volume 4 v1.1 (PAL)"
+  },
+  {
+    "gameId": "CU4P00",
+    "gameName": "StarSing : Retro Volume 5 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU5P00",
+    "gameName": "StarSing : International Volume 4 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU6P00",
+    "gameName": "StarSing : Volume 5 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU7P00",
+    "gameName": "StarSing : Retro Volume 6 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU8P00",
+    "gameName": "StarSing : Volume 6 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CU9P00",
+    "gameName": "StarSing : Volume 7 v1.0 (PAL)"
+  },
+  {
+    "gameId": "CVLE38",
+    "gameName": "Mario Kart: Victory Lane (NTSC-U)"
+  },
+  {
+    "gameId": "CYWEE9",
+    "gameName": "Harvest Moon: A Proud Life (NTSC-U)"
+  },
+  {
+    "gameId": "D01A",
+    "gameName": "Wiimmfi Patcher"
+  },
+  {
+    "gameId": "D02A",
+    "gameName": "Engine02"
+  },
+  {
+    "gameId": "D03A",
+    "gameName": "BrainSlug Wii"
+  },
+  {
+    "gameId": "D05A",
+    "gameName": "Bash the Castle"
+  },
+  {
+    "gameId": "D06A",
+    "gameName": "Bit Streamer"
+  },
+  {
+    "gameId": "D07A",
+    "gameName": "BlisterBall"
+  },
+  {
+    "gameId": "D08A",
+    "gameName": "Blob Wars: Metal Blob Solid"
+  },
+  {
+    "gameId": "D09A",
+    "gameName": "Blobby Volley 2 Wii"
+  },
+  {
+    "gameId": "D0AA",
+    "gameName": "MPlayer Wii YouTube"
+  },
+  {
+    "gameId": "D0BA",
+    "gameName": "MPlayer Wii"
+  },
+  {
+    "gameId": "D0CA",
+    "gameName": "Ocarina"
+  },
+  {
+    "gameId": "D0DA",
+    "gameName": "MPlayer Dvdlib Edition"
+  },
+  {
+    "gameId": "D0EA",
+    "gameName": "MPlayer Wii by Rodries"
+  },
+  {
+    "gameId": "D0FA",
+    "gameName": "Signcheck"
+  },
+  {
+    "gameId": "D0GA",
+    "gameName": "GCBoot"
+  },
+  {
+    "gameId": "D0HA",
+    "gameName": "Memview"
+  },
+  {
+    "gameId": "D0IA",
+    "gameName": "IOS Check"
+  },
+  {
+    "gameId": "D0JA",
+    "gameName": "Open Sram Lang Modifier"
+  },
+  {
+    "gameId": "D0KA",
+    "gameName": "WiiBServer"
+  },
+  {
+    "gameId": "D0LA",
+    "gameName": "LibWiiGameLoad"
+  },
+  {
+    "gameId": "D0MA",
+    "gameName": "WiiReader"
+  },
+  {
+    "gameId": "D0NA",
+    "gameName": "lsusb"
+  },
+  {
+    "gameId": "D0OA",
+    "gameName": "Move the Pussy (Demo)"
+  },
+  {
+    "gameId": "D0PA",
+    "gameName": "Wiilax Minitro"
+  },
+  {
+    "gameId": "D0QA",
+    "gameName": "Fission Engine Project"
+  },
+  {
+    "gameId": "D0RA",
+    "gameName": "GRRLIB 4.0 (Demo)"
+  },
+  {
+    "gameId": "D0SA",
+    "gameName": "OSDM-BAR"
+  },
+  {
+    "gameId": "D0TA",
+    "gameName": "Homebrew Menu (Demo)"
+  },
+  {
+    "gameId": "D0UA",
+    "gameName": "LibMii Example"
+  },
+  {
+    "gameId": "D0VA",
+    "gameName": "The Scary (Demo)"
+  },
+  {
+    "gameId": "D0WA",
+    "gameName": "Starfield (Demo)"
+  },
+  {
+    "gameId": "D0XA",
+    "gameName": "Wire3D (Demo)"
+  },
+  {
+    "gameId": "D0YA",
+    "gameName": "Something"
+  },
+  {
+    "gameId": "D0ZA",
+    "gameName": "GRRLIB 4.3.0 Promote Intro"
+  },
+  {
+    "gameId": "D10A",
+    "gameName": "cIOSFix"
+  },
+  {
+    "gameId": "D11A",
+    "gameName": "ASCII Pong"
+  },
+  {
+    "gameId": "D12A",
+    "gameName": "BuscaWiinas"
+  },
+  {
+    "gameId": "D13A",
+    "gameName": "C-Dogs SDL"
+  },
+  {
+    "gameId": "D14A",
+    "gameName": "Castles of Dr. Creep"
+  },
+  {
+    "gameId": "D15A",
+    "gameName": "Wii Shop and IOS51 Installer"
+  },
+  {
+    "gameId": "D16A",
+    "gameName": "Centipede"
+  },
+  {
+    "gameId": "D17A",
+    "gameName": "Cobra Arcade"
+  },
+  {
+    "gameId": "D18A",
+    "gameName": "Dump Espresso OTP"
+  },
+  {
+    "gameId": "D1LA",
+    "gameName": "B.L.I.N.D."
+  },
+  {
+    "gameId": "D1PA",
+    "gameName": "1bit Invaders"
+  },
+  {
+    "gameId": "D1RA",
+    "gameName": "MinimaLauncher"
+  },
+  {
+    "gameId": "D21A",
+    "gameName": "Xroar"
+  },
+  {
+    "gameId": "D22A",
+    "gameName": "cIOS222 installer"
+  },
+  {
+    "gameId": "D23J01",
+    "gameName": "Game Taikai Yuushou Kinen: Tokusei SmaBro DX Movie Disc (NTSC-J)"
+  },
+  {
+    "gameId": "D24A",
+    "gameName": "24 Points"
+  },
+  {
+    "gameId": "D24J01",
+    "gameName": "SmaBro DX Event-you Disc (NTSC-J)"
+  },
+  {
+    "gameId": "D26A",
+    "gameName": "Wii2600"
+  },
+  {
+    "gameId": "D28J01",
+    "gameName": "Interactive Multi-Game Demo Disk - April 2002 (NTSC-J)"
+  },
+  {
+    "gameId": "D29J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.5.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D2AA",
+    "gameName": "Wii Deadly Cobra"
+  },
+  {
+    "gameId": "D2AJAF",
+    "gameName": "Minna de Bouken! Family Trainer (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "D2BA",
+    "gameName": "Jump N Bump"
+  },
+  {
+    "gameId": "D2CA",
+    "gameName": "WiiFlow Advanced"
+  },
+  {
+    "gameId": "D2DA",
+    "gameName": "Box2D Balls"
+  },
+  {
+    "gameId": "D2EA",
+    "gameName": "WiiFlow Start Configurator"
+  },
+  {
+    "gameId": "D2GA",
+    "gameName": "WAD Batch Installer"
+  },
+  {
+    "gameId": "D2QA",
+    "gameName": "Sqrxz 2"
+  },
+  {
+    "gameId": "D2SE18",
+    "gameName": "Deca Sports 2 (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "D2ZA",
+    "gameName": "Console Shooter"
+  },
+  {
+    "gameId": "D32J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.6.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D33A",
+    "gameName": "Time Frack 2D"
+  },
+  {
+    "gameId": "D33J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.7.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D34J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.7.10 (NTSC-J)"
+  },
+  {
+    "gameId": "D36A",
+    "gameName": "cIOS36 installer"
+  },
+  {
+    "gameId": "D37A",
+    "gameName": "WiiConnect"
+  },
+  {
+    "gameId": "D38A",
+    "gameName": "cIOS38 installer"
+  },
+  {
+    "gameId": "D38J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.9.1 (NTSC-J)"
+  }
+,
+  {
+    "gameId": "D39A",
+    "gameName": "Ctr Gts DacoTaco Edition"
+  },
+  {
+    "gameId": "D39J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.10.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D3DA",
+    "gameName": "Time Frack 3D"
+  },
+  {
+    "gameId": "D3DE18",
+    "gameName": "Deca Sports 3 (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "D3JA",
+    "gameName": "NDSLoad"
+  },
+  {
+    "gameId": "D3KA",
+    "gameName": "Button Tester"
+  },
+  {
+    "gameId": "D3LA",
+    "gameName": "BootMii Booter"
+  },
+  {
+    "gameId": "D3MA",
+    "gameName": "Custom NAND Loader"
+  },
+  {
+    "gameId": "D3OA",
+    "gameName": "cIOS USB 2 Installer"
+  },
+  {
+    "gameId": "D3QA",
+    "gameName": "Sqrxz 3"
+  },
+  {
+    "gameId": "D3WA",
+    "gameName": "WarHeads: Scorched Earth"
+  },
+  {
+    "gameId": "D40A",
+    "gameName": "Luigi and the Island of Mystery"
+  },
+  {
+    "gameId": "D40E01",
+    "gameName": "Peach's Castle Tech Demo (NTSC-U)"
+  },
+  {
+    "gameId": "D42A",
+    "gameName": "ArianeB"
+  },
+  {
+    "gameId": "D42J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.11.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D43A",
+    "gameName": "Wii Virtual Jaguar"
+  },
+  {
+    "gameId": "D43E01",
+    "gameName": "The Legend of Zelda: Ocarina of Time / Master Quest (NTSC-U)"
+  },
+  {
+    "gameId": "D43J01",
+    "gameName": "Zelda no Densetsu: Toki no Ocarina GC / Ura Zelda (NTSC-J)"
+  },
+  {
+    "gameId": "D43P01",
+    "gameName": "The Legend of Zelda: Ocarina of Time / Master Quest (PAL)"
+  },
+  {
+    "gameId": "D43U01",
+    "gameName": "The Legend of Zelda: Ocarina of Time (Bonus Disc) (PAL)"
+  },
+  {
+    "gameId": "D43W01",
+    "gameName": "The Legend of Zelda: Ocarina of Time / Master Quest (NTSC-K)"
+  },
+  {
+    "gameId": "D44J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2002.12.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D46A",
+    "gameName": "Newo Escape"
+  },
+  {
+    "gameId": "D46J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.1.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D47J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.2.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D48J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.3.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D49J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.4.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D4BE08",
+    "gameName": "Resident Evil 4: Preview Disc (NTSC-U)"
+  },
+  {
+    "gameId": "D4BP01",
+    "gameName": "Resident Evil 4: Bonus Disc (PAL)"
+  },
+  {
+    "gameId": "D4BU01",
+    "gameName": "Resident Evil 4: Bonus Disc (PAL)"
+  },
+  {
+    "gameId": "D4KA",
+    "gameName": "Aleph WOne"
+  },
+  {
+    "gameId": "D4LA",
+    "gameName": "Yawnd"
+  },
+  {
+    "gameId": "D4NA",
+    "gameName": "Disc Dumper"
+  },
+  {
+    "gameId": "D4PA",
+    "gameName": "DVD Dumper"
+  },
+  {
+    "gameId": "D4QA",
+    "gameName": "Sqrxz 4"
+  },
+  {
+    "gameId": "D4SA",
+    "gameName": "USB Loader GUI FX"
+  },
+  {
+    "gameId": "D51A",
+    "gameName": "IOS51 Update"
+  },
+  {
+    "gameId": "D52A",
+    "gameName": "cboot252"
+  },
+  {
+    "gameId": "D52J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.5.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D53J01",
+    "gameName": "Monthly Nintendo Shop Demo - May 2003 (NTSC-J)"
+  },
+  {
+    "gameId": "D54A",
+    "gameName": "cIOS PatchMii Installer"
+  },
+  {
+    "gameId": "D54J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.6.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D55A",
+    "gameName": "PID Extractor"
+  },
+  {
+    "gameId": "D55J01",
+    "gameName": "Interactive Disc Catalog Summer 2003 (NTSC-J)"
+  },
+  {
+    "gameId": "D56A",
+    "gameName": "Shopping Channel Fixer"
+  },
+  {
+    "gameId": "D56E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 35 (NTSC-U)"
+  },
+  {
+    "gameId": "D56J01",
+    "gameName": "Pokémon Channel (Bonus Disc) (NTSC-J)"
+  },
+  {
+    "gameId": "D57A",
+    "gameName": "Hijill GUI"
+  },
+  {
+    "gameId": "D57E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 34 (NTSC-U)"
+  },
+  {
+    "gameId": "D58A",
+    "gameName": "Priiloader HacksDen Edition"
+  },
+  {
+    "gameId": "D58E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 33 (NTSC-U)"
+  },
+  {
+    "gameId": "D59A",
+    "gameName": "TheUntitledProject"
+  },
+  {
+    "gameId": "D59E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 32 (NTSC-U)"
+  },
+  {
+    "gameId": "D59J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.7.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D5AA",
+    "gameName": "Alarmii"
+  },
+  {
+    "gameId": "D5BA",
+    "gameName": "WiiFont"
+  },
+  {
+    "gameId": "D5CA",
+    "gameName": "cLoader"
+  },
+  {
+    "gameId": "D5FA",
+    "gameName": "Txted Mod"
+  },
+  {
+    "gameId": "D5HA",
+    "gameName": "Title Lister"
+  },
+  {
+    "gameId": "D5JA",
+    "gameName": "Tidy Up"
+  },
+  {
+    "gameId": "D5LA",
+    "gameName": "Switchtosneek"
+  },
+  {
+    "gameId": "D5RA",
+    "gameName": "Botoning"
+  },
+  {
+    "gameId": "D60A",
+    "gameName": "Ultimate USB Loader"
+  },
+  {
+    "gameId": "D61A",
+    "gameName": "Sand Traps Extra Levels"
+  },
+  {
+    "gameId": "D62A",
+    "gameName": "Newo Puzzle"
+  },
+  {
+    "gameId": "D62E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 31 (NTSC-U)"
+  },
+  {
+    "gameId": "D62J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.8.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D63A",
+    "gameName": "3D Maze"
+  },
+  {
+    "gameId": "D63E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 30 (NTSC-U)"
+  },
+  {
+    "gameId": "D64A",
+    "gameName": "Wii64 Emulator"
+  },
+  {
+    "gameId": "D64E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 29 (NTSC-U)"
+  },
+  {
+    "gameId": "D64J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.10.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D65A",
+    "gameName": "Transitory Vectors"
+  },
+  {
+    "gameId": "D65E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 28 (NTSC-U)"
+  },
+  {
+    "gameId": "D65J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.11.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D66A",
+    "gameName": "Secret Maryo Chronicles"
+  },
+  {
+    "gameId": "D66E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 27 (NTSC-U)"
+  },
+  {
+    "gameId": "D66JAF",
+    "gameName": "Baten Kaitos: Eternal Wings and the Lost Ocean - Special Experience Disc (NTSC-J)"
+  },
+  {
+    "gameId": "D67E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 26 (NTSC-U)"
+  },
+  {
+    "gameId": "D67J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2003.12.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D68A",
+    "gameName": "TheyDoNotDie2"
+  },
+  {
+    "gameId": "D68E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 25 (NTSC-U)"
+  },
+  {
+    "gameId": "D68J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.1.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D69A",
+    "gameName": "IOS60 Installer"
+  },
+  {
+    "gameId": "D69E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 24 (NTSC-U)"
+  },
+  {
+    "gameId": "D6AA",
+    "gameName": "Pussieloader"
+  },
+  {
+    "gameId": "D6BA",
+    "gameName": "Updatersafe"
+  },
+  {
+    "gameId": "D6DA",
+    "gameName": "Savegame Manager Mod"
+  },
+  {
+    "gameId": "D6EA",
+    "gameName": "Sneek FS Dumper"
+  },
+  {
+    "gameId": "D6FA",
+    "gameName": "AnyTitle Deleter Mod"
+  },
+  {
+    "gameId": "D6HA",
+    "gameName": "AnyTitle Deleter Mod DB"
+  },
+  {
+    "gameId": "D6IA",
+    "gameName": "DVD Info"
+  },
+  {
+    "gameId": "D6KA",
+    "gameName": "AnyTitle Deleter DB"
+  },
+  {
+    "gameId": "D6MA",
+    "gameName": "Banana Saves"
+  },
+  {
+    "gameId": "D6OA",
+    "gameName": "DOP Shop"
+  },
+  {
+    "gameId": "D6QA",
+    "gameName": "BootMii Checker"
+  },
+  {
+    "gameId": "D6TA",
+    "gameName": "MiiPlayer"
+  },
+  {
+    "gameId": "D70A",
+    "gameName": "Dungeon Crawl Stone Soup"
+  },
+  {
+    "gameId": "D71A",
+    "gameName": "Panic in the Mushroom Kingdom"
+  },
+  {
+    "gameId": "D72A",
+    "gameName": "Bfi"
+  }
+,
+  {
+    "gameId": "D72E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 23 (NTSC-U)"
+  },
+  {
+    "gameId": "D73E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 22 (NTSC-U)"
+  },
+  {
+    "gameId": "D73J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.2.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D74E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 21 (NTSC-U)"
+  },
+  {
+    "gameId": "D75E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 20 (NTSC-U)"
+  },
+  {
+    "gameId": "D75J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.3.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D76E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 19 (NTSC-U)"
+  },
+  {
+    "gameId": "D77E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 18 (NTSC-U)"
+  },
+  {
+    "gameId": "D77J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.4.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D77P01",
+    "gameName": "Interactive Multi-Game Demo Disc - April 2006 (PAL)"
+  },
+  {
+    "gameId": "D78A",
+    "gameName": "Wii7800"
+  },
+  {
+    "gameId": "D78E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 17 (NTSC-U)"
+  },
+  {
+    "gameId": "D78J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.5.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D78P01",
+    "gameName": "Interactive Multi-Game Demo Disc - October 2005 (PAL)"
+  },
+  {
+    "gameId": "D79A",
+    "gameName": "Newo Defence"
+  },
+  {
+    "gameId": "D79E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 16 (NTSC-U)"
+  },
+  {
+    "gameId": "D79J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.6.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D79P01",
+    "gameName": "Interactive Multi-Game Demo Disc - May 2005 (PAL)"
+  },
+  {
+    "gameId": "D7AA",
+    "gameName": "Action Replay Loader"
+  },
+  {
+    "gameId": "D7DA",
+    "gameName": "Depanbrew"
+  },
+  {
+    "gameId": "D7GA",
+    "gameName": "Channel Loader"
+  },
+  {
+    "gameId": "D7KA",
+    "gameName": "RawkSD"
+  },
+  {
+    "gameId": "D7LA",
+    "gameName": "Rumbler"
+  },
+  {
+    "gameId": "D7MA",
+    "gameName": "IS Wad"
+  },
+  {
+    "gameId": "D7OA",
+    "gameName": "Recovery Manager"
+  },
+  {
+    "gameId": "D7QA",
+    "gameName": "Reboot"
+  },
+  {
+    "gameId": "D7SA",
+    "gameName": "Childproof USB Loader"
+  },
+  {
+    "gameId": "D7TA",
+    "gameName": "Power Mii Off"
+  },
+  {
+    "gameId": "D7VA",
+    "gameName": "Power Off"
+  },
+  {
+    "gameId": "D7WA",
+    "gameName": "Abbaye des Morts"
+  },
+  {
+    "gameId": "D7XA",
+    "gameName": "NuGaSa"
+  },
+  {
+    "gameId": "D7YA",
+    "gameName": "Resistor"
+  },
+  {
+    "gameId": "D81A",
+    "gameName": "Newo Asteroids"
+  },
+  {
+    "gameId": "D82A",
+    "gameName": "cIOS PatchMii Installer with Korean Disc Support"
+  },
+  {
+    "gameId": "D82E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 15 (NTSC-U)"
+  },
+  {
+    "gameId": "D82J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.7.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D82P01",
+    "gameName": "Interactive Multi-Game Demo Disc - April 2005 (PAL)"
+  },
+  {
+    "gameId": "D83A",
+    "gameName": "Wii MFE Port"
+  },
+  {
+    "gameId": "D83E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 14 (NTSC-U)"
+  },
+  {
+    "gameId": "D83P01",
+    "gameName": "Interactive Multi-Game Demo Disc - February 2005 (PAL)"
+  },
+  {
+    "gameId": "D84A",
+    "gameName": "Gambol"
+  },
+  {
+    "gameId": "D84E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 13 (NTSC-U)"
+  },
+  {
+    "gameId": "D84J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.8.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D84P01",
+    "gameName": "Interactive Multi-Game Demo Disc - November 2004 (PAL)"
+  },
+  {
+    "gameId": "D85A",
+    "gameName": "Wii EDuke32"
+  },
+  {
+    "gameId": "D85E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 12 (NTSC-U)"
+  },
+  {
+    "gameId": "D85J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.9.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D85P01",
+    "gameName": "Interactive Multi-Game Demo Disc - July 2004 (PAL)"
+  },
+  {
+    "gameId": "D86A",
+    "gameName": "Firewii"
+  },
+  {
+    "gameId": "D86E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 11 (NTSC-U)"
+  },
+  {
+    "gameId": "D86J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.10.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D86P01",
+    "gameName": "Interactive Multi-Game Demo Disc - May 2004 (PAL)"
+  },
+  {
+    "gameId": "D87A",
+    "gameName": "Tick Tock Boat Race"
+  },
+  {
+    "gameId": "D87E01",
+    "gameName": "GameCube Preview Disc (NTSC-U)"
+  },
+  {
+    "gameId": "D87J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.11.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D87P01",
+    "gameName": "Interactive Multi-Game Demo Disc - March 2004 (PAL)"
+  },
+  {
+    "gameId": "D88A",
+    "gameName": "Quasi88"
+  },
+  {
+    "gameId": "D88E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 10 (NTSC-U)"
+  },
+  {
+    "gameId": "D88J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004.12.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D88P01",
+    "gameName": "Interactive Multi-Game Demo Disc - November 2003 (PAL)"
+  },
+  {
+    "gameId": "D89A",
+    "gameName": "Wiimote LED Flasher"
+  },
+  {
+    "gameId": "D89E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 9 (NTSC-U)"
+  },
+  {
+    "gameId": "D89J01",
+    "gameName": "Club Nintendo Original e-Catalog 2004 (NTSC-J)"
+  },
+  {
+    "gameId": "D89P01",
+    "gameName": "Interactive Multi-Game Demo Disc - September 2003 (PAL)"
+  },
+  {
+    "gameId": "D8AA",
+    "gameName": "Front SD ELF Loader"
+  },
+  {
+    "gameId": "D8BA",
+    "gameName": "GameCube Homebrew Launcher"
+  },
+  {
+    "gameId": "D8CA",
+    "gameName": "WiiSend"
+  },
+  {
+    "gameId": "D8DA",
+    "gameName": "Menu"
+  },
+  {
+    "gameId": "D8EA",
+    "gameName": "Gecko Loader"
+  },
+  {
+    "gameId": "D8FA",
+    "gameName": "Shell"
+  },
+  {
+    "gameId": "D8JA",
+    "gameName": "Calc"
+  },
+  {
+    "gameId": "D8QA",
+    "gameName": "Brick OS"
+  },
+  {
+    "gameId": "D8RA",
+    "gameName": "Lotto"
+  },
+  {
+    "gameId": "D8SA",
+    "gameName": "Brainf**k"
+  },
+  {
+    "gameId": "D8UA",
+    "gameName": "TCPLoader"
+  },
+  {
+    "gameId": "D8VA",
+    "gameName": "Snort48"
+  },
+  {
+    "gameId": "D8WA",
+    "gameName": "Wiisixty"
+  },
+  {
+    "gameId": "D8XA",
+    "gameName": "All In One Emuloader"
+  },
+  {
+    "gameId": "D8YA",
+    "gameName": "Swissloader"
+  },
+  {
+    "gameId": "D8ZA",
+    "gameName": "Tick Tock Zombie Shooter"
+  },
+  {
+    "gameId": "D91A",
+    "gameName": "Jenny Thinks"
+  },
+  {
+    "gameId": "D92E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 8 (NTSC-U)"
+  },
+  {
+    "gameId": "D92J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2004-2005 Nenmatsunenshi-gou (NTSC-J)"
+  },
+  {
+    "gameId": "D92P01",
+    "gameName": "Interactive Multi-Game Demo Disc - June 2003 (PAL)"
+  },
+  {
+    "gameId": "D93A",
+    "gameName": "WiiRayTracer"
+  },
+  {
+    "gameId": "D93E01",
+    "gameName": "Interactive Multi-Game Demo Disc - Version 7 (NTSC-U)"
+  },
+  {
+    "gameId": "D93J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.1.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D93P01",
+    "gameName": "Interactive Multi-Game Demo Disc - April 2003 (PAL)"
+  },
+  {
+    "gameId": "D94A",
+    "gameName": "Nowhere"
+  },
+  {
+    "gameId": "D94J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.2.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D94P01",
+    "gameName": "Interactive Multi-Game Demo Disc - February 2003 (PAL)"
+  },
+  {
+    "gameId": "D95A",
+    "gameName": "RenderMii"
+  },
+  {
+    "gameId": "D95P01",
+    "gameName": "Interactive Multi-Game Demo Disc - December 2002 (PAL)"
+  },
+  {
+    "gameId": "D96A",
+    "gameName": "WiiMotionDemo"
+  },
+  {
+    "gameId": "D97A",
+    "gameName": "Fire"
+  },
+  {
+    "gameId": "D97J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.5.1 (NTSC-J)"
+  },
+  {
+    "gameId": "D98A",
+    "gameName": "InstallMii"
+  },
+  {
+    "gameId": "D99A",
+    "gameName": "System Channels Updater"
+  },
+  {
+    "gameId": "D9BA",
+    "gameName": "Info"
+  },
+  {
+    "gameId": "D9CA",
+    "gameName": "cIOS USB2 Installer"
+  }
+,
+  {
+    "gameId": "D9FA",
+    "gameName": "Dump"
+  },
+  {
+    "gameId": "D9GA",
+    "gameName": "Wad Creator"
+  },
+  {
+    "gameId": "D9IA",
+    "gameName": "SNES9xGX Channel Installer"
+  },
+  {
+    "gameId": "D9KA",
+    "gameName": "Txtread"
+  },
+  {
+    "gameId": "D9LA",
+    "gameName": "Forwarder"
+  },
+  {
+    "gameId": "DA1A",
+    "gameName": "Radianwars"
+  },
+  {
+    "gameId": "DA2A",
+    "gameName": "Moonstone: A Hard Days Night"
+  },
+  {
+    "gameId": "DA3A",
+    "gameName": "Wiitch"
+  },
+  {
+    "gameId": "DA4A",
+    "gameName": "arCard+Wii"
+  },
+  {
+    "gameId": "DA6A",
+    "gameName": "Automatii"
+  },
+  {
+    "gameId": "DA7A",
+    "gameName": "Astronomy"
+  },
+  {
+    "gameId": "DA8A",
+    "gameName": "Beer Belly Bill 3 Grillieren"
+  },
+  {
+    "gameId": "DA9A",
+    "gameName": "Achtung Wii Kurve"
+  },
+  {
+    "gameId": "DAAA",
+    "gameName": "WiiNetPuzzle"
+  },
+  {
+    "gameId": "DAHA",
+    "gameName": "Accio Hacks"
+  },
+  {
+    "gameId": "DALJ01",
+    "gameName": "Dairantou Smash Brothers DX (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DAMA",
+    "gameName": "MegaCodeDownloader"
+  },
+  {
+    "gameId": "DAPA",
+    "gameName": "Map Maker"
+  },
+  {
+    "gameId": "DARA",
+    "gameName": "Anyregion Changer"
+  },
+  {
+    "gameId": "DASA",
+    "gameName": "Aspirin"
+  },
+  {
+    "gameId": "DASE4Q",
+    "gameName": "Disney Epic Mickey (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DATA",
+    "gameName": "AnyTitle Deleter"
+  },
+  {
+    "gameId": "DATD",
+    "gameName": "AnyTitle Deleter (PAL)"
+  },
+  {
+    "gameId": "DAUEPZ",
+    "gameName": "Country Dance (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DAVA",
+    "gameName": "Avoidance"
+  },
+  {
+    "gameId": "DAVE01",
+    "gameName": "Mystery Case Files: The Malgrave Incident (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DAWA",
+    "gameName": "Abuse Wii"
+  },
+  {
+    "gameId": "DAXE01",
+    "gameName": "The Legend of Zelda: Skyward Sword (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DAXP01",
+    "gameName": "The Legend of Zelda: Skyward Sword (Demo) (PAL)"
+  },
+  {
+    "gameId": "DB0A",
+    "gameName": "Spitits"
+  },
+  {
+    "gameId": "DB2A",
+    "gameName": "Mad Bomber"
+  },
+  {
+    "gameId": "DB3A",
+    "gameName": "Squarez"
+  },
+  {
+    "gameId": "DB5A",
+    "gameName": "mapbf"
+  },
+  {
+    "gameId": "DB7A",
+    "gameName": "Blacks Dash"
+  },
+  {
+    "gameId": "DB9A",
+    "gameName": "Robi"
+  },
+  {
+    "gameId": "DBAA",
+    "gameName": "BowFishing Action"
+  },
+  {
+    "gameId": "DBBA",
+    "gameName": "Balance Board Tools"
+  },
+  {
+    "gameId": "DBBE18",
+    "gameName": "Beyblade: Metal Fusion - Battle Fortress (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DBCA",
+    "gameName": "BootMii Configuration Editor"
+  },
+  {
+    "gameId": "DBDA",
+    "gameName": "Bluedump"
+  },
+  {
+    "gameId": "DBEA",
+    "gameName": "Beebem Wii"
+  },
+  {
+    "gameId": "DBGA",
+    "gameName": "BlastGuy"
+  },
+  {
+    "gameId": "DBIA",
+    "gameName": "Boot It"
+  },
+  {
+    "gameId": "DBIJ08",
+    "gameName": "Biohazard - Movie Demo Disc (NTSC-J)"
+  },
+  {
+    "gameId": "DBJJ08",
+    "gameName": "Biohazard: Special Edition (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DBKE69",
+    "gameName": "Boom Blox (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DBKP69",
+    "gameName": "Boom Blox (Demo) (PAL)"
+  },
+  {
+    "gameId": "DBLA",
+    "gameName": "BlueMSX-wii"
+  },
+  {
+    "gameId": "DBMA",
+    "gameName": "BootIOS"
+  },
+  {
+    "gameId": "DBPA",
+    "gameName": "Balance Board Pro"
+  },
+  {
+    "gameId": "DBRA",
+    "gameName": "WiiBrowser"
+  },
+  {
+    "gameId": "DBSA",
+    "gameName": "BrawlStats"
+  },
+  {
+    "gameId": "DBSBT3",
+    "gameName": "Dragon Ball Budokai Tenkaichi 3 Version Latino"
+  },
+  {
+    "gameId": "DBTA",
+    "gameName": "Bolt Thrower"
+  },
+  {
+    "gameId": "DBUA",
+    "gameName": "Buttoncast"
+  },
+  {
+    "gameId": "DBWA",
+    "gameName": "Reversmii"
+  },
+  {
+    "gameId": "DBXA",
+    "gameName": "Biniax 2"
+  },
+  {
+    "gameId": "DBZJ08",
+    "gameName": "Biohazard Zero: Trial Edition (NTSC-J)"
+  },
+  {
+    "gameId": "DC6A",
+    "gameName": "Frodo (C64-network.org)"
+  },
+  {
+    "gameId": "DC7A",
+    "gameName": "Calculate"
+  },
+  {
+    "gameId": "DC8A",
+    "gameName": "Line Attack Heroes"
+  },
+  {
+    "gameId": "DCAA",
+    "gameName": "WiiCasino"
+  },
+  {
+    "gameId": "DCAE18",
+    "gameName": "Calling (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DCBA",
+    "gameName": "CascadeBeneath"
+  },
+  {
+    "gameId": "DCCA",
+    "gameName": "ChristmasCountdown"
+  },
+  {
+    "gameId": "DCDA",
+    "gameName": "cIOS Downgrader"
+  },
+  {
+    "gameId": "DCEA",
+    "gameName": "Cheat Manager"
+  },
+  {
+    "gameId": "DCEP41",
+    "gameName": "Tom Clancy's Splinter Cell (Demo) (PAL)"
+  },
+  {
+    "gameId": "DCFA",
+    "gameName": "Coverfloader"
+  },
+  {
+    "gameId": "DCGA",
+    "gameName": "Ctr-Gcs"
+  },
+  {
+    "gameId": "DCHA",
+    "gameName": "Wii Chatter"
+  },
+  {
+    "gameId": "DCHEAF",
+    "gameName": "We Cheer (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DCHJAF",
+    "gameName": "We Cheer: O wa Star Produce! Gentei Collabo Game Disc (NTSC-J)"
+  },
+  {
+    "gameId": "DCIA",
+    "gameName": "cIOS Installer"
+  },
+  {
+    "gameId": "DCLA",
+    "gameName": "Configurable USB Loader"
+  },
+  {
+    "gameId": "DCMA",
+    "gameName": "Wiicm"
+  },
+  {
+    "gameId": "DCNA",
+    "gameName": "Nandclean"
+  },
+  {
+    "gameId": "DCOA",
+    "gameName": "ConnectMii"
+  },
+  {
+    "gameId": "DCPA",
+    "gameName": "Splatter Castle"
+  },
+  {
+    "gameId": "DCRA",
+    "gameName": "CosmoRaketti"
+  },
+  {
+    "gameId": "DCSA",
+    "gameName": "Cert.sys Extractor"
+  },
+  {
+    "gameId": "DCTA",
+    "gameName": "Christmas-Type Adventure Time"
+  },
+  {
+    "gameId": "DCUA",
+    "gameName": "cIOS Uninstaller"
+  },
+  {
+    "gameId": "DCVA",
+    "gameName": "WiiColEm"
+  },
+  {
+    "gameId": "DCWA",
+    "gameName": "WiiMC Channel Installer"
+  },
+  {
+    "gameId": "DCXA",
+    "gameName": "ComixChannel"
+  },
+  {
+    "gameId": "DCYA",
+    "gameName": "Cylinder Dodge"
+  },
+  {
+    "gameId": "DD2A",
+    "gameName": "Double Dash Wii"
+  },
+  {
+    "gameId": "DD2P41",
+    "gameName": "Just Dance 2 (Demo) (PAL)"
+  },
+  {
+    "gameId": "DD3A",
+    "gameName": "Dario"
+  },
+  {
+    "gameId": "DD5A",
+    "gameName": "Dcvg5k"
+  },
+  {
+    "gameId": "DD9A",
+    "gameName": "Dungeons"
+  },
+  {
+    "gameId": "DDAA",
+    "gameName": "Darkcorp"
+  },
+  {
+    "gameId": "DDBA",
+    "gameName": "DOSBox Wii"
+  },
+  {
+    "gameId": "DDCA",
+    "gameName": "d2x cIOS Installer"
+  },
+  {
+    "gameId": "DDDA",
+    "gameName": "Disk Drive Lighter"
+  },
+  {
+    "gameId": "DDEA",
+    "gameName": "WiiModder"
+  },
+  {
+    "gameId": "DDFA",
+    "gameName": "Defendguin"
+  },
+  {
+    "gameId": "DDHA",
+    "gameName": "Homebrew Disc Launcher"
+  },
+  {
+    "gameId": "DDIA",
+    "gameName": "DiiLC"
+  }
+,
+  {
+    "gameId": "DDLA",
+    "gameName": "Disc Loader"
+  },
+  {
+    "gameId": "DDMA",
+    "gameName": "DragonMedia Player"
+  },
+  {
+    "gameId": "DDOA",
+    "gameName": "DOP-Mii"
+  },
+  {
+    "gameId": "DDRA",
+    "gameName": "Wii Duplicated Channel Remover"
+  },
+  {
+    "gameId": "DDSA",
+    "gameName": "DeSmuME"
+  },
+  {
+    "gameId": "DDVA",
+    "gameName": "Devolution"
+  },
+  {
+    "gameId": "DDWA",
+    "gameName": "DOP-Mii WiiBrew Edition"
+  },
+  {
+    "gameId": "DDWE18",
+    "gameName": "Lost in Shadow - Press Disc (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DDWX18",
+    "gameName": "Lost In Shadow - Best Buy (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DE2A",
+    "gameName": "Doubledown"
+  },
+  {
+    "gameId": "DE5A",
+    "gameName": "Pictogrid"
+  },
+  {
+    "gameId": "DE7A",
+    "gameName": "Commander Keen"
+  },
+  {
+    "gameId": "DE9A",
+    "gameName": "Wii Bash"
+  },
+  {
+    "gameId": "DEAA",
+    "gameName": "Headtracking (Demo)"
+  },
+  {
+    "gameId": "DEBA",
+    "gameName": "Pong Breaker"
+  },
+  {
+    "gameId": "DEDA",
+    "gameName": "Txted"
+  },
+  {
+    "gameId": "DEEA",
+    "gameName": "Eeeek Eeeeek Hooooook"
+  },
+  {
+    "gameId": "DEFA",
+    "gameName": "Fuse"
+  },
+  {
+    "gameId": "DEHA",
+    "gameName": "Chess"
+  },
+  {
+    "gameId": "DEME",
+    "gameName": "PunEmu (NTSC-U)"
+  },
+  {
+    "gameId": "DEPA",
+    "gameName": "Pacman"
+  },
+  {
+    "gameId": "DERA",
+    "gameName": "Elongated Reptile"
+  },
+  {
+    "gameId": "DETA",
+    "gameName": "MPlayer TT"
+  },
+  {
+    "gameId": "DEWA",
+    "gameName": "Wii Exhibit"
+  },
+  {
+    "gameId": "DEZP8P",
+    "gameName": "Billy Hatcher and the Giant Egg (Demo) (PAL)"
+  },
+  {
+    "gameId": "DF0A",
+    "gameName": "Mini FSToolbox"
+  },
+  {
+    "gameId": "DF2A",
+    "gameName": "Da ShAmAn"
+  },
+  {
+    "gameId": "DF3A",
+    "gameName": "Briickout"
+  },
+  {
+    "gameId": "DF4A",
+    "gameName": "Star Catching"
+  },
+  {
+    "gameId": "DF5A",
+    "gameName": "Strobe Alarm Clock"
+  },
+  {
+    "gameId": "DF6A",
+    "gameName": "Wii Quizz"
+  },
+  {
+    "gameId": "DF7A",
+    "gameName": "Chatnoir"
+  },
+  {
+    "gameId": "DF8A",
+    "gameName": "Trinary"
+  },
+  {
+    "gameId": "DF9A",
+    "gameName": "Chunk Munch"
+  },
+  {
+    "gameId": "DFBA",
+    "gameName": "Fsbrowser"
+  },
+  {
+    "gameId": "DFEA",
+    "gameName": "FlipEm"
+  },
+  {
+    "gameId": "DFFA",
+    "gameName": "Simple FS Dumper"
+  },
+  {
+    "gameId": "DFGA",
+    "gameName": "Smashing!"
+  },
+  {
+    "gameId": "DFIA",
+    "gameName": "FCE Ultra GX Channel Installer"
+  },
+  {
+    "gameId": "DFLA",
+    "gameName": "Starfall"
+  },
+  {
+    "gameId": "DFMA",
+    "gameName": "FMyLife"
+  },
+  {
+    "gameId": "DFRA",
+    "gameName": "FridgeMagnets"
+  },
+  {
+    "gameId": "DFSA",
+    "gameName": "FSToolbox"
+  },
+  {
+    "gameId": "DFTA",
+    "gameName": "FTPii"
+  },
+  {
+    "gameId": "DFUA",
+    "gameName": "Fuse"
+  },
+  {
+    "gameId": "DG3A",
+    "gameName": "Giddy 3"
+  },
+  {
+    "gameId": "DG7A",
+    "gameName": "WiiPeng"
+  },
+  {
+    "gameId": "DG8A",
+    "gameName": "Abusimbel Deluxe"
+  },
+  {
+    "gameId": "DG9A",
+    "gameName": "Garnatron"
+  },
+  {
+    "gameId": "DGAJB2",
+    "gameName": "Kidou Senshi Gundam - Senshitachi no Kiseki Special Disc (NTSC-J)"
+  },
+  {
+    "gameId": "DGBA",
+    "gameName": "Geexbox"
+  },
+  {
+    "gameId": "DGCA",
+    "gameName": "GameCube Backup Launcher"
+  },
+  {
+    "gameId": "DGEA",
+    "gameName": "GeckoOS"
+  },
+  {
+    "gameId": "DGFA",
+    "gameName": "GuitarsOnFire"
+  },
+  {
+    "gameId": "DGGA",
+    "gameName": "Wii Rick Dangerous"
+  },
+  {
+    "gameId": "DGIA",
+    "gameName": "Gravitii"
+  },
+  {
+    "gameId": "DGKA",
+    "gameName": "ProjectGMC"
+  },
+  {
+    "gameId": "DGMA",
+    "gameName": "GCMM"
+  },
+  {
+    "gameId": "DGPA",
+    "gameName": "Genesis Plus"
+  },
+  {
+    "gameId": "DGSA",
+    "gameName": "Shooting Gallery"
+  },
+  {
+    "gameId": "DGWA",
+    "gameName": "Goodbye World"
+  },
+  {
+    "gameId": "DGXA",
+    "gameName": "GxGeo"
+  },
+  {
+    "gameId": "DH7A",
+    "gameName": "Harmony's Nightmare"
+  },
+  {
+    "gameId": "DH9A",
+    "gameName": "Prophecy"
+  },
+  {
+    "gameId": "DHBA",
+    "gameName": "Homebrew Browser"
+  },
+  {
+    "gameId": "DHCA",
+    "gameName": "Hero City"
+  },
+  {
+    "gameId": "DHDA",
+    "gameName": "Hidtest"
+  },
+  {
+    "gameId": "DHEA",
+    "gameName": "Helium Boy"
+  },
+  {
+    "gameId": "DHFA",
+    "gameName": "Homebrew Filter"
+  },
+  {
+    "gameId": "DHGA",
+    "gameName": "HuGo-GX"
+  },
+  {
+    "gameId": "DHHA",
+    "gameName": "HHexen"
+  },
+  {
+    "gameId": "DHHJ8J",
+    "gameName": "Hirano Aya Premium Movie Disc from Suzumiya Haruhi no Gekidou (NTSC-J)"
+  },
+  {
+    "gameId": "DHIA",
+    "gameName": "HackMii Installer"
+  },
+  {
+    "gameId": "DHKE18",
+    "gameName": "Help Wanted: 50 Wacky Jobs (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DHLA",
+    "gameName": "Heli"
+  },
+  {
+    "gameId": "DHMA",
+    "gameName": "CharioMan"
+  },
+  {
+    "gameId": "DHSA",
+    "gameName": "Homebrew Sorter"
+  },
+  {
+    "gameId": "DHTA",
+    "gameName": "Hatari"
+  },
+  {
+    "gameId": "DHWA",
+    "gameName": "We Are Nowhere"
+  },
+  {
+    "gameId": "DHXA",
+    "gameName": "Hex"
+  },
+  {
+    "gameId": "DI5A",
+    "gameName": "Tanks"
+  },
+  {
+    "gameId": "DI7A",
+    "gameName": "ExistenzE"
+  },
+  {
+    "gameId": "DI8A",
+    "gameName": "IOS58 Installer"
+  },
+  {
+    "gameId": "DI9A",
+    "gameName": "Barrage"
+  },
+  {
+    "gameId": "DIBA",
+    "gameName": "Revolt of the Binary Couriers"
+  },
+  {
+    "gameId": "DICA",
+    "gameName": "Cubic"
+  },
+  {
+    "gameId": "DIEA",
+    "gameName": "EasyIOS"
+  },
+  {
+    "gameId": "DIGA",
+    "gameName": "Categorii"
+  },
+  {
+    "gameId": "DIIA",
+    "gameName": "iiii"
+  },
+  {
+    "gameId": "DIMA",
+    "gameName": "InspectMii"
+  },
+  {
+    "gameId": "DINA",
+    "gameName": "Mii Installer"
+  },
+  {
+    "gameId": "DIRA",
+    "gameName": "Ironing Maiden"
+  },
+  {
+    "gameId": "DISA",
+    "gameName": "Wii Supersonic"
+  },
+  {
+    "gameId": "DITA",
+    "gameName": "IOS236 Installer"
+  },
+  {
+    "gameId": "DIXA",
+    "gameName": "cIOSx installer"
+  },
+  {
+    "gameId": "DIYP01",
+    "gameName": "New Super Mario Bros. Wii 0-4 D.I.Y. (PAL)"
+  },
+  {
+    "gameId": "DJAA",
+    "gameName": "Arcade Jigsaw"
+  },
+  {
+    "gameId": "DJCA",
+    "gameName": "JellyCar Wii"
+  },
+  {
+    "gameId": "DJFA",
+    "gameName": "Joyflow"
+  },
+  {
+    "gameId": "DJJA",
+    "gameName": "Jumping Jack"
+  }
+,
+  {
+    "gameId": "DJQA",
+    "gameName": "Jewel Quest"
+  },
+  {
+    "gameId": "DJWA",
+    "gameName": "Wii System Menu"
+  },
+  {
+    "gameId": "DJZA",
+    "gameName": "JzintvWii"
+  },
+  {
+    "gameId": "DK1A",
+    "gameName": "Karaokii"
+  },
+  {
+    "gameId": "DK3A",
+    "gameName": "Sketch Fight"
+  },
+  {
+    "gameId": "DK4A",
+    "gameName": "Drawingbox"
+  },
+  {
+    "gameId": "DK6A",
+    "gameName": "King of Fighters: Flames of Courage"
+  },
+  {
+    "gameId": "DK6E18",
+    "gameName": "Marble Saga: Kororinpa (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DK6J18",
+    "gameName": "Kororinpa 2 (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DK7A",
+    "gameName": "Uschtris"
+  },
+  {
+    "gameId": "DKBA",
+    "gameName": "RPG Baker"
+  },
+  {
+    "gameId": "DKCA",
+    "gameName": "Tick Tock Car Race"
+  },
+  {
+    "gameId": "DKCP01",
+    "gameName": "Darky Kart Riivo (PAL)"
+  },
+  {
+    "gameId": "DKDA",
+    "gameName": "Darkcube"
+  },
+  {
+    "gameId": "DKHA",
+    "gameName": "Katakana and Hiragana Practice"
+  },
+  {
+    "gameId": "DKKA",
+    "gameName": "KoreanKii"
+  },
+  {
+    "gameId": "DKOA",
+    "gameName": "Komopong"
+  },
+  {
+    "gameId": "DKPA",
+    "gameName": "Kidspaint"
+  },
+  {
+    "gameId": "DKSA",
+    "gameName": "Stppwii"
+  },
+  {
+    "gameId": "DKTA",
+    "gameName": "Taiko"
+  },
+  {
+    "gameId": "DKWA",
+    "gameName": "Kurushi"
+  },
+  {
+    "gameId": "DKWE01",
+    "gameName": "Darky Kart Wii Vol. 1 (NTSC-U)"
+  },
+  {
+    "gameId": "DKWE02",
+    "gameName": "Darky Kart Wii Vol. 2 (NTSC-U)"
+  },
+  {
+    "gameId": "DKWE03",
+    "gameName": "Darky Kart Wii Vol. 3 (NTSC-U)"
+  },
+  {
+    "gameId": "DKWE04",
+    "gameName": "Darky Kart Wii Vol. 4 (NTSC-U)"
+  },
+  {
+    "gameId": "DL3A",
+    "gameName": "Ballion"
+  },
+  {
+    "gameId": "DL4A",
+    "gameName": "LPairs"
+  },
+  {
+    "gameId": "DL5A",
+    "gameName": "Gameload"
+  },
+  {
+    "gameId": "DL7A",
+    "gameName": "LabClone"
+  },
+  {
+    "gameId": "DLBA",
+    "gameName": "My Little Ball"
+  },
+  {
+    "gameId": "DLCA",
+    "gameName": "Dance Clone"
+  },
+  {
+    "gameId": "DLCE41",
+    "gameName": "Just Dance 2015 All In One (NTSC-U)"
+  },
+  {
+    "gameId": "DLDA",
+    "gameName": "Devilock"
+  },
+  {
+    "gameId": "DLEA",
+    "gameName": "Preloader"
+  },
+  {
+    "gameId": "DLFA",
+    "gameName": "LifeMii"
+  },
+  {
+    "gameId": "DLGA",
+    "gameName": "Gravity Glider"
+  },
+  {
+    "gameId": "DLIA",
+    "gameName": "Wii Mod Lite"
+  },
+  {
+    "gameId": "DLLA",
+    "gameName": "Lolicopocalypse"
+  },
+  {
+    "gameId": "DLMA",
+    "gameName": "LoadMii"
+  },
+  {
+    "gameId": "DLNA",
+    "gameName": "Lander"
+  },
+  {
+    "gameId": "DLOA",
+    "gameName": "Lightsout"
+  },
+  {
+    "gameId": "DLPA",
+    "gameName": "Lopan"
+  },
+  {
+    "gameId": "DLSE64",
+    "gameName": "Star Wars: Rogue Squadron III: Rebel Strike: Limited Edition Bonus Disc (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DLSP64",
+    "gameName": "Star Wars: Rogue Squadron III: Rebel Strike: Limited Edition Bonus Disc (Demo) (PAL)"
+  },
+  {
+    "gameId": "DLTA",
+    "gameName": "Leveltool"
+  },
+  {
+    "gameId": "DLUA",
+    "gameName": "WiiLauncher"
+  },
+  {
+    "gameId": "DLXA",
+    "gameName": "Linux Installer"
+  },
+  {
+    "gameId": "DLZEPW",
+    "gameName": "Super Smash Bros. Brawl: Phoenix Wings (NTSC-U)"
+  },
+  {
+    "gameId": "DM0A",
+    "gameName": "Pom"
+  },
+  {
+    "gameId": "DM2J8P",
+    "gameName": "Super Monkey Ball 2 (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DM5A",
+    "gameName": "Missle Command"
+  },
+  {
+    "gameId": "DM7A",
+    "gameName": "Matches"
+  },
+  {
+    "gameId": "DM9A",
+    "gameName": "CheckRegion"
+  },
+  {
+    "gameId": "DMAA",
+    "gameName": "Mame Wii"
+  },
+  {
+    "gameId": "DMBA",
+    "gameName": "Multiboot"
+  },
+  {
+    "gameId": "DMBP05",
+    "gameName": "Dark Super Mario Bros. Wii (PAL)"
+  },
+  {
+    "gameId": "DMCA",
+    "gameName": "CleanRip Mod"
+  },
+  {
+    "gameId": "DMDA",
+    "gameName": "Wii Mod"
+  },
+  {
+    "gameId": "DMEA",
+    "gameName": "Mii Extractor"
+  },
+  {
+    "gameId": "DMFA",
+    "gameName": "WiiMednafen"
+  },
+  {
+    "gameId": "DMGA",
+    "gameName": "Mighty Channels"
+  },
+  {
+    "gameId": "DMHA",
+    "gameName": "NanoMechas"
+  },
+  {
+    "gameId": "DMHE08",
+    "gameName": "Monster Hunter Tri (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DMHJ08",
+    "gameName": "Monster Hunter Tri (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DMIA",
+    "gameName": "DIOS MIOS Booter"
+  },
+  {
+    "gameId": "DMJA",
+    "gameName": "Mahjongg Wii"
+  },
+  {
+    "gameId": "DMKE01",
+    "gameName": "Mario Kart Wii 2 (NTSC-U)"
+  },
+  {
+    "gameId": "DMLA",
+    "gameName": "Mighty Loader"
+  },
+  {
+    "gameId": "DMMA",
+    "gameName": "MyMenuify"
+  },
+  {
+    "gameId": "DMNA",
+    "gameName": "Magic Number"
+  },
+  {
+    "gameId": "DMOA",
+    "gameName": "cMIOS installer"
+  },
+  {
+    "gameId": "DMPA",
+    "gameName": "MPlayer CE"
+  },
+  {
+    "gameId": "DMRA",
+    "gameName": "MIOS Patcher"
+  },
+  {
+    "gameId": "DMSA",
+    "gameName": "ShutMiiReboot"
+  },
+  {
+    "gameId": "DMSP4Q",
+    "gameName": "SingItStar: Best of Disney (PAL)"
+  },
+  {
+    "gameId": "DMTA",
+    "gameName": "Metronome"
+  },
+  {
+    "gameId": "DMUA",
+    "gameName": "Multi Mod Manager"
+  },
+  {
+    "gameId": "DMVE26",
+    "gameName": "Dark Mario Vacation (NTSC-U)"
+  },
+  {
+    "gameId": "DMWA",
+    "gameName": "WakeMiiUp"
+  },
+  {
+    "gameId": "DN0A",
+    "gameName": "Thatother"
+  },
+  {
+    "gameId": "DN6A",
+    "gameName": "Not64"
+  },
+  {
+    "gameId": "DN7A",
+    "gameName": "Alien Breed"
+  },
+  {
+    "gameId": "DN9A",
+    "gameName": "Point and No Click"
+  },
+  {
+    "gameId": "DNAA",
+    "gameName": "Ncard"
+  },
+  {
+    "gameId": "DNCA",
+    "gameName": "NeoCD-Wii"
+  },
+  {
+    "gameId": "DNDA",
+    "gameName": "Nintendont"
+  },
+  {
+    "gameId": "DNEA",
+    "gameName": "Gravity"
+  },
+  {
+    "gameId": "DNGA",
+    "gameName": "NeoGamma Launcher"
+  },
+  {
+    "gameId": "DNHA",
+    "gameName": "Headings"
+  },
+  {
+    "gameId": "DNIA",
+    "gameName": "Bugin"
+  },
+  {
+    "gameId": "DNKA",
+    "gameName": "Neko Project II"
+  },
+  {
+    "gameId": "DNMA",
+    "gameName": "Newo Model Viewer"
+  },
+  {
+    "gameId": "DNNA",
+    "gameName": "Save installer"
+  },
+  {
+    "gameId": "DNOA",
+    "gameName": "O.T.T.F."
+  },
+  {
+    "gameId": "DNPA",
+    "gameName": "NeoPopWii"
+  },
+  {
+    "gameId": "DNRA",
+    "gameName": "Newo Runner"
+  },
+  {
+    "gameId": "DNSA",
+    "gameName": "Newo Shooter"
+  },
+  {
+    "gameId": "DNTA",
+    "gameName": "NeoTanks"
+  },
+  {
+    "gameId": "DNUA",
+    "gameName": "Wii Donut"
+  },
+  {
+    "gameId": "DNUEDA",
+    "gameName": "Naruto Clash of Ninja 2 (Demo) (NTSC-U)"
+  }
+,
+  {
+    "gameId": "DNWA",
+    "gameName": "Nowell"
+  },
+  {
+    "gameId": "DO2A",
+    "gameName": "O2EM"
+  },
+  {
+    "gameId": "DO3A",
+    "gameName": "Three Point O"
+  },
+  {
+    "gameId": "DO4A",
+    "gameName": "MTP"
+  },
+  {
+    "gameId": "DO5A",
+    "gameName": "Planet Hively"
+  },
+  {
+    "gameId": "DO6A",
+    "gameName": "Mini MP3 Player"
+  },
+  {
+    "gameId": "DOCA",
+    "gameName": "Code Downloader"
+  },
+  {
+    "gameId": "DOEA",
+    "gameName": "ShowTest"
+  },
+  {
+    "gameId": "DOGA",
+    "gameName": "MazeOfGaliousWii"
+  },
+  {
+    "gameId": "DOHA",
+    "gameName": "HighOctane"
+  },
+  {
+    "gameId": "DOIA",
+    "gameName": "Neogamma IOS Switcher"
+  },
+  {
+    "gameId": "DOLL41",
+    "gameName": "Just Dance Melody (PAL)"
+  },
+  {
+    "gameId": "DOMA",
+    "gameName": "Mole"
+  },
+  {
+    "gameId": "DONA",
+    "gameName": "Offline Network Enabler"
+  },
+  {
+    "gameId": "DOOA",
+    "gameName": "Doom"
+  },
+  {
+    "gameId": "DOPA",
+    "gameName": "PowerCheck"
+  },
+  {
+    "gameId": "DORA",
+    "gameName": "Rebooter"
+  },
+  {
+    "gameId": "DOTA",
+    "gameName": "OpenTTD"
+  },
+  {
+    "gameId": "DP0A",
+    "gameName": "Starplit"
+  },
+  {
+    "gameId": "DP1A",
+    "gameName": "Italian Parking"
+  },
+  {
+    "gameId": "DP2A",
+    "gameName": "Pong2"
+  },
+  {
+    "gameId": "DP3A",
+    "gameName": "Inkpoly"
+  },
+  {
+    "gameId": "DP4A",
+    "gameName": "Piirates"
+  },
+  {
+    "gameId": "DP5A",
+    "gameName": "Pix"
+  },
+  {
+    "gameId": "DP6A",
+    "gameName": "IOS36 Patcher"
+  },
+  {
+    "gameId": "DP7A",
+    "gameName": "Brawl+ Updatifier"
+  },
+  {
+    "gameId": "DP8A",
+    "gameName": "Timeless"
+  },
+  {
+    "gameId": "DP9A",
+    "gameName": "Alien Puzzle Wii"
+  },
+  {
+    "gameId": "DPAA",
+    "gameName": "WiiPaintBall"
+  },
+  {
+    "gameId": "DPBA",
+    "gameName": "Priibootergui"
+  },
+  {
+    "gameId": "DPCA",
+    "gameName": "Cherophobe"
+  },
+  {
+    "gameId": "DPEA",
+    "gameName": "PieChart"
+  },
+  {
+    "gameId": "DPFA",
+    "gameName": "Pwiictogrid"
+  },
+  {
+    "gameId": "DPGA",
+    "gameName": "Pingus"
+  },
+  {
+    "gameId": "DPIA",
+    "gameName": "Patched IOS 80 Installer for vWii"
+  },
+  {
+    "gameId": "DPIE18",
+    "gameName": "Oops! Prank Party (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DPIJ01",
+    "gameName": "Pikmin (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DPJA",
+    "gameName": "Project M Launcher"
+  },
+  {
+    "gameId": "DPKA",
+    "gameName": "Physco"
+  },
+  {
+    "gameId": "DPLA",
+    "gameName": "Priiloader"
+  },
+  {
+    "gameId": "DPMA",
+    "gameName": "Music Painter"
+  },
+  {
+    "gameId": "DPNA",
+    "gameName": "RPG Pineapple Apocalypse"
+  },
+  {
+    "gameId": "DPNP08",
+    "gameName": "P.N.03 (Promo) (PAL)"
+  },
+  {
+    "gameId": "DPOA",
+    "gameName": "Postloader"
+  },
+  {
+    "gameId": "DPOJ8P",
+    "gameName": "Phantasy Star Online Episode I & II Trial Edition (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DPPA",
+    "gameName": "Project Panic"
+  },
+  {
+    "gameId": "DPRA",
+    "gameName": "PlasmaRaketti"
+  },
+  {
+    "gameId": "DPSA",
+    "gameName": "Playstats"
+  },
+  {
+    "gameId": "DPSJ8P",
+    "gameName": "Phantasy Star Online Episode III: C.A.R.D. Revolution (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DPTA",
+    "gameName": "Two Point Five"
+  },
+  {
+    "gameId": "DPVA",
+    "gameName": "PattView Wii"
+  },
+  {
+    "gameId": "DPWA",
+    "gameName": "Pimp my Wii"
+  },
+  {
+    "gameId": "DQ1A",
+    "gameName": "Q1rev"
+  },
+  {
+    "gameId": "DQ2A",
+    "gameName": "Q2rev"
+  },
+  {
+    "gameId": "DQ6A",
+    "gameName": "Light"
+  },
+  {
+    "gameId": "DQ7A",
+    "gameName": "Quake"
+  },
+  {
+    "gameId": "DQ8A",
+    "gameName": "LuaFWii"
+  },
+  {
+    "gameId": "DQ9A",
+    "gameName": "Wiihttpd"
+  },
+  {
+    "gameId": "DQAJK2",
+    "gameName": "Aquarius Baseball (NTSC-J)"
+  },
+  {
+    "gameId": "DQAJSC",
+    "gameName": "Aquarius Baseball (Simplified Chinese Translation) (NTSC-J)"
+  },
+  {
+    "gameId": "DQBA",
+    "gameName": "Bible Quiz"
+  },
+  {
+    "gameId": "DQCA",
+    "gameName": "Q2ctfrev"
+  },
+  {
+    "gameId": "DQGP69",
+    "gameName": "MySims Racing (Demo) (PAL)"
+  },
+  {
+    "gameId": "DQRA",
+    "gameName": "Qrevpak"
+  },
+  {
+    "gameId": "DQWA",
+    "gameName": "Quakegx"
+  },
+  {
+    "gameId": "DR0A",
+    "gameName": "Rokoban"
+  },
+  {
+    "gameId": "DR1A",
+    "gameName": "Wii Whiteboard"
+  },
+  {
+    "gameId": "DR2JCQ",
+    "gameName": "Rune II: Koruten no Kagi no Himitsu (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DR3A",
+    "gameName": "Death Star Run"
+  },
+  {
+    "gameId": "DR4A",
+    "gameName": "Rock Paper Scissors"
+  },
+  {
+    "gameId": "DR5A",
+    "gameName": "Briicks"
+  },
+  {
+    "gameId": "DR6A",
+    "gameName": "Reader"
+  },
+  {
+    "gameId": "DR7A",
+    "gameName": "RockBlueMet"
+  },
+  {
+    "gameId": "DR8A",
+    "gameName": "Operation"
+  },
+  {
+    "gameId": "DR9A",
+    "gameName": "PixelPlot"
+  },
+  {
+    "gameId": "DRAA",
+    "gameName": "RetroArch-Wii"
+  },
+  {
+    "gameId": "DRBA",
+    "gameName": "Rock Band 2 WAD Installer"
+  },
+  {
+    "gameId": "DRCA",
+    "gameName": "Wiicross"
+  },
+  {
+    "gameId": "DRDA",
+    "gameName": "Drawmii"
+  },
+  {
+    "gameId": "DREA",
+    "gameName": "WiiRecipe"
+  },
+  {
+    "gameId": "DRFA",
+    "gameName": "Radiofeeds"
+  },
+  {
+    "gameId": "DRGA",
+    "gameName": "Reggie Dumper"
+  },
+  {
+    "gameId": "DRIA",
+    "gameName": "CleanRip"
+  },
+  {
+    "gameId": "DRKA",
+    "gameName": "Robotfindskitten"
+  },
+  {
+    "gameId": "DRMA",
+    "gameName": "Mr. Sitwell"
+  },
+  {
+    "gameId": "DRME18",
+    "gameName": "Rooms: The Main Building (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DROA",
+    "gameName": "SlimeRoll"
+  },
+  {
+    "gameId": "DRP22Q",
+    "gameName": "SingItStar Deutsch Rock-Pop Vol. 2"
+  },
+  {
+    "gameId": "DRPA",
+    "gameName": "Marcos Lopez Part II"
+  },
+  {
+    "gameId": "DRRA",
+    "gameName": "Riiper"
+  },
+  {
+    "gameId": "DRSA",
+    "gameName": "RedSquare"
+  },
+  {
+    "gameId": "DRSEAF",
+    "gameName": "Soulcalibur II (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DRTA",
+    "gameName": "Tetris Custom"
+  },
+  {
+    "gameId": "DRUA",
+    "gameName": "Radiofeeds Updater"
+  },
+  {
+    "gameId": "DRVA",
+    "gameName": "Residualvm"
+  },
+  {
+    "gameId": "DRWA",
+    "gameName": "Winterman"
+  },
+  {
+    "gameId": "DRZA",
+    "gameName": "Zerace"
+  },
+  {
+    "gameId": "DS0A",
+    "gameName": "ShootMii"
+  },
+  {
+    "gameId": "DS1A",
+    "gameName": "Another Rock Paper Scissors"
+  },
+  {
+    "gameId": "DS2A",
+    "gameName": "Swingball2"
+  }
+,
+  {
+    "gameId": "DS3A",
+    "gameName": "Senet"
+  },
+  {
+    "gameId": "DS4A",
+    "gameName": "Sar"
+  },
+  {
+    "gameId": "DS5A",
+    "gameName": "Snaketwo"
+  },
+  {
+    "gameId": "DS6A",
+    "gameName": "Scogger"
+  },
+  {
+    "gameId": "DS7A",
+    "gameName": "Swing Ball"
+  },
+  {
+    "gameId": "DS8A",
+    "gameName": "Scape"
+  },
+  {
+    "gameId": "DS9A",
+    "gameName": "Minesweeper"
+  },
+  {
+    "gameId": "DSAA",
+    "gameName": "Schism Tracker"
+  },
+  {
+    "gameId": "DSBA",
+    "gameName": "SpaceBubble"
+  },
+  {
+    "gameId": "DSCA",
+    "gameName": "Softchip"
+  },
+  {
+    "gameId": "DSDA",
+    "gameName": "Superdump"
+  },
+  {
+    "gameId": "DSEA",
+    "gameName": "Settings Editor GUI"
+  },
+  {
+    "gameId": "DSFA",
+    "gameName": "Sciifii"
+  },
+  {
+    "gameId": "DSFE7U",
+    "gameName": "Muramasa: The Demon Blade (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DSGA",
+    "gameName": "SaveGame Manager"
+  },
+  {
+    "gameId": "DSHA",
+    "gameName": "SysCheck HacksDen Edition"
+  },
+  {
+    "gameId": "DSIA",
+    "gameName": "Simple IOS Patcher"
+  },
+  {
+    "gameId": "DSKA",
+    "gameName": "SockDreams"
+  },
+  {
+    "gameId": "DSLA",
+    "gameName": "Wii Stella"
+  },
+  {
+    "gameId": "DSMA",
+    "gameName": "Sega Master System Plus"
+  },
+  {
+    "gameId": "DSOA",
+    "gameName": "Bermuda Syndrome Wii"
+  },
+  {
+    "gameId": "DSPA",
+    "gameName": "Super Star Shooter"
+  },
+  {
+    "gameId": "DSQA",
+    "gameName": "Sqrxz"
+  },
+  {
+    "gameId": "DSRA",
+    "gameName": "WiiStrobe"
+  },
+  {
+    "gameId": "DSRJ8P",
+    "gameName": "Sonic and the Secret Rings (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DSSA",
+    "gameName": "RSSMii"
+  },
+  {
+    "gameId": "DSTA",
+    "gameName": "Wii Solitaire"
+  },
+  {
+    "gameId": "DSUA",
+    "gameName": "Super Mario War"
+  },
+  {
+    "gameId": "DSVA",
+    "gameName": "ScummVM"
+  },
+  {
+    "gameId": "DSWA",
+    "gameName": "SuperTux Wii"
+  },
+  {
+    "gameId": "DSWJ13",
+    "gameName": "Star Wars: Rogue Squadron II (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DSXA",
+    "gameName": "Super Pixel Jumper"
+  },
+  {
+    "gameId": "DSYA",
+    "gameName": "SysCheck"
+  },
+  {
+    "gameId": "DT0A",
+    "gameName": "Tower Defense"
+  },
+  {
+    "gameId": "DT1A",
+    "gameName": "Turnip"
+  },
+  {
+    "gameId": "DT2A",
+    "gameName": "Matching Cards"
+  },
+  {
+    "gameId": "DT3A",
+    "gameName": "Bichejos"
+  },
+  {
+    "gameId": "DT4A",
+    "gameName": "Soduku"
+  },
+  {
+    "gameId": "DT5A",
+    "gameName": "Poker"
+  },
+  {
+    "gameId": "DT6A",
+    "gameName": "Simon"
+  },
+  {
+    "gameId": "DT7A",
+    "gameName": "TheyDoNotDie"
+  },
+  {
+    "gameId": "DTAA",
+    "gameName": "Wii-Tac-Toe"
+  },
+  {
+    "gameId": "DTCA",
+    "gameName": "The Catachthonic"
+  },
+  {
+    "gameId": "DTDA",
+    "gameName": "Descent"
+  },
+  {
+    "gameId": "DTEA",
+    "gameName": "Topedit"
+  },
+  {
+    "gameId": "DTFA",
+    "gameName": "Triiforce"
+  },
+  {
+    "gameId": "DTGA",
+    "gameName": "RiiTag"
+  },
+  {
+    "gameId": "DTHA",
+    "gameName": "Heretic"
+  },
+  {
+    "gameId": "DTIA",
+    "gameName": "Wiitriis"
+  },
+  {
+    "gameId": "DTJA",
+    "gameName": "Trojan"
+  },
+  {
+    "gameId": "DTKA",
+    "gameName": "Tick Tock Tank Fight"
+  },
+  {
+    "gameId": "DTLA",
+    "gameName": "TailTale"
+  },
+  {
+    "gameId": "DTLX01",
+    "gameName": "Action Replay"
+  },
+  {
+    "gameId": "DTMA",
+    "gameName": "Tetrominos"
+  },
+  {
+    "gameId": "DTNA",
+    "gameName": "Tunnel"
+  },
+  {
+    "gameId": "DTOA",
+    "gameName": "Tong"
+  },
+  {
+    "gameId": "DTOJ8P",
+    "gameName": "428: Fuusa Sareta Shibuya de (Taikenban) (NTSC-J)"
+  },
+  {
+    "gameId": "DTPA",
+    "gameName": "Paintown"
+  },
+  {
+    "gameId": "DTRA",
+    "gameName": "Trucha Bug Restorer"
+  },
+  {
+    "gameId": "DTSA",
+    "gameName": "Desert Bus"
+  },
+  {
+    "gameId": "DTTA",
+    "gameName": "Toddtris"
+  },
+  {
+    "gameId": "DTWA",
+    "gameName": "WiiTweet"
+  },
+  {
+    "gameId": "DTXA",
+    "gameName": "Texttris"
+  },
+  {
+    "gameId": "DTZJ08",
+    "gameName": "Takarajima Z Barbaros' Treasure (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DU0A",
+    "gameName": "DumpMiiNAND"
+  },
+  {
+    "gameId": "DU7A",
+    "gameName": "Uno"
+  },
+  {
+    "gameId": "DU8A",
+    "gameName": "RealWnd"
+  },
+  {
+    "gameId": "DU9A",
+    "gameName": "Harmonium"
+  },
+  {
+    "gameId": "DUAA",
+    "gameName": "UAE Wii"
+  },
+  {
+    "gameId": "DUAP01",
+    "gameName": "DU Super Mario Bros. : Anniversary Edition (PAL)"
+  },
+  {
+    "gameId": "DUBA",
+    "gameName": "Multibu"
+  },
+  {
+    "gameId": "DUCE01",
+    "gameName": "Kustom Mariokart Wii (NTSC-U)"
+  },
+  {
+    "gameId": "DUDA",
+    "gameName": "Duck Hunt"
+  },
+  {
+    "gameId": "DUDE01",
+    "gameName": "New Super Mario Bros. Wii Scooby-Doo! Hack (NTSC-U)"
+  },
+  {
+    "gameId": "DUGA",
+    "gameName": "Guitar Fun"
+  },
+  {
+    "gameId": "DUIA",
+    "gameName": "ChessUI"
+  },
+  {
+    "gameId": "DULA",
+    "gameName": "USB Loader GX"
+  },
+  {
+    "gameId": "DUNA",
+    "gameName": "Uname"
+  },
+  {
+    "gameId": "DUSA",
+    "gameName": "bootOperaModUSB"
+  },
+  {
+    "gameId": "DUTG",
+    "gameName": "DU Tag Channel (PAL)"
+  },
+  {
+    "gameId": "DUWA",
+    "gameName": "Waninkoko's USB Loader"
+  },
+  {
+    "gameId": "DV0A",
+    "gameName": "Remove Preloader Hacks"
+  },
+  {
+    "gameId": "DV3A",
+    "gameName": "DVD Browser"
+  },
+  {
+    "gameId": "DV9A",
+    "gameName": "SensorMii"
+  },
+  {
+    "gameId": "DVDA",
+    "gameName": "cIOS DVD Dumper"
+  },
+  {
+    "gameId": "DVGA",
+    "gameName": "The Video Game"
+  },
+  {
+    "gameId": "DVHA",
+    "gameName": "Horror Vacui"
+  },
+  {
+    "gameId": "DVIA",
+    "gameName": "Vbagx Channel Installer"
+  },
+  {
+    "gameId": "DVJP08",
+    "gameName": "Viewtiful Joe (Promotional demo) (PAL)"
+  },
+  {
+    "gameId": "DVLA",
+    "gameName": "Vigiroth le livreur"
+  },
+  {
+    "gameId": "DVNA",
+    "gameName": "WiiVNC"
+  },
+  {
+    "gameId": "DVOA",
+    "gameName": "Vectoroids"
+  },
+  {
+    "gameId": "DVPA",
+    "gameName": "Progressiveswitch"
+  },
+  {
+    "gameId": "DVSA",
+    "gameName": "GameCube Saver"
+  },
+  {
+    "gameId": "DVXA",
+    "gameName": "VectrexWii"
+  },
+  {
+    "gameId": "DW1A",
+    "gameName": "Intuitwars"
+  },
+  {
+    "gameId": "DW5A",
+    "gameName": "Marel"
+  },
+  {
+    "gameId": "DW6A",
+    "gameName": "Wiicraft"
+  },
+  {
+    "gameId": "DW7A",
+    "gameName": "Ravewild"
+  },
+  {
+    "gameId": "DWAA",
+    "gameName": "WiiApple"
+  }
+,
+  {
+    "gameId": "DWBA",
+    "gameName": "WiirtualBoy"
+  },
+  {
+    "gameId": "DWCA",
+    "gameName": "WiiFlow Channel Installer"
+  },
+  {
+    "gameId": "DWDA",
+    "gameName": "WiiFlow Banner Downloader"
+  },
+  {
+    "gameId": "DWEA",
+    "gameName": "WiiEarth"
+  },
+  {
+    "gameId": "DWEJA4",
+    "gameName": "Winning Eleven PLAY MAKER 2008 (Demo) (NTSC-J)"
+  },
+  {
+    "gameId": "DWEPA4",
+    "gameName": "Pro Evolution Soccer 2008 (Demo) (PAL)"
+  },
+  {
+    "gameId": "DWFA",
+    "gameName": "WiiFlow"
+  },
+  {
+    "gameId": "DWHA",
+    "gameName": "WiiHandySDL"
+  },
+  {
+    "gameId": "DWIA",
+    "gameName": "Wii Donut"
+  },
+  {
+    "gameId": "DWJA",
+    "gameName": "Jewel"
+  },
+  {
+    "gameId": "DWKA",
+    "gameName": "Wiibreaker"
+  },
+  {
+    "gameId": "DWLA",
+    "gameName": "Wii-Linux"
+  },
+  {
+    "gameId": "DWMA",
+    "gameName": "WAD Manager"
+  },
+  {
+    "gameId": "DWNA",
+    "gameName": "Nwancat"
+  },
+  {
+    "gameId": "DWPA",
+    "gameName": "WiiPhysics"
+  },
+  {
+    "gameId": "DWRA",
+    "gameName": "WiiRadio"
+  },
+  {
+    "gameId": "DWSA",
+    "gameName": "WiiSX"
+  },
+  {
+    "gameId": "DWTA",
+    "gameName": "Wiituka"
+  },
+  {
+    "gameId": "DWUA",
+    "gameName": "Wufe"
+  },
+  {
+    "gameId": "DWWA",
+    "gameName": "Winters End"
+  },
+  {
+    "gameId": "DWXA",
+    "gameName": "WiiXplorer"
+  },
+  {
+    "gameId": "DX3A",
+    "gameName": "Midway Space Invaders Emulator"
+  },
+  {
+    "gameId": "DX4A",
+    "gameName": "Brawl DX Launcher"
+  },
+  {
+    "gameId": "DX5A",
+    "gameName": "MP3+G Player"
+  },
+  {
+    "gameId": "DX6A",
+    "gameName": "Build Blocks"
+  },
+  {
+    "gameId": "DX7A",
+    "gameName": "Roxoptr2"
+  },
+  {
+    "gameId": "DX8A",
+    "gameName": "Hexen"
+  },
+  {
+    "gameId": "DX9A",
+    "gameName": "Sand Traps"
+  },
+  {
+    "gameId": "DXBA",
+    "gameName": "WiiX-Ball"
+  },
+  {
+    "gameId": "DXCA",
+    "gameName": "CorsixTH"
+  },
+  {
+    "gameId": "DXDA",
+    "gameName": "DVDX"
+  },
+  {
+    "gameId": "DXEA",
+    "gameName": "SDExplorer"
+  },
+  {
+    "gameId": "DXHA",
+    "gameName": "Texas Holdem Poker"
+  },
+  {
+    "gameId": "DXIA",
+    "gameName": "Piixelator"
+  },
+  {
+    "gameId": "DXLA",
+    "gameName": "WiiXL"
+  },
+  {
+    "gameId": "DXNA",
+    "gameName": "bootnetflix"
+  },
+  {
+    "gameId": "DXPA",
+    "gameName": "Xeempongwii"
+  },
+  {
+    "gameId": "DXQA",
+    "gameName": "Quadrax"
+  },
+  {
+    "gameId": "DXSA",
+    "gameName": "Save Extractor"
+  },
+  {
+    "gameId": "DXSE18",
+    "gameName": "Deca Sports (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DXTA",
+    "gameName": "The Lone Pixel"
+  },
+  {
+    "gameId": "DXXA",
+    "gameName": "Hexxagon"
+  },
+  {
+    "gameId": "DXYA",
+    "gameName": "xyzzy"
+  },
+  {
+    "gameId": "DXZA",
+    "gameName": "Megazeux"
+  },
+  {
+    "gameId": "DY5A",
+    "gameName": "Darkcorp Lite"
+  },
+  {
+    "gameId": "DY6A",
+    "gameName": "Liqwiid Wars"
+  },
+  {
+    "gameId": "DY9A",
+    "gameName": "TetWiis"
+  },
+  {
+    "gameId": "DYAA",
+    "gameName": "Syasokoban"
+  },
+  {
+    "gameId": "DYBA",
+    "gameName": "Yabause"
+  },
+  {
+    "gameId": "DYCA",
+    "gameName": "Tetricycle"
+  },
+  {
+    "gameId": "DYEA",
+    "gameName": "Epilepsii"
+  },
+  {
+    "gameId": "DYGA",
+    "gameName": "Yog"
+  },
+  {
+    "gameId": "DYHA",
+    "gameName": "Hypno Blast"
+  },
+  {
+    "gameId": "DYIA",
+    "gameName": "Chippy"
+  },
+  {
+    "gameId": "DYMA",
+    "gameName": "YAWMM"
+  },
+  {
+    "gameId": "DYOA",
+    "gameName": "Toy Wars"
+  },
+  {
+    "gameId": "DYPA",
+    "gameName": "PongYourWii"
+  },
+  {
+    "gameId": "DYSA",
+    "gameName": "Shiny tank"
+  },
+  {
+    "gameId": "DYTA",
+    "gameName": "Newo Tokyo"
+  },
+  {
+    "gameId": "DYUA",
+    "gameName": "UFO Racer"
+  },
+  {
+    "gameId": "DYWA",
+    "gameName": "Yahtzwii"
+  },
+  {
+    "gameId": "DYYA",
+    "gameName": "System Setting Replace Tool"
+  },
+  {
+    "gameId": "DZ0A",
+    "gameName": "Eject"
+  },
+  {
+    "gameId": "DZ7A",
+    "gameName": "SameGame"
+  },
+  {
+    "gameId": "DZ8A",
+    "gameName": "WiiMPC"
+  },
+  {
+    "gameId": "DZ9A",
+    "gameName": "Teeter Torture"
+  },
+  {
+    "gameId": "DZDE01",
+    "gameName": "The Legend of Zelda: Twilight Princess (Demo) (NTSC-U)"
+  },
+  {
+    "gameId": "DZDP01",
+    "gameName": "The Legend of Zelda: Twilight Princess (Demo) (PAL)"
+  },
+  {
+    "gameId": "DZIA",
+    "gameName": "Ziip"
+  },
+  {
+    "gameId": "DZPA",
+    "gameName": "Puzsion"
+  },
+  {
+    "gameId": "DZQA",
+    "gameName": "Quizz"
+  },
+  {
+    "gameId": "DZRA",
+    "gameName": "Rezerwar"
+  },
+  {
+    "gameId": "DZSA",
+    "gameName": "Szigoy"
+  },
+  {
+    "gameId": "DZXA",
+    "gameName": "FBZX Wii"
+  },
+  {
+    "gameId": "DZYA",
+    "gameName": "Snake Two"
+  },
+  {
+    "gameId": "DZZA",
+    "gameName": "OpenJazz"
+  },
+  {
+    "gameId": "E23J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.9.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E24J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.10.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E25J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2005.11.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E27J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.1.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E32J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.4.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E34J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.6.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E35J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.7.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E36J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.8.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E37J01",
+    "gameName": "Gekkan Nintendo Tentou Demo 2006.9.1 (NTSC-J)"
+  },
+  {
+    "gameId": "E52E",
+    "gameName": "1942 (NTSC-U)"
+  },
+  {
+    "gameId": "E52J",
+    "gameName": "1942 (NTSC-J)"
+  },
+  {
+    "gameId": "E52P",
+    "gameName": "1942 (PAL)"
+  },
+  {
+    "gameId": "E53E",
+    "gameName": "Black Tiger (NTSC-U)"
+  },
+  {
+    "gameId": "E53J",
+    "gameName": "Black Dragon (NTSC-J)"
+  },
+  {
+    "gameId": "E53P",
+    "gameName": "Black Tiger (PAL)"
+  },
+  {
+    "gameId": "E54E",
+    "gameName": "Ghosts 'n Goblins (NTSC-U)"
+  },
+  {
+    "gameId": "E54J",
+    "gameName": "Makaimura (NTSC-J)"
+  },
+  {
+    "gameId": "E54P",
+    "gameName": "Ghosts 'n Goblins (PAL)"
+  },
+  {
+    "gameId": "E55E",
+    "gameName": "Wolf of the Battlefield - Commando (NTSC-U)"
+  },
+  {
+    "gameId": "E55J",
+    "gameName": "Senjou no Ōkami (NTSC-J)"
+  },
+  {
+    "gameId": "E55P",
+    "gameName": "Wolf of the Battlefield - Commando (PAL)"
+  },
+  {
+    "gameId": "E56E",
+    "gameName": "Exed Exes (NTSC-U)"
+  },
+  {
+    "gameId": "E56J",
+    "gameName": "Exed Exes (NTSC-J)"
+  },
+  {
+    "gameId": "E56P",
+    "gameName": "Exed Exes (PAL)"
+  }
+,
+  {
+    "gameId": "E57E",
+    "gameName": "SonSon (NTSC-U)"
+  },
+  {
+    "gameId": "E57J",
+    "gameName": "Son Son (NTSC-J)"
+  },
+  {
+    "gameId": "E57P",
+    "gameName": "Son Son (PAL)"
+  },
+  {
+    "gameId": "E58J",
+    "gameName": "Mr. Do! (NTSC-J)"
+  },
+  {
+    "gameId": "E59J",
+    "gameName": "Karate Dou (NTSC-J)"
+  },
+  {
+    "gameId": "E5AJ",
+    "gameName": "Ikki (NTSC-J)"
+  },
+  {
+    "gameId": "E5BJ",
+    "gameName": "Shanghai (NTSC-J)"
+  },
+  {
+    "gameId": "E5VJ",
+    "gameName": "Nekketsu Kouha Kunio-kun (NTSC-J)"
+  },
+  {
+    "gameId": "E5WE",
+    "gameName": "Wonder Boy in Monster Land (NTSC-U)"
+  },
+  {
+    "gameId": "E5WJ",
+    "gameName": "Wonder Boy in Monster Land (NTSC-J)"
+  },
+  {
+    "gameId": "E5WP",
+    "gameName": "Wonder Boy in Monster Land (PAL)"
+  },
+  {
+    "gameId": "E5XJ",
+    "gameName": "Puyo Puyo Tsu (NTSC-J)"
+  },
+  {
+    "gameId": "E5YJ",
+    "gameName": "Puyo Puyo (NTSC-J)"
+  },
+  {
+    "gameId": "E5ZE",
+    "gameName": "Super Hang-On (NTSC-U)"
+  },
+  {
+    "gameId": "E5ZJ",
+    "gameName": "Super Hang-On (NTSC-J)"
+  },
+  {
+    "gameId": "E5ZP",
+    "gameName": "Super Hang-On (PAL)"
+  },
+  {
+    "gameId": "E62E",
+    "gameName": "Space Harrier (NTSC-U)"
+  },
+  {
+    "gameId": "E62J",
+    "gameName": "Space Harrier (NTSC-J)"
+  },
+  {
+    "gameId": "E62P",
+    "gameName": "Space Harrier (PAL)"
+  },
+  {
+    "gameId": "E63E",
+    "gameName": "Shinobi (NTSC-U)"
+  },
+  {
+    "gameId": "E63J",
+    "gameName": "Shinobi (NTSC-J)"
+  },
+  {
+    "gameId": "E63P",
+    "gameName": "Shinobi (PAL)"
+  },
+  {
+    "gameId": "E64J",
+    "gameName": "Rolling Thunder 2 (NTSC-J)"
+  },
+  {
+    "gameId": "E65J",
+    "gameName": "Valkyrie no Densetsu (NTSC-J)"
+  },
+  {
+    "gameId": "E66J",
+    "gameName": "Ordyne (NTSC-J)"
+  },
+  {
+    "gameId": "E67J",
+    "gameName": "Dig Dug (NTSC-J)"
+  },
+  {
+    "gameId": "E68J",
+    "gameName": "Galaga (NTSC-J)"
+  },
+  {
+    "gameId": "E69J",
+    "gameName": "Baraduke (NTSC-J)"
+  },
+  {
+    "gameId": "E6AJ",
+    "gameName": "Moon Cresta (NTSC-J)"
+  },
+  {
+    "gameId": "E6BJ",
+    "gameName": "Crazy Climber (NTSC-J)"
+  },
+  {
+    "gameId": "E6CJ",
+    "gameName": "Rompers (NTSC-J)"
+  },
+  {
+    "gameId": "E6DJ",
+    "gameName": "Toy Pop (NTSC-J)"
+  },
+  {
+    "gameId": "E6EJ",
+    "gameName": "Libble Rabble (NTSC-J)"
+  },
+  {
+    "gameId": "E6FJ",
+    "gameName": "Galaxian (NTSC-J)"
+  },
+  {
+    "gameId": "E6GJ",
+    "gameName": "Namco Quester (NTSC-J)"
+  },
+  {
+    "gameId": "E6HJ",
+    "gameName": "Face Off (NTSC-J)"
+  },
+  {
+    "gameId": "E6IJ",
+    "gameName": "Tank Force (NTSC-J)"
+  },
+  {
+    "gameId": "E6JJ",
+    "gameName": "Bakutotsu Kijuutei - Baraduke II (NTSC-J)"
+  },
+  {
+    "gameId": "E6KJ",
+    "gameName": "Chouzetsu Rinjin - Berabow Man (NTSC-J)"
+  },
+  {
+    "gameId": "E6LJ",
+    "gameName": "Maerchen Maze (NTSC-J)"
+  },
+  {
+    "gameId": "E6ME",
+    "gameName": "Tecmo Bowl (NTSC-U)"
+  },
+  {
+    "gameId": "E6MJ",
+    "gameName": "Tecmo Bowl (NTSC-J)"
+  },
+  {
+    "gameId": "E6NE",
+    "gameName": "Solomon's Key (NTSC-U)"
+  },
+  {
+    "gameId": "E6NJ",
+    "gameName": "Solomon's Key (NTSC-J)"
+  },
+  {
+    "gameId": "E6NP",
+    "gameName": "Solomon's Key (PAL)"
+  },
+  {
+    "gameId": "E6OJ",
+    "gameName": "Bomb Jack (NTSC-J)"
+  },
+  {
+    "gameId": "E6PE",
+    "gameName": "Ninja Gaiden (NTSC-U)"
+  },
+  {
+    "gameId": "E6PJ",
+    "gameName": "Ninja Ryukenden (NTSC-J)"
+  },
+  {
+    "gameId": "E6PP",
+    "gameName": "Ninja Gaiden (PAL)"
+  },
+  {
+    "gameId": "E6QE",
+    "gameName": "Rygar (NTSC-U)"
+  },
+  {
+    "gameId": "E6QJ",
+    "gameName": "Argus no Senshi (NTSC-J)"
+  },
+  {
+    "gameId": "E6QP",
+    "gameName": "Rygar (PAL)"
+  },
+  {
+    "gameId": "E6SJ",
+    "gameName": "New Rally-X (NTSC-J)"
+  },
+  {
+    "gameId": "E6VE",
+    "gameName": "Zaxxon (NTSC-U)"
+  },
+  {
+    "gameId": "E6VJ",
+    "gameName": "Zaxxon (NTSC-J)"
+  },
+  {
+    "gameId": "E6VP",
+    "gameName": "Zaxxon (PAL)"
+  },
+  {
+    "gameId": "E6WE",
+    "gameName": "Golden Axe (NTSC-U)"
+  },
+  {
+    "gameId": "E6WJ",
+    "gameName": "Golden Axe (NTSC-J)"
+  },
+  {
+    "gameId": "E6WP",
+    "gameName": "Golden Axe (PAL)"
+  },
+  {
+    "gameId": "E6XE",
+    "gameName": "Altered Beast (NTSC-U)"
+  },
+  {
+    "gameId": "E6XJ",
+    "gameName": "Jyuouki (NTSC-J)"
+  },
+  {
+    "gameId": "E6XP",
+    "gameName": "Altered Beast (PAL)"
+  },
+  {
+    "gameId": "E6YJ",
+    "gameName": "Space Invaders (NTSC-J)"
+  },
+  {
+    "gameId": "E6ZE",
+    "gameName": "Star Force (NTSC-U)"
+  },
+  {
+    "gameId": "E6ZJ",
+    "gameName": "Star Force (NTSC-J)"
+  },
+  {
+    "gameId": "E6ZP",
+    "gameName": "Star Force (PAL)"
+  },
+  {
+    "gameId": "E72J",
+    "gameName": "Star Blade (NTSC-J)"
+  },
+  {
+    "gameId": "E73E",
+    "gameName": "Mappy (NTSC-U)"
+  },
+  {
+    "gameId": "E73J",
+    "gameName": "Mappy (NTSC-J)"
+  },
+  {
+    "gameId": "E73P",
+    "gameName": "Mappy (PAL)"
+  },
+  {
+    "gameId": "E74J",
+    "gameName": "Cosmo Gang - The Puzzle (NTSC-J)"
+  },
+  {
+    "gameId": "E75J",
+    "gameName": "Genpei Toumaden (NTSC-J)"
+  },
+  {
+    "gameId": "E76J",
+    "gameName": "Emeraldia (NTSC-J)"
+  },
+  {
+    "gameId": "E77J",
+    "gameName": "Ishtar no Fukkatsu (NTSC-J)"
+  },
+  {
+    "gameId": "E78J",
+    "gameName": "Solvalou (NTSC-J)"
+  },
+  {
+    "gameId": "E79E",
+    "gameName": "Gaplus (NTSC-U)"
+  },
+  {
+    "gameId": "E79J",
+    "gameName": "Gaplus (NTSC-J)"
+  },
+  {
+    "gameId": "E79P",
+    "gameName": "Gaplus (PAL)"
+  },
+  {
+    "gameId": "E7AJ",
+    "gameName": "Grobda (NTSC-J)"
+  },
+  {
+    "gameId": "E7BJ",
+    "gameName": "Dig Dug II (NTSC-J)"
+  },
+  {
+    "gameId": "E7CJ",
+    "gameName": "Bosconian (NTSC-J)"
+  },
+  {
+    "gameId": "E7EJ",
+    "gameName": "Dragon Buster (NTSC-J)"
+  },
+  {
+    "gameId": "E7FJ",
+    "gameName": "Dragon Saber (NTSC-J)"
+  },
+  {
+    "gameId": "E7GJ",
+    "gameName": "Dragon Spirit (NTSC-J)"
+  },
+  {
+    "gameId": "E7HJ",
+    "gameName": "Xevious (NTSC-J)"
+  },
+  {
+    "gameId": "E7IJ",
+    "gameName": "Finest Hour (NTSC-J)"
+  },
+  {
+    "gameId": "E7JJ",
+    "gameName": "Knuckle Heads (NTSC-J)"
+  },
+  {
+    "gameId": "E7KJ",
+    "gameName": "Pac-Mania (NTSC-J)"
+  },
+  {
+    "gameId": "E7LJ",
+    "gameName": "Cosmo Gang - The Video (NTSC-J)"
+  },
+  {
+    "gameId": "E7MJ",
+    "gameName": "Phelios (NTSC-J)"
+  },
+  {
+    "gameId": "E7NJ",
+    "gameName": "Rolling Thunder (NTSC-J)"
+  },
+  {
+    "gameId": "E7OJ",
+    "gameName": "Burning Force (NTSC-J)"
+  },
+  {
+    "gameId": "E7PJ",
+    "gameName": "Marvel Land (NTSC-J)"
+  },
+  {
+    "gameId": "E7QJ",
+    "gameName": "Galaga '88 (NTSC-J)"
+  },
+  {
+    "gameId": "SMNJ01",
+    "gameName": "New Super Mario Bros. Wii"
+  },
+  {
+    "gameId": "SMNP01",
+    "gameName": "New Super Mario Bros. Wii"
+  },
+  {
+    "gameId": "SMNE01",
+    "gameName": "New Super Mario Bros. Wii"
+  },
+  {
+    "gameId": "RM8E01",
+    "gameName": "Mario Party 8"
+  },
+  {
+    "gameId": "E7VJ",
+    "gameName": "Cyber Sled (NTSC-J)"
+  },
+  {
+    "gameId": "E7WJ",
+    "gameName": "Numan Athletics (NTSC-J)"
+  }
 ]

@@ -1,0 +1,19 @@
+[
+    {
+    "global":{
+        "online":4,
+        "active":4,
+        "groups":2
+        },
+    "mariokartwii":{
+        "online":2,
+        "active":2,
+        "groups":1
+        },
+    "smashbrosxwii":{
+        "online":2,
+        "active":2,
+        "groups":1
+        }
+    }
+]

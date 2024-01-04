@@ -79,21 +79,35 @@ const { title, text, desc } = Astro.props;
         var day = x[i].getElementsByTagName("date")[0].getAttribute('day');
         var genre = x[i].getElementsByTagName("genre")[0].textContent;
         var rating = x[i].getElementsByTagName("rating")[0].getAttribute('value');
+        var classification = x[i].getElementsByTagName("rating")[0].getAttribute('type');
+        switch (classification) {
+          case 'ESRB':
+            classification = 'ESRB';
+            break;
+          case 'PEGI':
+            classification = 'PEGI';
+            break;
+          case 'CERO':
+            classification = 'CERO';
+            break;
+          default:
+            classification = 'ESRB';
+        }
         switch (rating){
           case '3':
-            rating = '<img src="/img/pegi3.webp" style="margin-top:20px;" width="130px">';
+            rating = '<img src="/img/pegi3.jpg" style="margin-top:20px;" width="130px">';
             break;
           case '7':
-            rating = '<img src="/img/pegi7.webp" style="margin-top:20px;"width="130px">';
+            rating = '<img src="/img/pegi7.jpg" style="margin-top:20px;"width="130px">';
             break;
           case '12':
-            rating = '<img src="/img/pegi12.webp" style="margin-top:20px;"width="130px">';
+            rating = '<img src="/img/pegi12.jpg" style="margin-top:20px;"width="130px">';
             break;
           case '16':
-            rating = '<img src="/img/pegi16.webp" style="margin-top:20px;"width="130px">';
+            rating = '<img src="/img/pegi16.jpg" style="margin-top:20px;"width="130px">';
             break;
           case '18':
-            rating = '<img src="/img/pegi18.webp" style="margin-top:20px;"width="130px">';
+            rating = '<img src="/img/pegi18.jpg" style="margin-top:20px;"width="130px">';
             break;
           case 'EC':
             rating = '<img src="/img/esrb-ec.webp" style="margin-top:20px;"width="130px">';
@@ -125,11 +139,16 @@ const { title, text, desc } = Astro.props;
           case 'Z':
             rating = '<img src="/img/cero-z.webp" style="margin-top:20px;"width="130px">';
             break;
+          default:
+            rating = '<b>Oh snap!</b><br>This title does not have an age rating.';
         }
         var wifiPlayers = x[i].getElementsByTagName("wi-fi")[0].getAttribute('players');
         var inputPlayers = x[i].getElementsByTagName("input")[0].getAttribute('players');
         var controls = x[i].getElementsByTagName("control");
 var controlTypes = '';
+if (inputPlayers == '') {
+  controlTypes = 'This title features no control types.';
+}
 for (var k = 0; k < controls.length; k++) {
   var type = controls[k].getAttribute('type');
   switch (type) {
@@ -264,12 +283,16 @@ for (var k = 0; k < controls.length; k++) {
 
             data = document.getElementById("data");
             data.innerHTML = `<div class="smalldatapill"><l style="grid-column: auto / span 5;"><i class="fa-solid fa-circle-info"></i> ${trueName}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
-            data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 3;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">PEGI</div> ${rating}</l> <l style="border:2px solid #dd42f520; grid-column: auto / span 5; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">WI-FI</div> <b style="font-size:30px; margin-right:18px;">${wifiPlayers}</b> <b id="wifino"></b></l> <l style="border:2px solid #dd42f540; grid-column: auto / span 5; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 5; grid-row: auto / span 2;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
+            data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l style="border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">WI-FI</div> <b style="font-size:30px; margin-right:18px;">${wifiPlayers}</b> <b id="wifino"></b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
             // Extra data: Rom Name: ${romName}<br>Rom Size: ${romSize}gb<br>Rom Version: ${romVersion}`
 
             var playIcon1 = document.getElementById("wifino");
-            for (var l = 0; l < wifiPlayers; l++) {
-              playIcon1.innerHTML += '<i class="fa fa-user" style="margin-right:8px;"></i>';
+            if (wifiPlayers == 0) {
+              playIcon1.innerHTML += '<i class="fa-solid fa-triangle-exclamation"></i> This title does not support online multiplayer.';
+            } else {
+              for (var l = 0; l < wifiPlayers; l++) {
+                playIcon1.innerHTML += '<i class="fa fa-user" style="margin-right:8px;"></i>';
+              }
             }
             var playIcon2 = document.getElementById("playerno");
             for (var l = 0; l < inputPlayers; l++) {
