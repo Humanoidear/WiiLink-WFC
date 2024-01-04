@@ -1,0 +1,11 @@
+<!-- _astro/helpers/loadSubpageData.astro -->
+export function loadSubpageData() {
+    const subpages = import.meta.glob('/src/data/subpages.json')
+    const subpagePaths = Object.keys(subpages)
+  
+    return subpagePaths.map((path) => {
+      const { title, content } = require(path).default
+      return { title, content }
+    })
+  }
+  

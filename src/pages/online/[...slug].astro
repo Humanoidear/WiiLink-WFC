@@ -1,0 +1,435 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Loading from "../../components/Loading.astro";
+import games from "../../../public/json/pages.json";
+export async function getStaticPaths() {
+  return games.map((data) => ({
+    params: {
+      slug: data.gameId
+    },
+    props: { 
+      title: data.gameId, 
+      text: data.gameName,
+      desc: data.gameDesc,
+    }
+  }));
+}
+const { title, text, desc } = Astro.props;
+---
+
+<Layout title={`WiiLink WFC - ${text}`} description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!" image="/temp.png">
+<Loading msg={`${text} - ${title}`}/>
+
+<html>
+  <body>
+    <div class="herobg"><div class="bginner"></div></div>
+    <div style="width:1000px; padding:20px; transform:translate(40px, 18px); position:relative;">
+      <h1 id="gameId" style="width:1000px;">{title}</h1>
+      <p style="width:500px; transform:translate(86px, -30px); opacity:0.5;">{title}</p>
+    </div>
+    <div class="data-holder">
+      <div id="img"></div>
+      <div id="data" style="width:100%; position:relative;">
+
+      </div>
+    </div>
+    <div style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;">
+      <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">About the game:</h1>
+    <p id="synopsis" style="font-size:20px;"></p>
+    <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">Screenshots:</h1>
+    <div id="imgCaroussel"></div>
+  </div>
+
+
+  </body>
+</html>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+      }
+    };
+    xmlhttp.open("GET", "/xml/wiitdb.xml", true);
+    xmlhttp.send();
+  });
+
+  function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.getElementsByTagName("game");
+    var desiredLang = 'EN'; // Replace with the desired language
+    var imglang = 'US';
+    for (var i = 0; i < x.length; i++) {
+      var id = x[i].getElementsByTagName("id")[0];
+      var titleCheck = document.getElementById("gameId").textContent;
+      if (id && id.childNodes[0].nodeValue === titleCheck) {
+        var locales = x[i].getElementsByTagName("locale");
+        for (var j = 0; j < locales.length; j++) {
+          var region = x[i].getElementsByTagName('region')[0].textContent;
+          if (locales[j].getAttribute('lang') === desiredLang) {
+        var trueName = x[i].getAttribute('name');
+        var developer = x[i].getElementsByTagName("developer")[0].textContent;
+        var region = x[i].getElementsByTagName("region")[0].textContent;
+        var languages = x[i].getElementsByTagName("languages")[0].textContent;
+        var publisher = x[i].getElementsByTagName("publisher")[0].textContent;
+        var date = x[i].getElementsByTagName("date")[0].getAttribute('year');
+        var month = x[i].getElementsByTagName("date")[0].getAttribute('month');
+        var day = x[i].getElementsByTagName("date")[0].getAttribute('day');
+        var genre = x[i].getElementsByTagName("genre")[0].textContent;
+        var rating = x[i].getElementsByTagName("rating")[0].getAttribute('value');
+        switch (rating){
+          case '3':
+            rating = '<img src="/img/pegi3.webp" style="margin-top:20px;" width="130px">';
+            break;
+          case '7':
+            rating = '<img src="/img/pegi7.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case '12':
+            rating = '<img src="/img/pegi12.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case '16':
+            rating = '<img src="/img/pegi16.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case '18':
+            rating = '<img src="/img/pegi18.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'EC':
+            rating = '<img src="/img/esrb-ec.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'E':
+            rating = '<img src="/img/esrb-e.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'E10+':
+            rating = '<img src="/img/esrb-e10.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'T':
+            rating = '<img src="/img/esrb-t.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'M':
+            rating = '<img src="/img/esrb-m.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'A':
+            rating = '<img src="/img/cero-a.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'B':
+            rating = '<img src="/img/cero-b.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'C':
+            rating = '<img src="/img/cero-c.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'D':
+            rating = '<img src="/img/cero-d.webp" style="margin-top:20px;"width="130px">';
+            break;
+          case 'Z':
+            rating = '<img src="/img/cero-z.webp" style="margin-top:20px;"width="130px">';
+            break;
+        }
+        var wifiPlayers = x[i].getElementsByTagName("wi-fi")[0].getAttribute('players');
+        var inputPlayers = x[i].getElementsByTagName("input")[0].getAttribute('players');
+        var controls = x[i].getElementsByTagName("control");
+var controlTypes = '';
+for (var k = 0; k < controls.length; k++) {
+  var type = controls[k].getAttribute('type');
+  switch (type) {
+    case 'wiimote':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/wiimote.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/wiimote.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'motionplus':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/motionplus.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-80%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/motionplus.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'nunchuk':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/nunchuk.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/nunchuk.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'classiccontroller':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/classiccontroller.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/classiccontroller.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'wheel':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/wheel.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/wheel.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'gamecube':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/gamecube.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/gamecube.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'balanceboard':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'zapper':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/zapper.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/zapper.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'guitar':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/guitar.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/guitar.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'keyboard':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/keyboard.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/keyboard.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'drums':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/drums.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/drums.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'nintendods':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/nintendods.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/nintendods.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'wiispeak':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'udraw':
+    if (controls[k].getAttribute('required') == 'true') {
+      controlTypes += `<img src="/img/udraw.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+    } else {
+      controlTypes += `<img src="/img/udraw.png" style="margin-right:15px;"height="60px">`;
+    }
+    break;
+    case 'mii':
+    break;
+    default:
+    controlTypes += type;
+  }
+}
+        var romName = x[i].getElementsByTagName("rom")[0].getAttribute('name');
+        var romSize = (x[i].getElementsByTagName("rom")[0].getAttribute('size')/1024/1024/1024).toFixed(2);
+        var romVersion = x[i].getElementsByTagName("rom")[0].getAttribute('version');
+
+            switch (region){
+              case 'NTSC-U':
+                imglang = 'US';
+                break;
+              case 'PAL':
+                imglang = 'EN';
+                break;
+              case 'NTSC-J':
+                imglang = 'JP';
+                break;
+            }
+
+            var title = document.getElementById("gameId");
+            title.innerHTML = '<img src="https://art.gametdb.com/wii/disc/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Game Disc" style="margin-right:15px;" width="70px"><b>' + locales[j].getElementsByTagName("title")[0].textContent + '</b>';
+            
+            var bg = document.getElementsByClassName("bginner");
+            bg[0].innerHTML = '<img src="https://art.gametdb.com/wii/coverfullHQ/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Game Disc" style="margin-right:15px;" width="100%">';
+           
+            var img = document.getElementById("img");
+            img.innerHTML = '<div class="coverimg"><img src="https://art.gametdb.com/wii/coverfullHQ/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Game Boxart" class="imginner"></div>';
+
+            data = document.getElementById("data");
+            data.innerHTML = `<div class="smalldatapill"><l style="grid-column: auto / span 5;"><i class="fa-solid fa-circle-info"></i> ${trueName}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
+            data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 3;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">PEGI</div> ${rating}</l> <l style="border:2px solid #dd42f520; grid-column: auto / span 5; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">WI-FI</div> <b style="font-size:30px; margin-right:18px;">${wifiPlayers}</b> <b id="wifino"></b></l> <l style="border:2px solid #dd42f540; grid-column: auto / span 5; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 5; grid-row: auto / span 2;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
+            // Extra data: Rom Name: ${romName}<br>Rom Size: ${romSize}gb<br>Rom Version: ${romVersion}`
+
+            var playIcon1 = document.getElementById("wifino");
+            for (var l = 0; l < wifiPlayers; l++) {
+              playIcon1.innerHTML += '<i class="fa fa-user" style="margin-right:8px;"></i>';
+            }
+            var playIcon2 = document.getElementById("playerno");
+            for (var l = 0; l < inputPlayers; l++) {
+              playIcon2.innerHTML += '<i class="fa fa-user" style="margin-right:8px;"></i>';
+            }
+            synopsis = document.getElementById("synopsis");
+            synopsis.innerHTML = locales[j].getElementsByTagName("synopsis")[0].textContent;
+          }
+        }
+        break;
+      }
+    }
+
+
+var toSearch = 'https://www.googleapis.com/customsearch/v1?cx=14ab9bd483f1f428f&key=AIzaSyAGL6CPKL-xJez-Ee3tdOoBan08RMdaOpA&q=' + x[i].getElementsByTagName("locale")[0].getElementsByTagName("title")[0].textContent + '+Wii+screenshots&searchType=image';
+console.log(toSearch);
+    fetch(toSearch)
+  .then(response => response.json())
+  .then(data => {
+    let images = data.items.map(item => item.link);
+    for (let i = 0; i < 5; i++) {
+      var div = document.getElementById("imgCaroussel");
+      div.innerHTML += `<img src="${images[i]}" height="300px" style="border-radius:8px; margin-right:20px;  background-color: #ffffff10;">`;
+    }
+  });
+  }
+</script>
+
+<style>
+	html body{
+		background-color: rgb(11, 0, 0);
+	}
+  h1{
+    color: white;
+  }
+  p{
+    color:white;
+  }
+  .herobg {
+  background: linear-gradient(to bottom, rgba(11,0,0,0) 0%, rgba(11,0,0,1) 80%), url('/img/bg.png');
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: changecolor 10s infinite;
+  width: 100%;
+  height: 100vh;
+  transform: translate(0, -50px);
+  position: absolute;
+  z-index: -10;
+  overflow:hidden;
+}
+
+.data-holder{
+  left:50%;
+  transform: translate(-50%, 0);
+  width:90%;
+  max-width: 2000px;
+  margin-bottom: 50px;
+  display:flex;
+  gap:20px;
+  position: relative;
+}
+
+.herobg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(11,0,0,0) 0%, rgba(11,0,0,1) 80%);
+  pointer-events: none;
+}
+
+#imgCaroussel{
+  left:50%;
+  width:100%;
+  height:300px;
+  width:100%;
+  transform: translate(-50%, 0);
+  border-radius: 8px;
+  display:flex;
+  overflow-y:hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  position: relative;
+}
+  </style>
+
+  <style is:global>
+    .coverimg{
+      height:400px; 
+      width:280px; 
+      border-radius: 8px;
+      overflow:hidden;
+      transition: 0.3s;
+    }
+    .coverimg:hover{
+      transform: scale(1.03);
+      box-shadow: 0px 0px 20px 0px #ffffff10;
+      transition: 0.3s;
+    }
+    .imginner{
+      height:400px; 
+      transform:translate(-53.5%, 0);
+      transition: 0.5s;
+      overflow:hidden;
+    }
+    l{
+      height:100%;
+      background-color: #ffffff10;
+      border:1.3px solid #ffffff15;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+      padding-left: 18px;
+      padding-right: 18px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    l:hover{
+      transform: scale(1.03);
+      box-shadow: 0px 0px 20px 0px #ffffff10;
+      transition: 0.3s;
+    }
+    .smalldatapill{
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      color:white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+      gap:15px;
+      position: relative;
+    }
+    .bigdatapill{
+      margin-top:20px;
+      width: 100%;
+      height:90%;
+      justify-content: center;
+      align-items: center;
+      color:white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+      gap:15px;
+      position: relative;
+    }
+    .bginner{
+      top:0;
+      left:0;
+      width:100%;
+      filter: blur(8px) grayscale(0.7);
+      opacity:0.1;
+      position:absolute;
+    }
+    .coverimg:hover .imginner{
+      transform:translate(0%, 0);
+      transition: 0.5s;
+    }
+  </style>
