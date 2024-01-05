@@ -37,12 +37,17 @@ const { title, text, desc } = Astro.props;
 
       </div>
     </div>
-    <p style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;">Data provided by <a href="https://www.gametdb.com/">GameTDB</a>.</p>
+    <div id="onlinecontainer">
+      <h1>Online statistics for {text}</h1>
+      <div id="containergamedata"></div>
+      <div id="containerplayers"></div>
+    </div>
+    <p style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;">Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink Violet API.</p>
     <div style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;">
       <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">About the game:</h1>
     <p id="synopsis" style="font-size:20px;">This title features no synopsis, why not add one yourself on gameTDB?</p>
     <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">Screenshots:</h1>
-    <div id="imgCaroussel"><i style="color:white;">There has been an error fetching the data from the Google API. Probable quota limit reached.</i></div>
+    <div id="imgCaroussel"><i style="color:white;">There has been an error fetching the data from the Google API. Posible quota limit reached.</i></div>
   </div>
 
 
@@ -72,6 +77,29 @@ const { title, text, desc } = Astro.props;
   position: absolute;
   z-index: -10;
   overflow:hidden;
+}
+
+#containergamedata{
+  color:white;
+}
+
+#containerplayers{
+  display: flex;
+  position: relative;
+}
+
+#onlinecontainer{
+  left:50%;
+  transform: translate(-50%, 0);
+  width:90%;
+  height: 400px;
+  max-width: 2000px;
+  border-radius: 8px;
+  border:2px solid #ffffff20;
+  margin-bottom: 20px;
+  background: rgba(0, 26, 36, 0.487);
+  display: none;
+  position:relative;
 }
 
 .data-holder{

@@ -12,7 +12,7 @@
             "eb":"5000",
             "ev":"5000",
             "fc":"0601-2954-2197",
-            "name":"no name",
+            "name":"Sketch",
             "pid":"53"
             },
         "1":{
@@ -20,7 +20,7 @@
             "eb":"5000",
             "ev":"5000",
             "fc":"5325-7594-4927",
-            "name":"no name",
+            "name":"Palapeli",
             "pid":"223"
             }
         }
@@ -34,14 +34,19 @@
         "players":
         {"0":{
             "count":"",
-            "name":"",
+            "name":"Palapeli",
             "pid":"121"
             },
         "1":{
             "count":"",
-            "name":"",
+            "name":"Diego",
             "pid":"84"
-            }
+            },
+         "2":{
+                "count":"",
+                "name":"alexmalvehy",
+                "pid":"84"
+                }
             
         }
     }

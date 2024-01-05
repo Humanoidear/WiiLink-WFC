@@ -28,11 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
             var gameid = id.textContent.substring(0, 3);
             if (data[j].GameID == gameid) {
               console.log(`Found an id for game with gamespy title ${data[j].GamespyName}!`);
+              document.getElementById("onlinecontainer").style.display = 'block';
+              document.getElementById("onlineload").style.display = 'block';
+              setInterval(() => {
               fetch('../../json/stats.json')
               .then(response => response.json())
               .then(isOnline => {
-                console.log(isOnline);
-                console.log(isOnline[0][data[j].GamespyName].active)
                 document.getElementById("WFCdetails").innerHTML = `
                 <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
           <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
@@ -49,7 +50,36 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
                `;
+               document.getElementById("containertitle").innerHTML = '';
               });
+              fetch('../../json/group.json')
+                .then(response => response.json())
+                .then(group => {
+                    for (let k = 0; k < group.length; k++) {
+                        if (group[k].game == data[j].GamespyName) {
+                          console.log(`Found group data!`);
+                          console.log(group[k]);
+                          document.getElementById("containergamedata").innerHTML = `Game:${group[k].game} Type:${group[k].type}  Suspend:${group[k].suspend}  Host:${group[k].host}  rk:${group[k].rk} `;
+                          document.getElementById("containerplayers").innerHTML = ` `;
+                          for (let playerIndex in group[k].players) {
+                            var player = group[k].players[playerIndex];
+                            console.log(player.name); // Logs the player's name
+                            document.getElementById("containerplayers").innerHTML += `
+                            <div style="width:200px; position:relative;">
+                              <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${player.name}</div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.pid}</div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.fc}</div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.eb} / ${player.ev}</div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.count}</div>
+                            </div>
+                            `;
+                          }
+                        } else {
+                          console.log(`No group data found! Retrying...`);
+                        }
+                    }
+                });
+            }, 5000);
                 
             }
           }
@@ -112,12 +142,14 @@ var isSupported = Array.from(onlineSupport).map(feature => feature.textContent).
 
             data = document.getElementById("data");
             data.innerHTML = `<div class="smalldatapill"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
-            data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l style="border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"></b> <div style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
+            data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l style="border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center; position:relative;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
 
             var playIcon1 = document.getElementById("wifino");
+            var playIcon2 = document.getElementById("onlineplaycontainer");
             if (wifiPlayers == 0) {
               document.getElementById("onlineplayno").style.display = 'none';
               playIcon1.innerHTML += '<i class="fa-solid fa-triangle-exclamation"></i> This title does not support online multiplayer.';
+              playIcon2.style.top = '45%';
             } else {
               for (var l = 0; l < wifiPlayers; l++) {
                 playIcon1.innerHTML += '<i class="fa fa-user" style="margin-right:8px;"></i>';
