@@ -1,12 +1,13 @@
 {
-  "routes": [
+  "headers": [
     {
-      "src": "/api/.*",
-      "methods": ["GET", "POST"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,POST"
-      }
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "access-control-allow-origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
