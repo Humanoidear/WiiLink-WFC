@@ -1,0 +1,1262 @@
+[
+    {
+        "GameID": "DWE",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2008 (Demo)"
+    },
+    {
+        "GameID": "R2S",
+        "GamespyName": "decasport2wii",
+        "Type": "Wii",
+        "Title": "Deca Sports 2"
+    },
+    {
+        "GameID": "R2T",
+        "GamespyName": "tmntsmashwii",
+        "Type": "Wii",
+        "Title": "Teenage Mutant Ninja Turtles - Smash-Up"
+    },
+    {
+        "GameID": "R2V",
+        "GamespyName": "sinpun2NAwii",
+        "Type": "Wii",
+        "Title": "Sin & Punishment - Star Successor"
+    },
+    {
+        "GameID": "R2W",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2009"
+    },
+    {
+        "GameID": "R3B",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Samba de Amigo"
+    },
+    {
+        "GameID": "R3R",
+        "GamespyName": "segaracingwii",
+        "Type": "Wii",
+        "Title": "Sonic & SEGA All-Stars Racing"
+    },
+    {
+        "GameID": "R4C",
+        "GamespyName": "simcitywii",
+        "Type": "Wii",
+        "Title": "SimCity Creator"
+    },
+    {
+        "GameID": "R4E",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Endless Ocean - Blue World"
+    },
+    {
+        "GameID": "R4Q",
+        "GamespyName": "mschargedwii",
+        "Type": "Wii",
+        "Title": "Mario Strikers Charged"
+    },
+    {
+        "GameID": "R6N",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Shaun White Snowboarding - World Stage"
+    },
+    {
+        "GameID": "R6R",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "TrackMania - Build to Race"
+    },
+    {
+        "GameID": "R76",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "NBA 2K10"
+    },
+    {
+        "GameID": "R7E",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "NiGHTS - Journey of Dreams"
+    },
+    {
+        "GameID": "R7F",
+        "GamespyName": "chocotokiwii",
+        "Type": "Wii",
+        "Title": "Final Fantasy Fables - Chocobo's Dungeon"
+    },
+    {
+        "GameID": "R7O",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "NHL 2K10"
+    },
+    {
+        "GameID": "R82",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Darts Wii DX"
+    },
+    {
+        "GameID": "R89",
+        "GamespyName": "tokyoparkwii",
+        "Type": "Wii",
+        "Title": "Tokyo Friend Park II - Ketteiban - Minna de Chousen! Taikan Attraction!"
+    },
+    {
+        "GameID": "R8D",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Yu-Gi-Oh! 5D's - Duel Transer"
+    },
+    {
+        "GameID": "RB6",
+        "GamespyName": "wiibombmanwii",
+        "Type": "Wii",
+        "Title": "Bomberman"
+    },
+    {
+        "GameID": "RBW",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Battalion Wars 2"
+    },
+    {
+        "GameID": "RBX",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Bleach - Versus Crusade"
+    },
+    {
+        "GameID": "RCJ",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "The Conduit"
+    },
+    {
+        "GameID": "RDG",
+        "GamespyName": "CVjudgmentwii",
+        "Type": "Wii",
+        "Title": "Castlevania Judgment"
+    },
+    {
+        "GameID": "RDS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Dragon Ball Z - Budokai Tenkaichi 3"
+    },
+    {
+        "GameID": "RE8",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Katekyoo Hitman Reborn! Kindan no Yami no Delta"
+    },
+    {
+        "GameID": "REN",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Sonic and the Black Knight"
+    },
+    {
+        "GameID": "RFB",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Endless Ocean"
+    },
+    {
+        "GameID": "RFM",
+        "GamespyName": "famstadiumwii",
+        "Type": "Wii",
+        "Title": "Pro Yakyuu Family Stadium"
+    },
+    {
+        "GameID": "RFS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Fushigi no Dungeon - Fuurai no Shiren 3 - Karakuri Yashiki no Nemuri-hime"
+    },
+    {
+        "GameID": "RFU",
+        "GamespyName": "mahjongkcds",
+        "Type": "Wii",
+        "Title": "Mahjong Fight Club Wii - Wi-Fi Taiou"
+    },
+    {
+        "GameID": "RG5",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Guinness World Records - The Videogame"
+    },
+    {
+        "GameID": "RGH",
+        "GamespyName": "guitarh3wii",
+        "Type": "Wii",
+        "Title": "Guitar Hero III - Legends of Rock"
+    },
+    {
+        "GameID": "RGL",
+        "GamespyName": "gwgalaxieswii",
+        "Type": "Wii",
+        "Title": "Geometry Wars - Galaxies"
+    },
+    {
+        "GameID": "RGS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Ghost Squad"
+    },
+    {
+        "GameID": "RGV",
+        "GamespyName": "guitarh3xpwii",
+        "Type": "Wii",
+        "Title": "Guitar Hero - Aerosmith"
+    },
+    {
+        "GameID": "RH7",
+        "GamespyName": "jissenpachwii",
+        "Type": "Wii",
+        "Title": "Jissen Pachi-Slot Pachinko Hisshouhou! Sammy's Collection - Hokuto no Ken Wii"
+    },
+    {
+        "GameID": "RJ2",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "007 - Quantum of Solace"
+    },
+    {
+        "GameID": "RJ6",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "MySims Sky Heroes"
+    },
+    {
+        "GameID": "RJT",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Minna no Joushiki Ryoku TV"
+    },
+    {
+        "GameID": "RK2",
+        "GamespyName": "cadZ2JPwii",
+        "Type": "Wii",
+        "Title": "Trauma Center - New Blood"
+    },
+    {
+        "GameID": "RK6",
+        "GamespyName": "kororinpa2wii",
+        "Type": "Wii",
+        "Title": "Marble Saga - Kororinpa"
+    },
+    {
+        "GameID": "RM7",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Monster Lab"
+    },
+    {
+        "GameID": "RMC",
+        "GamespyName": "mariokartwii",
+        "Type": "Wii",
+        "Title": "Mario Kart Wii"
+    },
+    {
+        "GameID": "RMK",
+        "GamespyName": "mariosprtwii",
+        "Type": "Wii",
+        "Title": "Mario Sports Mix"
+    },
+    {
+        "GameID": "RMS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Marvel - Ultimate Alliance 2"
+    },
+    {
+        "GameID": "RMT",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Momotarou Dentetsu 16 - Hokkaidou Daiidou no Maki!"
+    },
+    {
+        "GameID": "RMX",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "MX vs. ATV - Untamed"
+    },
+    {
+        "GameID": "RNEE",
+        "GamespyName": "narutorev3wii",
+        "Type": "Wii",
+        "Title": "Naruto Shippuden - Clash of Ninja Revolution 3"
+    },
+    {
+        "GameID": "RNEP",
+        "GamespyName": "narutor3euwii",
+        "Type": "Wii",
+        "Title": "Naruto Shippuden - Clash of Ninja Revolution 3"
+    },
+    {
+        "GameID": "RNR",
+        "GamespyName": "nitrobikewii",
+        "Type": "Wii",
+        "Title": "Nitro Bike"
+    },
+    {
+        "GameID": "ROL",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Mario & Sonic at the Olympic Winter Games"
+    },
+    {
+        "GameID": "RP4",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "MySims Party"
+    },
+    {
+        "GameID": "RPB",
+        "GamespyName": "pokebattlewii",
+        "Type": "Wii",
+        "Title": "Pok\u00e9mon Battle Revolution"
+    },
+    {
+        "GameID": "RS9",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Sonic Riders - Zero Gravity"
+    },
+    {
+        "GameID": "RSB",
+        "GamespyName": "smashbrosxwii",
+        "Type": "Wii",
+        "Title": "Super Smash Bros. Brawl"
+    },
+    {
+        "GameID": "RTG",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Wi-Fi Taiou - Gensen Table Game Wii"
+    },
+    {
+        "GameID": "RTK",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Octomania"
+    },
+    {
+        "GameID": "RTL",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Fishing Master - World Tour"
+    },
+    {
+        "GameID": "RTY",
+        "GamespyName": "chesswii",
+        "Type": "Wii",
+        "Title": "Wii Chess"
+    },
+    {
+        "GameID": "RUL",
+        "GamespyName": "ultibandwii",
+        "Type": "Wii",
+        "Title": "Ultimate Band"
+    },
+    {
+        "GameID": "RUU",
+        "GamespyName": "acrossingwii",
+        "Type": "Wii",
+        "Title": "Animal Crossing - City Folk"
+    },
+    {
+        "GameID": "RVK",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Valhalla Knights - Eldar Saga"
+    },
+    {
+        "GameID": "RVU",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Virtua Tennis 2009"
+    },
+    {
+        "GameID": "RW9",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "WWE SmackDown vs. Raw 2009"
+    },
+    {
+        "GameID": "RWE",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2008"
+    },
+    {
+        "GameID": "RWG",
+        "GamespyName": "lovegolfwii",
+        "Type": "Wii",
+        "Title": "We Love Golf!"
+    },
+    {
+        "GameID": "RWS",
+        "GamespyName": "MSolympicwii",
+        "Type": "Wii",
+        "Title": "Mario & Sonic at the Olympic Games"
+    },
+    {
+        "GameID": "RX3",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "ExciteBots - Trick Racing"
+    },
+    {
+        "GameID": "RXN",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Hooked Again - Real Motion Fishing"
+    },
+    {
+        "GameID": "RXP",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Hooked! - Real Motion Fishing"
+    },
+    {
+        "GameID": "RXX",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Spectrobes - Origins"
+    },
+    {
+        "GameID": "RY2",
+        "GamespyName": "raymanrr2wii",
+        "Type": "Wii",
+        "Title": "Rayman Raving Rabbids 2"
+    },
+    {
+        "GameID": "RZ2",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 1 - The Minna de Kart Race"
+    },
+    {
+        "GameID": "RZ3",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 2 - The Minna de Bass Tsuri Taikai"
+    },
+    {
+        "GameID": "RZ4",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 3 - Asonde Oboeru - The Party Casino"
+    },
+    {
+        "GameID": "RZ5",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 4 - The Shooting Action"
+    },
+    {
+        "GameID": "RZ6",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 5 - The Block Kuzushi"
+    },
+    {
+        "GameID": "RZ7",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Simple Wii Series Vol. 6 - The Wai Wai Combat"
+    },
+    {
+        "GameID": "RZIE",
+        "GamespyName": "winters3nawii",
+        "Type": "Wii",
+        "Title": "Winter Sports 3 - The Great Tournament"
+    },
+    {
+        "GameID": "RZIP",
+        "GamespyName": "rtlwsportswii",
+        "Type": "Wii",
+        "Title": "Winter Sports 2010 - The Great Tournament"
+    },
+    {
+        "GameID": "RZN",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Zangeki no Reginleiv"
+    },
+    {
+        "GameID": "S22",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Family Fishing"
+    },
+    {
+        "GameID": "S2P",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2012"
+    },
+    {
+        "GameID": "S2R",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Reload"
+    },
+    {
+        "GameID": "S3D",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Deca Sports 3"
+    },
+    {
+        "GameID": "S3I",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2013"
+    },
+    {
+        "GameID": "S3S",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Karaoke Joysound Wii Super DX - Hitori de Minna de Utai Houdai!"
+    },
+    {
+        "GameID": "S59",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Samurai Warriors 3"
+    },
+    {
+        "GameID": "S5Q",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Sengoku Musou 3 Moushouden"
+    },
+    {
+        "GameID": "S5S",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Inazuma Eleven Go Strikers 2013"
+    },
+    {
+        "GameID": "SB5",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "NBA 2K11"
+    },
+    {
+        "GameID": "SBA",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Dragon Quest - Monster Battle Road Victory"
+    },
+    {
+        "GameID": "SBD",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Resident Evil - The Darkside Chronicles"
+    },
+    {
+        "GameID": "SBS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Remington Super Slam Hunting - North America"
+    },
+    {
+        "GameID": "SC2",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Conduit 2"
+    },
+    {
+        "GameID": "SFV",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Fishing Resort"
+    },
+    {
+        "GameID": "SGB",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Greg Hastings Paintball 2"
+    },
+    {
+        "GameID": "SGH",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Tom Clancy's Ghost Recon"
+    },
+    {
+        "GameID": "SGI",
+        "GamespyName": "gticsfestwii",
+        "Type": "Wii",
+        "Title": "GTI Club Supermini Festa!"
+    },
+    {
+        "GameID": "SGK",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Champion Jockey - G1 Jockey & Gallop Racer"
+    },
+    {
+        "GameID": "SH3",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "NHL 2K11"
+    },
+    {
+        "GameID": "SII",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Mario & Sonic at the London 2012 Olympic Games"
+    },
+    {
+        "GameID": "SIL",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Worms - Battle Islands"
+    },
+    {
+        "GameID": "SLS",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "The Last Story"
+    },
+    {
+        "GameID": "SMT",
+        "GamespyName": "momo2010wii",
+        "Type": "Wii",
+        "Title": "Momotarou Dentetsu 2010 - Sengoku Ishin no Hero Daishuugou! no Maki"
+    },
+    {
+        "GameID": "SNC",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Sonic Colors"
+    },
+    {
+        "GameID": "SPO",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Winter Sports 2011 - Go for Gold"
+    },
+    {
+        "GameID": "SPV",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2011"
+    },
+    {
+        "GameID": "SPY",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Yetisports - Penguin Party Island"
+    },
+    {
+        "GameID": "SQD",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Gunblade NY & LA Machineguns - Arcade Hits Pack"
+    },
+    {
+        "GameID": "SRK",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Remington Super Slam Hunting - Alaska"
+    },
+    {
+        "GameID": "SS7",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Remington Super Slam Hunting - Africa"
+    },
+    {
+        "GameID": "ST7",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Fortune Street"
+    },
+    {
+        "GameID": "STD",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Reload"
+    },
+    {
+        "GameID": "STG",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Tales of Graces"
+    },
+    {
+        "GameID": "STK",
+        "GamespyName": "tatvscapwii",
+        "Type": "Wii",
+        "Title": "Tatsunoko vs. Capcom - Ultimate All-Stars"
+    },
+    {
+        "GameID": "SU4",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "UFC Personal Trainer - The Ultimate Fitness System"
+    },
+    {
+        "GameID": "SUX",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Pro Evolution Soccer 2010"
+    },
+    {
+        "GameID": "SV4",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Virtua Tennis 4"
+    },
+    {
+        "GameID": "SVT",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Bit.Trip Complete"
+    },
+    {
+        "GameID": "SW3",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Winter Stars"
+    },
+    {
+        "GameID": "SXA",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Guitar Hero - World Tour"
+    },
+    {
+        "GameID": "SXB",
+        "GamespyName": "gh4metalwii",
+        "Type": "Wii",
+        "Title": "Guitar Hero - Metallica"
+    },
+    {
+        "GameID": "SXC",
+        "GamespyName": "gh4ghitswii",
+        "Type": "Wii",
+        "Title": "Guitar Hero - Smash Hits"
+    },
+    {
+        "GameID": "SXD",
+        "GamespyName": "gh4vhalenwii",
+        "Type": "Wii",
+        "Title": "Guitar Hero - Van Halen"
+    },
+    {
+        "GameID": "E5X",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Puyo Puyo Tsu"
+    },
+    {
+        "GameID": "E5Y",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Puyo Puyo"
+    },
+    {
+        "GameID": "HCF",
+        "GamespyName": "",
+        "Type": "Wii Channel",
+        "Title": "Wii Speak Channel"
+    },
+    {
+        "GameID": "HDM",
+        "GamespyName": "",
+        "Type": "Wii Channel",
+        "Title": "Dr. Mario & Germ Buster (Beta)"
+    },
+    {
+        "GameID": "MC3",
+        "GamespyName": "",
+        "Type": "Wii",
+        "Title": "Super Street Fighter II - The New Challengers"
+    },
+    {
+        "GameID": "W2F",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Physiofun - Balance Training"
+    },
+    {
+        "GameID": "W3D",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "3\u00b0 C"
+    },
+    {
+        "GameID": "W3K",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "ThruSpace"
+    },
+    {
+        "GameID": "W4K",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Deer Captor"
+    },
+    {
+        "GameID": "W4T",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Spaceball Revolution"
+    },
+    {
+        "GameID": "WA7",
+        "GamespyName": "toribashwii",
+        "Type": "WiiWare",
+        "Title": "Toribash"
+    },
+    {
+        "GameID": "WAQ",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Yakuman Wii - Ide Yousuke no Kenkou Mahjong"
+    },
+    {
+        "GameID": "WAR",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Tsuushin Taikyoku Igo Doujou 2700 Mon"
+    },
+    {
+        "GameID": "WAS",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Tsuushin Taikyoku - Hayazashi Syogi Sandan"
+    },
+    {
+        "GameID": "WAU",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Ts\u016bshin Taikyoku - World Chess"
+    },
+    {
+        "GameID": "WBB",
+        "GamespyName": "bboarderswii",
+        "Type": "WiiWare",
+        "Title": "Snowboard Riot"
+    },
+    {
+        "GameID": "WBL",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Bubble Bobble Wii"
+    },
+    {
+        "GameID": "WBQ",
+        "GamespyName": "ssoldierrwii",
+        "Type": "WiiWare",
+        "Title": "Star Soldier R"
+    },
+    {
+        "GameID": "WBS",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pop"
+    },
+    {
+        "GameID": "WC2",
+        "GamespyName": "crystalw2wii",
+        "Type": "WiiWare",
+        "Title": "Crystal Defenders R2"
+    },
+    {
+        "GameID": "WCH",
+        "GamespyName": "chesschalwii",
+        "Type": "WiiWare",
+        "Title": "Chess Challenge!"
+    },
+    {
+        "GameID": "WCI",
+        "GamespyName": "crystalw1wii",
+        "Type": "WiiWare",
+        "Title": "Crystal Defenders R1"
+    },
+    {
+        "GameID": "WCR",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Carnival King"
+    },
+    {
+        "GameID": "WCS",
+        "GamespyName": "cuesportswii",
+        "Type": "WiiWare",
+        "Title": "CueSports - Pool Revolution"
+    },
+    {
+        "GameID": "WCU",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "3-2-1, Rattle Battle!"
+    },
+    {
+        "GameID": "WD2",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Simple Wii Series Vol. 2 - The Number Puzzle Neo"
+    },
+    {
+        "GameID": "WDB",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Derby Dogs"
+    },
+    {
+        "GameID": "WDD",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Diner Dash"
+    },
+    {
+        "GameID": "WDI",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Simple Wii Series Vol. 1 - The Block Kuzushi Neo"
+    },
+    {
+        "GameID": "WDM",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Dr. Mario Online Rx"
+    },
+    {
+        "GameID": "WDP",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Dr. Mario Online Rx (Friend Battle Demo)"
+    },
+    {
+        "GameID": "WE6",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "My Dolphin"
+    },
+    {
+        "GameID": "WE9",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Alien Crush Returns"
+    },
+    {
+        "GameID": "WEN",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "TNT Racers"
+    },
+    {
+        "GameID": "WEV",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Viral Survival"
+    },
+    {
+        "GameID": "WF5",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Okiraku Daifugou Wii"
+    },
+    {
+        "GameID": "WFP",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Hirameki Card Battle Mekuruca"
+    },
+    {
+        "GameID": "WGD",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Gradius Rebirth"
+    },
+    {
+        "GameID": "WGO",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "World of Goo"
+    },
+    {
+        "GameID": "WHV",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "High Voltage - Hot Rod Show"
+    },
+    {
+        "GameID": "WHW",
+        "GamespyName": "hoopworldwii",
+        "Type": "WiiWare",
+        "Title": "HoopWorld"
+    },
+    {
+        "GameID": "WID",
+        "GamespyName": "idraculawii",
+        "Type": "WiiWare",
+        "Title": "Dracula - Undead Awakening"
+    },
+    {
+        "GameID": "WIV",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Space Invaders Get Even"
+    },
+    {
+        "GameID": "WJP",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Janken Party Paradise"
+    },
+    {
+        "GameID": "WJW",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Bejeweled 2"
+    },
+    {
+        "GameID": "WK9",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Minna de Asobou Koinu de Kururin"
+    },
+    {
+        "GameID": "WL2",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Target Toss Pro - Lawn Darts"
+    },
+    {
+        "GameID": "WLP",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Lonpos"
+    },
+    {
+        "GameID": "WM3",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Manic Monkey Mayhem"
+    },
+    {
+        "GameID": "WM8",
+        "GamespyName": "wiibombmanwii",
+        "Type": "WiiWare",
+        "Title": "Bomberman Blast"
+    },
+    {
+        "GameID": "WM9",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Happy Hammerin"
+    },
+    {
+        "GameID": "WMG",
+        "GamespyName": "mmartracewii",
+        "Type": "WiiWare",
+        "Title": "Mart Racer"
+    },
+    {
+        "GameID": "WML",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Major League Eating - The Game"
+    },
+    {
+        "GameID": "WMP",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Word Puzzle Moji Pitan Wii"
+    },
+    {
+        "GameID": "WN9",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Military Madness - Nectaris"
+    },
+    {
+        "GameID": "WOL",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Othello"
+    },
+    {
+        "GameID": "WOT",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Overturn"
+    },
+    {
+        "GameID": "WPA",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pok\u00e9mon Fushigi no Dungeon - Ikuzo! Arashi no Boukendan"
+    },
+    {
+        "GameID": "WPF",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pok\u00e9mon Fushigi no Dungeon - Susume! Honoo no Boukendan"
+    },
+    {
+        "GameID": "WPH",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pok\u00e9mon Fushigi no Dungeon - Mesaze! Hikari no Boukendan"
+    },
+    {
+        "GameID": "WPI",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pit Crew Panic!"
+    },
+    {
+        "GameID": "WPK",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Texas Hold'Em Poker"
+    },
+    {
+        "GameID": "WPT",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Fantasic Cube"
+    },
+    {
+        "GameID": "WPX",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Minna de Tobikome Penguin Diving Hooper Looper"
+    },
+    {
+        "GameID": "WR9",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Mega Man 9"
+    },
+    {
+        "GameID": "WRX",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Mega Man 10"
+    },
+    {
+        "GameID": "WS8",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Minna de Taisen Puzzle Shanghai"
+    },
+    {
+        "GameID": "WSA",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Onslaught"
+    },
+    {
+        "GameID": "WSN",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Sonic The Hedgehog 4 Episode I"
+    },
+    {
+        "GameID": "WSZ",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Sneezies"
+    },
+    {
+        "GameID": "WT3",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Tomena  Sanner"
+    },
+    {
+        "GameID": "WT8",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Hajite! Block Rush"
+    },
+    {
+        "GameID": "WTK",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "TV Show King 2"
+    },
+    {
+        "GameID": "WTM",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Adventure Island - The Beginning"
+    },
+    {
+        "GameID": "WTP",
+        "GamespyName": "tetpartywii",
+        "Type": "WiiWare",
+        "Title": "Tetris Party"
+    },
+    {
+        "GameID": "WTX",
+        "GamespyName": "texasholdwii",
+        "Type": "WiiWare",
+        "Title": "Texas Hold\u2019em Tournament"
+    },
+    {
+        "GameID": "WUN",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Uno"
+    },
+    {
+        "GameID": "WVK",
+        "GamespyName": "wtrwarfarewii",
+        "Type": "WiiWare",
+        "Title": "Water Warfare"
+    },
+    {
+        "GameID": "WWR",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Excitebike - World Rally"
+    },
+    {
+        "GameID": "WZI",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Rubik's Puzzle Galaxy RUSH"
+    },
+    {
+        "GameID": "WZJ",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Simple Series Vol. 5 - The Judo"
+    },
+    {
+        "GameID": "WZM",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Simple Wii Series Vol. 3 - The Mahjong"
+    },
+    {
+        "GameID": "XHH",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Pok\u00e9mon Fushigi no Dungeon - Mezase! Hikari no Boukendan (Demo)"
+    },
+    {
+        "GameID": "XHJ",
+        "GamespyName": "",
+        "Type": "WiiWare",
+        "Title": "Thruspace (Demo)"
+    }
+]

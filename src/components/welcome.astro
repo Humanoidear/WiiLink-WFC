@@ -22,7 +22,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", async function () {
-    const url = 'http://violet.wiilink24.com/api/stats';
+    const url = './json/stats.json';
     fetch(url)
       .then(response => response.json())
       .then(json => showService(json[0])); // General stats

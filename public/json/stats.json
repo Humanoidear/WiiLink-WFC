@@ -1,14 +1,14 @@
 [
     {
     "global":{
-        "online":4,
-        "active":4,
-        "groups":2
+        "online":445,
+        "active":234,
+        "groups":25
         },
     "mariokartwii":{
-        "online":2,
-        "active":2,
-        "groups":1
+        "online":443,
+        "active":232,
+        "groups":24
         },
     "smashbrosxwii":{
         "online":2,
