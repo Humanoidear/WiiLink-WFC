@@ -1,0 +1,90 @@
+<div class="header">
+	<input type="text" id="game-search" placeholder="&#xF002;   Search for any Wii title..." style="font-family:inter, FontAwesome;">
+	<div id="suggestions"></div>
+</div>
+
+	
+<script is:inline>
+	 fetch('../../json/pages.json')
+    .then(response => response.json())
+    .then(games => {
+      var gameSearchInput = document.getElementById('game-search');
+      var suggestionsDiv = document.getElementById('suggestions');
+
+      gameSearchInput.addEventListener('focus', function(e) {
+        suggestionsDiv.style.display = 'block';
+      });
+
+      gameSearchInput.addEventListener('blur', function(e) {
+        suggestionsDiv.style.display = 'none';
+      });
+
+      gameSearchInput.addEventListener('input', function(e) {
+        suggestionsDiv.innerHTML = ''; // clear previous suggestions
+        var inputText = gameSearchInput.value;
+        var counter = 0;
+        for (var i = 0; i < games.length; i++) {
+          if (games[i].gameName.startsWith(inputText)) {
+            var suggestion = document.createElement('div');
+            suggestion.innerHTML = '<a href="/online/' + games[i].gameId + '"><div style="width:100%; height:50px; display:flex; justify-content:space-between; position:relative;"> <img src="https://art.gametdb.com/wii/disc/US/' + games[i].gameId + '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' + games[i].gameId + '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-right:15px;" width="70px"><div><h3>' + games[i].gameName + '</h3><br><p>' + games[i].gameId + '</p></div></div></a><hr\>';
+            suggestionsDiv.appendChild(suggestion);
+            counter++;
+          }
+          if (counter >= 5) {
+            break;
+          }
+        }
+      });
+  
+	  gameSearchInput.addEventListener('keypress', function(e) {
+		if (e.keyCode === 13) { // 'Enter' key
+		  var firstSuggestion = suggestionsDiv.firstChild;
+		  if (firstSuggestion) {
+			window.location.href = firstSuggestion.querySelector('a').href;
+		  }
+		}
+	  });
+	})
+	.catch(error => console.error('Error:', error));
+</script>
+
+<style>
+	#suggestions{
+		left:50%;
+		width: 600px;
+		max-height: 500px;
+		transform: translate(-50%, 18px);
+		background-color: white;
+		border-radius: 8px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border:2px solid #00000020;
+		border-top: 0px;
+		z-index: 10000;
+		display:none;
+		overflow-y:scroll;
+		position: absolute;
+		transition: 0.3s;
+	}
+
+	.header{
+		width:100%;
+		height:100px;
+
+		background-color: blue;
+		position: relative;
+	}
+
+	#game-search{
+		left:50%;
+		top:50%;
+		transform: translate(-50%, -50%);
+		width: 600px;
+		height: 50px;
+		padding:10px;
+		border-radius: 8px;
+		border:2px solid #00000020;
+		background-color: white;
+		position: relative;
+	}
+</style>

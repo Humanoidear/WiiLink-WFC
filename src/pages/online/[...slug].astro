@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Loading from "../../components/Loading.astro";
+import Header from "../../components/Header.astro";
 import games from "../../../public/json/pages.json";
 export async function getStaticPaths() {
   return games.map((data) => ({
@@ -26,6 +27,7 @@ const { title, text, desc } = Astro.props;
 
 <html>
   <body>
+    <Header/>
     <div class="herobg"><div class="bginner"></div></div>
     <div style="width:1000px; padding:20px; transform:translate(40px, 18px); position:relative;">
       <h1 id="gameId" style="width:1000px;">{title}</h1>
@@ -38,18 +40,17 @@ const { title, text, desc } = Astro.props;
       </div>
     </div>
     <div id="onlinecontainer">
-      <h1>Online statistics for {text}</h1>
-      <div id="containergamedata"></div>
-      <div id="containerplayers"></div>
+      <div id="containerdata"></div>
+      <img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px">
+      <div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">Statistics</div>
     </div>
     <p style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;">Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink Violet API.</p>
     <div style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;">
       <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">About the game:</h1>
     <p id="synopsis" style="font-size:20px;">This title features no synopsis, why not add one yourself on gameTDB?</p>
     <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">Screenshots:</h1>
-    <div id="imgCaroussel"><i style="color:white;">There has been an error fetching the data from the Google API. Posible quota limit reached.</i></div>
+    <div id="imgCaroussel"><i style="color:white;">There has been an error fetching the data from the Google API. Possible quota limit reached.</i></div>
   </div>
-
 
   </body>
 </html>
@@ -79,26 +80,20 @@ const { title, text, desc } = Astro.props;
   overflow:hidden;
 }
 
-#containergamedata{
-  color:white;
-}
-
-#containerplayers{
-  display: flex;
-  position: relative;
-}
-
 #onlinecontainer{
   left:50%;
   transform: translate(-50%, 0);
   width:90%;
-  height: 400px;
+  height: auto;
+  min-height: 300px;
   max-width: 2000px;
   border-radius: 8px;
-  border:2px solid #ffffff20;
+  border:2px solid #4287f530;
   margin-bottom: 20px;
-  background: rgba(0, 26, 36, 0.487);
+  background-color: #151414;
+  padding:20px;
   display: none;
+  overflow: hidden;
   position:relative;
 }
 

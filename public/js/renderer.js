@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
             var gameid = id.textContent.substring(0, 3);
             if (data[j].GameID == gameid) {
               console.log(`Found an id for game with gamespy title ${data[j].GamespyName}!`);
-              document.getElementById("onlinecontainer").style.display = 'block';
               document.getElementById("onlineload").style.display = 'block';
               setInterval(() => {
               fetch('../../json/stats.json')
@@ -55,29 +54,59 @@ document.addEventListener("DOMContentLoaded", function () {
               fetch('../../json/group.json')
                 .then(response => response.json())
                 .then(group => {
+                  document.getElementById("containerdata").innerHTML = ` `;
                     for (let k = 0; k < group.length; k++) {
                         if (group[k].game == data[j].GamespyName) {
                           console.log(`Found group data!`);
                           console.log(group[k]);
-                          document.getElementById("containergamedata").innerHTML = `Game:${group[k].game} Type:${group[k].type}  Suspend:${group[k].suspend}  Host:${group[k].host}  rk:${group[k].rk} `;
-                          document.getElementById("containerplayers").innerHTML = ` `;
+                          switch (group[k].type){
+                              case 'anybody':
+                                group[k].type = 'background-color:#3cc761;"><i class="fa-solid fa-earth-americas"></i> Public';
+                                break;
+                              case 'private':
+                                group[k].type = 'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
+                                break;
+                          }
+                          group[k].host = group[k].players[group[k].host].name;
+                         if (data[j].GamespyName == 'mariokartwii') {
+                          console.log(group[k].host);
+                          group[k].rk = group[k].rk.substring(0, 2); 
+                          switch (group[k].rk){
+                              case 'vs':
+                                group[k].rk = 'background-color:#3c86c7;"><i class="fa-solid fa-motorcycle"></i> Versus';
+                                break;
+                              case 'bt':
+                                group[k].rk = 'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
+                                break;
+                          }
+                        }
+                          document.getElementById("containerdata").innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; background-color:#ffffff10;"><i class="fa-solid fa-door-open" style="margin-right:5px;"></i> ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+                          var playerData = '';
+                          document.getElementById("onlinecontainer").style.display = 'block';
                           for (let playerIndex in group[k].players) {
                             var player = group[k].players[playerIndex];
                             console.log(player.name); // Logs the player's name
-                            document.getElementById("containerplayers").innerHTML += `
-                            <div style="width:200px; position:relative;">
-                              <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${player.name}</div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.pid}</div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.fc}</div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.eb} / ${player.ev}</div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> ${player.count}</div>
+                            playerData += `
+                            <div style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
+                             <div>
+                              <div style="font-size: 30px; font-family: Rubik; font-weight:800; color:white;">${player.name}</div>
+                              <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
+                             </div>
+                             <div style="text-align:right;">
+                              <div style="font-size: 15px; font-family: Rubik; color:white;">${player.pid} <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${player.eb} / VR:${player.ev} <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+                              <div style="font-size: 15px; font-family: Rubik; color:white;">${player.count} <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+                             </div>
                             </div>
                             `;
                           }
+                          document.getElementById("containerdata").innerHTML += '<div style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' + playerData + '</div><hr\>';
                         } else {
                           console.log(`No group data found! Retrying...`);
+                          document.getElementById("onlinecontainer").style.display += 'none';
                         }
                     }
+                    document.getElementById("containerdata").innerHTML += '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' + data[j].GamespyName + '</div>';
                 });
             }, 5000);
                 
@@ -132,7 +161,7 @@ var isSupported = Array.from(onlineSupport).map(feature => feature.textContent).
             }
 
             var title = document.getElementById("gameId");
-            title.innerHTML = '<img src="https://art.gametdb.com/wii/disc/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Game Disc" style="margin-right:15px;" width="70px"><b>' + locales[j].getElementsByTagName("title")[0].textContent + '</b>';
+            title.innerHTML = '<img src="https://art.gametdb.com/wii/disc/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Game Disc" style="margin-right:15px;" width="70px" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';"><b>' + locales[j].getElementsByTagName("title")[0].textContent + '</b>';
             
             var bg = document.getElementsByClassName("bginner");
             bg[0].innerHTML = '<img src="https://art.gametdb.com/wii/coverfullHQ/' + imglang + '/' + titleCheck + '.png" alt="' + locales[j].getElementsByTagName("title")[0].textContent + ' Background" style="margin-right:15px;" width="100%">';
