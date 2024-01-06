@@ -80,7 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 break;
                           }
                         }
-                          document.getElementById("containerdata").innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; background-color:#ffffff10;"><i class="fa-solid fa-door-open" style="margin-right:5px;"></i> ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+                        if(group[k].suspend) {
+                          group[k].suspend = 'background-color:#c7403c;"><i class="fa-solid fa-door-closed"></i> Not joinable';
+                        } else {
+                          group[k].suspend = 'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
+                        }
+
+                          document.getElementById("containerdata").innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
                           var playerData = '';
                           document.getElementById("onlinecontainer").style.display = 'block';
                           for (let playerIndex in group[k].players) {
@@ -89,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             playerData += `
                             <div style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
                              <div>
-                              <div style="font-size: 30px; font-family: Rubik; font-weight:800; color:white;">${player.name}</div>
+                              <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${player.name}</div>
                               <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
                              </div>
                              <div style="text-align:right;">
@@ -203,6 +209,7 @@ var toSearch = 'https://www.googleapis.com/customsearch/v1?cx=14ab9bd483f1f428f&
   .then(response => response.json())
   .then(data => {
     let images = data.items.map(item => item.link);
+    document.getElementById("imgCaroussel").innerHTML = '';
     for (let i = 0; i < 5; i++) {
       var div = document.getElementById("imgCaroussel");
       div.innerHTML += `<img src="${images[i]}" height="300px" style="border-radius:8px; margin-right:20px;  background-color: #ffffff10;">`;

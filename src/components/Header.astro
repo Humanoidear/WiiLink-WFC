@@ -26,7 +26,7 @@
         for (var i = 0; i < games.length; i++) {
           if (games[i].gameName.startsWith(inputText)) {
             var suggestion = document.createElement('div');
-            suggestion.innerHTML = '<a href="/online/' + games[i].gameId + '"><div style="width:100%; height:50px; display:flex; justify-content:space-between; position:relative;"> <img src="https://art.gametdb.com/wii/disc/US/' + games[i].gameId + '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' + games[i].gameId + '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-right:15px;" width="70px"><div><h3>' + games[i].gameName + '</h3><br><p>' + games[i].gameId + '</p></div></div></a><hr\>';
+            suggestion.innerHTML = '<a href="/online/' + games[i].gameId + '"><div style="width:100%;display:flex; justify-content:space-between; "> <img src="https://art.gametdb.com/wii/disc/US/' + games[i].gameId + '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' + games[i].gameId + '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-right:15px;" width="70px"><div><h3>' + games[i].gameName + '</h3><br><p>' + games[i].gameId + '</p></div></a><hr\>';
             suggestionsDiv.appendChild(suggestion);
             counter++;
           }

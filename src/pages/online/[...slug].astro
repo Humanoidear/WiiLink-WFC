@@ -80,6 +80,16 @@ const { title, text, desc } = Astro.props;
   overflow:hidden;
 }
 
+#img{
+  height:440px;
+  background-color: #151414;
+  border-radius: 8px;
+  background-image: url('/img/bg.png');
+  background-size: cover;
+  position: relative;
+
+}
+
 #onlinecontainer{
   left:50%;
   transform: translate(-50%, 0);
@@ -150,6 +160,7 @@ const { title, text, desc } = Astro.props;
     .imginner{
       height:440px; 
       transform:translate(-52.3%, 0);
+      color:white; 
       transition: 0.5s;
       overflow:hidden;
     }
