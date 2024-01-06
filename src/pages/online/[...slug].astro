@@ -2,172 +2,213 @@
 import Layout from "../../layouts/Layout.astro";
 import Loading from "../../components/Loading.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 import games from "../../../public/json/pages.json";
 export async function getStaticPaths() {
   return games.map((data) => ({
     params: {
-      slug: data.gameId
+      slug: data.gameId,
     },
-    props: { 
-      title: data.gameId, 
+    props: {
+      title: data.gameId,
       text: data.gameName,
       desc: data.gameDesc,
-    }
+    },
   }));
 }
 const { title, text, desc } = Astro.props;
 ---
 
-<Layout title={`WiiLink WFC - ${text}`} description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!" image="/temp.png">
-<Loading msg={`${text} - ${title}`}/>
+<Layout
+  title={`WiiLink WFC - ${text}`}
+  description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!"
+  image="/temp.png"
+>
+  <Loading msg={`${text} - ${title}`} />
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<!-- Grab gameTDB data and insert into the site -->
-<script type="module" src="/js/renderer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Grab gameTDB data and insert into the site -->
+  <script type="module" src="/js/renderer.js"></script>
 
-<html>
-  <body>
-    <Header/>
-    <div class="herobg"><div class="bginner"></div></div>
-    <div style="width:1000px; padding:20px; transform:translate(40px, 18px); position:relative;">
-      <h1 id="gameId" style="width:1000px;">{title}</h1>
-      <p style="width:500px; transform:translate(86px, -30px); opacity:0.5;">{title}</p>
-    </div>
-    <div class="data-holder">
-      <div id="img"></div>
-      <div id="data" style="width:100%; position:relative;">
-
+  <html>
+    <body>
+      <Header />
+      <div class="herobg"><div class="bginner"></div></div>
+      <div
+        style="width:1000px; padding:20px; transform:translate(40px, 18px); position:relative;"
+      >
+        <h1 id="gameId" style="width:1000px;">{title}</h1>
+        <p style="width:500px; transform:translate(86px, -30px); opacity:0.5;">
+          {title}
+        </p>
       </div>
-    </div>
-    <div id="onlinecontainer">
-      <div id="containerdata"></div>
-      <img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px">
-      <div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">Statistics</div>
-    </div>
-    <p style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;">Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink Violet API.</p>
-    <div style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;">
-      <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">About the game:</h1>
-    <p id="synopsis" style="font-size:20px;">This title features no synopsis, why not add one yourself on gameTDB?</p>
-    <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">Screenshots:</h1>
-    <div id="imgCaroussel"><i style="color:white;">There has been an error fetching the data from the Google API. Possible quota limit reached.</i></div>
-  </div>
+      <div class="data-holder" id="errnomatch">
+        <div id="img"></div>
+        <div id="data" style="width:100%; position:relative;"></div>
+      </div>
+      <div id="onlinecontainer">
+        <div id="containerdata"></div>
+        <img
+          src="/img/loading.gif"
+          id="onlineload"
+          style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;"
+          width="30px"
+        />
+        <div
+          style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;"
+        >
+          Statistics
+        </div>
+      </div>
+      <p
+        style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
+      >
+        Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
+        Violet API.
+      </p>
+      <div
+        style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;" id="errhide"
+      >
+        <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">
+          About the game:
+        </h1>
+        <p id="synopsis" style="font-size:20px;">
+          This title features no synopsis, why not add one yourself on gameTDB?
+        </p>
+        <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">
+          Screenshots:
+        </h1>
+        <div id="imgCaroussel">
+          <i style="color:white;"
+            >There has been an error fetching the data from the Google API.
+            Possible quota limit reached.</i>
+        </div>
+      </div>
+      <Footer />
+    </body>
+  </html>
 
-  </body>
-</html>
+  <style>
+    html body {
+      background-color: rgb(11, 0, 0);
+    }
+    h1 {
+      color: white;
+    }
+    p {
+      color: white;
+    }
+    .herobg {
+      background: linear-gradient(
+          to bottom,
+          rgba(11, 0, 0, 0) 0%,
+          rgba(11, 0, 0, 1) 80%
+        ),
+        url("/img/bg.png");
+      opacity: 0.5;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: changecolor 10s infinite;
+      width: 100%;
+      height: 100vh;
+      transform: translate(0, -50px);
+      position: absolute;
+      z-index: -10;
+      overflow: hidden;
+    }
 
-<style>
-	html body{
-		background-color: rgb(11, 0, 0);
-	}
-  h1{
-    color: white;
-  }
-  p{
-    color:white;
-  }
-  .herobg {
-  background: linear-gradient(to bottom, rgba(11,0,0,0) 0%, rgba(11,0,0,1) 80%), url('/img/bg.png');
-  opacity: 0.5;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: changecolor 10s infinite;
-  width: 100%;
-  height: 100vh;
-  transform: translate(0, -50px);
-  position: absolute;
-  z-index: -10;
-  overflow:hidden;
-}
+    #img {
+      height: 440px;
+      background-color: #151414;
+      border-radius: 8px;
+      background-image: url("/img/bg.png");
+      background-size: cover;
+      position: relative;
+    }
 
-#img{
-  height:440px;
-  background-color: #151414;
-  border-radius: 8px;
-  background-image: url('/img/bg.png');
-  background-size: cover;
-  position: relative;
+    #onlinecontainer {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 90%;
+      height: auto;
+      min-height: 300px;
+      max-width: 2000px;
+      border-radius: 8px;
+      border: 2px solid #4287f530;
+      margin-bottom: 20px;
+      background-color: #151414;
+      padding: 20px;
+      display: none;
+      overflow: hidden;
+      position: relative;
+    }
 
-}
+    .data-holder {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 90%;
+      max-width: 2000px;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
 
-#onlinecontainer{
-  left:50%;
-  transform: translate(-50%, 0);
-  width:90%;
-  height: auto;
-  min-height: 300px;
-  max-width: 2000px;
-  border-radius: 8px;
-  border:2px solid #4287f530;
-  margin-bottom: 20px;
-  background-color: #151414;
-  padding:20px;
-  display: none;
-  overflow: hidden;
-  position:relative;
-}
+    .herobg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 0, 0, 0) 0%,
+        rgba(11, 0, 0, 1) 80%
+      );
+      pointer-events: none;
+    }
 
-.data-holder{
-  left:50%;
-  transform: translate(-50%, 0);
-  width:90%;
-  max-width: 2000px;
-  margin-bottom: 18px;
-  display:flex;
-  gap:20px;
-  position: relative;
-}
-
-.herobg::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(11,0,0,0) 0%, rgba(11,0,0,1) 80%);
-  pointer-events: none;
-}
-
-#imgCaroussel{
-  left:50%;
-  width:100%;
-  height:300px;
-  width:100%;
-  transform: translate(-50%, 0);
-  border-radius: 8px;
-  display:flex;
-  overflow-y:hidden;
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
-  position: relative;
-}
+    #imgCaroussel {
+      left: 50%;
+      width: 100%;
+      height: 300px;
+      width: 100%;
+      transform: translate(-50%, 0);
+      border-radius: 8px;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      scroll-snap-type: x proximity;
+      position: relative;
+    }
   </style>
 
   <style is:global>
-    .coverimg{
-      height:440px; 
-      width:310px; 
+    .coverimg {
+      height: 440px;
+      width: 310px;
       border-radius: 8px;
-      overflow:hidden;
+      overflow: hidden;
       transition: 0.3s;
     }
-    .coverimg:hover{
+    .coverimg:hover {
       transform: scale(1.03);
       box-shadow: 0px 0px 20px 0px #ffffff10;
       transition: 0.3s;
     }
-    .imginner{
-      height:440px; 
-      transform:translate(-52.3%, 0);
-      color:white; 
+    .imginner {
+      height: 440px;
+      transform: translate(-52.3%, 0);
+      color: white;
       transition: 0.5s;
-      overflow:hidden;
+      overflow: hidden;
     }
-    l{
-      height:100%;
+    l {
+      height: 100%;
       background-color: #151414;
-      border:2px solid #272525;
+      border: 2px solid #272525;
       border-radius: 8px;
       text-align: center;
       padding: 10px;
@@ -179,42 +220,43 @@ const { title, text, desc } = Astro.props;
       overflow: hidden;
       transition: 0.3s;
     }
-    l:hover{
+    l:hover {
       transform: scale(1.01);
       transition: 0.3s;
     }
-    .smalldatapill{
+    .smalldatapill {
       width: 100%;
       justify-content: center;
       align-items: center;
-      color:white;
+      color: white;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(55px,1fr));
-      gap:15px;
+      grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+      gap: 15px;
       position: relative;
     }
-    .bigdatapill{
-      margin-top:15px;
+    .bigdatapill {
+      margin-top: 15px;
       width: 100%;
-      height:86%;
+      height: 86%;
       justify-content: center;
       align-items: center;
-      color:white;
+      color: white;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
-      gap:15px;
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      gap: 15px;
       position: relative;
     }
-    .bginner{
-      top:0;
-      left:0;
-      width:100%;
+    .bginner {
+      top: 0;
+      left: 0;
+      width: 100%;
       filter: blur(8px) grayscale(0.7);
-      opacity:0.13;
-      position:absolute;
+      opacity: 0.13;
+      position: absolute;
     }
-    .coverimg:hover .imginner{
-      transform:translate(0%, 0);
+    .coverimg:hover .imginner {
+      transform: translate(0%, 0);
       transition: 0.5s;
     }
   </style>
+</Layout>

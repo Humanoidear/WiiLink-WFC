@@ -2,10 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Welcome from "../components/welcome.astro";
 import Loading from "../components/Loading.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="WiiLink WFC" description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!" image="/temp.png">
 <Loading />
+<Header />
 
 <head>
 	<style> body { height:50000px; background-color: rgb(11, 0, 0); margin: 0; } </style>
