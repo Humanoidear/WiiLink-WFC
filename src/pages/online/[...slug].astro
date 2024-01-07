@@ -26,7 +26,6 @@ const { title, text, desc } = Astro.props;
 >
   <Loading msg={`${text} - ${title}`} />
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- Grab gameTDB data and insert into the site -->
   <script type="module" src="/js/renderer.js"></script>
 
@@ -34,10 +33,11 @@ const { title, text, desc } = Astro.props;
     <body>
       <Header />
       <div class="herobg"><div class="bginner"></div></div>
+      <div style="transform:translate(0, 60px);">
       <div
-        style="width:1000px; padding:20px; transform:translate(40px, 18px); position:relative;"
+        style="width:900px; padding:20px; transform:translate(70px, 18px); position:relative;" id="mobilehide"
       >
-        <h1 id="gameId" style="width:1000px;">{title}</h1>
+        <h1 id="gameId" style="width:900px;">{title}</h1>
         <p style="width:500px; transform:translate(86px, -30px); opacity:0.5;">
           {title}
         </p>
@@ -84,6 +84,7 @@ const { title, text, desc } = Astro.props;
             Possible quota limit reached.</i>
         </div>
       </div>
+    </div>
       <Footer />
     </body>
   </html>
@@ -258,5 +259,95 @@ const { title, text, desc } = Astro.props;
       transform: translate(0%, 0);
       transition: 0.5s;
     }
+
+    @media only screen and (max-width: 1000px) {
+      .data-holder {
+        width: 95% !important;
+        flex-direction: column;
+      }
+      #onlinecontainer {
+        width: 95% !important;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0);
+      }
+      .coverimg{
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        position: relative;
+      }
+      .coverimg:hover {
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+      }
+      .imginner {
+        height: 100%;
+      }
+      .smalldatapill{
+        display:flex;
+        flex-wrap:wrap;
+      }
+      .bigdatapill{
+        display:flex;
+        flex-wrap:wrap;
+      }
+      l{
+        width:100%;
+      }
+      #mobilehide{
+        display:none;
+      }
+      #onlinemobile{
+        height: 200px;
+        position: relative;
+      }
+      #mobilestats{
+        width:100% !important;
+        display:flex !important;
+        overflow-y: scroll;
+      }
+      #mobileinner{
+        
+      }
+      #data {
+        width: 100%;
+        transform: translate(0, 0);
+      }
+      #containerdata {
+        width: 100%;
+        transform: translate(0, 0);
+      }
+      #onlinecontainer {
+        width: 100%;
+        transform: translate(0, 0);
+      }
+      #synopsis {
+        max-height: 300px;
+        overflow: scroll;
+      }
+      #imgCaroussel {
+        width: 100%;
+        transform: translate(0, 0);
+      }
+      .coverimg {
+        height: 300px;
+        width: 210px;
+      }
+      .imginner {
+        height: 300px;
+        transform: translate(-52.3%, 0);
+      }
+      .smalldatapill {
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+      }
+      .bigdatapill {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      }
+    }
+
   </style>
 </Layout>

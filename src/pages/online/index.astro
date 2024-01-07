@@ -1,1 +1,30 @@
-hello
+---
+import Layout from "../../layouts/Layout.astro";
+import Loading from "../../components/Loading.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import games from "../../../public/json/pages.json";
+export async function getStaticPaths() {
+  return games.map((data) => ({
+    params: {
+      slug: data.gameId,
+    },
+    props: {
+      title: data.gameId,
+      text: data.gameName,
+      desc: data.gameDesc,
+    },
+  }));
+}
+const { title, text, desc } = Astro.props;
+---
+
+<Layout
+  title={`WiiLink WFC - ${text}`}
+  description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!"
+  image="/temp.png"
+>
+  <Loading msg={`${text} - ${title}`} />
+  <Header />
+
+  <Footer />

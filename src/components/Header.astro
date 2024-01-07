@@ -1,11 +1,18 @@
+<div id="betamobile">
+	This service is still in beta, please report your issues on our <a href="https://discord.gg/wiilink-750581992223146074" style="text-decoration:none;"><i class="fa-brands fa-discord" style="margin-left:8px;"></i> Discord
+	server!</a>
+</div>
+
 <div class="header">
   <div
-    style="width:90%; height:80px; max-width:2000px; left:50%; transform:translate(-50%, 0); position:relative;"
+    id="innerheader"
   >
+  <a href="/" style="text-decoration: none; color:white;">
     <img
       src="/img/logo.png"
       style="top:50%; transform: translate(0, -50%); height: 60px; filter:invert(1); position:absolute;"
     />
+</a>
     <input
       type="text"
       id="game-search"
@@ -14,192 +21,439 @@
     />
     <div id="suggestions"></div>
     <div>
-      <div
-        style="right:0; top:50%; transform:translate(0, -50%); display:flex; gap:18px; position:absolute;"
-      >
+      <div id="links">
         <a href="/" style="text-decoration: none; color:white;"
           ><div
-            style="height:50px; background-color: #121212; display:flex; justify-content:center; align-items:center;"
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
           >
             <i class="fa fa-home" style="margin-right:5px;"></i> Home
           </div></a
         >
         <a href="/online" style="text-decoration: none; color:white;"
           ><div
-            style="height:50px; background-color: #121212; display:flex; justify-content:center; align-items:center;"
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
           >
             <i class="fa fa-globe" style="margin-right:5px;"></i> Online
           </div></a
         >
-        <a href="/settings" style="text-decoration: none; color:white;"
+        <a href="https://status.wiilink24.com" style="text-decoration: none; color:white;"
           ><div
-            style="height:50px; background-color: #121212; display:flex; justify-content:center; align-items:center;"
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
           >
             <i class="fa fa-server" style="margin-right:5px;"></i> Status
           </div></a
         >
         <button type="button" class="btn btn-success"
-          ><i
+          ><a href="https://www.wiilink24.com" style="text-decoration:none; color:white;"><i
             class="fa-solid fa-square-arrow-up-right"
-            style="margin-right:5px;"></i> Visit WiiLink</button
+            style="margin-right:5px;"></i> Visit WiiLink</a></button
         >
       </div>
+      <button
+        class="btn"
+		id="mobilemenu"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+		style="right:0; top:50%; transform: translate(0, -50%); position:absolute;"
+      >
+        <i class="fa fa-bars" style="font-size:30px; color:white; z-index:0; position:relative;"></i>
+      </button>
     </div>
   </div>
 
-  <script is:inline>
-    fetch("../../json/gamespy_titles.json")
-      .then((response) => response.json())
-      .then((gamespyTitles) => {
-        fetch("../../json/pages.json")
-          .then((response) => response.json())
-          .then((games) => {
-            var gameSearchInput = document.getElementById("game-search");
-            var suggestionsDiv = document.getElementById("suggestions");
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+    style="background-color:rgb(23,23,23);"
+  >
+    <div class="offcanvas-header">
+      <img
+        src="/img/logo.png"
+        style="left:0%; transform: translate(0, 0); height: 60px; filter:invert(1); position:relative;"
+      />
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        style="filter:invert(1);"></button>
+    </div>
+    <div class="offcanvas-body">
+      <input
+        type="text"
+        id="game-search-mobile"
+        placeholder="   Search for any Wii title..."
+        style="font-family:inter, FontAwesome;"
+      />
+      <div id="suggestions-mobile"></div>
+      <div>
+        <div
+          style="margin-top:18px; display:flex; flex-direction:column; gap:8px;"
+        >
+          <a
+            href="/"
+            style="text-decoration: none; color:white; padding-bottom:8px; border-radius:8px;"
+            ><div
+              style="height:50px; background-color: #121212; display:flex; border-radius:8px; justify-content:center; align-items:center;"
+            >
+              <i class="fa fa-home" style="margin-right:5px;"></i> Home
+            </div></a
+          >
+          <a
+            href="/online"
+            style="text-decoration: none; color:white; padding-bottom:8px; border-radius:8px;"
+            ><div
+              style="height:50px; background-color: #121212; border-radius:8px; display:flex; justify-content:center; align-items:center;"
+            >
+              <i class="fa fa-globe" style="margin-right:5px;"></i> Online
+            </div></a
+          >
+          <a
+            href="/settings"
+            style="text-decoration: none; color:white; padding-bottom:8px; border-radius:8px;"
+            ><div
+              style="height:50px; background-color: #121212; border-radius:8px; display:flex; justify-content:center; align-items:center;"
+            >
+              <i class="fa fa-server" style="margin-right:5px;"></i> Status
+            </div></a
+          >
+          <button type="button" class="btn btn-success"
+            ><i
+              class="fa-solid fa-square-arrow-up-right"
+              style="margin-right:5px;"></i> Visit WiiLink</button
+          >
+        </div>
+      </div>
+    </div>
 
-            gameSearchInput.addEventListener("focus", function (e) {
-              suggestionsDiv.style.display = "block";
-            });
+    <script is:inline>
+      fetch("../../json/gamespy_titles.json")
+        .then((response) => response.json())
+        .then((gamespyTitles) => {
+          fetch("../../json/pages.json")
+            .then((response) => response.json())
+            .then((games) => {
+              var gameSearchInput = document.getElementById("game-search");
+              var suggestionsDiv = document.getElementById("suggestions");
 
-            gameSearchInput.addEventListener("blur", function (e) {
-              if (suggestionsDiv.contains(e.relatedTarget)) {
-                return;
-              }
-              suggestionsDiv.style.display = "none";
-            });
+              gameSearchInput.addEventListener("focus", function (e) {
+                suggestionsDiv.style.display = "block";
+              });
 
-            gameSearchInput.addEventListener("input", function (e) {
-              suggestionsDiv.innerHTML =
-                '<p style="margin-left:20px; font-family:Gilroy; color:white;">Suggestions:</p>'; // clear previous suggestions
-              var inputText = gameSearchInput.value.toLowerCase();
-              var counter = 0;
-              for (var i = 0; i < games.length; i++) {
-                if (games[i].gameName.toLowerCase().startsWith(inputText)) {
-                  const gameIdPrefix = games[i].gameId.substring(0, 3);
-                  const isFound = gamespyTitles.some(
-                    (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
-                  );
-                  var onlineFeatures = "";
-                  var suggestion = document.createElement("div");
-                  if (isFound) {
-                    onlineFeatures +=
-                      '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+              gameSearchInput.addEventListener("blur", function (e) {
+                if (suggestionsDiv.contains(e.relatedTarget)) {
+                  return;
+                }
+                suggestionsDiv.style.display = "none";
+              });
+
+              gameSearchInput.addEventListener("input", function (e) {
+                suggestionsDiv.innerHTML =
+                  '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
+                var inputText = gameSearchInput.value.toLowerCase();
+                var counter = 0;
+                for (var i = 0; i < games.length; i++) {
+                  if (games[i].gameName.toLowerCase().startsWith(inputText)) {
+                    const gameIdPrefix = games[i].gameId.substring(0, 3);
+                    const isFound = gamespyTitles.some(
+                      (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
+                    );
+                    var onlineFeatures = "";
+                    var suggestion = document.createElement("div");
+                    if (isFound) {
+                      onlineFeatures +=
+                        '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+                    }
+                    suggestion.innerHTML =
+                      '<a href="/online/' +
+                      games[i].gameId +
+                      '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
+                      games[i].gameId +
+                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
+                      games[i].gameId +
+                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
+                      games[i].gameId +
+                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
+                      games[i].gameId +
+                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="margin-right:20px; font-size:30px; line-height:30px; text-align:right;">' +
+                      games[i].gameName +
+                      "<br><i>" +
+                      onlineFeatures +
+                      '</i><i style="font-size:20px; opacity:0.7;">' +
+                      games[i].gameId +
+                      "</i></div></a>";
+                    suggestionsDiv.appendChild(suggestion);
+                    counter++;
                   }
-                  suggestion.innerHTML =
-                    '<a href="/online/' +
-                    games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
-                    games[i].gameId +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
-                    games[i].gameId +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
-                    games[i].gameId +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
-                    games[i].gameId +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="margin-right:20px; font-size:30px; line-height:30px; text-align:right;">' +
-                    games[i].gameName +
-                    "<br><i>" +
-                    onlineFeatures +
-                    '</i><i style="font-size:20px; opacity:0.7;">' +
-                    games[i].gameId +
-                    "</i></div></a>";
-                  suggestionsDiv.appendChild(suggestion);
-                  counter++;
+                  if (counter >= 5) {
+                    break;
+                  }
                 }
-                if (counter >= 5) {
-                  break;
+              });
+              gameSearchInput.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  const firstSuggestion =
+                    document.querySelector("#suggestionitem");
+                  if (firstSuggestion) {
+                    window.location.href = firstSuggestion.getAttribute("href");
+                  }
                 }
-              }
+              });
             });
-            gameSearchInput.addEventListener("keydown", function (e) {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                const firstSuggestion =
-                  document.querySelector("#suggestionitem");
-                if (firstSuggestion) {
-                  window.location.href = firstSuggestion.getAttribute("href");
+        });
+    </script>
+
+    <script is:inline>
+      fetch("../../json/gamespy_titles.json")
+        .then((response) => response.json())
+        .then((gamespyTitles) => {
+          fetch("../../json/pages.json")
+            .then((response) => response.json())
+            .then((games) => {
+              var gameSearchInput =
+                document.getElementById("game-search-mobile");
+              var suggestionsDiv =
+                document.getElementById("suggestions-mobile");
+
+              gameSearchInput.addEventListener("focus", function (e) {
+                suggestionsDiv.style.display = "block";
+              });
+
+              gameSearchInput.addEventListener("blur", function (e) {
+                if (suggestionsDiv.contains(e.relatedTarget)) {
+                  return;
                 }
-              }
+                suggestionsDiv.style.display = "none";
+              });
+
+              gameSearchInput.addEventListener("input", function (e) {
+                suggestionsDiv.innerHTML =
+                  '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
+                var inputText = gameSearchInput.value.toLowerCase();
+                var counter = 0;
+                for (var i = 0; i < games.length; i++) {
+                  if (games[i].gameName.toLowerCase().startsWith(inputText)) {
+                    const gameIdPrefix = games[i].gameId.substring(0, 3);
+                    const isFound = gamespyTitles.some(
+                      (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
+                    );
+                    var onlineFeatures = "";
+                    var suggestion = document.createElement("div");
+                    if (isFound) {
+                      onlineFeatures +=
+                        '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+                    }
+                    suggestion.innerHTML =
+                      '<a href="/online/' +
+                      games[i].gameId +
+                      '" id="suggestionitem" style="width:95%; height:150px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
+                      games[i].gameId +
+                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
+                      games[i].gameId +
+                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
+                      games[i].gameId +
+                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
+                      games[i].gameId +
+                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="margin-right:20px; font-size:30px; line-height:30px; text-align:right;">' +
+                      games[i].gameName +
+                      "<br><i>" +
+                      onlineFeatures +
+                      '</i><i style="font-size:20px; opacity:0.7;">' +
+                      games[i].gameId +
+                      "</i></div></a>";
+                    suggestionsDiv.appendChild(suggestion);
+                    counter++;
+                  }
+                  if (counter >= 5) {
+                    break;
+                  }
+                }
+              });
+              gameSearchInput.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  const firstSuggestion =
+                    document.querySelector("#suggestionitem");
+                  if (firstSuggestion) {
+                    window.location.href = firstSuggestion.getAttribute("href");
+                  }
+                }
+              });
             });
-          });
-      });
-  </script>
+        });
+    </script>
 
-  <style>
-    #suggestions {
-      left: 110px;
-      width: 600px;
-      max-height: 300px;
-      transform: translate(0, 10px);
-      padding-top: 5px;
-      background-color: rgb(23, 23, 23);
-      border-radius: 8px;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border: 2px solid #ffffff10;
-      border-top: 0px;
-      z-index: 10000;
-      display: none;
-      overflow-y: scroll;
-      position: relative;
-      transition: 0.3s;
-    }
+    <style>
+      #suggestions {
+        left: 110px;
+        width: 600px;
+        max-height: 300px;
+        transform: translate(0, 8px);
+        padding-top: 5px;
+        background-color: rgba(23, 23, 23, 0.965);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+        border-radius: 8px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border: 2px solid #ffffff10;
+        border-top: 0px;
+        z-index: 10000;
+        display: none;
+        overflow-y: scroll;
+        position: relative;
+        transition: 0.3s;
+      }
 
-    #suggestions::before {
-      content: "";
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(
-        to bottom,
-        rgb(255, 255, 255),
-        rgba(23, 23, 23, 0)
-      );
-      z-index: 10000;
-      pointer-events: none;
-    }
+      #suggestions-mobile {
+        width: 100%;
+        transform: translate(0, -10px);
+        padding-top: 5px;
+        background-color: rgb(23, 23, 23);
+        border-radius: 8px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border: 2px solid #ffffff10;
+        border-top: 0px;
+        z-index: 10000;
+        display: none;
+        overflow-y: scroll;
+        position: relative;
+        transition: 0.3s;
+      }
 
-    textarea:focus,
-    input:focus {
-      outline: none;
-    }
+	  #innerheader{
+		width:90%; height:80px; max-width:2000px; left:50%; transform:translate(-50%, 0); position:relative;
+	  }
 
-    .header {
-      width: 100%;
-      height: 80px;
-      z-index: 10000;
-      background-color: #121212;
-      position: relative;
-    }
+      textarea:focus,
+      input:focus {
+        outline: none;
+      }
 
-    #game-search {
-      left: 110px;
-      top: 50%;
-      transform: translate(0, -50%);
-      width: 600px;
-      height: 50px;
-      padding: 10px;
-      border-radius: 8px;
-      color: white;
-      border: 2px solid #ffffff10;
-      background-color: rgb(23, 23, 23);
-      position: relative;
-    }
-  </style>
+      .header {
+        width: 100%;
+        height: 80px;
+        z-index: 10000;
+		box-shadow: 0px 0px 18px 0px #00000080;
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+        background-color: #121212be;
+        position: fixed;
+      }
 
-  <style is:global>
-    #suggestionitem {
-      border: 2px solid #ffffff20;
-      transition: 0.3s;
-    }
+	  #mobilemenu{
+		display:none;
+	  }
 
-    #suggestionitem:hover {
-      transform: scale(1.01);
-      border: 2px solid #ffffff80;
-      transition: 0.3s;
-    }
-  </style>
+      #game-search {
+        left: 110px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 40%;
+		max-width: 600px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        border: 2px solid #ffffff10;
+        background-color: rgba(23, 23, 23, 0.786);
+		z-index: 10000;
+        position: relative;
+      }
+
+      #game-search-mobile {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        border: 2px solid #ffffff10;
+        background-color: rgb(23, 23, 23);
+        position: relative;
+      }
+    </style>
+
+    <style is:global>
+      #suggestionitem {
+        border: 2px solid #ffffff20;
+        transition: 0.3s;
+      }
+
+      #suggestionitem:hover {
+        transform: scale(1.01);
+        border: 2px solid #ffffff80;
+        transition: 0.3s;
+      }
+
+      #links {
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: flex;
+        gap: 18px;
+        position: absolute;
+      }
+
+      #betamobile {
+        bottom: 20px;
+		right:20px;
+        width: auto;
+        height: 40px;
+		padding-left:10px;
+		padding-right:10px;
+		border-radius: 8px;
+        color: white;
+		box-shadow: 0px 0px 10px 0px #00000080;
+		border:2px solid #ffffff10;
+        background-color: rgb(26, 26, 26);
+		z-index: 10;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        #game-search {
+          display: none;
+        }
+        #suggestions {
+          display: none;
+        }
+        #links {
+          display: none;
+        }
+        #betamobile {
+          display: none;
+        }
+		#mobilemenu{
+			display:block !important;
+		}
+		.header{
+			width:100%;
+			height:80px !important;
+		}
+		#innerheader{
+			left:50% !important;
+			width:calc(100% - 20px) !important;
+			transform: translate(-50%, 0) !important;
+		}
+      }
+
+      @media only screen and (max-width: 600px) {
+        #game-search {
+          display: none;
+        }
+        #suggestions {
+          display: none;
+        }
+      }
+    </style>
+  </div>
 </div>
