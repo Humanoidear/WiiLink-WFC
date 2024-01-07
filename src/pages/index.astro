@@ -10,7 +10,7 @@ import Header from "../components/Header.astro";
 <Header />
 
 <head>
-	<style> body { height:50000px; background-color: rgb(11, 0, 0); margin: 0; } </style>
+	<style> body {background-color: rgb(11, 0, 0); margin: 0; } </style>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script is:inline src="//unpkg.com/three"></script>
 	<script is:inline src="//unpkg.com/globe.gl"></script>
@@ -18,14 +18,14 @@ import Header from "../components/Header.astro";
   </head>
   
   <body>
-	<div class="header" style="top:0; left:0; width:100%; height:120px; z-index:10000; position:absolute;">
-		<div class="logo" onmouseover="eyesEmotions()" style="left:20px; top:20px; width:120px; height:120px; position:relative;">
+	<div class="herobg"></div>
+
+	<div style="top:0; left:50%; transform:translate(-50%, 0); width:90%; height:1000px; max-width:1500px; position:absolute;">
+		<div class="logo" onmouseover="eyesEmotions()" style="right:20px; top:100px; width:120px; height:120px; z-index:10000; position:absolute;">
 			<img src="/img/logo_bg.png" alt="WiiLink WFC logo" style="top:5px; position:absolute;" width="120px" height="auto">
 			<img src="/img/logo_eyes.png" alt="WiiLink WFC logo" id="eyes" style="top:50%; left:50%; transform:translate(-50%, -50%); position:absolute;" width="30px" height="auto">
 		</div>
-	</div>
-	<div class="herobg"></div>
-	<div id="main" style="top:50%; right:38px; transform:translate(0, -50%); width:550px; position:absolute;">
+		<div id="main" style="bottom:250px; right:38px; transform:translate(0, 0); width:550px; position:absolute;">
 		<h1 style="color:white; font-family: Rubik; font-weight:800; font-size:58px; text-align:right; z-index:1; position:relative;"><span class="badge" style="background-color:rgb(118, 118, 238); font-size:30px; font-family:system-ui;">WFC</span></br>WiiLink</h1>
 		<h2 style="color:white; font-family:system-ui; font-size:28px; text-align:right;">WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!</h2>
 		<div style="right:0; display:flex; gap:10px; position:absolute;">
@@ -33,6 +33,7 @@ import Header from "../components/Header.astro";
 		</div>
 	</div>
   <div style="top:180px; left:-650px; width:50%; scale:120%; z-index:1; position:absolute;" id="globeViz"></div>
+</div>
 
   <Welcome />
 
@@ -91,7 +92,7 @@ let gData = cities.map((city, i) => {
     name: ['Jess', 'Alex', 'Alex', 'Giustino', 'Pablo', 'oscie', 'Luna', 'diego', 'Sketch', 'Palapeli', 'Nova', 'Kouacc', 'Philemax', 'Jau', 'Matthe815'][i % 14],
     game: ['Samba de Amigo', 'UNO WiiWare', 'Tetris Party', 'Inazuma Eleven Go', 'Mario Kart Wii', 'Wii Chess', 'Super Smash Bros. Brawl'][i % 7],
     isOpen: [false, true, false, true, false, false, true, false][i % 8],
-    faces: ['jess.png', 'alexb.png', 'alexv.png', 'idk.png', 'pablo.png', 'idk.png', 'luna.png', 'diego.png', 'idk.png', 'palapeli.png', 'nova.png', 'kouacc.png', 'idk.png', 'idk.png', 'matthe.png'][i % 14],
+    faces: ['jess.png', 'alexb.png', 'alexv.png', 'idk.png', 'pablo.png', 'oscie.png', 'luna.png', 'diego.png', 'idk.png', 'palapeli.png', 'nova.png', 'kouacc.png', 'idk.png', 'idk.png', 'matthe.png'][i % 14],
 	icons: ['samba.png','uno.png', 'tetrisparty.png', 'inazuma.png', 'mkw.png', 'chess.png', 'smash.png'][i % 7]
   };
 });

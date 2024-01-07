@@ -12,11 +12,11 @@ export async function getStaticPaths() {
     props: {
       title: data.gameId,
       text: data.gameName,
-      desc: data.gameDesc,
+      gamespyId: data.gamespyId,
     },
   }));
 }
-const { title, text, desc } = Astro.props;
+const { title, text, gamespyId } = Astro.props;
 ---
 
 <Layout
@@ -39,6 +39,7 @@ const { title, text, desc } = Astro.props;
           id="mobilehide"
         >
           <h1 id="gameId" style="width:900px;">{title}</h1>
+          <p id="gamespyId" style="display:none;">{gamespyId}</p>
           <p
             style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
           >

@@ -20,6 +20,11 @@
         "gameName": "Minna de Bouken! Family Trainer (Demo)"
     },
     {
+        "gameId": "mariokartwii",
+        "gamespyId": "RMCP01",
+        "gameName": "Mario Kart Wii"
+    },
+    {
         "gameId": "D2SE18",
         "gameName": "Deca Sports 2 (Demo)"
     },

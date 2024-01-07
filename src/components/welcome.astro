@@ -22,28 +22,34 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", async function () {
-    const url = './json/stats.json';
+    const url = 'http://violet.wiilink24.com/api/stats';
     fetch(url)
       .then(response => response.json())
-      .then(json => showService(json[0])); // General stats
+      .then(isOnline => showService(isOnline[data[0].GamespyName])); // General stats
 
-    function showService(json) {
+    function showService(isOnline) {
       let data = document.getElementById("data");
       data.innerHTML = `
-        <div style="display:flex; flex-direction:row; justify-content:space-between; width:100%;">
-          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.online}</div>
-            <div style="font-size: 20px; font-family: Rubik; color:white;">users online</div>
-          </div>
-          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.active}</div>
-            <div style="font-size: 20px; font-family: Rubik; color:white;">active users</div>
-          </div>
-          <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-            <div style="font-size: 50px; font-family: Rubik; font-weight:800; color:white;">${json.global.groups}</div>
-            <div style="font-size: 20px; font-family: Rubik; color:white;">groups</div>
-          </div>
-        </div>
+      <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
+                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                           isOnline.online
+                        }</div>
+                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> online</div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                            isOnline.active
+                        }</div>
+                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-gamepad" style="margin-right:5px;"></i> active</div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                            isOnline.groups
+                        }</div>
+                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-users-rays" style="margin-right:5px;"></i> groups</div>
+                    </div>
+                </div>
       `;
 
       // Loop through specific games
@@ -239,11 +245,13 @@ gridItems.forEach(item => {
   }
 
   .svc-holder {
+    top:1100px;
     left: 50%;
     transform: translate(-50%, 0);
+    width:90%;
     max-width: 1500px;
     z-index: 0;
-    position: relative;
+    position: absolute;
   }
 
   .slider {
