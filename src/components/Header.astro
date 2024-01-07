@@ -3,72 +3,12 @@
 	server!</a>
 </div>
 
-<div class="header">
-  <div
-    id="innerheader"
-  >
-  <a href="/" style="text-decoration: none; color:white;">
-    <img
-      src="/img/logo.png"
-      style="top:50%; transform: translate(0, -50%); height: 60px; filter:invert(1); position:absolute;"
-    />
-</a>
-    <input
-      type="text"
-      id="game-search"
-      placeholder="   Search for any Wii title..."
-      style="font-family:inter, FontAwesome;"
-    />
-    <div id="suggestions"></div>
-    <div>
-      <div id="links">
-        <a href="/" style="text-decoration: none; color:white;"
-          ><div
-            style="height:50px; display:flex; justify-content:center; align-items:center;"
-          >
-            <i class="fa fa-home" style="margin-right:5px;"></i> Home
-          </div></a
-        >
-        <a href="/online" style="text-decoration: none; color:white;"
-          ><div
-            style="height:50px; display:flex; justify-content:center; align-items:center;"
-          >
-            <i class="fa fa-globe" style="margin-right:5px;"></i> Online
-          </div></a
-        >
-        <a href="https://status.wiilink24.com" style="text-decoration: none; color:white;"
-          ><div
-            style="height:50px; display:flex; justify-content:center; align-items:center;"
-          >
-            <i class="fa fa-server" style="margin-right:5px;"></i> Status
-          </div></a
-        >
-        <button type="button" class="btn btn-success"
-          ><a href="https://www.wiilink24.com" style="text-decoration:none; color:white;"><i
-            class="fa-solid fa-square-arrow-up-right"
-            style="margin-right:5px;"></i> Visit WiiLink</a></button
-        >
-      </div>
-      <button
-        class="btn"
-		id="mobilemenu"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample"
-		style="right:0; top:50%; transform: translate(0, -50%); position:absolute;"
-      >
-        <i class="fa fa-bars" style="font-size:30px; color:white; z-index:0; position:relative;"></i>
-      </button>
-    </div>
-  </div>
-
-  <div
+<div
     class="offcanvas offcanvas-start"
     tabindex="-1"
     id="offcanvasExample"
     aria-labelledby="offcanvasExampleLabel"
-    style="background-color:rgb(23,23,23);"
+    style="background-color:rgb(23,23,23); z-index:1000000; position:fixedº;"
   >
     <div class="offcanvas-header">
       <img
@@ -129,6 +69,67 @@
         </div>
       </div>
     </div>
+</div>
+
+<div class="header">
+  <div
+    id="innerheader"
+  >
+  <a href="/" style="text-decoration: none; color:white;">
+    <img
+      src="/img/logo.png"
+      style="top:50%; transform: translate(0, -50%); height: 60px; filter:invert(1); position:absolute;"
+    />
+</a>
+    <input
+      type="text"
+      id="game-search"
+      placeholder="   Search for any Wii title..."
+      style="font-family:inter, FontAwesome;"
+    />
+    <div id="suggestions"></div>
+    <div>
+      <div id="links">
+        <a href="/" style="text-decoration: none; color:white;"
+          ><div
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
+          >
+            <i class="fa fa-home" style="margin-right:5px;"></i> Home
+          </div></a
+        >
+        <a href="/online" style="text-decoration: none; color:white;"
+          ><div
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
+          >
+            <i class="fa fa-globe" style="margin-right:5px;"></i> Online
+          </div></a
+        >
+        <a href="https://status.wiilink24.com" style="text-decoration: none; color:white;"
+          ><div
+            style="height:50px; display:flex; justify-content:center; align-items:center;"
+          >
+            <i class="fa fa-server" style="margin-right:5px;"></i> Status
+          </div></a
+        >
+        <button type="button" class="btn btn-success"
+          ><a href="https://www.wiilink24.com" style="text-decoration:none; color:white;"><i
+            class="fa-solid fa-square-arrow-up-right"
+            style="margin-right:5px;"></i> Visit WiiLink</a></button
+        >
+      </div>
+      <button
+        class="btn"
+		id="mobilemenu"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+		style="right:0; top:50%; transform: translate(0, -50%); position:absolute;"
+      >
+        <i class="fa fa-bars" style="font-size:30px; color:white; z-index:0; position:relative;"></i>
+      </button>
+    </div>
+  </div>
 
     <script is:inline>
       fetch("../../json/gamespy_titles.json")
