@@ -34,57 +34,63 @@ const { title, text, desc } = Astro.props;
       <Header />
       <div class="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
-      <div
-        style="width:900px; padding:20px; transform:translate(70px, 18px); position:relative;" id="mobilehide"
-      >
-        <h1 id="gameId" style="width:900px;">{title}</h1>
-        <p style="width:500px; transform:translate(86px, -30px); opacity:0.5;">
-          {title}
-        </p>
-      </div>
-      <div class="data-holder" id="errnomatch">
-        <div id="img"></div>
-        <div id="data" style="width:100%; position:relative;"></div>
-      </div>
-      <div id="onlinecontainer">
-        <div id="containerdata"></div>
-        <img
-          src="/img/loading.gif"
-          id="onlineload"
-          style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;"
-          width="30px"
-        />
         <div
-          style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;"
+          style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px); position:relative;"
+          id="mobilehide"
         >
-          Statistics
+          <h1 id="gameId" style="width:900px;">{title}</h1>
+          <p
+            style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
+          >
+            {title}
+          </p>
         </div>
-      </div>
-      <p
-        style="width:90%;  max-width:2000px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
-      >
-        Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
-        Violet API.
-      </p>
-      <div
-        style="width:90%; max-width:2000px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;" id="errhide"
-      >
-        <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">
-          About the game:
-        </h1>
-        <p id="synopsis" style="font-size:20px;">
-          This title features no synopsis, why not add one yourself on gameTDB?
+        <div class="data-holder" id="errnomatch">
+          <div id="img"></div>
+          <div id="data" style="width:100%; position:relative;"></div>
+        </div>
+        <div id="onlinecontainer">
+          <div id="containerdata"></div>
+          <img
+            src="/img/loading.gif"
+            id="onlineload"
+            style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;"
+            width="30px"
+          />
+          <div
+            style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;"
+          >
+            Statistics
+          </div>
+        </div>
+        <p
+          style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
+        >
+          Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
+          Violet API.
         </p>
-        <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">
-          Screenshots:
-        </h1>
-        <div id="imgCaroussel">
-          <i style="color:white;"
-            >There has been an error fetching the data from the Google API.
-            Possible quota limit reached.</i>
+        <div
+          style="width:90%; max-width:1500px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;"
+          id="errhide"
+        >
+          <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">
+            About the game:
+          </h1>
+          <p id="synopsis" style="font-size:20px;">
+            This title features no synopsis, why not add one yourself on
+            gameTDB?
+          </p>
+          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">
+            Screenshots:
+          </h1>
+          <div id="imgCaroussel">
+            <i style="color:white;"
+              >There has been an error fetching the data from the Google API.
+              Possible quota limit reached.</i
+            >
+          </div>
         </div>
       </div>
-    </div>
       <Footer />
     </body>
   </html>
@@ -134,7 +140,7 @@ const { title, text, desc } = Astro.props;
       width: 90%;
       height: auto;
       min-height: 300px;
-      max-width: 2000px;
+      max-width: 1500px;
       border-radius: 8px;
       border: 2px solid #4287f530;
       margin-bottom: 20px;
@@ -149,7 +155,7 @@ const { title, text, desc } = Astro.props;
       left: 50%;
       transform: translate(-50%, 0);
       width: 90%;
-      max-width: 2000px;
+      max-width: 1500px;
       margin-bottom: 18px;
       display: flex;
       gap: 20px;
@@ -273,9 +279,9 @@ const { title, text, desc } = Astro.props;
         height: 100%;
         transform: translate(0, 0);
       }
-      .coverimg{
-        top:50%;
-        left:50%;
+      .coverimg {
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
         height: 100%;
         position: relative;
@@ -287,31 +293,30 @@ const { title, text, desc } = Astro.props;
       .imginner {
         height: 100%;
       }
-      .smalldatapill{
-        display:flex;
-        flex-wrap:wrap;
+      .smalldatapill {
+        display: flex;
+        flex-wrap: wrap;
       }
-      .bigdatapill{
-        display:flex;
-        flex-wrap:wrap;
+      .bigdatapill {
+        display: flex;
+        flex-wrap: wrap;
       }
-      l{
-        width:100%;
+      l {
+        width: 100%;
       }
-      #mobilehide{
-        display:none;
+      #mobilehide {
+        display: none;
       }
-      #onlinemobile{
+      #onlinemobile {
         height: 200px;
         position: relative;
       }
-      #mobilestats{
-        width:100% !important;
-        display:flex !important;
+      #mobilestats {
+        width: 100% !important;
+        display: flex !important;
         overflow-y: scroll;
       }
-      #mobileinner{
-        
+      #mobileinner {
       }
       #data {
         width: 100%;
@@ -348,6 +353,5 @@ const { title, text, desc } = Astro.props;
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
       }
     }
-
   </style>
 </Layout>

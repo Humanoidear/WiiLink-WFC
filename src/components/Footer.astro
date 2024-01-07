@@ -2,20 +2,22 @@
 const today = new Date();
 ---
 
-<footer style="margin-top:50px;">
-	<img src="/img/oliver_png.png" style="transform:translate(70px, -25px); z-index:10000; position:absolute;" height="150px">
+<footer style="margin-top:50px; z-index:10000; position:relative;">
 	<div class="copyright">
         <div class="footer-holder">
+			<img src="/img/oliver_png.png" style="transform:translate(70px, -115px); z-index:10000; position:absolute;" height="150px">
 			<img class="footer-logo" src="../../img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
 			<h4 class="slogan">WiiLink WFC</b> is an open-source Nintendo Wi-Fi Connection replacement for your Wii!</br></br>© 2020-2024 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
 		
 			
 			<div class="socials">
+				<div style="width:200px; text-align:right;">
 				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
 				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
 				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
 				<a href="https://www.patreon.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Donate!">Patreon<i style="margin-left:10px;" class="fa-brands fa-patreon"></i></div></a>
 				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				</div>
 				<div style="margin-top:15px;">
 				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Contact us!" style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
 				<a href="/404"><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Branding assets" style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
@@ -69,7 +71,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 		transform: translate(0, -50%);
 		color:white;
 		font-size: 25px;
-		width:200px;
+		width:220px;
 		justify-content:right;
 		display: flex;
 		flex-wrap: wrap;
@@ -199,11 +201,11 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	}
 
     	
-	@media only screen and (min-width:2000px) {
+	@media only screen and (min-width:1500px) {
 		.footer-holder{
 			left:50%;
 			transform:translate(-50%, 40px);
-			width:2000px;
+			width:1500px;
 			position:relative;
 		}
 	}
