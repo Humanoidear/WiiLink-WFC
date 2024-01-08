@@ -253,7 +253,6 @@ function onlineUpdater(data, j) {
                  </div>
              </div>
          `;
-       document.getElementById("containertitle").innerHTML = "";
      }
    });
 
