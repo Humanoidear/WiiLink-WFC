@@ -13,7 +13,9 @@ function render(xml) {
   var xmlDoc = xml.responseXML;
   var x = xmlDoc.getElementsByTagName("game");
   var desiredLang = "EN"; // Replace with the desired language
-  var imglang = "US";
+  var imgLang = "US";
+  var apiGroups ="https://api.wfc.wiilink24.com/api/groups";
+  var apiStats ="https://api.wfc.wiilink24.com/api/stats";
 
   for (var i = 0; i < x.length; i++) { // Loop through gamelist of gameTDB
     var id = x[i].getElementsByTagName("id")[0];
@@ -30,7 +32,7 @@ function render(xml) {
             if (data[j].GameID == gameid) { // Online support through gamespy found
               document.getElementById("onlineload").style.display = "block";
               setInterval(() => { // Update online data every 5 seconds
-                fetch("http://violet.wiilink24.com/api/stats") // Global stats for game
+                fetch(apiStats) // Global stats for game
                 .then((response) => response.json())
                 .then((isOnline) => {
                     if (isOnline[data[j].GamespyName] == undefined) {
@@ -64,7 +66,7 @@ function render(xml) {
                     }
                 });
 
-                fetch("http://violet.wiilink24.com/api/groups") // Specific group data for game
+                fetch(apiGroups) // Specific group data for game
                   .then((response) => response.json())
                   .then((group) => {
                     document.getElementById("containerdata").innerHTML = ` `;
@@ -220,13 +222,13 @@ function render(xml) {
           // Get the correct image URL based on the title's region
           switch (region) {
             case "NTSC-U":
-              imglang = "US";
+              imgLang = "US";
               break;
             case "PAL":
-              imglang = "EN";
+              imgLang = "EN";
               break;
             case "NTSC-J":
-              imglang = "JP";
+              imgLang = "JP";
               break;
           }
 
@@ -240,7 +242,7 @@ function render(xml) {
         }
           title.innerHTML =
             '<img src="https://art.gametdb.com/wii/disc/' +
-            imglang +
+            imgLang +
             "/" +
             discImage +
             '.png" alt="' +
@@ -252,7 +254,7 @@ function render(xml) {
           var bg = document.getElementsByClassName("bginner");
           bg[0].innerHTML =
             '<img src="https://art.gametdb.com/wii/coverfullHQ/' +
-            imglang +
+            imgLang +
             "/" +
             discImage +
             '.png" alt="' +
@@ -262,7 +264,7 @@ function render(xml) {
           var img = document.getElementById("img");
           img.innerHTML =
             '<div class="coverimg"><img src="https://art.gametdb.com/wii/coverfullHQ/' +
-            imglang +
+            imgLang +
             "/" +
             discImage +
             '.png" alt="' +
