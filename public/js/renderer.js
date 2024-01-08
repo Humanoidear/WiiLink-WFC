@@ -14,14 +14,17 @@ function render(xml) {
   var x = xmlDoc.getElementsByTagName("game");
   var desiredLang = "EN"; // Replace with the desired language
   var imgLang = "US";
-  var apiGroups ="https://api.wfc.wiilink24.com/api/groups";
-  var apiStats ="https://api.wfc.wiilink24.com/api/stats";
 
-  for (var i = 0; i < x.length; i++) { // Loop through gamelist of gameTDB
+  for (var i = 0; i < x.length; i++) {
+    // Loop through gamelist of gameTDB
     var id = x[i].getElementsByTagName("id")[0];
     var titleCheck = document.getElementById("gameId").textContent;
     var gamespyCheck = document.getElementById("gamespyId").textContent;
-    if (id && id.childNodes[0].nodeValue === titleCheck || id && id.childNodes[0].nodeValue === gamespyCheck) { // Check if the titleid of the query matches the titleid of the gameTDB entry
+    if (
+      (id && id.childNodes[0].nodeValue === titleCheck) ||
+      (id && id.childNodes[0].nodeValue === gamespyCheck)
+    ) {
+      // Check if the titleid of the query matches the titleid of the gameTDB entry
       var locales = x[i].getElementsByTagName("locale");
 
       fetch("../../json/gamespy_titles.json") // Check for gamespy support
@@ -29,128 +32,23 @@ function render(xml) {
         .then((data) => {
           for (let j = 0; j < data.length; j++) {
             var gameid = id.textContent.substring(0, 3);
-            if (data[j].GameID == gameid) { // Online support through gamespy found
+            if (data[j].GameID == gameid) {
+              // Online support through gamespy found
               document.getElementById("onlineload").style.display = "block";
-              setInterval(() => { // Update online data every 5 seconds
-                fetch(apiStats) // Global stats for game
-                .then((response) => response.json())
-                .then((isOnline) => {
-                    if (isOnline[data[j].GamespyName] == undefined) {
-                        document.getElementById("WFCdetails").innerHTML = `
-                            <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
-                        `;
-                    } else {
-                        document.getElementById("WFCdetails").innerHTML = `
-                            <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
-                                <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                                    <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                                        isOnline[data[j].GamespyName].online
-                                    }</div>
-                                    <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> online</div>
-                                </div>
-                                <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                                    <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                                        isOnline[data[j].GamespyName].active
-                                    }</div>
-                                    <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-gamepad" style="margin-right:5px;"></i> active</div>
-                                </div>
-                                <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                                    <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                                        isOnline[data[j].GamespyName].groups
-                                    }</div>
-                                    <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-users-rays" style="margin-right:5px;"></i> groups</div>
-                                </div>
-                            </div>
-                        `;
-                        document.getElementById("containertitle").innerHTML = "";
-                    }
-                });
-
-                fetch(apiGroups) // Specific group data for game
-                  .then((response) => response.json())
-                  .then((group) => {
-                    document.getElementById("containerdata").innerHTML = ` `;
-                    for (let k = 0; k < group.length; k++) {
-                      if (group[k].game == data[j].GamespyName) { // Check for online groups in the specific game
-                        switch (group[k].type) {
-                          case "anybody":
-                            group[k].type =
-                              'background-color:#3cc761;"><i class="fa-solid fa-earth-americas"></i> Public';
-                            break;
-                          case "private":
-                            group[k].type =
-                              'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
-                            break;
-                        }
-                        group[k].host = group[k].players[group[k].host].name;
-                        if (data[j].GamespyName == "mariokartwii") { // MKW exclusive data
-                          group[k].rk = group[k].rk.substring(0, 2);
-                          switch (group[k].rk) {
-                            case "vs":
-                              group[k].rk =
-                                'background-color:#3c86c7;"><i class="fa-solid fa-motorcycle"></i> Versus';
-                              break;
-                            case "bt":
-                              group[k].rk =
-                                'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
-                              break;
-                          }
-                        }
-                        if (group[k].suspend) {
-                          group[k].suspend =
-                            'background-color:#c7403c;"><i class="fa-solid fa-door-closed"></i> Not joinable';
-                        } else {
-                          group[k].suspend =
-                            'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
-                        }
-
-                        document.getElementById(
-                          "containerdata"
-                        ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
-                        var playerData = "";
-                        document.getElementById(
-                          "onlinecontainer"
-                        ).style.display = "block";
-                        for (let playerIndex in group[k].players) {
-                          var player = group[k].players[playerIndex];
-                          playerData += `
-                            <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
-                             <div>
-                              <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${player.name}</div>
-                              <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
-                             </div>
-                             <div style="text-align:right;">
-                              <div style="font-size: 15px; font-family: Rubik; color:white;">${player.pid} <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${player.eb} / VR:${player.ev} <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
-                              <div style="font-size: 15px; font-family: Rubik; color:white;">${player.count} <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
-                             </div>
-                            </div>
-                            `;
-                        }
-                        document.getElementById("containerdata").innerHTML +=
-                          '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
-                          playerData +
-                          "</div><hr>";
-                      } else { // There is no online data for this game at the moment, hide the statistics container because it has no meaningful data
-                        document.getElementById(
-                          "onlinecontainer"
-                        ).style.display += "none";
-                      }
-                    }
-                    document.getElementById("containerdata").innerHTML +=
-                      '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
-                      data[j].GamespyName +
-                      "</div>";
-                  });
+              onlineUpdater(data, j); // Fetch data on page load
+              setInterval(() => {
+               onlineUpdater(data, j); // Fetch data on a 5 second interval
               }, 5000);
             }
           }
         });
 
-      for (var j = 0; j < locales.length; j++) { // Loop through available locales
+      for (var j = 0; j < locales.length; j++) {
+        // Loop through available locales
         var region = x[i].getElementsByTagName("region")[0].textContent;
-        if (locales[j].getAttribute("lang") === desiredLang) { // Check if the locale matches the desired language (to be added at a later date)
-          
+        if (locales[j].getAttribute("lang") === desiredLang) {
+          // Check if the locale matches the desired language (to be added at a later date)
+
           // Get all the data from the XML
           var trueName = x[i].getAttribute("name");
           var developer = x[i].getElementsByTagName("developer")[0].textContent;
@@ -237,9 +135,9 @@ function render(xml) {
           var discImage = "";
           if (gamespyCheck) {
             discImage = gamespyCheck;
-        } else {
+          } else {
             discImage = titleCheck;
-        }
+          }
           title.innerHTML =
             '<img src="https://art.gametdb.com/wii/disc/' +
             imgLang +
@@ -321,6 +219,124 @@ function render(xml) {
     });
 }
 
+function onlineUpdater(data, j) {
+  var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
+  var apiStats = "https://api.wfc.wiilink24.com/api/stats";
+   // Update online data every 5 seconds
+   fetch(apiStats) // Global stats for game
+   .then((response) => response.json())
+   .then((isOnline) => {
+     if (isOnline[data[j].GamespyName] == undefined) {
+       document.getElementById("WFCdetails").innerHTML = `
+             <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
+         `;
+     } else {
+       document.getElementById("WFCdetails").innerHTML = `
+             <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
+                 <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                     <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                       isOnline[data[j].GamespyName].online
+                     }</div>
+                     <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> online</div>
+                 </div>
+                 <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                     <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                       isOnline[data[j].GamespyName].active
+                     }</div>
+                     <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-gamepad" style="margin-right:5px;"></i> active</div>
+                 </div>
+                 <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
+                     <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
+                       isOnline[data[j].GamespyName].groups
+                     }</div>
+                     <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-users-rays" style="margin-right:5px;"></i> groups</div>
+                 </div>
+             </div>
+         `;
+       document.getElementById("containertitle").innerHTML = "";
+     }
+   });
+
+ fetch(apiGroups) // Specific group data for game
+   .then((response) => response.json())
+   .then((group) => {
+     document.getElementById("containerdata").innerHTML = ` `;
+     for (let k = 0; k < group.length; k++) {
+       if (group[k].game == data[j].GamespyName) {
+         // Check for online groups in the specific game
+         switch (group[k].type) {
+           case "anybody":
+             group[k].type =
+               'background-color:#3cc761;"><i class="fa-solid fa-earth-americas"></i> Public';
+             break;
+           case "private":
+             group[k].type =
+               'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
+             break;
+         }
+         group[k].host = group[k].players[group[k].host].name;
+         if (data[j].GamespyName == "mariokartwii") {
+           // MKW exclusive data
+           group[k].rk = group[k].rk.substring(0, 2);
+           switch (group[k].rk) {
+             case "vs":
+               group[k].rk =
+                 'background-color:#3c86c7;"><i class="fa-solid fa-motorcycle"></i> Versus';
+               break;
+             case "bt":
+               group[k].rk =
+                 'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
+               break;
+           }
+         }
+         if (group[k].suspend) {
+           group[k].suspend =
+             'background-color:#c7403c;"><i class="fa-solid fa-door-closed"></i> Not joinable';
+         } else {
+           group[k].suspend =
+             'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
+         }
+
+         document.getElementById(
+           "containerdata"
+         ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+         var playerData = "";
+         document.getElementById(
+           "onlinecontainer"
+         ).style.display = "block";
+         for (let playerIndex in group[k].players) {
+           var player = group[k].players[playerIndex];
+           playerData += `
+             <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
+              <div>
+               <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${player.name}</div>
+               <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
+              </div>
+              <div style="text-align:right;">
+               <div style="font-size: 15px; font-family: Rubik; color:white;">${player.pid} <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
+               <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${player.eb} / VR:${player.ev} <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+               <div style="font-size: 15px; font-family: Rubik; color:white;">${player.count} <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+              </div>
+             </div>
+             `;
+         }
+         document.getElementById("containerdata").innerHTML +=
+           '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
+           playerData +
+           "</div><hr>";
+       } else {
+         // There is no online data for this game at the moment, hide the statistics container because it has no meaningful data
+         document.getElementById(
+           "onlinecontainer"
+         ).style.display += "none";
+       }
+     }
+     document.getElementById("containerdata").innerHTML +=
+       '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
+       data[j].GamespyName +
+       "</div>";
+   });
+}
 
 // Other functions
 
