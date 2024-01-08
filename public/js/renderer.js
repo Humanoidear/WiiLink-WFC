@@ -301,9 +301,15 @@ function onlineUpdater(data, j) {
            "containerdata"
          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
          var playerData = "";
+         var numberOfPlayers = Object.keys(group[k].players).length;
          document.getElementById(
-           "onlinecontainer"
-         ).style.display = "block";
+          "onlinecontainer"
+        ).style.display = "block"; 
+         if (numberOfPlayers == 0) {
+            document.getElementById(
+              "onlinecontainer"
+            ).style.display = "none";
+          }
          for (let playerIndex in group[k].players) {
            var player = group[k].players[playerIndex];
            playerData += `
