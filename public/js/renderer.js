@@ -55,9 +55,9 @@ function render(xml) {
           var region = x[i].getElementsByTagName("region")[0]?.textContent || 'Unknown';
           var languages = x[i].getElementsByTagName("languages")[0]?.textContent || 'Unknown';
           var publisher = x[i].getElementsByTagName("publisher")[0]?.textContent || 'Unknown';
-          var date = x[i].getElementsByTagName("date")[0]?.getAttribute("year") || 'Unknown';
-          var month = x[i].getElementsByTagName("date")[0]?.getAttribute("month") || 'Unknown';
-          var day = x[i].getElementsByTagName("date")[0]?.getAttribute("day") || 'Unknown';
+          var date = x[i].getElementsByTagName("date")[0]?.getAttribute("year") || 'YYYY';
+          var month = x[i].getElementsByTagName("date")[0]?.getAttribute("month") || 'MM';
+          var day = x[i].getElementsByTagName("date")[0]?.getAttribute("day") || 'DD';
           var genre = x[i].getElementsByTagName("genre")[0]?.textContent || 'Unknown';
           // Format the data in a more appealing way
           genre = genre
