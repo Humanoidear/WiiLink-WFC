@@ -39,7 +39,7 @@ const { title, text, gamespyId } = Astro.props;
           style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px); position:relative;"
           id="mobilehide"
         >
-          <h1 id="gameId" style="width:900px;">{title}</h1>
+          <h1 id="gameId" style="width:900px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">{title}</h1>
           <p id="gamespyId" style="display:none;">{gamespyId}</p>
           <p
             style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
@@ -266,6 +266,54 @@ const { title, text, gamespyId } = Astro.props;
     .coverimg:hover .imginner {
       transform: translate(0%, 0);
       transition: 0.5s;
+    }
+
+    @media only screen and (max-width: 1500px) {
+      .genre{
+        grid-column: auto / span 6 !important;
+      }
+      .rating{
+        grid-column: auto / span 5 !important;
+      }
+    }
+
+    @media only screen and (max-width: 1390px) {
+
+      .data-holder {
+        width: 95% !important;
+        flex-direction: column;
+      }
+      #onlinecontainer {
+        width: 95% !important;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0);
+      }
+      .coverimg {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        position: relative;
+      }
+      .coverimg:hover {
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+      }
+      .imginner {
+        height: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 1264px) {
+      #extradata{
+        grid-column: auto / span 14 !important;
+      }
+      #publisher{
+        grid-column: auto / span 6 !important;
+      }
     }
 
     @media only screen and (max-width: 1000px) {

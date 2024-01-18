@@ -50,17 +50,15 @@ function render(xml) {
           // Check if the locale matches the desired language (to be added at a later date)
 
           // Get all the data from the XML
-          var trueName = x[i].getAttribute("name");
-          var developer = x[i].getElementsByTagName("developer")[0].textContent;
-          var region = x[i].getElementsByTagName("region")[0].textContent;
-          var languages = x[i].getElementsByTagName("languages")[0].textContent;
-          var publisher = x[i].getElementsByTagName("publisher")[0].textContent;
-          var date = x[i].getElementsByTagName("date")[0].getAttribute("year");
-          var month = x[i]
-            .getElementsByTagName("date")[0]
-            .getAttribute("month");
-          var day = x[i].getElementsByTagName("date")[0].getAttribute("day");
-          var genre = x[i].getElementsByTagName("genre")[0].textContent;
+          var trueName = x[i].getAttribute("name") || 'Unknown';
+          var developer = x[i].getElementsByTagName("developer")[0]?.textContent || 'Unknown';
+          var region = x[i].getElementsByTagName("region")[0]?.textContent || 'Unknown';
+          var languages = x[i].getElementsByTagName("languages")[0]?.textContent || 'Unknown';
+          var publisher = x[i].getElementsByTagName("publisher")[0]?.textContent || 'Unknown';
+          var date = x[i].getElementsByTagName("date")[0]?.getAttribute("year") || 'Unknown';
+          var month = x[i].getElementsByTagName("date")[0]?.getAttribute("month") || 'Unknown';
+          var day = x[i].getElementsByTagName("date")[0]?.getAttribute("day") || 'Unknown';
+          var genre = x[i].getElementsByTagName("genre")[0]?.textContent || 'Unknown';
           // Format the data in a more appealing way
           genre = genre
             .split(",")
@@ -173,8 +171,8 @@ function render(xml) {
             ' Game Boxart" class="imginner"></div>';
 
           var data = document.getElementById("data");
-          data.innerHTML = `<div class="smalldatapill"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
-          data.innerHTML += `<div class="bigdatapill"><l style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center; position:relative;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
+          data.innerHTML = `<div class="smalldatapill"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" id="publisher" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
+          data.innerHTML += `<div class="bigdatapill"><l class="genre"  style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l class="rating"  style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center; position:relative;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
 
           var playIcon1 = document.getElementById("wifino");
           var playIcon2 = document.getElementById("onlineplaycontainer");
@@ -405,13 +403,21 @@ function getRating(rating) {
       return '<img src="/img/pegi7.jpg" alt="Pegi 7" style="margin-top:20px;"width="130px">';
 
     case "12":
-      return '<img src="/img/pegi12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+      if (classification == "PEGI") {
+        return '<img src="/img/pegi12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+      } else {
+        return '<img src="/img/grac-12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+      }
 
     case "16":
       return '<img src="/img/pegi16.jpg" alt="Pegi 16" style="margin-top:20px;"width="130px">';
 
     case "18":
-      return '<img src="/img/pegi18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+      if (classification == "PEGI") {
+        return '<img src="/img/pegi18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+      } else {
+        return '<img src="/img/grac-18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+      }
 
     case "EC":
       return '<img src="/img/esrb-ec.webp" alt="ESRB EC" style="margin-top:20px;"width="130px">';
@@ -442,6 +448,12 @@ function getRating(rating) {
 
     case "Z":
       return '<img src="/img/cero-z.png" alt="CERO Z" style="margin-top:20px;"width="130px">';
+
+    case "ALL":
+      return '<img src="/img/grac-all.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
+
+    case "15":
+      return '<img src="/img/grac-15.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
 
     default:
       return "<b>Oh snap!</b><br>This title does not have an age rating.";
@@ -509,9 +521,9 @@ function getController(xml, i) {
         break;
       case "balanceboard":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="50px">`;
         }
         break;
       case "zapper":
@@ -551,9 +563,9 @@ function getController(xml, i) {
         break;
       case "wiispeak":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="40px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="40px">`;
         }
         break;
       case "udraw":

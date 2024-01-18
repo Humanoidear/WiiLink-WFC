@@ -35,6 +35,12 @@ var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 })
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 </script>
 
 <style>
@@ -47,7 +53,6 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
     background-color: rgb(28, 28, 28);
     top:0px;
-    z-index: 5;
     background-size: cover;
     animation: changecolor 10s linear infinite;
 }
@@ -76,6 +81,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 		justify-content:right;
 		display: flex;
 		flex-wrap: wrap;
+		z-index:100;
 		position: absolute;
 	}
 	.slogan{
