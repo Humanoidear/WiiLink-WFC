@@ -126,7 +126,10 @@ function render(xml) {
               imgLang = "EN";
               break;
             case "NTSC-J":
-              imgLang = "JP";
+              imgLang = "JA";
+              break;
+            case "NTSC-K":
+              imgLang = "KO";
               break;
           }
 
@@ -286,6 +289,10 @@ function onlineUpdater(data, j) {
                group[k].rk =
                  'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
                break;
+              default:
+                group[k].rk =
+                'background-color:#3cc761;"><i class="fa-solid fa-question"></i> Unknown';
+                break;
            }
          }
          if (group[k].suspend) {
@@ -422,19 +429,19 @@ function getRating(rating) {
       return '<img src="/img/esrb-m.webp" alt="ESRB M" style="margin-top:20px;"width="130px">';
 
     case "A":
-      return '<img src="/img/cero-a.webp" alt="CERO A" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/cero-a.png" alt="CERO A" style="margin-top:20px;"width="130px">';
 
     case "B":
-      return '<img src="/img/cero-b.webp" alt="CERO B" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/cero-b.png" alt="CERO B" style="margin-top:20px;"width="130px">';
 
     case "C":
-      return '<img src="/img/cero-c.webp" alt="CERO C" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/cero-c.png" alt="CERO C" style="margin-top:20px;"width="130px">';
 
     case "D":
-      return '<img src="/img/cero-d.webp" alt="CERO D" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/cero-d.png" alt="CERO D" style="margin-top:20px;"width="130px">';
 
     case "Z":
-      return '<img src="/img/cero-z.webp" alt="CERO Z" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/cero-z.png" alt="CERO Z" style="margin-top:20px;"width="130px">';
 
     default:
       return "<b>Oh snap!</b><br>This title does not have an age rating.";
