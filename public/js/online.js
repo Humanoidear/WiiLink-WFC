@@ -1,6 +1,4 @@
 var onlineNow = document.getElementById("online-now");
-var enhanced = document.getElementById("enhanced");
-var all = document.getElementById("all");
 var trueName = "Unknown";
 var developer = "Unknown";
 var publisher = "Unknown";
@@ -25,6 +23,9 @@ var hash2 = "Unknown";
 var hash3 = "Unknown";
 var imgLang = "Unknown";
 var id = "Unknown";
+
+var totalPlayers = 0;
+var totalGames = 0;
 
 function render(xml, GameID) {
   var xmlDoc = xml.responseXML;
@@ -121,6 +122,8 @@ function render(xml, GameID) {
           }
 
           var titleData = [trueName, developer, publisher, region, date, month, day, genre, rating, classification, wifiPlayers, isSupported, inputPlayers, languages, mainGenre, romName, romSize, romVersion, hash, hash2, hash3, imgLang, id];
+          console.log(totalPlayers + " players | " + totalGames + " games");
+          
           return titleData;
         }
       }
@@ -172,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 isBig = "grid-column: auto / span 1; grid-row: auto / span 1";
               }
 
+              totalGames ++;
+              totalPlayers += extraData[0];
+
               onlineNow.innerHTML +=
                 '<a href="/online/' + titleDataReturn[22] + '" class="card-online" style="' + isBig + '"><img src="https://art.gametdb.com/wii/cover/US/' +
                 titleDataReturn[22] +
@@ -207,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
               document.getElementById("main").style.transform = "translate(-50%, -50%)";
             }
           }
+          onlineNow.innerHTML += "<p style='opacity:0.3;'>Now serving <b>" + totalPlayers + "</b> <i class='fa-solid fa-user' style='margin-right:5px;'></i> players in <b>" + totalGames + "</b> <i class='fa-solid fa-gamepad' style='margin-right:5px;'></i> games!</p>";
         });
     })
     .catch((error) => console.error(error));
