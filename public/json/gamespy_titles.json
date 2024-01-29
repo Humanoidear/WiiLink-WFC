@@ -1128,6 +1128,12 @@
         "Title": "Panel de Pon DS"
     },
     {
+        "GameID": "AMCE",
+        "GamespyName": "mariokartds",
+        "Type": "DS",
+        "Title": "Mario Kart DS"
+    },
+    {
         "GameID": "WPK",
         "GamespyName": "",
         "Type": "WiiWare",
