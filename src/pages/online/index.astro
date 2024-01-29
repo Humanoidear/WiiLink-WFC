@@ -261,6 +261,17 @@ const { title, text, desc } = Astro.props;
       filter:blur(12px) opacity(0.10) grayscale(0.3);
       transition: 0.2s;
     }
+
+    @media only screen and (max-width: 800px) {
+    .card-online:hover {
+      border: 2px solid #ffffff70;
+      transform: scale(1.00);
+      transition: 0.2s;
+    }
+    .card-online {
+      width:100%;
+    }
+    }
   </style>
 
   <style>
@@ -375,6 +386,20 @@ const { title, text, desc } = Astro.props;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 20px;
       position: relative;
+    }
+
+    @media only screen and (max-width: 800px) {
+      #online-now {
+      margin-bottom:50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+    #noResults {
+      top:80px;
+      width:200px;
+    }
     }
   </style>
 </Layout>

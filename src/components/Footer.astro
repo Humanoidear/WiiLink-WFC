@@ -2,10 +2,10 @@
 const today = new Date();
 ---
 
-<footer style="margin-top:50px; z-index:10000; position:relative;">
+<footer style="margin-top:50px; z-index:10; position:relative;">
 	<div class="copyright">
         <div class="footer-holder">
-			<img src="/img/oliver_png.png" style="transform:translate(70px, -115px); z-index:10000; position:absolute;" height="150px" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Hi! I'm Oliver, WFC lead developer's cat!" data-bs-trigger="hover">
+			<img src="/img/oliver_png.png" class="oliver" height="150px" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Hi! I'm Oliver, WFC lead developer's cat!" data-bs-trigger="hover">
 			<img class="footer-logo" src="../../img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
 			<h4 class="slogan">WiiLink WFC</b> is an open-source Nintendo Wi-Fi Connection replacement for your Wii!</br></br>© 2020-2024 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
 		
@@ -113,6 +113,11 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 		margin:5px;
 		margin-top: 10px;
 	}
+	.oliver {
+		transform:translate(70px, -115px);
+		z-index:10000;
+		position:absolute;
+	}
 	@media only screen and (max-width: 1150px) {
 		.logohold{
 			display: none;
@@ -125,7 +130,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 			height:auto;
 			position: relative;
 		}
-
+		.oliver {
+			display: none;
+		}
 		.top{
 		top:0;
 		left:50%;
