@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
               document.getElementById("main").style.transform = "translate(-50%, -50%)";
             }
           }
-          onlineNow.innerHTML += "<p style='opacity:0.3;'>Now serving <b>" + totalPlayers + "</b> <i class='fa-solid fa-user' style='margin-right:5px;'></i> players in <b>" + totalGames + "</b> <i class='fa-solid fa-gamepad' style='margin-right:5px;'></i> games!</p>";
+          document.getElementById("onlineInfo").innerHTML += "<p style='opacity:0.3;'>Now serving <b>" + totalPlayers + "</b> <i class='fa-solid fa-user' style='margin-right:5px;'></i> players in <b>" + totalGames + "</b> <i class='fa-solid fa-gamepad' style='margin-right:5px;'></i> games!</p>";
         });
     })
     .catch((error) => console.error(error));

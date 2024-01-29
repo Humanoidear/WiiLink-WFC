@@ -82,6 +82,7 @@ const { title, text, desc } = Astro.props;
     </div>
     <div class="online-now-holder">
       <div id="online-now"></div>
+      <div id="onlineInfo"></div>
       <div class="alert alert-light" style="color:white; background-color:#121212; border:2px solid #ffffff20;" role="alert">
        <b>Heads up!</b><br>To search for a particular game, type in the <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">search box</span> above. You can also  <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">filter</span> online-only results by checking the <i class="fa-solid fa-earth-americas"></i> button.
       </div>
@@ -375,11 +376,14 @@ const { title, text, desc } = Astro.props;
       position: relative;
     }
     #online-now {
-      margin-bottom:50px;
+      margin-bottom:20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 20px;
       position: relative;
+    }
+    #onlineInfo{
+      margin-bottom:50px;
     }
     #enhanced {
       display: grid;

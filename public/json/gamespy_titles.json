@@ -1122,6 +1122,12 @@
         "Title": "Pit Crew Panic!"
     },
     {
+        "GameID": "JBO",
+        "GamespyName": "pandeponds",
+        "Type": "DS",
+        "Title": "Panel de Pon DS"
+    },
+    {
         "GameID": "WPK",
         "GamespyName": "",
         "Type": "WiiWare",
