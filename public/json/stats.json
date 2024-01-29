@@ -1,4 +1,4 @@
-[
+
   {
     "global": {
       "online": 6,
@@ -11,14 +11,34 @@
       "groups": 2
     },
     "smashbrosxwii": {
-      "online": 0,
+      "online": 1,
       "active": 0,
       "groups": 0
     },
     "mschargedwii": {
-        "online": 0,
+        "online": 1,
         "active": 0,
+        "groups": 0
+      },
+      "segaracingwii": {
+        "online": 1,
+        "active": 5345,
+        "groups": 0
+      },
+      "simcitywii": {
+        "online": 1,
+        "active": 1,
+        "groups": 0
+      },
+      "chocotokiwii": {
+        "online": 1,
+        "active": 2,
+        "groups": 0
+      },
+      "kororinpa2wii": {
+        "online": 1,
+        "active": 4,
         "groups": 0
       }
   }
-]
+

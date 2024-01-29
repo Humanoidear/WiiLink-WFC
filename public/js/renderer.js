@@ -37,7 +37,7 @@ function render(xml) {
               document.getElementById("onlineload").style.display = "block";
               onlineUpdater(data, j); // Fetch data on page load
               setInterval(() => {
-               onlineUpdater(data, j); // Fetch data on a 5 second interval
+                onlineUpdater(data, j); // Fetch data on a 5 second interval
               }, 5000);
             }
           }
@@ -50,15 +50,25 @@ function render(xml) {
           // Check if the locale matches the desired language (to be added at a later date)
 
           // Get all the data from the XML
-          var trueName = x[i].getAttribute("name") || 'Unknown';
-          var developer = x[i].getElementsByTagName("developer")[0]?.textContent || 'Unknown';
-          var region = x[i].getElementsByTagName("region")[0]?.textContent || 'Unknown';
-          var languages = x[i].getElementsByTagName("languages")[0]?.textContent || 'Unknown';
-          var publisher = x[i].getElementsByTagName("publisher")[0]?.textContent || 'Unknown';
-          var date = x[i].getElementsByTagName("date")[0]?.getAttribute("year") || 'YYYY';
-          var month = x[i].getElementsByTagName("date")[0]?.getAttribute("month") || 'MM';
-          var day = x[i].getElementsByTagName("date")[0]?.getAttribute("day") || 'DD';
-          var genre = x[i].getElementsByTagName("genre")[0]?.textContent || 'Unknown';
+          var trueName = x[i].getAttribute("name") || "Unknown";
+          var developer =
+            x[i].getElementsByTagName("developer")[0]?.textContent || "Unknown";
+          var region =
+            x[i].getElementsByTagName("region")[0]?.textContent || "Unknown";
+          var languages =
+            x[i].getElementsByTagName("languages")[0]?.textContent || "Unknown";
+          var publisher =
+            x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
+          var date =
+            x[i].getElementsByTagName("date")[0]?.getAttribute("year") ||
+            "YYYY";
+          var month =
+            x[i].getElementsByTagName("date")[0]?.getAttribute("month") || "MM";
+          var day =
+            x[i].getElementsByTagName("date")[0]?.getAttribute("day") || "DD";
+          var genre =
+            x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
+          var mainGenre = genre.split(",")[0].trim();
           // Format the data in a more appealing way
           genre = genre
             .split(",")
@@ -74,20 +84,21 @@ function render(xml) {
               );
             })
             .join("<br>");
-          var rating = x[i]
+            var rating = x[i]
             .getElementsByTagName("rating")[0]
-            .getAttribute("value");
-          rating = getRating(rating);
+            ?.getAttribute("value") || "Unknown";
           var classification = x[i]
             .getElementsByTagName("rating")[0]
-            .getAttribute("type");
+            ?.getAttribute("type") || "Unknown";
 
+            rating = getRating(rating, classification);
+          
           var wifiPlayers = x[i]
             .getElementsByTagName("wi-fi")[0]
-            .getAttribute("players");
+            ?.getAttribute("players") || "Unknown";
           var onlineSupport = x[i]
             .getElementsByTagName("wi-fi")[0]
-            .getElementsByTagName("feature");
+            ?.getElementsByTagName("feature") || [];
           var isSupported = Array.from(onlineSupport)
             .map((feature) => feature.textContent)
             .join(" | ");
@@ -202,37 +213,92 @@ function render(xml) {
     }
   }
 
-  // Google image search for the "screenshots" area
-  var toSearch =
-    "https://www.googleapis.com/customsearch/v1?cx=14ab9bd483f1f428f&key=AIzaSyAEcFx8fW0oPfZGYpzWTgvO5fu9QBac7VY" +
-    x[i].getElementsByTagName("locale")[0].getElementsByTagName("title")[0]
-      .textContent +
-    "+Wii+screenshots&searchType=image";
-  fetch(toSearch)
-    .then((response) => response.json())
-    .then((data) => {
-      let images = data.items.map((item) => item.link);
-      document.getElementById("imgCaroussel").innerHTML = "";
-      for (let i = 0; i < 5; i++) {
-        var div = document.getElementById("imgCaroussel");
-        div.innerHTML += `<img src="${images[i]}" height="300px" style="border-radius:8px; margin-right:20px;  background-color: #ffffff10;">`;
-      }
-    });
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  var sameGenreTitles = [];
+  for (var i = 0; i < x.length; i++) {
+    var genre = x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
+    genre = genre.split(",")[0].trim();
+
+    if (mainGenre == genre) {
+      var trueName = x[i].getAttribute("name") || "Unknown";
+      var tid =
+        x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
+      var disc = x[i].getElementsByTagName("disc")[0]?.textContent || "Unknown";
+      var publisher =
+        x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
+      var releaseYear =
+      x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
+      sameGenreTitles.push({
+        title: trueName,
+        tid,
+        disc,
+        publisher,
+        releaseYear,
+        genre,
+      });
+    }
+  }
+
+  shuffleArray(sameGenreTitles);
+  sameGenreTitles = sameGenreTitles.slice(0, 4);
+  document.getElementById("recommendedTitles").innerHTML = "";
+  var genreIconClass = getIconForGenre(mainGenre);
+  document.getElementById("genreSuggestion").innerHTML = '<i class="fas ' + genreIconClass + '" style="margin-right:5px;"></i> ' + mainGenre;
+
+
+  sameGenreTitles.forEach(function (game) {
+    document.getElementById("recommendedTitles").innerHTML +=
+      '<a style="text-decoration:none;" href="/online/' +
+      game.tid +
+      '" <div class="recommended-title"><img src="https://art.gametdb.com/wii/cover/US/' +
+      game.tid +
+      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/cover/JA/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/cover/KO/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="transform:scale(110%); filter:blur(8px) opacity(0.1) grayscale(0.7); position:absolute;" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="https://art.gametdb.com/wii/disc/US/' +
+      game.tid +
+      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/disc/JA/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/disc/KO/' +
+      game.tid +
+      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" width="70px">' +
+      "<div style='text-align:right;'><t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'> " +
+      game.title +
+      "</t><i>" +
+      game.tid +
+      "</i></div></div><div style='bottom:0; width:100%; padding:10px; display:flex; justify-content:space-between; position:relative;'><p style='margin-bottom:0px; text-align:left;'><i class='fa fa-code'></i> " +
+      game.publisher +
+      "</p>" +
+      "<p style='margin-bottom:0px; text-align:right;'>" +
+      game.releaseYear +
+      " <i class='fa fa-calendar'></i></p></div></div>";
+});
 }
 
 function onlineUpdater(data, j) {
-  var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
-  var apiStats = "https://api.wfc.wiilink24.com/api/stats";
-   // Update online data every 5 seconds
-   fetch(apiStats) // Global stats for game
-   .then((response) => response.json())
-   .then((isOnline) => {
-     if (isOnline[data[j].GamespyName] == undefined) {
-       document.getElementById("WFCdetails").innerHTML = `
+  var apiGroups = "../../json/group.json";
+  var apiStats = "../../json/stats.json";
+
+  fetch(apiStats) // Global stats for game
+    .then((response) => response.json())
+    .then((isOnline) => {
+      if (isOnline[data[j].GamespyName] == undefined) {
+        document.getElementById("WFCdetails").innerHTML = `
              <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
          `;
-     } else {
-       document.getElementById("WFCdetails").innerHTML = `
+      } else {
+        document.getElementById("WFCdetails").innerHTML = `
              <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
                  <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
                      <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
@@ -254,69 +320,65 @@ function onlineUpdater(data, j) {
                  </div>
              </div>
          `;
-     }
-   });
+      }
+    });
 
- fetch(apiGroups) // Specific group data for game
-   .then((response) => response.json())
-   .then((group) => {
-     document.getElementById("containerdata").innerHTML = ` `;
-     for (let k = 0; k < group.length; k++) {
-       if (group[k].game == data[j].GamespyName) {
-         // Check for online groups in the specific game
-         switch (group[k].type) {
-           case "anybody":
-             group[k].type =
-               'background-color:#3cc761;"><i class="fa-solid fa-earth-americas"></i> Public';
-             break;
-           case "private":
-             group[k].type =
-               'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
-             break;
-         }
-         group[k].host = group[k].players[group[k].host].name;
-         if (data[j].GamespyName == "mariokartwii") {
-           // MKW exclusive data
-           group[k].rk = group[k].rk.substring(0, 2);
-           switch (group[k].rk) {
-             case "vs":
-               group[k].rk =
-                 'background-color:#3c86c7;"><i class="fa-solid fa-motorcycle"></i> Versus';
-               break;
-             case "bt":
-               group[k].rk =
-                 'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
-               break;
+  fetch(apiGroups) // Specific group data for game
+    .then((response) => response.json())
+    .then((group) => {
+      document.getElementById("containerdata").innerHTML = ` `;
+      for (let k = 0; k < group.length; k++) {
+        if (group[k].game == data[j].GamespyName) {
+          // Check for online groups in the specific game
+          switch (group[k].type) {
+            case "anybody":
+              group[k].type =
+                'background-color:#3cc761;"><i class="fa-solid fa-earth-americas"></i> Public';
+              break;
+            case "private":
+              group[k].type =
+                'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
+              break;
+          }
+          group[k].host = group[k].players[group[k].host].name;
+          if (data[j].GamespyName == "mariokartwii") {
+            // MKW exclusive data
+            group[k].rk = group[k].rk.substring(0, 2);
+            switch (group[k].rk) {
+              case "vs":
+                group[k].rk =
+                  'background-color:#3c86c7;"><i class="fa-solid fa-motorcycle"></i> Versus';
+                break;
+              case "bt":
+                group[k].rk =
+                  'background-color:#9f3cc7;"><i class="fa-solid fa-coins"></i> Battle';
+                break;
               default:
                 group[k].rk =
-                'background-color:#3cc761;"><i class="fa-solid fa-question"></i> Unknown';
+                  'background-color:#3cc761;"><i class="fa-solid fa-question"></i> Unknown';
                 break;
-           }
-         }
-         if (group[k].suspend) {
-           group[k].suspend =
-             'background-color:#c7403c;"><i class="fa-solid fa-door-closed"></i> Not joinable';
-         } else {
-           group[k].suspend =
-             'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
-         }
-
-         document.getElementById(
-           "containerdata"
-         ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
-         var playerData = "";
-         var numberOfPlayers = Object.keys(group[k].players).length;
-         document.getElementById(
-          "onlinecontainer"
-        ).style.display = "block"; 
-         if (numberOfPlayers == 0) {
-            document.getElementById(
-              "onlinecontainer"
-            ).style.display = "none";
+            }
           }
-         for (let playerIndex in group[k].players) {
-           var player = group[k].players[playerIndex];
-           playerData += `
+          if (group[k].suspend) {
+            group[k].suspend =
+              'background-color:#c7403c;"><i class="fa-solid fa-door-closed"></i> Not joinable';
+          } else {
+            group[k].suspend =
+              'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
+          }
+
+          document.getElementById(
+            "containerdata"
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+          var playerData = "";
+          var numberOfPlayers = Object.keys(group[k].players).length;
+          document.getElementById("onlinecontainer").style.display = "block";
+          if (numberOfPlayers == 0) {
+            document.getElementById("onlinecontainer").style.display = "none";
+          }
+          for (let playerIndex in group[k].players) {
+            var player = group[k].players[playerIndex];
+            playerData += `
              <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
               <div>
                <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${player.name}</div>
@@ -329,23 +391,18 @@ function onlineUpdater(data, j) {
               </div>
              </div>
              `;
-         }
-         document.getElementById("containerdata").innerHTML +=
-           '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
-           playerData +
-           "</div><hr>";
-       } else {
-         // There is no online data for this game at the moment, hide the statistics container because it has no meaningful data
-         document.getElementById(
-           "onlinecontainer"
-         ).style.display += "none";
-       }
-     }
-     document.getElementById("containerdata").innerHTML +=
-       '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
-       data[j].GamespyName +
-       "</div>";
-   });
+          }
+          document.getElementById("containerdata").innerHTML +=
+            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
+            playerData +
+            "</div><hr>";
+        }
+      }
+      document.getElementById("containerdata").innerHTML +=
+        '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
+        data[j].GamespyName +
+        "</div>";
+    });
 }
 
 // Other functions
@@ -394,7 +451,7 @@ function getIconForGenre(genre) {
   }
 }
 
-function getRating(rating) {
+function getRating(rating, classification) {
   switch (rating) {
     case "3":
       return '<img src="/img/pegi3.jpg" alt="Pegi 3" style="margin-top:20px;" width="130px">';

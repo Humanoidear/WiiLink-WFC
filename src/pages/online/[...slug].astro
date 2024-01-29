@@ -21,8 +21,8 @@ const { title, text, gamespyId } = Astro.props;
 
 <Layout
   title={`WiiLink WFC - ${text}`}
-  description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!"
-  image="/temp.png"
+  description={`${title} - WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!`}
+  image="/img/temp.png"
 >
   <Loading msg={`${text} - ${title}`} />
 
@@ -32,6 +32,7 @@ const { title, text, gamespyId } = Astro.props;
 
   <html>
     <body>
+      <script>0</script>
       <Header />
       <div class="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
@@ -82,13 +83,13 @@ const { title, text, gamespyId } = Astro.props;
             This title features no synopsis, why not add one yourself on
             gameTDB?
           </p>
-          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px;">
-            Screenshots:
+          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;">
+            You may also like:
+            <span style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;">Matches genre <i style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;" id="genreSuggestion"></i></span>
           </h1>
-          <div id="imgCaroussel">
+          <div id="recommendedTitles">
             <i style="color:white;"
-              >There has been an error fetching the data from the Google API.
-              Possible quota limit reached.</i
+              >There are no recommendations for this title...</i
             >
           </div>
         </div>
@@ -206,6 +207,27 @@ const { title, text, gamespyId } = Astro.props;
       transform: scale(1.03);
       box-shadow: 0px 0px 20px 0px #ffffff10;
       transition: 0.3s;
+    }
+    .recommended-title{
+      color:white;
+      background-color: #ffffff10;
+      border:2px solid #ffffff20;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      transition: 0.3s;
+    }
+    .recommended-title:hover{
+      transform: scale(1.03);
+      box-shadow: 0px 0px 20px 0px #ffffff10;
+      border: 2px solid #ffffff60;
+      transition: 0.3s;
+    }
+    #recommendedTitles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      position: relative;
     }
     .imginner {
       height: 440px;

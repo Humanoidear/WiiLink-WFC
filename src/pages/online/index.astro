@@ -20,11 +20,361 @@ const { title, text, desc } = Astro.props;
 ---
 
 <Layout
-  title={`WiiLink WFC - ${text}`}
+  title="WiiLink WFC - Online"
   description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!"
-  image="/temp.png"
+  image="img/temp.png"
 >
-  <Loading msg={`${text} - ${title}`} />
-  <Header />
+  <Loading msg="Populating data, this may take a while..." />
+  <Header
+    hasSearch="display:none;"
+    specialInstructions="transform:translate(0, 30px); backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
+  />
+  <div class="head herobg">
+    <div id="main" class="searchbox">
+      <h1
+        style="color:white; font-family: Rubik; font-weight:800; font-size:58px; display:flex; align-items:center; justify-content:center; gap:20px; text-align:right; z-index:1; position:relative;"
+      >
+        WiiLink <span
+          class="badge"
+          style="background-color:rgb(118, 118, 238); font-size:30px; font-family:system-ui;"
+          >WFC</span
+        >
+      </h1>
+      <input
+        type="text"
+        id="game-search-online"
+        placeholder="   Search for any Wii title..."
+        style="font-family:system-ui, FontAwesome"
+      />
+      <div id="suggestions-online"></div>
+      <input type="checkbox" id="onlineOnly" style="display: none;" />
+      <label
+        for="onlineOnly"
+        style="right:0; transform:translate(10px, -125%); z-index:100000000; position:absolute;"
+      >
+        <i class="fa-solid fa-earth-americas"></i>
+      </label>
+      <div style=" width:100%; right:0;">
+        <p
+          id="noResults"
+          style="left:0; transform:translate(0, 120%); color:white; display:none; position:absolute;"
+        >
+          <i class="fa-solid fa-triangle-exclamation"></i> There seems to be nobody
+          online right now...
+        </p>
+        <div style="right:0; display:flex; gap:10px; position:absolute;">
+          <button
+            type="button"
+            style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"
+            ><i class="fa fa-heart"></i></button
+          ><button
+            type="button"
+            style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"
+            ><i class="fa-brands fa-github"></i></button
+          ><button
+            type="button"
+            class="btn btn-primary btn-lg"
+            style="margin-top:15px; right:0; position:relative;"
+            ><i class="fa-brands fa-discord"></i></button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="online-now-holder">
+      <div id="online-now"></div>
+      <div class="alert alert-light" style="color:white; background-color:#121212; border:2px solid #ffffff20;" role="alert">
+       <b>Heads up!</b><br>To search for a particular game, type in the <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">search box</span> above. You can also  <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">filter</span> online-only results by checking the <i class="fa-solid fa-earth-americas"></i> button.
+      </div>
+      
+  </div>
 
-  <Footer />
+    <Footer />
+
+    <script type="module" src="/js/online.js"></script>
+  </div>
+
+  <script is:inline>
+    document
+      .getElementById("onlineOnly")
+      .addEventListener("change", function () {
+        var icon = document.querySelector("#onlineOnly + label i");
+        if (this.checked) {
+          icon.className = "fa-solid fa-check-circle"; // change to the icon you want when checked
+          setTimeout(function () {
+            icon.className = "fa-solid fa-earth-americas";
+          }, 500);
+        } else {
+          icon.className = "fa-solid fa-circle-xmark"; // change to the icon you want when checked
+          setTimeout(function () {
+            icon.className = "fa-solid fa-earth-americas";
+          }, 500);
+        }
+      });
+  </script>
+
+  <script is:inline>
+    fetch("../../json/gamespy_titles.json")
+      .then((response) => response.json())
+      .then((gamespyTitles) => {
+        fetch("../../json/pages.json")
+          .then((response) => response.json())
+          .then((games) => {
+            var gameSearchInput = document.getElementById("game-search-online");
+            var suggestionsDiv = document.getElementById("suggestions-online");
+
+            gameSearchInput.addEventListener("focus", function (e) {
+              suggestionsDiv.style.visibility = "visible";
+              suggestionsDiv.style.maxHeight = "618px";
+              setTimeout(function () {
+                suggestionsDiv.style.overflowY = "scroll";
+              }, 200);
+            });
+
+            gameSearchInput.addEventListener("blur", function (e) {
+              if (suggestionsDiv.contains(e.relatedTarget)) {
+                return;
+              }
+              suggestionsDiv.style.maxHeight = "0px";
+              suggestionsDiv.style.overflowY = "hidden";
+              setTimeout(function () {
+                suggestionsDiv.style.visibility = "hidden";
+              }, 200);
+            });
+
+            gameSearchInput.addEventListener("input", function (e) {
+              suggestionsDiv.innerHTML =
+                '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
+              var inputText = gameSearchInput.value.toLowerCase();
+              var onlineOnly = document.getElementById("onlineOnly").checked;
+              var counter = 0;
+              for (var i = 0; i < games.length; i++) {
+                const gameIdPrefix = games[i].gameId.substring(0, 3);
+                const isFound =
+                  gamespyTitles.some(
+                    (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
+                  ) || games[i].gamespyId;
+                if (
+                  games[i].gameName.toLowerCase().startsWith(inputText) &&
+                  (!onlineOnly || isFound)
+                ) {
+                  var discImage = "";
+                  if (games[i].gamespyId) {
+                    discImage = games[i].gamespyId;
+                  } else {
+                    discImage = games[i].gameId;
+                  }
+                  var onlineFeatures = "";
+                  var gamespyId = "";
+                  if (games[i].gamespyId) {
+                    gamespyId = " | " + games[i].gamespyId;
+                  }
+                  var suggestion = document.createElement("div");
+                  if (isFound) {
+                    onlineFeatures +=
+                      '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+                  }
+                  suggestion.innerHTML =
+                    '<a href="/online/' +
+                    games[i].gameId +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
+                    discImage +
+                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
+                    discImage +
+                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/cover/JA/" +
+                    discImage +
+                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/cover/KO/" +
+                    discImage +
+                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
+                    discImage +
+                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
+                    discImage +
+                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/disc/JA/" +
+                    discImage +
+                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/disc/KO/" +
+                    discImage +
+                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:500px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    games[i].gameName +
+                    "<br><i>" +
+                    onlineFeatures +
+                    '</i><i style="font-size:20px; opacity:0.7;">' +
+                    games[i].gameId +
+                    "" +
+                    gamespyId +
+                    "</i></div></a>";
+                  suggestionsDiv.appendChild(suggestion);
+                  counter++;
+                }
+                if (counter >= 5) {
+                  break;
+                }
+              }
+              if (counter === 0) {
+                suggestionsDiv.innerHTML =
+                  "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+              }
+            });
+            gameSearchInput.addEventListener("keydown", function (e) {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                const firstSuggestion =
+                  document.querySelector("#suggestionitem");
+                if (firstSuggestion) {
+                  window.location.href = firstSuggestion.getAttribute("href");
+                }
+              }
+            });
+          });
+      });
+  </script>
+
+  <style is:global>
+    .bg-translucent {
+      margin-top:10px;
+      padding:7px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .card-online {
+      text-decoration:none; 
+      background-color: #090909;
+      padding:20px;
+      padding-bottom:0px;
+      color:white;
+      backdrop-filter: blur(8px) grayscale(0.7);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 8px;
+      border: 2px solid #ffffff20;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+    .card-online:hover {
+      border: 2px solid #ffffff70;
+      transform: scale(1.02);
+      transition: 0.2s;
+    }
+    #card-bg {
+      transform:translate(-5%, -30%);
+      filter:blur(12px) opacity(0.05) grayscale(0.7);
+      position:absolute;
+      transition: 0.2s;
+    }
+    .card-online:hover #card-bg {
+      filter:blur(12px) opacity(0.10) grayscale(0.3);
+      transition: 0.2s;
+    }
+  </style>
+
+  <style>
+    body {
+      background-color: rgba(11, 0, 0, 1);
+    }
+    .herobg {
+      background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 70%,
+          rgba(11, 0, 0, 1) 100%
+        ),
+        url("/img/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: changecolor 10s infinite;
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+    #loadMoreButton {
+      margin-top: 20px;
+      left:50%;
+      transform: translate(-50%, 0);
+      width:200px;
+      position:relative;
+    }
+    #onlineOnly:checked + label {
+      background-color: #3c86c7;
+      opacity: 1;
+      transition: 0.3s;
+    }
+    label {
+      display: inline-block;
+      padding: 5px 10px;
+      cursor: pointer;
+      color: white;
+      border-radius: 4px;
+      font-size: 15px;
+      margin-right: 18px;
+      background-color: #ffffff00; /* default background color */
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+    label:hover{
+      opacity: 1;
+      transition: 0.3s;
+    }
+    .searchbox {
+      width: 95%;
+      max-width: 700px;
+      left: 50%;
+      top: 160px;
+      transform: translate(-50%, 0%);
+      z-index: 100;
+      position: relative;
+    }
+    #game-search-online {
+      top: 50%;
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      border: 2px solid #ffffff10;
+      background-color: rgba(23, 23, 23, 0.965);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      position: relative;
+    }
+    #suggestions-online {
+      max-height: 0px;
+      width: 100%;
+      transform: translate(0, -8px);
+      resize: vertical;
+      padding-top: 5px;
+      background-color: rgba(23, 23, 23, 0.965);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border: 2px solid #ffffff10;
+      border-top: 0px;
+      z-index: 10000;
+      visibility: hidden;
+      overflow-y: hidden;
+      position: absolute;
+      transition: 0.2s;
+    }
+    .online-now-holder {
+      top: 300px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      max-width: 1500px;
+      margin-bottom: 500px;
+      color: white;
+      position: relative;
+    }
+    #online-now {
+      margin-bottom:50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      position: relative;
+    }
+    #enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      position: relative;
+    }
+  </style>
+</Layout>

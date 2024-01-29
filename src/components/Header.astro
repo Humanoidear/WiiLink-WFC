@@ -1,3 +1,13 @@
+---
+interface Props {
+	hasSearch: string;
+  specialInstructions: string;
+}
+
+const {hasSearch, specialInstructions} = Astro.props;
+---
+
+<!--
 <div id="betamobile">
   This service is still in beta, please report your issues on our <a
     href="https://discord.gg/wiilink-750581992223146074"
@@ -5,6 +15,88 @@
     ><i class="fa-brands fa-discord" style="margin-left:8px;"></i> Discord server!</a
   >
 </div>
+-->
+
+<script is:inline type="module" src="/js/options_panel.js"></script>
+
+<div class="background-fade" id="backblur">
+  <div class="customization-container" id="customization">
+    <div style="display:flex; justify-content:space-between; align-items:center; height:50px; padding-top:20px; padding-left:20px; padding-right:20px;">
+      <div style="font-size:30px; color:white; font-family:system-ui; font-weight:600;">Customization</div>
+      <button type="button" class="btn btn-danger" onclick="closeCustomization();">Close</button>
+  </div>
+
+  <fieldset style="color:white;">
+    <legend>Display mode:</legend>
+  
+    <div>
+      <input type="radio" id="huey" name="display" value="complete" checked />
+      <label for="huey">Complete</label>
+    </div>
+  
+    <div>
+      <input type="radio" id="dewey" name="display" value="compact" />
+      <label for="dewey">Compact</label>
+    </div>
+  
+    <div>
+      <input type="radio" id="louie" name="display" value="utilitarian" />
+      <label for="louie">Utilitarian</label>
+    </div>
+  </fieldset>
+
+  <fieldset style="color:white;">
+    <legend>Online stats:</legend>
+  
+    <div>
+      <input type="radio" id="huey" name="statistics" value="big" checked />
+      <label for="huey">Big</label>
+    </div>
+  
+    <div>
+      <input type="radio" id="dewey" name="statistics" value="small" />
+      <label for="dewey">Small</label>
+    </div>
+    </fieldset>
+
+    <fieldset style="color:white;">
+      <legend>Theme:</legend>
+    
+      <div>
+        <input type="radio" id="huey" name="theme" value="dark" checked />
+        <label for="huey">Dark</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="dewey" name="theme" value="light" />
+        <label for="dewey">Light</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="louie" name="theme" value="midnight" />
+        <label for="louie">Midnight</label>
+      </div>
+    </fieldset>
+
+    <button type="button" class="btn btn-success" onclick="saveSelections();">Save</button>
+
+</div>
+</div>
+
+<script is:inline>
+
+window.saveSelections = function() {
+  var displayMode = document.querySelector('input[name="display"]:checked').value;
+  var theme = document.querySelector('input[name="theme"]:checked').value;
+  var statistics = document.querySelector('input[name="statistics"]:checked').value;
+
+  localStorage.setItem('displayMode', displayMode);
+  localStorage.setItem('statistics', statistics);
+  localStorage.setItem('theme', theme);
+
+  console.log(displayMode, theme, statistics);
+}
+</script>
 
 <div
   class="offcanvas offcanvas-start"
@@ -30,7 +122,7 @@
       type="text"
       id="game-search-mobile"
       placeholder="   Search for any Wii title..."
-      style="font-family:inter, FontAwesome;"
+      style="font-family:system-ui, FontAwesome;"
     />
     <div id="suggestions-mobile"></div>
     <div>
@@ -74,7 +166,7 @@
   </div>
 </div>
 
-<div class="header">
+<div class="header" style={specialInstructions}>
   <div id="innerheader">
     <a href="/" style="text-decoration: none; color:white;">
       <img
@@ -86,7 +178,8 @@
       type="text"
       id="game-search"
       placeholder="   Search for any Wii title..."
-      style="font-family:inter, FontAwesome;"
+      style={hasSearch}
+      style="font-family:system-ui, FontAwesome"
     />
     <div id="suggestions"></div>
     <div>
@@ -123,6 +216,11 @@
               style="margin-right:5px;"></i> Visit WiiLink</a
           ></button
         >
+        <div
+          id="customizeicon" style="height:50px; color:white; font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; display:none;" onclick="openCustomization();"
+        >
+          <i class="fa-solid fa-paint-roller customhover"></i>
+        </div>
       </div>
       <button
         class="btn"
@@ -226,8 +324,9 @@
                 }
               }
               if (counter === 0) {
-                suggestionsDiv.innerHTML = "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
-                }
+                suggestionsDiv.innerHTML =
+                  "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+              }
             });
             gameSearchInput.addEventListener("keydown", function (e) {
               if (e.key === "Enter") {
@@ -269,59 +368,60 @@
                 '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
               var inputText = gameSearchInput.value.toLowerCase();
               var counter = 0;
-                for (var i = 0; i < games.length; i++) {
-                  if (games[i].gameName.toLowerCase().startsWith(inputText)) {
-                    var discImage = "";
-                    if (games[i].gamespyId) {
-                      discImage = games[i].gamespyId;
-                    } else {
-                      discImage = games[i].gameId;
-                    }
-                    const gameIdPrefix = games[i].gameId.substring(0, 3);
-                    const isFound =
-                      gamespyTitles.some(
-                        (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
-                      ) || games[i].gamespyId;
-                    var onlineFeatures = "";
-                    var gamespyId = "";
-                    if (games[i].gamespyId) {
-                      gamespyId = " | " + games[i].gamespyId;
-                    }
-                    var suggestion = document.createElement("div");
-                    if (isFound) {
-                      onlineFeatures +=
-                        '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
-                    }
-                    suggestion.innerHTML =
-                      '<a href="/online/' +
-                      games[i].gameId +
-                      '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
-                      discImage +
-                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
-                      discImage +
-                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
-                      discImage +
-                      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
-                      discImage +
-                      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
-                      games[i].gameName +
-                      "<br><i>" +
-                      onlineFeatures +
-                      '</i><i style="font-size:20px; opacity:0.7;">' +
-                      games[i].gameId +
-                      "" +
-                      gamespyId +
-                      "</i></div></a>";
-                    suggestionsDiv.appendChild(suggestion);
-                    counter++;
+              for (var i = 0; i < games.length; i++) {
+                if (games[i].gameName.toLowerCase().startsWith(inputText)) {
+                  var discImage = "";
+                  if (games[i].gamespyId) {
+                    discImage = games[i].gamespyId;
+                  } else {
+                    discImage = games[i].gameId;
                   }
-                  if (counter >= 5) {
-                    break;
+                  const gameIdPrefix = games[i].gameId.substring(0, 3);
+                  const isFound =
+                    gamespyTitles.some(
+                      (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
+                    ) || games[i].gamespyId;
+                  var onlineFeatures = "";
+                  var gamespyId = "";
+                  if (games[i].gamespyId) {
+                    gamespyId = " | " + games[i].gamespyId;
                   }
+                  var suggestion = document.createElement("div");
+                  if (isFound) {
+                    onlineFeatures +=
+                      '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+                  }
+                  suggestion.innerHTML =
+                    '<a href="/online/' +
+                    games[i].gameId +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
+                    discImage +
+                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
+                    discImage +
+                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
+                    discImage +
+                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
+                    discImage +
+                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    games[i].gameName +
+                    "<br><i>" +
+                    onlineFeatures +
+                    '</i><i style="font-size:20px; opacity:0.7;">' +
+                    games[i].gameId +
+                    "" +
+                    gamespyId +
+                    "</i></div></a>";
+                  suggestionsDiv.appendChild(suggestion);
+                  counter++;
                 }
-                if (counter === 0) {
-                suggestionsDiv.innerHTML = "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+                if (counter >= 5) {
+                  break;
                 }
+              }
+              if (counter === 0) {
+                suggestionsDiv.innerHTML =
+                  "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+              }
             });
             gameSearchInput.addEventListener("keydown", function (e) {
               if (e.key === "Enter") {
@@ -374,6 +474,58 @@
       display: none;
       overflow-y: scroll;
       position: relative;
+      transition: 0.3s;
+    }
+
+    #customization, #backblur {
+  transition: all 0.2s ease-out;
+}
+
+.fade-move {
+  transform: rotate(50deg);
+  opacity: 0;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+    .background-fade {
+      width: 100%;
+      height: 100%;
+      background-color: #00000090;
+      backdrop-filter: grayscale(0.5) blur(8px);
+      -webkit-backdrop-filter: grayscale(0.5) blur(8px);
+      z-index: 1000000;
+      position: fixed;
+      display:none;
+    }
+
+    .customization-container {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      background-color: #202020;
+      border-radius: 8px;
+      border: 2px solid #ffffff10;
+      z-index: 1000000;
+      position: fixed;
+    }
+
+    .customhover {
+      background: -webkit-linear-gradient(#fff, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: 0.3s;
+    }
+
+    .customhover:hover {
+      background: -webkit-linear-gradient(#6cb3ff, #d4e976);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      scale: 1.1;
+      transform: rotate(5deg);
       transition: 0.3s;
     }
 
