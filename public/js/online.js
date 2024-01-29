@@ -122,8 +122,6 @@ function render(xml, GameID) {
           }
 
           var titleData = [trueName, developer, publisher, region, date, month, day, genre, rating, classification, wifiPlayers, isSupported, inputPlayers, languages, mainGenre, romName, romSize, romVersion, hash, hash2, hash3, imgLang, id];
-          console.log(totalPlayers + " players | " + totalGames + " games");
-          
           return titleData;
         }
       }
