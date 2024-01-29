@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then(async (allGames) => {
       // Fetch the list of online games
-      fetch("../json/stats.json")
+      fetch("https://api.wfc.wiilink24.com/api/stats")
         .then((response) => response.json())
         .then(async (onlineStats) => {
           // Loop through all games

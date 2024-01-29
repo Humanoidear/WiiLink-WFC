@@ -287,8 +287,8 @@ function render(xml) {
 }
 
 function onlineUpdater(data, j) {
-  var apiGroups = "../../json/group.json";
-  var apiStats = "../../json/stats.json";
+  var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
+  var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 
   fetch(apiStats) // Global stats for game
     .then((response) => response.json())
