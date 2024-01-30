@@ -83,11 +83,23 @@ const { title, text, desc } = Astro.props;
     <div class="online-now-holder">
       <div id="online-now"></div>
       <div id="onlineInfo"></div>
-      <div class="alert alert-light" style="color:white; background-color:#121212; border:2px solid #ffffff20;" role="alert">
-       <b>Heads up!</b><br>To search for a particular game, type in the <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">search box</span> above. You can also  <span class="badge bg-secondary" style="font-family:system-ui; font-size:15px; background-color:#ffffff20;">filter</span> online-only results by checking the <i class="fa-solid fa-earth-americas"></i> button.
+      <div
+        class="alert alert-light"
+        style="color:white; background-color:#121212; border:2px solid #ffffff20;"
+        role="alert"
+      >
+        <b>Heads up!</b><br />To search for a particular game, type in the <span
+          class="badge bg-secondary"
+          style="font-family:system-ui; font-size:15px; background-color:#ffffff20;"
+          >search box</span
+        > above. You can also <span
+          class="badge bg-secondary"
+          style="font-family:system-ui; font-size:15px; background-color:#ffffff20;"
+          >filter</span
+        > online-only results by checking the <i
+          class="fa-solid fa-earth-americas"></i> button.
       </div>
-      
-  </div>
+    </div>
 
     <Footer />
 
@@ -95,54 +107,89 @@ const { title, text, desc } = Astro.props;
   </div>
 
   <script is:inline>
+    var gameSearchInput = document.getElementById("game-search-online");
+    var suggestionsDiv = document.getElementById("suggestions-online");
+    var onlineFilterButton = document.getElementById("onlineOnly");
+
     document
       .getElementById("onlineOnly")
       .addEventListener("change", function () {
         var icon = document.querySelector("#onlineOnly + label i");
         if (this.checked) {
           icon.className = "fa-solid fa-check-circle"; // change to the icon you want when checked
+          fetchQuery();
+          setTimeout(function () {
+            suggestionsDiv.style.visibility = "visible";
+            suggestionsDiv.style.maxHeight = "618px";
+            suggestionsDiv.style.overflowY = "scroll";
+            gameSearchInput.focus();
+          }, 500);
           setTimeout(function () {
             icon.className = "fa-solid fa-earth-americas";
           }, 500);
         } else {
           icon.className = "fa-solid fa-circle-xmark"; // change to the icon you want when checked
+          fetchQuery();
+          setTimeout(function () {
+            suggestionsDiv.style.visibility = "visible";
+            suggestionsDiv.style.maxHeight = "618px";
+            suggestionsDiv.style.overflowY = "scroll";
+            gameSearchInput.focus();
+          }, 500);
           setTimeout(function () {
             icon.className = "fa-solid fa-earth-americas";
           }, 500);
         }
       });
-  </script>
 
-  <script is:inline>
-    fetch("../../json/gamespy_titles.json")
-      .then((response) => response.json())
-      .then((gamespyTitles) => {
-        fetch("../../json/pages.json")
-          .then((response) => response.json())
-          .then((games) => {
-            var gameSearchInput = document.getElementById("game-search-online");
-            var suggestionsDiv = document.getElementById("suggestions-online");
+    gameSearchInput.addEventListener("focus", function (e) {
+      suggestionsDiv.style.visibility = "visible";
+      suggestionsDiv.style.maxHeight = "618px";
+      setTimeout(function () {
+        suggestionsDiv.style.overflowY = "scroll";
+      }, 200);
+    });
 
-            gameSearchInput.addEventListener("focus", function (e) {
-              suggestionsDiv.style.visibility = "visible";
-              suggestionsDiv.style.maxHeight = "618px";
-              setTimeout(function () {
-                suggestionsDiv.style.overflowY = "scroll";
-              }, 200);
-            });
+    gameSearchInput.addEventListener("blur", function (e) {
+      setTimeout(function () {
+        if (
+          suggestionsDiv.contains(document.activeElement)
+        ) {
+          return;
+        }
+        suggestionsDiv.style.maxHeight = "0px";
+        suggestionsDiv.style.overflowY = "hidden";
+        setTimeout(function () {
+          suggestionsDiv.style.visibility = "hidden";
+        }, 200);
+      }, 0);
+    });
 
-            gameSearchInput.addEventListener("blur", function (e) {
-              if (suggestionsDiv.contains(e.relatedTarget)) {
-                return;
-              }
-              suggestionsDiv.style.maxHeight = "0px";
-              suggestionsDiv.style.overflowY = "hidden";
-              setTimeout(function () {
-                suggestionsDiv.style.visibility = "hidden";
-              }, 200);
-            });
+    gameSearchInput.addEventListener("input", function (e) {
+      fetchQuery();
+    });
 
-            gameSearchInput.addEventListener("input", function (e) {
+    gameSearchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const firstSuggestion = document.querySelector("#suggestionitem");
+        if (firstSuggestion) {
+          window.location.href = firstSuggestion.getAttribute("href");
+        }
+      }
+    });
+
+    function fetchQuery() {
+      fetch("../../json/gamespy_titles.json")
+        .then((response) => response.json())
+        .then((gamespyTitles) => {
+          fetch("../../json/pages.json")
+            .then((response) => response.json())
+            .then((games) => {
+              var gameSearchInput =
+                document.getElementById("game-search-online");
+              var suggestionsDiv =
+                document.getElementById("suggestions-online");
               suggestionsDiv.innerHTML =
                 '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
               var inputText = gameSearchInput.value.toLowerCase();
@@ -214,32 +261,22 @@ const { title, text, desc } = Astro.props;
                   "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
               }
             });
-            gameSearchInput.addEventListener("keydown", function (e) {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                const firstSuggestion =
-                  document.querySelector("#suggestionitem");
-                if (firstSuggestion) {
-                  window.location.href = firstSuggestion.getAttribute("href");
-                }
-              }
-            });
-          });
-      });
+        });
+    }
   </script>
 
   <style is:global>
     .bg-translucent {
-      margin-top:10px;
-      padding:7px;
+      margin-top: 10px;
+      padding: 7px;
       background-color: rgba(255, 255, 255, 0.1);
     }
     .card-online {
-      text-decoration:none; 
+      text-decoration: none;
       background-color: #090909;
-      padding:20px;
-      padding-bottom:0px;
-      color:white;
+      padding: 20px;
+      padding-bottom: 0px;
+      color: white;
       backdrop-filter: blur(8px) grayscale(0.7);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 8px;
@@ -253,25 +290,36 @@ const { title, text, desc } = Astro.props;
       transition: 0.2s;
     }
     #card-bg {
-      transform:translate(-5%, -30%);
-      filter:blur(12px) opacity(0.05) grayscale(0.7);
-      position:absolute;
+      transform: translate(-5%, -30%);
+      filter: blur(12px) opacity(0.05) grayscale(0.7);
+      position: absolute;
       transition: 0.2s;
     }
     .card-online:hover #card-bg {
-      filter:blur(12px) opacity(0.10) grayscale(0.3);
+      filter: blur(12px) opacity(0.1) grayscale(0.3);
       transition: 0.2s;
     }
 
+    @keyframes fadeup{
+      from {
+        opacity: 0;
+        transform: translate(0, 10px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
     @media only screen and (max-width: 800px) {
-    .card-online:hover {
-      border: 2px solid #ffffff70;
-      transform: scale(1.00);
-      transition: 0.2s;
-    }
-    .card-online {
-      width:100%;
-    }
+      .card-online:hover {
+        border: 2px solid #ffffff70;
+        transform: scale(1);
+        transition: 0.2s;
+      }
+      .card-online {
+        width: 100%;
+      }
     }
   </style>
 
@@ -296,10 +344,10 @@ const { title, text, desc } = Astro.props;
     }
     #loadMoreButton {
       margin-top: 20px;
-      left:50%;
+      left: 50%;
       transform: translate(-50%, 0);
-      width:200px;
-      position:relative;
+      width: 200px;
+      position: relative;
     }
     #onlineOnly:checked + label {
       background-color: #3c86c7;
@@ -318,7 +366,7 @@ const { title, text, desc } = Astro.props;
       opacity: 0.5;
       transition: 0.3s;
     }
-    label:hover{
+    label:hover {
       opacity: 1;
       transition: 0.3s;
     }
@@ -376,14 +424,14 @@ const { title, text, desc } = Astro.props;
       position: relative;
     }
     #online-now {
-      margin-bottom:20px;
+      margin-bottom: 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 20px;
       position: relative;
     }
-    #onlineInfo{
-      margin-bottom:50px;
+    #onlineInfo {
+      margin-bottom: 50px;
     }
     #enhanced {
       display: grid;
@@ -394,16 +442,16 @@ const { title, text, desc } = Astro.props;
 
     @media only screen and (max-width: 800px) {
       #online-now {
-      margin-bottom:50px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      position: relative;
-    }
-    #noResults {
-      top:80px;
-      width:200px;
-    }
+        margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: relative;
+      }
+      #noResults {
+        top: 80px;
+        width: 200px;
+      }
     }
   </style>
 </Layout>

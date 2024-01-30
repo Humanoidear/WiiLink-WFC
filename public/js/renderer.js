@@ -187,11 +187,15 @@ function render(xml) {
 
           var playIcon1 = document.getElementById("wifino");
           var playIcon2 = document.getElementById("onlineplaycontainer");
-          if (wifiPlayers == 0) {
+          if (wifiPlayers == 0 && isSupported == "") {
             document.getElementById("onlineplayno").style.display = "none";
             playIcon1.innerHTML +=
               '<i class="fa-solid fa-triangle-exclamation"></i> This title does not support online multiplayer.';
             playIcon2.style.top = "45%";
+          } else if (wifiPlayers == 0) {
+            document.getElementById("onlineplayno").innerHTML = '0';
+            playIcon1.innerHTML +=
+                '<i class="fa fa-user" style="margin-right:8px;"></i>';
           } else {
             for (var l = 0; l < wifiPlayers; l++) {
               playIcon1.innerHTML +=
