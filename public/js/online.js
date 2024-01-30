@@ -277,10 +277,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     await Promise.all(gamePromises);
 
     if (Object.keys(onlineStats).length < 2) {
-      document.getElementsByClassName("online-now-holder")[0].style.opacity = "0";
-      document.getElementsByClassName("online-now-holder")[0].style.pointerEvents = "none";
+      document.getElementsByClassName("online-now-holder")[0].style.display = "none";
       document.getElementById("noResults").style.display = "block";
       document.getElementById("main").style.top = "45%";
+      document.getElementById("noResultsHold").classList.add("active");
       document.getElementById("main").style.transform = "translate(-50%, -50%)";
     }
 
