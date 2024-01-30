@@ -10,7 +10,7 @@ const { msg, img } = Astro.props;
 <div class="cover" id="cover">
 <img src="../../img/logo.png" id="imgLoadLogo" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 0.2s forwards; filter:invert(1); position:absolute;">
 <img src={img} id="imgLoadNews" style="left:50%; top:42%; border-radius:8px; width:350px; opacity:0; animation:fadeupload2 0.2s forwards; transform:translate(-50%, -50%); position:absolute;">
-<o id="imgLoadText" style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 200ms 0.2s forwards; filter:invert(1); display:flex; flex-wrap:wrap; align-items:center; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 10px); margin-right:8px;" width="30px" height="30px">{msg}</o>
+<o id="imgLoadText" style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 200ms 0.2s forwards; filter:invert(1); display:flex; flex-wrap:wrap; align-items:center; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 0px); margin-right:8px;" width="30px" height="30px">{msg}</o>
 </div>
 
 <script is:inline>
@@ -29,7 +29,7 @@ setTimeout(() => {
 
 setTimeout(() => {
    remove();
-}, 3000);
+}, 30000);
 
 window.addEventListener('load', function () {
     document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
