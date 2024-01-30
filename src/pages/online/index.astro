@@ -89,13 +89,13 @@ const { title, text, desc } = Astro.props;
         role="alert"
       >
         <b>Heads up!</b><br />To search for a particular game, type in the <span
-          class="badge bg-secondary"
+          class="badge"
           style="font-family:system-ui; font-size:15px; background-color:#ffffff20;"
-          >search box</span
+          ><i class="fa-solid fa-magnifying-glass"></i> search box</span
         > above. You can also <span
-          class="badge bg-secondary"
+          class="badge"
           style="font-family:system-ui; font-size:15px; background-color:#ffffff20;"
-          >filter</span
+          ><i class="fa fa-filter"></i> filter</span
         > online-only results by checking the <i
           class="fa-solid fa-earth-americas"></i> button.
       </div>
@@ -290,6 +290,7 @@ const { title, text, desc } = Astro.props;
       transition: 0.2s;
     }
     #card-bg {
+      width:100%;
       transform: translate(-5%, -30%);
       filter: blur(12px) opacity(0.05) grayscale(0.7);
       position: absolute;
