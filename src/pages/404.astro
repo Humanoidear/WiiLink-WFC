@@ -54,7 +54,7 @@ import Footer from "../components/Footer.astro";
     </div>
     <div
       id="globeViz"
-      style="top:0px; left:50%; transform:translate(-50%, 0); z-index: 0; position:relative;"
+      style="top:0px; left:50%; filter:brightness(0.8); transform:translate(-50%, 0); z-index: 0; position:relative;"
     >
     </div>
   </div>
@@ -120,7 +120,7 @@ import Footer from "../components/Footer.astro";
           "Wii Chess",
           "Super Smash Bros. Brawl",
         ][i % 7],
-        isOpen: [false, true, false, true, false, false, true, false][i % 8],
+        isOpen: [false, false, false, false, false, false, false, false][i % 8],
         faces: [
           "jess.png",
           "alexb.png",
