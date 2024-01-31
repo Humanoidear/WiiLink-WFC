@@ -18,6 +18,7 @@ function render(xml) {
   for (var i = 0; i < x.length; i++) {
     // Loop through gamelist of gameTDB
     var id = x[i].getElementsByTagName("id")[0];
+    var type = x[i].getElementsByTagName("type")[0];
     var titleCheck = document.getElementById("gameId").textContent;
     var gamespyCheck = document.getElementById("gamespyId").textContent;
     if (
@@ -34,7 +35,17 @@ function render(xml) {
             var gameid = id.textContent.substring(0, 3);
             if (data[j].GameID == gameid) {
               // Online support through gamespy found
+              var patchType = "D";
+              var extensionType = "00";
+              if (type.textContent == "") {
+                patchType = "D";
+                extensionType = "00";
+              } else {
+                patchType = "N";
+                extensionType = "0001";
+              }
               document.getElementById("onlineload").style.display = "block";
+              document.getElementById("downloadPatchButton").innerHTML = "<a href='/patches/" + id.textContent.substring(0, 4) + patchType + extensionType + ".txt'><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + id.textContent.substring(0, 4) + patchType + extensionType + ".txt</button></a>";
               onlineUpdater(data, j); // Fetch data on page load
               setInterval(() => {
                 onlineUpdater(data, j); // Fetch data on a 5 second interval
