@@ -4,6 +4,7 @@ import Loading from "../../components/Loading.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import games from "../../../public/json/pages.json";
+import DNSInstructions from "../../components/DNSInstructions.astro";
 export async function getStaticPaths() {
   return games.map((data) => ({
     params: {
@@ -34,6 +35,8 @@ const { title, text, gamespyId } = Astro.props;
     <body>
       <script>0</script>
       <Header />
+      <DNSInstructions />
+
       <div class="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
         <div
