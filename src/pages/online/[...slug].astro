@@ -27,12 +27,15 @@ const { title, text, gamespyId } = Astro.props;
   <Loading msg={`${text} - ${title}`} />
 
   <!-- Grab gameTDB data and insert into the site -->
-  <script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+  ></script>
   <script type="module" src="/js/renderer.js"></script>
 
   <html>
     <body>
-      <script>0</script>
+      <script>
+        0;
+      </script>
       <Header />
       <div class="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
@@ -40,7 +43,12 @@ const { title, text, gamespyId } = Astro.props;
           style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px); position:relative;"
           id="mobilehide"
         >
-          <h1 id="gameId" style="width:900px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">{title}</h1>
+          <h1
+            id="gameId"
+            style="width:900px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"
+          >
+            {title}
+          </h1>
           <p id="gamespyId" style="display:none;">{gamespyId}</p>
           <p
             style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
@@ -66,15 +74,24 @@ const { title, text, gamespyId } = Astro.props;
             Statistics
           </div>
         </div>
-        <div style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; position:relative;">
-        <div id="downloadPatchButton" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" data-bs-title="<b><i class='fa fa-triangle-exclamation'></i> Heads up!</b><br>This feature is experimental and may not always work!"></div>
-        <p
-          style="text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
+        <div
+          style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; position:relative;"
         >
-          Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
-          Violet API.
-        </p>
-      </div>
+          <div
+            id="downloadPatchButton"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-html="true"
+            data-bs-title="<b><i class='fa fa-triangle-exclamation'></i> Heads up!</b><br>This feature is experimental and may not always work!"
+          >
+          </div>
+          <p
+            style="text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
+          >
+            Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
+            Violet API.
+          </p>
+        </div>
         <div
           style="width:90%; max-width:1500px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;"
           id="errhide"
@@ -86,9 +103,16 @@ const { title, text, gamespyId } = Astro.props;
             This title features no synopsis, why not add one yourself on
             gameTDB?
           </p>
-          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;">
+          <h1
+            style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;"
+          >
             You may also like:
-            <span style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;">Matches genre <i style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;" id="genreSuggestion"></i></span>
+            <span
+              style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;"
+              >Matches genre <i
+                style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;"
+                id="genreSuggestion"></i></span
+            >
           </h1>
           <div id="recommendedTitles">
             <i style="color:white;"
@@ -212,36 +236,36 @@ const { title, text, gamespyId } = Astro.props;
       transition: 0.3s;
     }
     .tooltip .tooltip-inner {
-    background-color: #ffffff10;
-    border: 1px solid #ffffff20;
-}
-.tooltip .tooltip-arrow::before {
-    filter:invert(1);
-    opacity: 0.2;
-}
-    .recommended-title{
-      color:white;
       background-color: #ffffff10;
-      border:2px solid #ffffff20;
+      border: 1px solid #ffffff20;
+    }
+    .tooltip .tooltip-arrow::before {
+      filter: invert(1);
+      opacity: 0.2;
+    }
+    .recommended-title {
+      color: white;
+      background-color: #ffffff10;
+      border: 2px solid #ffffff20;
       border-radius: 8px;
       overflow: hidden;
       position: relative;
       transition: 0.3s;
     }
-    .recommended-title:hover{
+    .recommended-title:hover {
       transform: scale(1.03);
       box-shadow: 0px 0px 20px 0px #ffffff10;
       border: 2px solid #ffffff60;
       transition: 0.3s;
     }
     .img-bg {
-      transform:scale(110%);
-      filter:blur(8px) opacity(0.1) grayscale(0.7);
-      position:absolute;
+      transform: scale(110%);
+      filter: blur(8px) opacity(0.1) grayscale(0.7);
+      position: absolute;
       transition: 0.3s;
     }
-    .recommended-title:hover .img-bg{
-      filter:blur(8px) opacity(0.2) grayscale(0.3);
+    .recommended-title:hover .img-bg {
+      filter: blur(8px) opacity(0.2) grayscale(0.3);
       transition: 0.3s;
     }
     #recommendedTitles {
@@ -312,16 +336,15 @@ const { title, text, gamespyId } = Astro.props;
     }
 
     @media only screen and (max-width: 1500px) {
-      .genre{
+      .genre {
         grid-column: auto / span 6 !important;
       }
-      .rating{
+      .rating {
         grid-column: auto / span 5 !important;
       }
     }
 
     @media only screen and (max-width: 1390px) {
-
       .data-holder {
         width: 95% !important;
         flex-direction: column;
@@ -351,10 +374,10 @@ const { title, text, gamespyId } = Astro.props;
     }
 
     @media only screen and (max-width: 1264px) {
-      #extradata{
+      #extradata {
         grid-column: auto / span 14 !important;
       }
-      #publisher{
+      #publisher {
         grid-column: auto / span 6 !important;
       }
     }
