@@ -279,7 +279,7 @@ function render(xml) {
       game.tid +
       '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/cover/KO/' +
       game.tid +
-      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="transform:scale(110%); filter:blur(8px) opacity(0.1) grayscale(0.7); position:absolute;" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="https://art.gametdb.com/wii/disc/US/' +
+      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="https://art.gametdb.com/wii/disc/US/' +
       game.tid +
       '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
       game.tid +

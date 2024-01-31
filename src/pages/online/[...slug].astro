@@ -234,6 +234,16 @@ const { title, text, gamespyId } = Astro.props;
       border: 2px solid #ffffff60;
       transition: 0.3s;
     }
+    .img-bg {
+      transform:scale(110%);
+      filter:blur(8px) opacity(0.1) grayscale(0.7);
+      position:absolute;
+      transition: 0.3s;
+    }
+    .recommended-title:hover .img-bg{
+      filter:blur(8px) opacity(0.2) grayscale(0.3);
+      transition: 0.3s;
+    }
     #recommendedTitles {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
