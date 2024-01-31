@@ -373,6 +373,10 @@
         "gamespyId": "R2VE01"
     },
     {
+        "gameId": "R2VE01",
+        "gameName": "Sin & Punishment: Star Successor"
+    },
+    {
         "gameId": "R2VJ01",
         "gameName": "Tsumi to Batsu: Sora no Koukeisha"
     },
@@ -586,6 +590,10 @@
         "gamespyId": "R3RE8P"
     },
     {
+        "gameId": "R3RE8P",
+        "gameName": "Sonic & SEGA All-Stars Racing"
+    },
+    {
         "gameId": "R3RP8P",
         "gameName": "Sonic & SEGA All-Stars Racing"
     },
@@ -727,6 +735,10 @@
         "gamespyId": "R4CE69"
     },
     {
+        "gameId": "R4CE69",
+        "gameName": "SimCity Creator"
+    },
+    {
         "gameId": "R4CJ13",
         "gameName": "SimCity Creator"
     },
@@ -802,6 +814,10 @@
         "gameId": "mschargedwii",
         "gameName": "Mario Strikers Charged",
         "gamespyId": "R4QE01"
+    },
+    {
+        "gameId": "R4QE01",
+        "gameName": "Mario Strikers Charged"
     },
     {
         "gameId": "R4QJ01",
@@ -1397,6 +1413,10 @@
         "gamespyId": "R7FEGD"
     },
     {
+        "gameId": "R7FEGD",
+        "gameName": "Final Fantasy Fables: Chocobo's Dungeon"
+    },
+    {
         "gameId": "R7FJGD",
         "gameName": "Chocobo no Fushigi na Dungeon: Toki-wasure no Meikyuu"
     },
@@ -1588,6 +1608,10 @@
         "gameId": "tokyoparkwii",
         "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!",
         "gamespyId": "R89JEL"
+    },
+    {
+        "gameId": "R89JEL",
+        "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!"
     },
     {
         "gameId": "R8AE01",
@@ -2037,6 +2061,10 @@
         "gameId": "wiibombmanwii",
         "gameName": "Bomberman",
         "gamespyId": "RBBJ18"
+    },
+    {
+        "gameId": "RBBJ18",
+        "gameName": "Bomberman"
     },
     {
         "gameId": "RB7E54",
@@ -4452,6 +4480,10 @@
         "gamespyId": "R2VE01"
     },
     {
+        "gameId": "R2VE01",
+        "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane"
+    },
+    {
         "gameId": "RK6P18",
         "gameName": "Marbles! Balance Challenge"
     },
@@ -5081,6 +5113,10 @@
         "gamespyId": "RMCE01"
     },
     {
+        "gameId": "RMCE01",
+        "gameName": "Mario Kart Wii"
+    },
+    {
         "gameId": "RMCJ01",
         "gameName": "Mario Kart Wii"
     },
@@ -5168,6 +5204,10 @@
         "gameId": "mariosprtwii",
         "gameName": "Mario Sports Mix",
         "gamespyId": "RMKE01"
+    },
+    {
+        "gameId": "RMKE01",
+        "gameName": "Mario Sports Mix"
     },
     {
         "gameId": "RMLEH4",
@@ -5969,6 +6009,10 @@
         "gameId": "pokebattlewii",
         "gameName": "Pok\u00e9mon Battle Revolution",
         "gamespyId": "RPBE01"
+    },
+    {
+        "gameId": "RPBE01",
+        "gameName": "Pok\u00e9mon Battle Revolution"
     },
     {
         "gameId": "RPCE20",
@@ -6804,6 +6848,10 @@
         "gamespyId": "RSBE01"
     },
     {
+        "gameId": "RSBE01",
+        "gameName": "Super Smash Bros. Brawl"
+    },
+    {
         "gameId": "RSCD7D",
         "gameName": "Scarface: The World Is Yours"
     },
@@ -7389,6 +7437,10 @@
         "gamespyId": "RTYP01"
     },
     {
+        "gameId": "RTYP01",
+        "gameName": "Wii Chess"
+    },
+    {
         "gameId": "RTZE08",
         "gameName": "Zack & Wiki: Quest for Barbaros' Treasure"
     },
@@ -7688,6 +7740,10 @@
         "gameId": "acrossingwii",
         "gameName": "Animal Crossing: Let's Go to the City",
         "gamespyId": "RUUP01"
+    },
+    {
+        "gameId": "RUUP01",
+        "gameName": "Animal Crossing: Let's Go to the City"
     },
     {
         "gameId": "RUWJC8",
@@ -8183,6 +8239,10 @@
         "gamespyId": "RWSP8P"
     },
     {
+        "gameId": "RWSP8P",
+        "gameName": "Mario & Sonic at the Olympic Games"
+    },
+    {
         "gameId": "RWTEG9",
         "gameName": "Ben 10: Alien Force"
     },
@@ -8530,6 +8590,10 @@
         "gameId": "raymanrr2wii",
         "gameName": "Rayman Raving Rabbids 2",
         "gamespyId": "RY2P41"
+    },
+    {
+        "gameId": "RY2P41",
+        "gameName": "Rayman Raving Rabbids 2"
     },
     {
         "gameId": "RY2R41",
@@ -17249,6 +17313,10 @@
         "gamespyId": "WTPP"
     },
     {
+        "gameId": "WTPP",
+        "gameName": "Tetris Party"
+    },
+    {
         "gameId": "WTRE",
         "gameName": "Bit. Trip Beat"
     },
@@ -19972,6 +20040,10 @@
         "gameId": "pandeponds",
         "gameName": "Panel de Pon",
         "gamespyId": "JBOJ"
+    },
+    {
+        "gameId": "JBOJ",
+        "gameName": "Panel de Pon"
     },
     {
         "gameId": "JBOQ",
