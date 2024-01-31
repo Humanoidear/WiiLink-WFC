@@ -1,19 +1,93 @@
 [
     {
-        "gameId": "007E01",
-        "gameName": "Wii Auto Erase Disc"
+        "gameId": "segaracingwii",
+        "gameName": "Sonic & SEGA All-Stars Racing",
+        "gamespyId": "R3RE8P"
     },
     {
-        "gameId": "091E00",
-        "gameName": "Movie-Ch Install Disc Ver. A"
+        "gameId": "simcitywii",
+        "gameName": "SimCity Creator",
+        "gamespyId": "R4CE69"
     },
     {
-        "gameId": "413E01",
-        "gameName": "DiscUpdate Disc"
+        "gameId": "mschargedwii",
+        "gameName": "Mario Strikers Charged",
+        "gamespyId": "R4QE01"
     },
     {
-        "gameId": "D2AJAF",
-        "gameName": "Minna de Bouken! Family Trainer (Demo)"
+        "gameId": "chocotokiwii",
+        "gameName": "Final Fantasy Fables: Chocobo's Dungeon",
+        "gamespyId": "R7FEGD"
+    },
+    {
+        "gameId": "tokyoparkwii",
+        "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!",
+        "gamespyId": "R89JEL"
+    },
+    {
+        "gameId": "wiibombmanwii",
+        "gameName": "Bomberman",
+        "gamespyId": "RBBJ18"
+    },
+    {
+        "gameId": "kororinpa2wii",
+        "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane",
+        "gamespyId": "R2VE01"
+    },
+    {
+        "gameId": "mariokartwii",
+        "gameName": "Mario Kart Wii",
+        "gamespyId": "RMCE01"
+    },
+    {
+        "gameId": "mariosprtwii",
+        "gameName": "Mario Sports Mix",
+        "gamespyId": "RMKE01"
+    },
+    {
+        "gameId": "pokebattlewii",
+        "gameName": "Pok\u00e9mon Battle Revolution",
+        "gamespyId": "RPBE01"
+    },
+    {
+        "gameId": "smashbrosxwii",
+        "gameName": "Super Smash Bros. Brawl",
+        "gamespyId": "RSBE01"
+    },
+    {
+        "gameId": "smashbrosxwii",
+        "gameName": "Super Smash Bros. Brawl",
+        "gamespyId": "RSBE01"
+    },
+    {
+        "gameId": "chesswii",
+        "gameName": "Wii Chess",
+        "gamespyId": "RTYP01"
+    },
+    {
+        "gameId": "acrossingwii",
+        "gameName": "Animal Crossing: Let's Go to the City",
+        "gamespyId": "RUUP01"
+    },
+    {
+        "gameId": "MSolympicwii",
+        "gameName": "Mario & Sonic at the Olympic Games",
+        "gamespyId": "RWSP8P"
+    },
+    {
+        "gameId": "raymanrr2wii",
+        "gameName": "Rayman Raving Rabbids 2",
+        "gamespyId": "RY2P41"
+    },
+    {
+        "gameId": "tetpartywii",
+        "gameName": "Tetris Party",
+        "gamespyId": "WTPP"
+    },
+    {
+        "gameId": "pandeponds",
+        "gameName": "Panel de Pon",
+        "gamespyId": "JBOJ"
     },
     {
         "gameId": "D2SE18",
@@ -80,10 +154,6 @@
         "gameName": "Lost In Shadow - Best Buy (Demo)"
     },
     {
-        "gameId": "DHHJ8J",
-        "gameName": "Hirano Aya Premium Movie Disc from Suzumiya Haruhi no Gekidou"
-    },
-    {
         "gameId": "DHKE18",
         "gameName": "Help Wanted: 50 Wacky Jobs (Demo)"
     },
@@ -122,14 +192,6 @@
     {
         "gameId": "DSFE7U",
         "gameName": "Muramasa: The Demon Blade (Demo)"
-    },
-    {
-        "gameId": "DSRJ8P",
-        "gameName": "Sonic and the Secret Rings (Demo)"
-    },
-    {
-        "gameId": "DTOJ8P",
-        "gameName": "428: Fuusa Sareta Shibuya de (Taikenban)"
     },
     {
         "gameId": "DTZJ08",
@@ -585,11 +647,6 @@
         "gameName": "Speed Racer: The Videogame"
     },
     {
-        "gameId": "segaracingwii",
-        "gameName": "Sonic & SEGA All-Stars Racing",
-        "gamespyId": "R3RE8P"
-    },
-    {
         "gameId": "R3RE8P",
         "gameName": "Sonic & SEGA All-Stars Racing"
     },
@@ -730,11 +787,6 @@
         "gameName": "Table Football"
     },
     {
-        "gameId": "simcitywii",
-        "gameName": "SimCity Creator",
-        "gamespyId": "R4CE69"
-    },
-    {
         "gameId": "R4CE69",
         "gameName": "SimCity Creator"
     },
@@ -787,10 +839,6 @@
         "gameName": "Athletic Piggy Party"
     },
     {
-        "gameId": "R4MJ0Q",
-        "gameName": "Shikakui Atama o Maruku Suru. Wii"
-    },
-    {
         "gameId": "R4NE5G",
         "gameName": "Major Minor's Majestic March"
     },
@@ -809,11 +857,6 @@
     {
         "gameId": "R4PP69",
         "gameName": "The Sims 2: Pets"
-    },
-    {
-        "gameId": "mschargedwii",
-        "gameName": "Mario Strikers Charged",
-        "gamespyId": "R4QE01"
     },
     {
         "gameId": "R4QE01",
@@ -1010,10 +1053,6 @@
     {
         "gameId": "R5MJAF",
         "gameName": "Kotoba no Puzzle Mojipittan Wii Deluxe"
-    },
-    {
-        "gameId": "R5NJN9",
-        "gameName": "Doala de Wii"
     },
     {
         "gameId": "R5OENR",
@@ -1408,11 +1447,6 @@
         "gameName": "NiGHTS: Journey of Dreams"
     },
     {
-        "gameId": "chocotokiwii",
-        "gameName": "Final Fantasy Fables: Chocobo's Dungeon",
-        "gamespyId": "R7FEGD"
-    },
-    {
         "gameId": "R7FEGD",
         "gameName": "Final Fantasy Fables: Chocobo's Dungeon"
     },
@@ -1553,10 +1587,6 @@
         "gameName": "Animal Planet: Vet Life"
     },
     {
-        "gameId": "R82JG0",
-        "gameName": "Darts Wii DX"
-    },
-    {
         "gameId": "R82P52",
         "gameName": "Animal Planet: Vet Life"
     },
@@ -1603,11 +1633,6 @@
     {
         "gameId": "R88J2L",
         "gameName": "Anpanman Niko Niko Party"
-    },
-    {
-        "gameId": "tokyoparkwii",
-        "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!",
-        "gamespyId": "R89JEL"
     },
     {
         "gameId": "R89JEL",
@@ -2058,12 +2083,7 @@
         "gameName": "Brothers in Arms: Earned in Blood"
     },
     {
-        "gameId": "wiibombmanwii",
-        "gameName": "Bomberman",
-        "gamespyId": "RBBJ18"
-    },
-    {
-        "gameId": "RBBJ18",
+        "gameId": "RB6J18",
         "gameName": "Bomberman"
     },
     {
@@ -2375,14 +2395,6 @@
         "gameName": "Crayon Shin-Chan: Saikyou Kazoku Kasukabe King Wii"
     },
     {
-        "gameId": "RC4SGT",
-        "gameName": "Shin Chan The New Adventures For Wii"
-    },
-    {
-        "gameId": "RC5JDQ",
-        "gameName": "Osouji Sentai Clean Keeper"
-    },
-    {
         "gameId": "RC7E20",
         "gameName": "Sea Monsters: A Prehistoric Adventure"
     },
@@ -2437,10 +2449,6 @@
     {
         "gameId": "RCCE5G",
         "gameName": "Cooking Mama: Cook Off"
-    },
-    {
-        "gameId": "RCCJC0",
-        "gameName": "Cooking Mama: Minna to Issho ni Oryouri Taikai!"
     },
     {
         "gameId": "RCCPGT",
@@ -2537,10 +2545,6 @@
     {
         "gameId": "RCOK99",
         "gameName": "Myeongtamjeong Conan - Chueogui Hwansang"
-    },
-    {
-        "gameId": "RCOKZF",
-        "gameName": "Case Closed: The Mirapolis Investigation"
     },
     {
         "gameId": "RCOPNP",
@@ -2779,10 +2783,6 @@
         "gameName": "Domino Rally"
     },
     {
-        "gameId": "RDMJ8N",
-        "gameName": "Go! Go! Minon"
-    },
-    {
         "gameId": "RDMPHZ",
         "gameName": "Minon: Everyday Hero"
     },
@@ -2945,10 +2945,6 @@
     {
         "gameId": "RE7PNK",
         "gameName": "Hunting Challenge"
-    },
-    {
-        "gameId": "RE8J99",
-        "gameName": "Katekyoo Hitman Reborn! Kindan no Yami no Delta"
     },
     {
         "gameId": "REAE69",
@@ -3603,10 +3599,6 @@
         "gameName": "Gintama: Yorozuya Chuubu: Tsukkomable Douga"
     },
     {
-        "gameId": "RGOJJ9",
-        "gameName": "The World of Golden Eggs: Nori Nori Rhythm kei - Nissan Note Original Version"
-    },
-    {
         "gameId": "RGPJAF",
         "gameName": "Anime Slot Revolution: Pachi-Slot Kidou Senshi Gundam II: Ai Senshi-hen"
     },
@@ -3632,10 +3624,6 @@
     },
     {
         "gameId": "RGTE41",
-        "gameName": "GT Pro Series"
-    },
-    {
-        "gameId": "RGTJBL",
         "gameName": "GT Pro Series"
     },
     {
@@ -3739,10 +3727,6 @@
         "gameName": "Harry Potter and the Half-Blood Prince"
     },
     {
-        "gameId": "RH7J8P",
-        "gameName": "Jissen Pachi-Slot Pachinko Hisshouhou! Sammy's Collection: Hokuto no Ken Wii"
-    },
-    {
         "gameId": "RH8E4F",
         "gameName": "Tomb Raider: Underworld"
     },
@@ -3753,10 +3737,6 @@
     {
         "gameId": "RH8P4F",
         "gameName": "Tomb Raider: Underworld"
-    },
-    {
-        "gameId": "RH9JC8",
-        "gameName": "Harukanaru Toki no Naka de 4"
     },
     {
         "gameId": "RHAE01",
@@ -4143,10 +4123,6 @@
         "gameName": "One Piece: Unlimited Adventure"
     },
     {
-        "gameId": "RIQPUJ",
-        "gameName": "Dancing on Ice"
-    },
-    {
         "gameId": "RIRE8P",
         "gameName": "Iron Man"
     },
@@ -4267,10 +4243,6 @@
         "gameName": "Think Logic Trainer"
     },
     {
-        "gameId": "RJ9XML",
-        "gameName": "Think Logic Trainer"
-    },
-    {
         "gameId": "RJAD52",
         "gameName": "Call of Duty: Modern Warfare - Reflex Edition"
     },
@@ -4285,10 +4257,6 @@
     {
         "gameId": "RJAX52",
         "gameName": "Call of Duty: Modern Warfare - Reflex Edition"
-    },
-    {
-        "gameId": "RJBJAF",
-        "gameName": "Daikaijuu Battle Ultra Coliseum"
     },
     {
         "gameId": "RJCE52",
@@ -4475,12 +4443,7 @@
         "gameName": "Marble Saga: Kororinpa"
     },
     {
-        "gameId": "kororinpa2wii",
-        "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane",
-        "gamespyId": "R2VE01"
-    },
-    {
-        "gameId": "R2VE01",
+        "gameId": "RK6J18",
         "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane"
     },
     {
@@ -4674,10 +4637,6 @@
     {
         "gameId": "RKVP54",
         "gameName": "The Bigs 2: Baseball"
-    },
-    {
-        "gameId": "RKWJ18",
-        "gameName": "Jigsaw Puzzle: Kyou no Wanko"
     },
     {
         "gameId": "RKXE69",
@@ -5108,21 +5067,12 @@
         "gameName": "Super Mario Stadium: Family Baseball"
     },
     {
-        "gameId": "mariokartwii",
-        "gameName": "Mario Kart Wii",
-        "gamespyId": "RMCE01"
-    },
-    {
         "gameId": "RMCE01",
         "gameName": "Mario Kart Wii"
     },
     {
         "gameId": "RMCJ01",
         "gameName": "Mario Kart Wii"
-    },
-    {
-        "gameId": "RMCJ51",
-        "gameName": "Wiimms MKW-Fun 2023-09.jap"
     },
     {
         "gameId": "RMCK01",
@@ -5201,12 +5151,7 @@
         "gameName": "Mario Sports Mix"
     },
     {
-        "gameId": "mariosprtwii",
-        "gameName": "Mario Sports Mix",
-        "gamespyId": "RMKE01"
-    },
-    {
-        "gameId": "RMKE01",
+        "gameId": "RMKP01",
         "gameName": "Mario Sports Mix"
     },
     {
@@ -6006,12 +5951,7 @@
         "gameName": "Pok\u00e9mon Battle Revolution"
     },
     {
-        "gameId": "pokebattlewii",
-        "gameName": "Pok\u00e9mon Battle Revolution",
-        "gamespyId": "RPBE01"
-    },
-    {
-        "gameId": "RPBE01",
+        "gameId": "RPBP01",
         "gameName": "Pok\u00e9mon Battle Revolution"
     },
     {
@@ -6173,10 +6113,6 @@
     {
         "gameId": "RPXE69",
         "gameName": "EA Playground"
-    },
-    {
-        "gameId": "RPXJ13",
-        "gameName": "Playground: Kouen de Asobou!"
     },
     {
         "gameId": "RPXP69",
@@ -6843,12 +6779,7 @@
         "gameName": "M64 Project M"
     },
     {
-        "gameId": "smashbrosxwii",
-        "gameName": "Super Smash Bros. Brawl",
-        "gamespyId": "RSBE01"
-    },
-    {
-        "gameId": "RSBE01",
+        "gameId": "RSBP01",
         "gameName": "Super Smash Bros. Brawl"
     },
     {
@@ -7140,10 +7071,6 @@
         "gameName": "Rockstar Games Presents: Table Tennis"
     },
     {
-        "gameId": "RT3JEL",
-        "gameName": "Rockstar Games Presents: Table Tennis"
-    },
-    {
         "gameId": "RT3P54",
         "gameName": "Rockstar Games Presents: Table Tennis"
     },
@@ -7430,11 +7357,6 @@
     {
         "gameId": "RTWP5D",
         "gameName": "TNA iMPACT!"
-    },
-    {
-        "gameId": "chesswii",
-        "gameName": "Wii Chess",
-        "gamespyId": "RTYP01"
     },
     {
         "gameId": "RTYP01",
@@ -7735,11 +7657,6 @@
     {
         "gameId": "RUUK01",
         "gameName": "Animal Crossing: City Folk"
-    },
-    {
-        "gameId": "acrossingwii",
-        "gameName": "Animal Crossing: Let's Go to the City",
-        "gamespyId": "RUUP01"
     },
     {
         "gameId": "RUUP01",
@@ -8234,11 +8151,6 @@
         "gameName": "Mariowa Sonic Beijing Olympic"
     },
     {
-        "gameId": "MSolympicwii",
-        "gameName": "Mario & Sonic at the Olympic Games",
-        "gamespyId": "RWSP8P"
-    },
-    {
         "gameId": "RWSP8P",
         "gameName": "Mario & Sonic at the Olympic Games"
     },
@@ -8343,10 +8255,6 @@
         "gameName": "The Biggest Loser"
     },
     {
-        "gameId": "RX7JGD",
-        "gameName": "Meja-maji March"
-    },
-    {
         "gameId": "RX8JA4",
         "gameName": "Jikkyou Powerful Pro Yakyuu Next"
     },
@@ -8449,10 +8357,6 @@
     {
         "gameId": "RXIP52",
         "gameName": "Transformers: Revenge of the Fallen"
-    },
-    {
-        "gameId": "RXJJDA",
-        "gameName": "Jinsei Game Wii EX"
     },
     {
         "gameId": "RXKEGL",
@@ -8587,11 +8491,6 @@
         "gameName": "Rayman - Raving Rabbids 2"
     },
     {
-        "gameId": "raymanrr2wii",
-        "gameName": "Rayman Raving Rabbids 2",
-        "gamespyId": "RY2P41"
-    },
-    {
         "gameId": "RY2P41",
         "gameName": "Rayman Raving Rabbids 2"
     },
@@ -8704,10 +8603,6 @@
         "gameName": "SPRay"
     },
     {
-        "gameId": "RYJPTV",
-        "gameName": "Princess Lillifee's Magic Fairy"
-    },
-    {
         "gameId": "RYKEAF",
         "gameName": "We Ski & Snowboard"
     },
@@ -8808,10 +8703,6 @@
         "gameName": "World Party Games"
     },
     {
-        "gameId": "RYZPTV",
-        "gameName": "Play the World"
-    },
-    {
         "gameId": "RZ2JG9",
         "gameName": "Simple Wii Series Vol. 1: The Minna de Kart Race"
     },
@@ -8834,10 +8725,6 @@
     {
         "gameId": "RZ7JG9",
         "gameName": "Simple Wii Series Vol. 6: The Wai Wai Combat"
-    },
-    {
-        "gameId": "RZ8JG9",
-        "gameName": "Simple 2000 Series Wii Vol. 1: The Table Game: Mahjong, Igo, Shougi, Card, Hanafuda, Reversi, Gomoku Narabe"
     },
     {
         "gameId": "RZ9EG9",
@@ -9037,10 +8924,6 @@
     },
     {
         "gameId": "S22JAF",
-        "gameName": "Family Fishing"
-    },
-    {
-        "gameId": "S22K01",
         "gameName": "Family Fishing"
     },
     {
@@ -9300,10 +9183,6 @@
         "gameName": "Barbie Jet, Set & Style!"
     },
     {
-        "gameId": "S3EXVZ",
-        "gameName": "Barbie Jet, Set & Style!"
-    },
-    {
         "gameId": "S3FE69",
         "gameName": "FIFA Soccer 13"
     },
@@ -9406,10 +9285,6 @@
     {
         "gameId": "S4MJGD",
         "gameName": "Dragon Quest X: Mezameshi Itsutsu no Shuzoku Online"
-    },
-    {
-        "gameId": "S4SJGD",
-        "gameName": "Dragon Quest X: Nemureru Yuusha to Michibiki no Meiyuu Online"
     },
     {
         "gameId": "S59E01",
@@ -9524,10 +9399,6 @@
         "gameName": "Wreck-It Ralph"
     },
     {
-        "gameId": "S6TJGD",
-        "gameName": "Dragon Quest X: All in One Package"
-    },
-    {
         "gameId": "S72E01",
         "gameName": "Kirby's Dream Collection: Special Edition"
     },
@@ -9549,10 +9420,6 @@
     },
     {
         "gameId": "S7AKWR",
-        "gameName": "LEGO Batman 2: DC Super Heroes"
-    },
-    {
-        "gameId": "S7AKZA",
         "gameName": "LEGO Batman 2: DC Super Heroes"
     },
     {
@@ -9852,19 +9719,11 @@
         "gameName": "Barbie: Groom and Glam Pups"
     },
     {
-        "gameId": "SB9EVZ",
-        "gameName": "Barbie: Groom and Glam Pups"
-    },
-    {
         "gameId": "SB9P78",
         "gameName": "Barbie: Groom and Glam Pups"
     },
     {
         "gameId": "SB9X78",
-        "gameName": "Barbie: Groom and Glam Pups"
-    },
-    {
-        "gameId": "SB9YVZ",
         "gameName": "Barbie: Groom and Glam Pups"
     },
     {
@@ -10272,22 +10131,6 @@
         "gameName": "Der Gesundheitscoach"
     },
     {
-        "gameId": "SD5PTV",
-        "gameName": "Lernerfolg Grundschule: Deutsch - Klasse 1-4"
-    },
-    {
-        "gameId": "SD6PTV",
-        "gameName": "Lernerfolg Grundschule: Englisch - Klasse 1-4"
-    },
-    {
-        "gameId": "SD7PTV",
-        "gameName": "Lernerfolg Grundschule: Mathematik - Klasse 1-4"
-    },
-    {
-        "gameId": "SD8DSV",
-        "gameName": "Mein neues Leben Abenteuer auf Tropicana"
-    },
-    {
         "gameId": "SD9JAF",
         "gameName": "SD Gundam: Gashapon Wars"
     },
@@ -10580,10 +10423,6 @@
         "gameName": "Disney Epic Mickey 2: Futatsu no Chikara"
     },
     {
-        "gameId": "SERK8M",
-        "gameName": "Disney Epic Mickey 2: The Power of Two"
-    },
-    {
         "gameId": "SERP4Q",
         "gameName": "Disney Epic Mickey 2: The Power of Two"
     },
@@ -10658,10 +10497,6 @@
     {
         "gameId": "SFAE41",
         "gameName": "Family Feud Decades"
-    },
-    {
-        "gameId": "SFAJGD",
-        "gameName": "Hagane no Renkinjutsushi: Fullmetal Alchemist: Tasogare no Shoujo"
     },
     {
         "gameId": "SFBE70",
@@ -10869,10 +10704,6 @@
     },
     {
         "gameId": "SGBE5G",
-        "gameName": "Greg Hastings Paintball 2"
-    },
-    {
-        "gameId": "SGBPGT",
         "gameName": "Greg Hastings Paintball 2"
     },
     {
@@ -11116,10 +10947,6 @@
         "gameName": "Basketball Hall of Fame: Ultimate Hoops Challenge"
     },
     {
-        "gameId": "SHGDRM",
-        "gameName": "Holiday Games"
-    },
-    {
         "gameId": "SHHE69",
         "gameName": "Harry Potter and the Deathly Hallows, Part 1"
     },
@@ -11256,10 +11083,6 @@
         "gameName": "The Island of Dr. Frankenstein"
     },
     {
-        "gameId": "SIFPNJ",
-        "gameName": "The Island of Dr. Frankenstein"
-    },
-    {
         "gameId": "SIHE4Z",
         "gameName": "Sing 4: The Hits Edition"
     },
@@ -11338,10 +11161,6 @@
     {
         "gameId": "SJ2PWR",
         "gameName": "Scooby-Doo! and the Spooky Swamp"
-    },
-    {
-        "gameId": "SJ3JDA",
-        "gameName": "Jinsei Game: Happy Family"
     },
     {
         "gameId": "SJ3PNL",
@@ -11800,10 +11619,6 @@
         "gameName": "Everyone Sing"
     },
     {
-        "gameId": "SL7DML",
-        "gameName": "2-in-1 - Meine Tierpension + Meine Tiersprechstunde"
-    },
-    {
         "gameId": "SLAE78",
         "gameName": "The Last Airbender"
     },
@@ -12146,10 +11961,6 @@
     {
         "gameId": "SMTJ18",
         "gameName": "Momotarou Dentetsu 2010: Sengoku Ishin no Hero Daishuugou! no Maki"
-    },
-    {
-        "gameId": "SMUJAF",
-        "gameName": "Daikaijuu Battle: Ultra Coliseum DX: Ultra Senshi Daishuuketsu"
     },
     {
         "gameId": "SMVE54",
@@ -12724,10 +12535,6 @@
         "gameName": "Mama's 2-Pack"
     },
     {
-        "gameId": "SQKK01",
-        "gameName": "Cooking Mama"
-    },
-    {
         "gameId": "SQLE4Z",
         "gameName": "Cartoon Network: Punch Time Explosion XL"
     },
@@ -13280,10 +13087,6 @@
         "gameName": "Reload"
     },
     {
-        "gameId": "STDURN",
-        "gameName": "Reload"
-    },
-    {
         "gameId": "STEETR",
         "gameName": "Tetris Party Deluxe"
     },
@@ -13804,14 +13607,6 @@
         "gameName": "Vegas Party"
     },
     {
-        "gameId": "SVQEVZ",
-        "gameName": "Barbie and Her Sisters: Puppy Rescue"
-    },
-    {
-        "gameId": "SVQPVZ",
-        "gameName": "Barbie and Her Sisters: Puppy Rescue"
-    },
-    {
         "gameId": "SVSPZX",
         "gameName": "Battle vs Chess"
     },
@@ -14120,32 +13915,8 @@
         "gameName": "Rock Band 3"
     },
     {
-        "gameId": "DC8A",
-        "gameName": "Line Attack Heroes"
-    },
-    {
         "gameId": "HDMD",
         "gameName": "Dr. Mario & Bazillenjagd (Beta)"
-    },
-    {
-        "gameId": "HDME",
-        "gameName": "Dr. Mario Online Rx (Beta)"
-    },
-    {
-        "gameId": "HDMF",
-        "gameName": "Dr. Mario & Bactericide (Beta)"
-    },
-    {
-        "gameId": "HDMI",
-        "gameName": "Dr. Mario & Sterminavirus (Beta)"
-    },
-    {
-        "gameId": "HDMJ",
-        "gameName": "Dr. Mario & Saikin Bokumetsu (Beta)"
-    },
-    {
-        "gameId": "HDMP",
-        "gameName": "Dr. Mario & Germ Buster (Beta)"
     },
     {
         "gameId": "HDMS",
@@ -14420,10 +14191,6 @@
         "gameName": "Shika Gari"
     },
     {
-        "gameId": "W4OJ",
-        "gameName": "Shikakui Atama wo Maru Kusuru - Mainichi Minna no Challenge Hen"
-    },
-    {
         "gameId": "W4TE",
         "gameName": "Spaceball Revolution"
     },
@@ -14480,10 +14247,6 @@
         "gameName": "Successfully Learning German - Year 2"
     },
     {
-        "gameId": "W82J",
-        "gameName": "Jintori Action! Taikoukenchi - Karakuri Shiro no Nazo"
-    },
-    {
         "gameId": "W8BP",
         "gameName": "Babel Rising"
     },
@@ -14500,20 +14263,8 @@
         "gameName": "Bit. Trip Core"
     },
     {
-        "gameId": "W8DJ",
-        "gameName": "Moebius Drive"
-    },
-    {
-        "gameId": "W8IJ",
-        "gameName": "81diver Wii"
-    },
-    {
         "gameId": "W8LE",
         "gameName": "Balloon Pop Festival"
-    },
-    {
-        "gameId": "W8PJ",
-        "gameName": "Ouchide Mugen Puti Puti"
     },
     {
         "gameId": "W8WE",
@@ -14728,16 +14479,8 @@
         "gameName": "Tsuushin Taikyoku - Igo Dojo 2700-Mon"
     },
     {
-        "gameId": "WASJ",
-        "gameName": "Tsuushin Taikyoku - Hayazashi Shogi Sandan"
-    },
-    {
         "gameId": "WATE",
         "gameName": "Astro Bugz Revenge"
-    },
-    {
-        "gameId": "WAUJ",
-        "gameName": "Tsuushin Taikyoku - World Chess"
     },
     {
         "gameId": "WAYE",
@@ -14826,10 +14569,6 @@
     {
         "gameId": "WB8P",
         "gameName": "Midnight Bowling"
-    },
-    {
-        "gameId": "WBAJ",
-        "gameName": "Bakutan"
     },
     {
         "gameId": "WBBE",
@@ -15044,10 +14783,6 @@
         "gameName": "Chronos Twins DX"
     },
     {
-        "gameId": "WC8J",
-        "gameName": "Line Attack Heroes"
-    },
-    {
         "gameId": "WCHE",
         "gameName": "Chess Challenge!"
     },
@@ -15090,10 +14825,6 @@
     {
         "gameId": "WCLE",
         "gameName": "Doc Clock - The Toasted Sandwich of Time"
-    },
-    {
-        "gameId": "WCNJ",
-        "gameName": "Tokyo City Nights"
     },
     {
         "gameId": "WCOE",
@@ -15160,10 +14891,6 @@
         "gameName": "ColorZ"
     },
     {
-        "gameId": "WD2J",
-        "gameName": "Simple Series Vol. 2 - The Number Puzzle neo"
-    },
-    {
         "gameId": "WD9E",
         "gameName": "Castlevania - The Adventure ReBirth"
     },
@@ -15174,10 +14901,6 @@
     {
         "gameId": "WD9P",
         "gameName": "Castlevania - The Adventure ReBirth"
-    },
-    {
-        "gameId": "WDAJ",
-        "gameName": "Darts Wii"
     },
     {
         "gameId": "WDBE",
@@ -15228,10 +14951,6 @@
         "gameName": "Art Style - ROTOHEX"
     },
     {
-        "gameId": "WDIJ",
-        "gameName": "Simple Series Vol. 1 - The Block Kuzushi neo"
-    },
-    {
         "gameId": "WDKE",
         "gameName": "Dart Rage"
     },
@@ -15248,24 +14967,12 @@
         "gameName": "Dr. Mario & Germ Buster"
     },
     {
-        "gameId": "WDNJ",
-        "gameName": "Discipline - Teikoku no Tanjyou"
-    },
-    {
         "gameId": "WDOE",
         "gameName": "Driift Mania"
     },
     {
         "gameId": "WDOP",
         "gameName": "Driift Mania"
-    },
-    {
-        "gameId": "WDPE",
-        "gameName": "Dr. Mario Online Rx - Friend Battle"
-    },
-    {
-        "gameId": "WDPJ",
-        "gameName": "Dr. Mario & Saikin Bokumetsu - Furendo Taisen"
     },
     {
         "gameId": "WDPP",
@@ -15448,18 +15155,6 @@
         "gameName": "Fast Draw Showdown"
     },
     {
-        "gameId": "WFBE",
-        "gameName": "Sandy Beach"
-    },
-    {
-        "gameId": "WFBJ",
-        "gameName": "Beach de Oshiro wo Tsukuccha Wow!"
-    },
-    {
-        "gameId": "WFBP",
-        "gameName": "Sandy Beach"
-    },
-    {
         "gameId": "WFCE",
         "gameName": "Final Fantasy Crystal Chronicles - My Life as a King"
     },
@@ -15572,10 +15267,6 @@
         "gameName": "Frogger Returns"
     },
     {
-        "gameId": "WFSJ",
-        "gameName": "Minna no Theatre Wii"
-    },
-    {
         "gameId": "WFTE",
         "gameName": "Fish'em All"
     },
@@ -15624,10 +15315,6 @@
         "gameName": "Family Games - Pen & Paper Edition"
     },
     {
-        "gameId": "WG2J",
-        "gameName": "Sugarbunnies Wii - Youkoso Bunnies Field-e"
-    },
-    {
         "gameId": "WG4E",
         "gameName": "GhostSlayer"
     },
@@ -15652,10 +15339,6 @@
         "gameName": "Gradius ReBirth"
     },
     {
-        "gameId": "WGFP",
-        "gameName": "Girlfriends Forever - Magic Skate"
-    },
-    {
         "gameId": "WGGE",
         "gameName": "Gabrielle's Ghostly Groove - Monster Mix"
     },
@@ -15666,14 +15349,6 @@
     {
         "gameId": "WGGP",
         "gameName": "Gabrielle's Ghostly Groove - Monster Mix"
-    },
-    {
-        "gameId": "WGLE",
-        "gameName": "Gene Labs"
-    },
-    {
-        "gameId": "WGMJ",
-        "gameName": "Game Sound Station"
     },
     {
         "gameId": "WGOE",
@@ -15726,14 +15401,6 @@
     {
         "gameId": "WGSS",
         "gameName": "Phoenix Wright - Ace Attorney"
-    },
-    {
-        "gameId": "WGTJ",
-        "gameName": "Sekai no Omoshiro Party Game"
-    },
-    {
-        "gameId": "WGUJ",
-        "gameName": "Aero Guitar"
     },
     {
         "gameId": "WGVE",
@@ -15884,10 +15551,6 @@
         "gameName": "Play with Birds"
     },
     {
-        "gameId": "WIKJ",
-        "gameName": "Ivy the Kiwi - Mini"
-    },
-    {
         "gameId": "WILE",
         "gameName": "Tales of Monkey Island - Chapter 1 - Launch of the Screaming Narwhal"
     },
@@ -15960,10 +15623,6 @@
         "gameName": "Tales of Monkey Island - Chapter 4 - The Trial and Execution of Guybrush Threepwood"
     },
     {
-        "gameId": "WJ2J",
-        "gameName": "Jinsei Game - Happy Step"
-    },
-    {
         "gameId": "WJAE",
         "gameName": "Jam City Rollergirls"
     },
@@ -15992,20 +15651,12 @@
         "gameName": "Gnomz"
     },
     {
-        "gameId": "WJGJ",
-        "gameName": "Jinsei Game"
-    },
-    {
         "gameId": "WJKE",
         "gameName": "Jewel Keepers - Easter Island"
     },
     {
         "gameId": "WJKP",
         "gameName": "Jewel Keepers - Easter Island"
-    },
-    {
-        "gameId": "WJPJ",
-        "gameName": "Janken Party Paradise"
     },
     {
         "gameId": "WJSE",
@@ -16022,18 +15673,6 @@
     {
         "gameId": "WJWP",
         "gameName": "Bejeweled 2"
-    },
-    {
-        "gameId": "WK2J",
-        "gameName": "Kappa-kun to Asobou - Kappa-kun no Ota no Shimikai"
-    },
-    {
-        "gameId": "WK3J",
-        "gameName": "Kappa-kun to Asobou - Kappa-kun to 3 Bikino Koneko"
-    },
-    {
-        "gameId": "WK9J",
-        "gameName": "Minna de Asobou - Koinu de Kururin"
     },
     {
         "gameId": "WKBE",
@@ -16058,10 +15697,6 @@
     {
         "gameId": "WKDE",
         "gameName": "Pirates - The Key of Dreams"
-    },
-    {
-        "gameId": "WKEJ",
-        "gameName": "Raku Raku Kinen Appli Wii - Kinenka no Isha ga Oshieru Nanoka de Yamaru Hoho"
     },
     {
         "gameId": "WKFE",
@@ -16100,18 +15735,6 @@
         "gameName": "Pop-up Pirate!"
     },
     {
-        "gameId": "WKNJ",
-        "gameName": "Kanken - Minna de Wai Wai Kanji Nou"
-    },
-    {
-        "gameId": "WKPJ",
-        "gameName": "Kappa-kun to Asobou - Kappa-kun to Mori no Nakamatachi"
-    },
-    {
-        "gameId": "WKQJ",
-        "gameName": "Kentei TV! Wii - Minna de Gotouchi Quiz Battle!"
-    },
-    {
         "gameId": "WKRP",
         "gameName": "Karate Phants - Gloves of Glory"
     },
@@ -16126,10 +15749,6 @@
     {
         "gameId": "WKTP",
         "gameName": "Contra ReBirth"
-    },
-    {
-        "gameId": "WKUJ",
-        "gameName": "Downtown Nekketsu Dodgeball"
     },
     {
         "gameId": "WKWE",
@@ -16168,10 +15787,6 @@
         "gameName": "Bingo Party Deluxe"
     },
     {
-        "gameId": "WLDJ",
-        "gameName": "Bokumo Sekai wo Sukuitai"
-    },
-    {
         "gameId": "WLEE",
         "gameName": "Learning with The PooYoos - Episode 1"
     },
@@ -16190,14 +15805,6 @@
     {
         "gameId": "WLIE",
         "gameName": "Liight"
-    },
-    {
-        "gameId": "WLJJ",
-        "gameName": "Bokumo Sekai wo Sukuitai - Battle Tournament"
-    },
-    {
-        "gameId": "WLKJ",
-        "gameName": "Licca-chan Oshare House"
     },
     {
         "gameId": "WLLE",
@@ -16274,10 +15881,6 @@
     {
         "gameId": "WLWP",
         "gameName": "LostWinds"
-    },
-    {
-        "gameId": "WLXJ",
-        "gameName": "Phalanx"
     },
     {
         "gameId": "WLZE",
@@ -16436,10 +16039,6 @@
         "gameName": "Moki Moki"
     },
     {
-        "gameId": "WMPJ",
-        "gameName": "Kotoba no Puzzle - Mojipittan Wii"
-    },
-    {
         "gameId": "WMRE",
         "gameName": "Monochrome Racing"
     },
@@ -16516,10 +16115,6 @@
         "gameName": "Niki - Rock 'n' Ball"
     },
     {
-        "gameId": "WNPJ",
-        "gameName": "Sugu Suro Duo - New Pulsar R&V"
-    },
-    {
         "gameId": "WNSE",
         "gameName": "Newton vs The Horde"
     },
@@ -16538,10 +16133,6 @@
     {
         "gameId": "WNVP",
         "gameName": "Neves Plus - Pantheon of Tangrams"
-    },
-    {
-        "gameId": "WNWJ",
-        "gameName": "Hamekomi Lucky Puzzle Wii Returns"
     },
     {
         "gameId": "WO6E",
@@ -16584,10 +16175,6 @@
         "gameName": "Order!!"
     },
     {
-        "gameId": "WOEJ",
-        "gameName": "Oekaki Logic"
-    },
-    {
         "gameId": "WOFE",
         "gameName": "Overflow"
     },
@@ -16602,18 +16189,6 @@
     {
         "gameId": "WOGP",
         "gameName": "Family Mini Golf"
-    },
-    {
-        "gameId": "WOKJ",
-        "gameName": "Karaoke Joysound Wii"
-    },
-    {
-        "gameId": "WOLJ",
-        "gameName": "Othello"
-    },
-    {
-        "gameId": "WOMJ",
-        "gameName": "Sekai no Omoshiro Party Game 2"
     },
     {
         "gameId": "WOPE",
@@ -16644,10 +16219,6 @@
         "gameName": "Overturn"
     },
     {
-        "gameId": "WOXJ",
-        "gameName": "Osu! Exercise Doujou"
-    },
-    {
         "gameId": "WOYE",
         "gameName": "Bit Boy!!"
     },
@@ -16658,10 +16229,6 @@
     {
         "gameId": "WOYP",
         "gameName": "Bit Boy!!"
-    },
-    {
-        "gameId": "WOZJ",
-        "gameName": "Kodomo Kyouiku Terebi Wii - Aiue Oumuzu"
     },
     {
         "gameId": "WP2E",
@@ -16688,10 +16255,6 @@
         "gameName": "Pokosuka Racing"
     },
     {
-        "gameId": "WP6J",
-        "gameName": "Boku wa Plarail Untenshi - Shinkansen & Joukikikansha Hen"
-    },
-    {
         "gameId": "WP7E",
         "gameName": "My Planetarium"
     },
@@ -16702,10 +16265,6 @@
     {
         "gameId": "WP7P",
         "gameName": "My Starry Night"
-    },
-    {
-        "gameId": "WP9J",
-        "gameName": "Pokers Wii"
     },
     {
         "gameId": "WPAJ",
@@ -16774,14 +16333,6 @@
     {
         "gameId": "WPLE",
         "gameName": "Planet Pachinko"
-    },
-    {
-        "gameId": "WPNJ",
-        "gameName": "Ponjan Wii"
-    },
-    {
-        "gameId": "WPOJ",
-        "gameName": "Popple to Mahou no Crayon"
     },
     {
         "gameId": "WPPE",
@@ -16860,10 +16411,6 @@
         "gameName": "Pong Toss Pro - Frat Party Games"
     },
     {
-        "gameId": "WPXJ",
-        "gameName": "Minna de Tobikome! Penguin Diving - Hooper Looper"
-    },
-    {
         "gameId": "WPYE",
         "gameName": "Pallurikio"
     },
@@ -16874,10 +16421,6 @@
     {
         "gameId": "WPZE",
         "gameName": "Bruiser and Scratch"
-    },
-    {
-        "gameId": "WQ4J",
-        "gameName": "Kentoushi - Furi Furi Boxing"
     },
     {
         "gameId": "WR2E",
@@ -16980,10 +16523,6 @@
         "gameName": "FAST - Racing League"
     },
     {
-        "gameId": "WRNJ",
-        "gameName": "Bit. Trip Runner - Rhythm Seijin no Gekisou"
-    },
-    {
         "gameId": "WRPE",
         "gameName": "Burn the Rope"
     },
@@ -17040,10 +16579,6 @@
         "gameName": "Robox"
     },
     {
-        "gameId": "WS2J",
-        "gameName": "Saikyou Ginsei Igo"
-    },
-    {
         "gameId": "WS3E",
         "gameName": "Silver Star Chess"
     },
@@ -17052,28 +16587,12 @@
         "gameName": "Saikyou Ginsei Chess"
     },
     {
-        "gameId": "WS4J",
-        "gameName": "Saikyou Ginsei Mahjong"
-    },
-    {
-        "gameId": "WS5J",
-        "gameName": "Saikyou Ginsei Gomoku Narabe"
-    },
-    {
         "gameId": "WS6E",
         "gameName": "Silver Star Reversi"
     },
     {
         "gameId": "WS6J",
         "gameName": "Saikyou Ginsei Reversi"
-    },
-    {
-        "gameId": "WS7E",
-        "gameName": "Fantasy Slots - Adventure Slots and Games"
-    },
-    {
-        "gameId": "WS8J",
-        "gameName": "Minna de Taisen Puzzle - Shanghai Wii"
     },
     {
         "gameId": "WS9E",
@@ -17096,18 +16615,6 @@
         "gameName": "Onslaught"
     },
     {
-        "gameId": "WSBJ",
-        "gameName": "Sorcery Blade"
-    },
-    {
-        "gameId": "WSCJ",
-        "gameName": "Out of Galaxy - Gin no Koushika"
-    },
-    {
-        "gameId": "WSEJ",
-        "gameName": "Princess Ai Monogatari"
-    },
-    {
         "gameId": "WSGE",
         "gameName": "Pop 'Em, Drop 'Em SameGame"
     },
@@ -17122,10 +16629,6 @@
     {
         "gameId": "WSHE",
         "gameName": "Stonekeep - Bones of the Ancestors"
-    },
-    {
-        "gameId": "WSIJ",
-        "gameName": "Saikyou Ginsei Shogi"
     },
     {
         "gameId": "WSJE",
@@ -17174,10 +16677,6 @@
     {
         "gameId": "WSSP",
         "gameName": "Solitaire"
-    },
-    {
-        "gameId": "WSTJ",
-        "gameName": "Tenshi no Solitaire"
     },
     {
         "gameId": "WSUE",
@@ -17244,10 +16743,6 @@
         "gameName": "Fantastic Tambourine"
     },
     {
-        "gameId": "WTDJ",
-        "gameName": "Tomy Car Drive Shutsudou! Kinkyuu Sharyou Hen"
-    },
-    {
         "gameId": "WTEE",
         "gameName": "Tales of Elastic Boy - Mission 1"
     },
@@ -17262,10 +16757,6 @@
     {
         "gameId": "WTFP",
         "gameName": "Bit. Trip Flux"
-    },
-    {
-        "gameId": "WTHJ",
-        "gameName": "Kaku! Ugoku! Tsukamaeru! Sensei Wii"
     },
     {
         "gameId": "WTIE",
@@ -17308,11 +16799,6 @@
         "gameName": "Tetris Party"
     },
     {
-        "gameId": "tetpartywii",
-        "gameName": "Tetris Party",
-        "gamespyId": "WTPP"
-    },
-    {
         "gameId": "WTPP",
         "gameName": "Tetris Party"
     },
@@ -17339,10 +16825,6 @@
     {
         "gameId": "WTUE",
         "gameName": "Tumblebugs 2"
-    },
-    {
-        "gameId": "WTWP",
-        "gameName": "Fenimore Fillmore - The Westerner"
     },
     {
         "gameId": "WTXE",
@@ -17389,10 +16871,6 @@
         "gameName": "Successfully Learning Mathematics - Year 2"
     },
     {
-        "gameId": "WUKJ",
-        "gameName": "Unou Kids - Okigaru Unou Training"
-    },
-    {
         "gameId": "WUNE",
         "gameName": "UNO"
     },
@@ -17427,10 +16905,6 @@
     {
         "gameId": "WVCE",
         "gameName": "V.I.P. Casino - Blackjack"
-    },
-    {
-        "gameId": "WVDJ",
-        "gameName": "Kodomo Kyouiku Terebi Wii - Aiue Ouchan"
     },
     {
         "gameId": "WVFE",
@@ -17541,28 +17015,12 @@
         "gameName": "Paper Wars - Cannon Fodder"
     },
     {
-        "gameId": "WX2P",
-        "gameName": "Successfully Learning English Year 3"
-    },
-    {
-        "gameId": "WX3P",
-        "gameName": "Successfully Learning English Year 4"
-    },
-    {
-        "gameId": "WX4P",
-        "gameName": "Successfully Learning English Year 5"
-    },
-    {
         "gameId": "WXBE",
         "gameName": "Ben 10 Alien Force - The Rise of Hex"
     },
     {
         "gameId": "WXBP",
         "gameName": "Ben 10 Alien Force - The Rise of Hex"
-    },
-    {
-        "gameId": "WXIP",
-        "gameName": "Successfully Learning English Year 2"
     },
     {
         "gameId": "WXME",
@@ -17591,10 +17049,6 @@
     {
         "gameId": "WYIP",
         "gameName": "escapeVektor - Chapter 1"
-    },
-    {
-        "gameId": "WYKJ",
-        "gameName": "Yomi Kiku Asobi Wii"
     },
     {
         "gameId": "WYME",
@@ -17649,10 +17103,6 @@
         "gameName": "Simple Series Vol. 5 - The Judo"
     },
     {
-        "gameId": "WZMJ",
-        "gameName": "Simple Series Vol. 3 - The Mahjong"
-    },
-    {
         "gameId": "WZPE",
         "gameName": "Zombie Panic in Wonderland"
     },
@@ -17677,66 +17127,6 @@
         "gameName": "The Tales of Bearsworth Manor - Puzzling Pages"
     },
     {
-        "gameId": "XH2E",
-        "gameName": "Cave Story (Demo)"
-    },
-    {
-        "gameId": "XH2P",
-        "gameName": "Cave Story (Demo)"
-    },
-    {
-        "gameId": "XH3E",
-        "gameName": "Frobot (Demo)"
-    },
-    {
-        "gameId": "XH4E",
-        "gameName": "Max and the Magic Marker (Demo)"
-    },
-    {
-        "gameId": "XH4P",
-        "gameName": "Max & the Magic Marker (Demo)"
-    },
-    {
-        "gameId": "XH5E",
-        "gameName": "Ayim And Yet It Moves (Demo)"
-    },
-    {
-        "gameId": "XH5P",
-        "gameName": "And Yet It Moves (Demo)"
-    },
-    {
-        "gameId": "XH6E",
-        "gameName": "Robox (Demo)"
-    },
-    {
-        "gameId": "XH6P",
-        "gameName": "Robox (Demo)"
-    },
-    {
-        "gameId": "XH7E",
-        "gameName": "Lit (Demo)"
-    },
-    {
-        "gameId": "XH7P",
-        "gameName": "Lit (Demo)"
-    },
-    {
-        "gameId": "XH8E",
-        "gameName": "Lead the Meerkats (Demo)"
-    },
-    {
-        "gameId": "XH8P",
-        "gameName": "Lead the Meerkats (Demo)"
-    },
-    {
-        "gameId": "XH9P",
-        "gameName": "ColorZ (Demo)"
-    },
-    {
-        "gameId": "XHAE",
-        "gameName": "Pok\u00e9mon Rumble (Demo)"
-    },
-    {
         "gameId": "XHAP",
         "gameName": "Pok\u00e9mon Rumble (Demo)"
     },
@@ -17751,26 +17141,6 @@
     {
         "gameId": "XHCP",
         "gameName": "Final Fantasy Crystal Chronicles: My Life as a Darklord (Demo)"
-    },
-    {
-        "gameId": "XHDE",
-        "gameName": "NyxQuest: Kindred Spirits (Demo)"
-    },
-    {
-        "gameId": "XHDP",
-        "gameName": "NyxQuest: Kindred Spirits (Demo)"
-    },
-    {
-        "gameId": "XHEE",
-        "gameName": "BIT.TRIP BEAT (Demo)"
-    },
-    {
-        "gameId": "XHEJ",
-        "gameName": "Bit. Trip Beat"
-    },
-    {
-        "gameId": "XHEP",
-        "gameName": "BIT.TRIP BEAT (Demo)"
     },
     {
         "gameId": "XHFE",
@@ -17789,14 +17159,6 @@
         "gameName": "Pok\u00e9mon Fushigi no Dungeon - Mezase! Hikari no Boukendan (Demo)"
     },
     {
-        "gameId": "XHIE",
-        "gameName": "Fluidity (Demo)"
-    },
-    {
-        "gameId": "XHIP",
-        "gameName": "Hydroventure (Demo)"
-    },
-    {
         "gameId": "XHJE",
         "gameName": "Thruspace (Demo)"
     },
@@ -17809,78 +17171,6 @@
         "gameName": "Thruspace (Demo)"
     },
     {
-        "gameId": "XHKE",
-        "gameName": "Dive: The Medes Islands Secret (Demo)"
-    },
-    {
-        "gameId": "XHKP",
-        "gameName": "Dive: The Medes Islands Secret (Demo)"
-    },
-    {
-        "gameId": "XHLE",
-        "gameName": "Jett Rocket (Demo)"
-    },
-    {
-        "gameId": "XHLP",
-        "gameName": "Jett Rocket (Demo)"
-    },
-    {
-        "gameId": "XHME",
-        "gameName": "Art of Balance (Demo)"
-    },
-    {
-        "gameId": "XHMP",
-        "gameName": "Art of Balance (Demo)"
-    },
-    {
-        "gameId": "XHNP",
-        "gameName": "Chronos Twins DX (Demo)"
-    },
-    {
-        "gameId": "XHOP",
-        "gameName": "Art of Balance (Demo)"
-    },
-    {
-        "gameId": "XHQE",
-        "gameName": "Zombie Panic (Demo)"
-    },
-    {
-        "gameId": "XHQP",
-        "gameName": "Zombie Panic (Demo)"
-    },
-    {
-        "gameId": "XHRE",
-        "gameName": "Furry Legends (Demo)"
-    },
-    {
-        "gameId": "XHRP",
-        "gameName": "Furry Legends (Demo)"
-    },
-    {
-        "gameId": "XHVE",
-        "gameName": "BIT.TRIP CORE (Demo)"
-    },
-    {
-        "gameId": "XHVP",
-        "gameName": "BIT.TRIP CORE (Demo)"
-    },
-    {
-        "gameId": "XHWE",
-        "gameName": "BIT.TRIP VOID (Demo)"
-    },
-    {
-        "gameId": "XHWP",
-        "gameName": "BIT.TRIP VOID (Demo)"
-    },
-    {
-        "gameId": "XHXE",
-        "gameName": "BIT.TRIP RUNNER (Demo)"
-    },
-    {
-        "gameId": "XHXP",
-        "gameName": "BIT.TRIP RUNNER (Demo)"
-    },
-    {
         "gameId": "XHYE",
         "gameName": "BIT.TRIP FATE (Demo)"
     },
@@ -17889,256 +17179,8 @@
         "gameName": "BIT.TRIP FATE (Demo)"
     },
     {
-        "gameId": "XHZE",
-        "gameName": "Chronos Twins DX (Demo)"
-    },
-    {
-        "gameId": "XHZP",
-        "gameName": "Chronos Twins DX (Demo)"
-    },
-    {
-        "gameId": "XI2E",
-        "gameName": "Kyotokei (Demo)"
-    },
-    {
-        "gameId": "XI2P",
-        "gameName": "Kyotokei (Demo)"
-    },
-    {
-        "gameId": "XI7E",
-        "gameName": "Liight (Demo)"
-    },
-    {
-        "gameId": "XI8E",
-        "gameName": "Jam City (Demo)"
-    },
-    {
-        "gameId": "XI8P",
-        "gameName": "Jam City (Demo)"
-    },
-    {
-        "gameId": "XIAE",
-        "gameName": "Lilt Line (Demo)"
-    },
-    {
-        "gameId": "XIAP",
-        "gameName": "Lilt Line (Demo)"
-    },
-    {
-        "gameId": "XIBE",
-        "gameName": "Fish em All (Demo)"
-    },
-    {
-        "gameId": "XIBP",
-        "gameName": "Fish em All (Demo)"
-    },
-    {
-        "gameId": "XICE",
-        "gameName": "Gods vs Humans (Demo)"
-    },
-    {
-        "gameId": "XICP",
-        "gameName": "Gods vs Humans (Demo)"
-    },
-    {
-        "gameId": "XIDE",
-        "gameName": "Racers Islands Crazy Racers (Demo)"
-    },
-    {
-        "gameId": "XIDP",
-        "gameName": "Racers Islands Crazy Racers (Demo)"
-    },
-    {
-        "gameId": "XIEE",
-        "gameName": "chick chick BOOM (Demo)"
-    },
-    {
-        "gameId": "XIEJ",
-        "gameName": "Chick Chick BOOM"
-    },
-    {
-        "gameId": "XIEP",
-        "gameName": "chick chick BOOM (Demo)"
-    },
-    {
-        "gameId": "XIGE",
-        "gameName": "Urbanix (Demo)"
-    },
-    {
-        "gameId": "XIGP",
-        "gameName": "Urbanix (Demo)"
-    },
-    {
-        "gameId": "XIHE",
-        "gameName": "Gladiator (Demo)"
-    },
-    {
-        "gameId": "XIHP",
-        "gameName": "Gladiator (Demo)"
-    },
-    {
-        "gameId": "XIJE",
-        "gameName": "Fast Racing League (Demo)"
-    },
-    {
-        "gameId": "XIJP",
-        "gameName": "Fast Racing League (Demo)"
-    },
-    {
-        "gameId": "XIKE",
-        "gameName": "Monsteca Corral (Demo)"
-    },
-    {
-        "gameId": "XIKP",
-        "gameName": "Monsteca Corral (Demo)"
-    },
-    {
         "gameId": "XIMP",
         "gameName": "HoopWorld: BasketBrawl (Demo)"
-    },
-    {
-        "gameId": "XINE",
-        "gameName": "Learning with the Pooyoos Episode 1 (Demo)"
-    },
-    {
-        "gameId": "XINP",
-        "gameName": "Learning with the Pooyoos Episode 1 (Demo)"
-    },
-    {
-        "gameId": "XIOE",
-        "gameName": "Learning with the Pooyoos Episode 2 (Demo)"
-    },
-    {
-        "gameId": "XIOP",
-        "gameName": "Learning with the Pooyoos Episode 2 (Demo)"
-    },
-    {
-        "gameId": "XIPE",
-        "gameName": "Learning with the Pooyoos Episode 3 (Demo)"
-    },
-    {
-        "gameId": "XIPP",
-        "gameName": "Learning with the Pooyoos Episode 3 (Demo)"
-    },
-    {
-        "gameId": "XIQE",
-        "gameName": "Dart Rage (Demo)"
-    },
-    {
-        "gameId": "XIRE",
-        "gameName": "Pong Toss Pro (Demo)"
-    },
-    {
-        "gameId": "XISE",
-        "gameName": "BIT.TRIP FLUX (Demo)"
-    },
-    {
-        "gameId": "XISP",
-        "gameName": "BIT.TRIP FLUX (Demo)"
-    },
-    {
-        "gameId": "XITE",
-        "gameName": "Fast Draw (Demo)"
-    },
-    {
-        "gameId": "XITP",
-        "gameName": "Fast Draw (Demo)"
-    },
-    {
-        "gameId": "XIUE",
-        "gameName": "Soccer Bashi (Demo)"
-    },
-    {
-        "gameId": "XIUP",
-        "gameName": "Soccer Bashi (Demo)"
-    },
-    {
-        "gameId": "XIVE",
-        "gameName": "Mix Superstar (Demo)"
-    },
-    {
-        "gameId": "XIVP",
-        "gameName": "Mix Superstar (Demo)"
-    },
-    {
-        "gameId": "XIWE",
-        "gameName": "Horizon Riders (Demo)"
-    },
-    {
-        "gameId": "XIZE",
-        "gameName": "3D Pixel Racing"
-    },
-    {
-        "gameId": "XIZP",
-        "gameName": "3D Pixel Racing (Demo)"
-    },
-    {
-        "gameId": "XJDE",
-        "gameName": "MotoHeroz (Demo)"
-    },
-    {
-        "gameId": "XJDP",
-        "gameName": "MotoHeroz (Demo)"
-    },
-    {
-        "gameId": "XJEE",
-        "gameName": "Aya and the Cubes of Light (Demo)"
-    },
-    {
-        "gameId": "XJEP",
-        "gameName": "Aya and the Cubes of Light (Demo)"
-    },
-    {
-        "gameId": "XJFP",
-        "gameName": "ANIMA Ark of Sinners (Demo)"
-    },
-    {
-        "gameId": "XJGE",
-        "gameName": "Gnomz (Demo)"
-    },
-    {
-        "gameId": "XJGP",
-        "gameName": "Gnomz (Demo)"
-    },
-    {
-        "gameId": "XJHE",
-        "gameName": "Paint Splash (Demo)"
-    },
-    {
-        "gameId": "XJHP",
-        "gameName": "Paint Splash (Demo)"
-    },
-    {
-        "gameId": "XJIE",
-        "gameName": "2 Fast 4 Gnomz"
-    },
-    {
-        "gameId": "XJIP",
-        "gameName": "2 Fast 4 Gnomz (Demo)"
-    },
-    {
-        "gameId": "XJJE",
-        "gameName": "Vampire Crystals (Demo)"
-    },
-    {
-        "gameId": "XJJP",
-        "gameName": "Vampire Crystals (Demo)"
-    },
-    {
-        "gameId": "XJSE",
-        "gameName": "Karaoke Joysound (Demo)"
-    },
-    {
-        "gameId": "XJSP",
-        "gameName": "Karaoke Joysound Wii (Demo)"
-    },
-    {
-        "gameId": "FA2J",
-        "gameName": "Exerion"
-    },
-    {
-        "gameId": "FA3J",
-        "gameName": "Formation Z"
     },
     {
         "gameId": "FA4J",
@@ -18147,10 +17189,6 @@
     {
         "gameId": "FA4P",
         "gameName": "Devil World"
-    },
-    {
-        "gameId": "FA5J",
-        "gameName": "Fire Emblem - Ankoku Ryuu to Hikari no Tsurugi"
     },
     {
         "gameId": "FA6E",
@@ -18251,10 +17289,6 @@
     {
         "gameId": "FACP",
         "gameName": "Pinball"
-    },
-    {
-        "gameId": "FADJ",
-        "gameName": "Gomoku Narabe Renju"
     },
     {
         "gameId": "FAFE",
@@ -18489,18 +17523,6 @@
         "gameName": "Pac-Man"
     },
     {
-        "gameId": "FAYJ",
-        "gameName": "Ikki"
-    },
-    {
-        "gameId": "FAZJ",
-        "gameName": "Field Combat"
-    },
-    {
-        "gameId": "FAZQ",
-        "gameName": "Downtown Nekketsu Koushinkyoku: Soreyuke Daiundoukai"
-    },
-    {
         "gameId": "FB2J",
         "gameName": "Super Mario Bros. 2"
     },
@@ -18511,10 +17533,6 @@
     {
         "gameId": "FB2N",
         "gameName": "Super Mario Bros. - The Lost Levels"
-    },
-    {
-        "gameId": "FB3J",
-        "gameName": "Valkyrie no Bouken - Toki no Kagi Densetsu"
     },
     {
         "gameId": "FB4E",
@@ -18535,22 +17553,6 @@
     {
         "gameId": "FB5J",
         "gameName": "Zanac"
-    },
-    {
-        "gameId": "FB6J",
-        "gameName": "Front Line"
-    },
-    {
-        "gameId": "FB7J",
-        "gameName": "Nuts & Milk"
-    },
-    {
-        "gameId": "FB8J",
-        "gameName": "Challenger"
-    },
-    {
-        "gameId": "FB9J",
-        "gameName": "Pooyan"
     },
     {
         "gameId": "FBAJ",
@@ -18685,14 +17687,6 @@
         "gameName": "Ninja Gaiden"
     },
     {
-        "gameId": "FBOJ",
-        "gameName": "Gradius II - Gofer no Yabou"
-    },
-    {
-        "gameId": "FBQJ",
-        "gameName": "Druaga no Tou"
-    },
-    {
         "gameId": "FBRE",
         "gameName": "Galaga"
     },
@@ -18737,22 +17731,6 @@
         "gameName": "Adventures of Lolo"
     },
     {
-        "gameId": "FBVJ",
-        "gameName": "Tsuppari Oozumou"
-    },
-    {
-        "gameId": "FBWJ",
-        "gameName": "Joy Mech Fight"
-    },
-    {
-        "gameId": "FBWQ",
-        "gameName": "Joy Mech Fight"
-    },
-    {
-        "gameId": "FBXJ",
-        "gameName": "Famicom Wars"
-    },
-    {
         "gameId": "FBYE",
         "gameName": "Super Mario Bros. 2"
     },
@@ -18781,10 +17759,6 @@
         "gameName": "Metroid"
     },
     {
-        "gameId": "FC2J",
-        "gameName": "Hanjuku Hero"
-    },
-    {
         "gameId": "FC3E",
         "gameName": "Bubble Bobble"
     },
@@ -18799,14 +17773,6 @@
     {
         "gameId": "FC3T",
         "gameName": "Bubble Bobble"
-    },
-    {
-        "gameId": "FC4J",
-        "gameName": "Chack'n Pop"
-    },
-    {
-        "gameId": "FC5J",
-        "gameName": "Ganbare Goemon! Karakuri Douchuu"
     },
     {
         "gameId": "FC6E",
@@ -18841,10 +17807,6 @@
         "gameName": "Castlevania II - Simon's Quest"
     },
     {
-        "gameId": "FC9J",
-        "gameName": "Metal Slader Glory"
-    },
-    {
         "gameId": "FCAE",
         "gameName": "Star Soldier"
     },
@@ -18855,38 +17817,6 @@
     {
         "gameId": "FCEJ",
         "gameName": "Esper Dream"
-    },
-    {
-        "gameId": "FCFJ",
-        "gameName": "Yie Ar Kung-Fu"
-    },
-    {
-        "gameId": "FCGJ",
-        "gameName": "TwinBee"
-    },
-    {
-        "gameId": "FCHJ",
-        "gameName": "Flappy"
-    },
-    {
-        "gameId": "FCIJ",
-        "gameName": "Volguard II"
-    },
-    {
-        "gameId": "FCJJ",
-        "gameName": "SD Gundam World - Gachapon Senshi 2 Capsule Senki"
-    },
-    {
-        "gameId": "FCNJ",
-        "gameName": "Kekkyoku Nankyoku Daibouken"
-    },
-    {
-        "gameId": "FCNQ",
-        "gameName": "Antarctic Adventure"
-    },
-    {
-        "gameId": "FCOJ",
-        "gameName": "Battle City"
     },
     {
         "gameId": "FCPE",
@@ -19025,14 +17955,6 @@
         "gameName": "Double Dragon"
     },
     {
-        "gameId": "FD3J",
-        "gameName": "Nekketsu Koukou Dodgeball Bu - Soccer Hen"
-    },
-    {
-        "gameId": "FD3Q",
-        "gameName": "Nekketsu Koukou Dodgeball-bu - Soccer Hen"
-    },
-    {
         "gameId": "FD6E",
         "gameName": "Adventures of Lolo 2"
     },
@@ -19065,18 +17987,6 @@
         "gameName": "Spelunker"
     },
     {
-        "gameId": "FDBJ",
-        "gameName": "Famicom Mukashibanashi - Shin Onigashima Zenkouhen"
-    },
-    {
-        "gameId": "FDCJ",
-        "gameName": "Star Luster"
-    },
-    {
-        "gameId": "FDEJ",
-        "gameName": "Mappy"
-    },
-    {
         "gameId": "FDFE",
         "gameName": "Bases Loaded"
     },
@@ -19095,10 +18005,6 @@
     {
         "gameId": "FDGP",
         "gameName": "Ghosts 'n Goblins"
-    },
-    {
-        "gameId": "FDIJ",
-        "gameName": "Bokosuka Wars"
     },
     {
         "gameId": "FDLE",
@@ -19153,10 +18059,6 @@
         "gameName": "Skate or Die!"
     },
     {
-        "gameId": "FDSJ",
-        "gameName": "Famicom Tantei Club - Kieta Koukeisha"
-    },
-    {
         "gameId": "FDTE",
         "gameName": "Renegade"
     },
@@ -19189,46 +18091,6 @@
         "gameName": "Downtown Nekketsu Monogatari"
     },
     {
-        "gameId": "FDWJ",
-        "gameName": "Downtown Special Kunio-kun no Jidaigeki dayo Zennin Shuugou"
-    },
-    {
-        "gameId": "FDXJ",
-        "gameName": "Famicom Tantei Club Part II - Ushiro ni Tatsu Shoujo"
-    },
-    {
-        "gameId": "FDYJ",
-        "gameName": "Fire Emblem Gaiden"
-    },
-    {
-        "gameId": "FDZJ",
-        "gameName": "Downtown Nekketsu Koushinkyoku - Soreyuke Daiundoukai"
-    },
-    {
-        "gameId": "FDZQ",
-        "gameName": "Downtown - Nekketsu Koushinkyoku"
-    },
-    {
-        "gameId": "FE5J",
-        "gameName": "Kanshaku Tamanage Kantarou no Toukaidou Gojuusan-tsugi"
-    },
-    {
-        "gameId": "FE6J",
-        "gameName": "Ninja-kun Majyou no Bouken"
-    },
-    {
-        "gameId": "FE7J",
-        "gameName": "Ninja-kun Ashura no Shou"
-    },
-    {
-        "gameId": "FE8J",
-        "gameName": "Takeshi no Chousenjou"
-    },
-    {
-        "gameId": "FE9J",
-        "gameName": "Ike Ike! Nekketsu Hockey Bu - Subette Koronde Dairantou"
-    },
-    {
         "gameId": "FECE",
         "gameName": "Sky Kid"
     },
@@ -19249,22 +18111,6 @@
         "gameName": "Dig Dug"
     },
     {
-        "gameId": "FEEJ",
-        "gameName": "Tantei Jinguuji Saburo - Shinjuku Chuuou Kouen Satsujin Jiken"
-    },
-    {
-        "gameId": "FEFJ",
-        "gameName": "Tantei Jinguuji Saburou 2 - Yokohamakou Renzoku Satsujin Jiken"
-    },
-    {
-        "gameId": "FEGJ",
-        "gameName": "Tantei Jinguuji Saburo - Kikenna Futari - Zenkouhen"
-    },
-    {
-        "gameId": "FEHJ",
-        "gameName": "Tantei Jinguuji Saburo - Toki no Sugiyuku Mama ni..."
-    },
-    {
         "gameId": "FEIE",
         "gameName": "City Connection"
     },
@@ -19275,14 +18121,6 @@
     {
         "gameId": "FEIP",
         "gameName": "City Connection"
-    },
-    {
-        "gameId": "FEJJ",
-        "gameName": "Nazo no Murasamejou"
-    },
-    {
-        "gameId": "FELJ",
-        "gameName": "Transformers - Convoy no Nazo"
     },
     {
         "gameId": "FEMJ",
@@ -19303,14 +18141,6 @@
     {
         "gameId": "FENJ",
         "gameName": "Salamander"
-    },
-    {
-        "gameId": "FEOJ",
-        "gameName": "Zoids - Mokushiroku"
-    },
-    {
-        "gameId": "FEPJ",
-        "gameName": "Getsu Fuuma Den"
     },
     {
         "gameId": "FEQE",
@@ -19365,22 +18195,6 @@
         "gameName": "Donkey Kong 3"
     },
     {
-        "gameId": "FEVJ",
-        "gameName": "Atlantis no Nazo"
-    },
-    {
-        "gameId": "FEWJ",
-        "gameName": "Dragon Buster"
-    },
-    {
-        "gameId": "FEXJ",
-        "gameName": "Wagan Land"
-    },
-    {
-        "gameId": "FF2J",
-        "gameName": "Sugoro Quest - Dice no Senshi Tachi"
-    },
-    {
         "gameId": "FF4E",
         "gameName": "BurgerTime"
     },
@@ -19401,14 +18215,6 @@
         "gameName": "Double Dragon II - The Revenge"
     },
     {
-        "gameId": "FF6J",
-        "gameName": "Ganbare Goemon 2"
-    },
-    {
-        "gameId": "FF7J",
-        "gameName": "Ganbare Goemon Gaiden Kieta Ogon Kiseru"
-    },
-    {
         "gameId": "FFAE",
         "gameName": "Final Fantasy"
     },
@@ -19419,10 +18225,6 @@
     {
         "gameId": "FFAM",
         "gameName": "Final Fantasy"
-    },
-    {
-        "gameId": "FFBJ",
-        "gameName": "Final Fantasy II"
     },
     {
         "gameId": "FFDE",
@@ -19439,22 +18241,6 @@
     {
         "gameId": "FFEP",
         "gameName": "A Boy and His Blob - Trouble on Blobolonia"
-    },
-    {
-        "gameId": "FFFJ",
-        "gameName": "Final Fantasy III"
-    },
-    {
-        "gameId": "FFGJ",
-        "gameName": "SD Gundam World - Gachapon Senshi - Scramble Wars"
-    },
-    {
-        "gameId": "FFJJ",
-        "gameName": "Metal Max"
-    },
-    {
-        "gameId": "FFKJ",
-        "gameName": "Championship Lode Runner"
     },
     {
         "gameId": "FFLE",
@@ -19489,10 +18275,6 @@
         "gameName": "Mega Man 4"
     },
     {
-        "gameId": "FFOJ",
-        "gameName": "Moero! TwinBee - Cinnamon Hakushi wo Sukue!"
-    },
-    {
         "gameId": "FFPB",
         "gameName": "Ufouria - The Saga"
     },
@@ -19523,22 +18305,6 @@
     {
         "gameId": "FFRP",
         "gameName": "Faxanadu"
-    },
-    {
-        "gameId": "FFTJ",
-        "gameName": "Binary Land"
-    },
-    {
-        "gameId": "FFUE",
-        "gameName": "Adventure Island 2"
-    },
-    {
-        "gameId": "FFUJ",
-        "gameName": "Takahashi Meijin no Boken Jima II"
-    },
-    {
-        "gameId": "FFUP",
-        "gameName": "Adventure Island II"
     },
     {
         "gameId": "FFVE",
@@ -19585,20 +18351,8 @@
         "gameName": "Contra"
     },
     {
-        "gameId": "FJOR",
-        "gameName": "Kung Fu"
-    },
-    {
         "gameId": "FMCA",
         "gameName": "The Goonies"
-    },
-    {
-        "gameId": "JA2J",
-        "gameName": "Shin Megami Tensei"
-    },
-    {
-        "gameId": "JA3J",
-        "gameName": "Kamaitachi no Yoru"
     },
     {
         "gameId": "JA4E",
@@ -19611,10 +18365,6 @@
     {
         "gameId": "JA4P",
         "gameName": "Super Ghouls 'n Ghosts"
-    },
-    {
-        "gameId": "JA5J",
-        "gameName": "Heracles no Eikou III - Kamigami no Chinmoku"
     },
     {
         "gameId": "JA6E",
@@ -19765,10 +18515,6 @@
         "gameName": "Sim City"
     },
     {
-        "gameId": "JAGJ",
-        "gameName": "Fire Emblem - Monshou no Nazo"
-    },
-    {
         "gameId": "JAHE",
         "gameName": "R-Type III - The Third Lightning"
     },
@@ -19841,14 +18587,6 @@
         "gameName": "Gradius 3"
     },
     {
-        "gameId": "JAPJ",
-        "gameName": "Fire Emblem - Seisen no Keifu"
-    },
-    {
-        "gameId": "JAUJ",
-        "gameName": "Famicom Bunko - Hajimari no Mori"
-    },
-    {
         "gameId": "JAVE",
         "gameName": "Super Metroid"
     },
@@ -19903,22 +18641,6 @@
     {
         "gameId": "JB3P",
         "gameName": "Harvest Moon"
-    },
-    {
-        "gameId": "JB5J",
-        "gameName": "Super Gussun Oyoyo"
-    },
-    {
-        "gameId": "JB6J",
-        "gameName": "Treasure Hunter G"
-    },
-    {
-        "gameId": "JB7J",
-        "gameName": "Front Mission Series - Gun Hazard"
-    },
-    {
-        "gameId": "JB9J",
-        "gameName": "Gakkou de atta Kowai Hanashi"
     },
     {
         "gameId": "JBAE",
@@ -19977,22 +18699,6 @@
         "gameName": "Donkey Kong Country 2 - Diddy's Kong Quest"
     },
     {
-        "gameId": "JBEJ",
-        "gameName": "Magical Drop"
-    },
-    {
-        "gameId": "JBFJ",
-        "gameName": "Otogirisou"
-    },
-    {
-        "gameId": "JBGJ",
-        "gameName": "Fushigi no Dungeon 2 - Furai no Shiren"
-    },
-    {
-        "gameId": "JBHJ",
-        "gameName": "Heracles no Eikou IV - Kamigami kara no Okurimono"
-    },
-    {
         "gameId": "JBIE",
         "gameName": "Street Fighter II' Turbo - Hyper Fighting"
     },
@@ -20035,19 +18741,6 @@
     {
         "gameId": "JBNJ",
         "gameName": "Darius Twin"
-    },
-    {
-        "gameId": "pandeponds",
-        "gameName": "Panel de Pon",
-        "gamespyId": "JBOJ"
-    },
-    {
-        "gameId": "JBOJ",
-        "gameName": "Panel de Pon"
-    },
-    {
-        "gameId": "JBOQ",
-        "gameName": "Panel de Pon"
     },
     {
         "gameId": "JBPE",
@@ -20118,10 +18811,6 @@
         "gameName": "Super Turrican Two"
     },
     {
-        "gameId": "JBVJ",
-        "gameName": "Langrisser, Der"
-    },
-    {
         "gameId": "JBWE",
         "gameName": "Cybernator"
     },
@@ -20154,14 +18843,6 @@
         "gameName": "Super R-Type"
     },
     {
-        "gameId": "JC2J",
-        "gameName": "Taikou Risshiden"
-    },
-    {
-        "gameId": "JC3J",
-        "gameName": "Bahamut Lagoon"
-    },
-    {
         "gameId": "JC4E",
         "gameName": "Indiana Jones' Greatest Adventures"
     },
@@ -20172,14 +18853,6 @@
     {
         "gameId": "JC4P",
         "gameName": "Indiana Jones' Greatest Adventures"
-    },
-    {
-        "gameId": "JC5J",
-        "gameName": "Romancing SaGa"
-    },
-    {
-        "gameId": "JC6J",
-        "gameName": "Romancing SaGa 2"
     },
     {
         "gameId": "JC7E",
@@ -20204,10 +18877,6 @@
     {
         "gameId": "JC8P",
         "gameName": "Final Fantasy 2"
-    },
-    {
-        "gameId": "JC9J",
-        "gameName": "Final Fantasy V"
     },
     {
         "gameId": "JCAJ",
@@ -20258,22 +18927,6 @@
         "gameName": "Kirby's Dream Land 3"
     },
     {
-        "gameId": "JCEJ",
-        "gameName": "Fire Emblem - Thracia 776"
-    },
-    {
-        "gameId": "JCGJ",
-        "gameName": "Ganbare Goemon 2 - Kiteretsu Shogun Magginesu"
-    },
-    {
-        "gameId": "JCHJ",
-        "gameName": "Ganbare Goemon 3 - Shishijuurokube no Karakuri Manji Gatame"
-    },
-    {
-        "gameId": "JCIJ",
-        "gameName": "Famicom Tantei Club Part II - Ushiro ni Tatsu Shoujo"
-    },
-    {
         "gameId": "JCJE",
         "gameName": "Super Punch-Out!!"
     },
@@ -20316,10 +18969,6 @@
     {
         "gameId": "JCLP",
         "gameName": "Secret of Mana"
-    },
-    {
-        "gameId": "JCMJ",
-        "gameName": "Super Wagan Land"
     },
     {
         "gameId": "JCNE",
@@ -20396,10 +19045,6 @@
     {
         "gameId": "JCZJ",
         "gameName": "Super Aoki Oukami to Shiroki Mejika - Genchou Hishi"
-    },
-    {
-        "gameId": "JD2J",
-        "gameName": "Bishoujo Janshi Suchie-Pai"
     },
     {
         "gameId": "JD3E",
@@ -20542,14 +19187,6 @@
         "gameName": "Final Fight 3"
     },
     {
-        "gameId": "JDFJ",
-        "gameName": "Sutte Hakkun"
-    },
-    {
-        "gameId": "JDHJ",
-        "gameName": "Super Famicom Wars"
-    },
-    {
         "gameId": "JDIE",
         "gameName": "Super Star Wars"
     },
@@ -20574,10 +19211,6 @@
         "gameName": "Super Star Wars - The Empire Strikes Back"
     },
     {
-        "gameId": "JDKJ",
-        "gameName": "Metal Max 2"
-    },
-    {
         "gameId": "JDLE",
         "gameName": "Super Star Wars - Return of the Jedi"
     },
@@ -20590,10 +19223,6 @@
         "gameName": "Super Star Wars - Return of the Jedi"
     },
     {
-        "gameId": "JDMJ",
-        "gameName": "Kirby no Kirakira Kizzu"
-    },
-    {
         "gameId": "JDNE",
         "gameName": "Ghoul Patrol"
     },
@@ -20604,34 +19233,6 @@
     {
         "gameId": "JDNP",
         "gameName": "Ghoul Patrol"
-    },
-    {
-        "gameId": "JDOJ",
-        "gameName": "Heisei Shin Onigashima Zenpen"
-    },
-    {
-        "gameId": "JDPJ",
-        "gameName": "Heisei Shin Onigashima Kouhen"
-    },
-    {
-        "gameId": "JDQJ",
-        "gameName": "Romancing SaGa 3"
-    },
-    {
-        "gameId": "JDRJ",
-        "gameName": "Clock Tower"
-    },
-    {
-        "gameId": "JDSJ",
-        "gameName": "Shin Megami Tensei II"
-    },
-    {
-        "gameId": "JDTJ",
-        "gameName": "Shin Megami Tensei If..."
-    },
-    {
-        "gameId": "JDUJ",
-        "gameName": "Albert Odyssey"
     },
     {
         "gameId": "JDVE",
@@ -20668,10 +19269,6 @@
     {
         "gameId": "JDXP",
         "gameName": "Aero the Acrobat 2"
-    },
-    {
-        "gameId": "JDYJ",
-        "gameName": "Rudora no Hihou"
     },
     {
         "gameId": "JDZD",
@@ -20738,22 +19335,6 @@
         "gameName": "Chrono Trigger"
     },
     {
-        "gameId": "JEDJ",
-        "gameName": "Kunio-kun no Dodgeball da yo Zenin Shugou!"
-    },
-    {
-        "gameId": "JEEJ",
-        "gameName": "Majin Tensei"
-    },
-    {
-        "gameId": "JEFJ",
-        "gameName": "Majin Tensei II - Spiral Nemesis"
-    },
-    {
-        "gameId": "JEGJ",
-        "gameName": "Gouketsuji Ichizoku"
-    },
-    {
         "gameId": "JEHE",
         "gameName": "Mega Man X2"
     },
@@ -20764,18 +19345,6 @@
     {
         "gameId": "JEHP",
         "gameName": "Mega Man X2"
-    },
-    {
-        "gameId": "JEIJ",
-        "gameName": "Metal Max Returns"
-    },
-    {
-        "gameId": "JEJJ",
-        "gameName": "Tsukikomori"
-    },
-    {
-        "gameId": "JEKJ",
-        "gameName": "Kyuuyaku Megami Tensei"
     },
     {
         "gameId": "NA3E",
@@ -20868,10 +19437,6 @@
     {
         "gameId": "NAFP",
         "gameName": "F-Zero X"
-    },
-    {
-        "gameId": "NAGJ",
-        "gameName": "Aerogauge"
     },
     {
         "gameId": "NAHE",
@@ -21006,10 +19571,6 @@
         "gameName": "1080 Snowboarding"
     },
     {
-        "gameId": "NAPJ",
-        "gameName": "Custom Robo V2"
-    },
-    {
         "gameId": "NARE",
         "gameName": "The Legend of Zelda - Majora's Mask"
     },
@@ -21090,16 +19651,8 @@
         "gameName": "SM64 Randomizer"
     },
     {
-        "gameId": "NTLC",
-        "gameName": "Super Mario 64 Multiplayer"
-    },
-    {
         "gameId": "NZXM",
         "gameName": "Super Mario 64 Multiplayer"
-    },
-    {
-        "gameId": "LAAJ",
-        "gameName": "Hokuto no Ken"
     },
     {
         "gameId": "LABE",
@@ -21286,10 +19839,6 @@
         "gameName": "Alex Kidd in Shinobi World"
     },
     {
-        "gameId": "MA2J",
-        "gameName": "Dyna Brothers"
-    },
-    {
         "gameId": "MA3E",
         "gameName": "Puyo Puyo 2"
     },
@@ -21300,14 +19849,6 @@
     {
         "gameId": "MA3L",
         "gameName": "Puyo Puyo 2"
-    },
-    {
-        "gameId": "MA4J",
-        "gameName": "Bahamut Senki"
-    },
-    {
-        "gameId": "MA5J",
-        "gameName": "Rent A Hero"
     },
     {
         "gameId": "MA6E",
@@ -21344,10 +19885,6 @@
     {
         "gameId": "MA8P",
         "gameName": "Ecco - The Tides of Time"
-    },
-    {
-        "gameId": "MA9J",
-        "gameName": "The Hybrid Front"
     },
     {
         "gameId": "MAAE",
@@ -21590,10 +20127,6 @@
         "gameName": "Sonic Spinball"
     },
     {
-        "gameId": "MAUJ",
-        "gameName": "Puzzle Action - Tanto-R"
-    },
-    {
         "gameId": "MAVE",
         "gameName": "Wonder Boy in Monster World"
     },
@@ -21650,10 +20183,6 @@
         "gameName": "ToeJam & Earl in Panic on Funkotron"
     },
     {
-        "gameId": "MB2J",
-        "gameName": "Langrisser"
-    },
-    {
         "gameId": "MB3E",
         "gameName": "Monster World IV"
     },
@@ -21664,14 +20193,6 @@
     {
         "gameId": "MB3L",
         "gameName": "Monster World IV"
-    },
-    {
-        "gameId": "MB4J",
-        "gameName": "Party Quiz Mega Q"
-    },
-    {
-        "gameId": "MB5J",
-        "gameName": "Langrisser II"
     },
     {
         "gameId": "MB6E",
@@ -21704,10 +20225,6 @@
     {
         "gameId": "MB8P",
         "gameName": "Phantasy Star II"
-    },
-    {
-        "gameId": "MB9J",
-        "gameName": "Pepen ga Pengo"
     },
     {
         "gameId": "MBAJ",
@@ -21794,10 +20311,6 @@
         "gameName": "Dynamite Headdy"
     },
     {
-        "gameId": "MBHJ",
-        "gameName": "Puzzle & Action - Ichidant-R"
-    },
-    {
         "gameId": "MBIE",
         "gameName": "Landstalker - The Treasures of King Nole"
     },
@@ -21850,10 +20363,6 @@
         "gameName": "Sonic The Hedgehog 3"
     },
     {
-        "gameId": "MBNJ",
-        "gameName": "Chelnov"
-    },
-    {
         "gameId": "MBOE",
         "gameName": "Golden Axe III"
     },
@@ -21902,10 +20411,6 @@
         "gameName": "Rolling Thunder 2"
     },
     {
-        "gameId": "MBSJ",
-        "gameName": "Dyna Brothers 2 Special"
-    },
-    {
         "gameId": "MBTE",
         "gameName": "Alien Soldier"
     },
@@ -21928,10 +20433,6 @@
     {
         "gameId": "MBUP",
         "gameName": "Sonic 3D - Flickies' Island"
-    },
-    {
-        "gameId": "MBVJ",
-        "gameName": "Juso Kihei Leynos"
     },
     {
         "gameId": "MBWE",
@@ -22074,10 +20575,6 @@
         "gameName": "Super Fantasy Zone"
     },
     {
-        "gameId": "MCFJ",
-        "gameName": "Phelios"
-    },
-    {
         "gameId": "MCGE",
         "gameName": "Forgotten Worlds"
     },
@@ -22100,10 +20597,6 @@
     {
         "gameId": "MCHM",
         "gameName": "M.U.S.H.A."
-    },
-    {
-        "gameId": "MCIJ",
-        "gameName": "Gynoug"
     },
     {
         "gameId": "MCJE",
@@ -22140,18 +20633,6 @@
     {
         "gameId": "MCLP",
         "gameName": "Street Fighter II - Special Champion Edition"
-    },
-    {
-        "gameId": "MCMJ",
-        "gameName": "Lord Monarch - Tokoton Sentou Densetsu"
-    },
-    {
-        "gameId": "MCNJ",
-        "gameName": "Hokuto no Ken - Shin Seikimatsu Kyuseishu Densetsu"
-    },
-    {
-        "gameId": "MCOJ",
-        "gameName": "Sorcerian"
     },
     {
         "gameId": "MCPE",
@@ -22206,10 +20687,6 @@
         "gameName": "Clay Fighter"
     },
     {
-        "gameId": "MCUJ",
-        "gameName": "Dragon Slayer - Eiyu Densetsu"
-    },
-    {
         "gameId": "MCVE",
         "gameName": "Pitfall - The Mayan Adventure"
     },
@@ -22234,10 +20711,6 @@
         "gameName": "Galaxy Force II"
     },
     {
-        "gameId": "MCXJ",
-        "gameName": "Dragon Slayer: The Legend of Heroes"
-    },
-    {
         "gameId": "MCYE",
         "gameName": "The Revenge of Shinobi"
     },
@@ -22256,18 +20729,6 @@
     {
         "gameId": "MCZP",
         "gameName": "Shanghai II - Dragon's Eye"
-    },
-    {
-        "gameId": "PA2J",
-        "gameName": "Yokai Douchuuki"
-    },
-    {
-        "gameId": "PA3J",
-        "gameName": "Salamander"
-    },
-    {
-        "gameId": "PA4J",
-        "gameName": "Parasol Stars"
     },
     {
         "gameId": "PA6E",
@@ -22418,10 +20879,6 @@
         "gameName": "New Adventure Island"
     },
     {
-        "gameId": "PAJJ",
-        "gameName": "Jaseiken Necromancer"
-    },
-    {
         "gameId": "PAKE",
         "gameName": "Dragon's Curse"
     },
@@ -22482,14 +20939,6 @@
         "gameName": "Final Soldier"
     },
     {
-        "gameId": "PAPJ",
-        "gameName": "R-Type II"
-    },
-    {
-        "gameId": "PAQJ",
-        "gameName": "Gradius"
-    },
-    {
         "gameId": "PARJ",
         "gameName": "Detana!! TwinBee"
     },
@@ -22500,18 +20949,6 @@
     {
         "gameId": "PARN",
         "gameName": "Detana!! TwinBee"
-    },
-    {
-        "gameId": "PASJ",
-        "gameName": "Cadash"
-    },
-    {
-        "gameId": "PATJ",
-        "gameName": "KiKi KaiKai"
-    },
-    {
-        "gameId": "PAUJ",
-        "gameName": "Kaizou Choujin Shubibinman"
     },
     {
         "gameId": "PAVE",
@@ -22538,14 +20975,6 @@
         "gameName": "Galaga '90"
     },
     {
-        "gameId": "PAYJ",
-        "gameName": "Valkyrie no Densetsu"
-    },
-    {
-        "gameId": "PAZJ",
-        "gameName": "Genpei Toumaden"
-    },
-    {
         "gameId": "PB2E",
         "gameName": "Neutopia II"
     },
@@ -22570,20 +20999,12 @@
         "gameName": "Devil's Crush"
     },
     {
-        "gameId": "PB5J",
-        "gameName": "Ninja Ryukenden"
-    },
-    {
         "gameId": "PB6E",
         "gameName": "Cratermaze"
     },
     {
         "gameId": "PB6P",
         "gameName": "Cratermaze"
-    },
-    {
-        "gameId": "PB7J",
-        "gameName": "Sengoku Mahjong"
     },
     {
         "gameId": "PB8E",
@@ -22622,10 +21043,6 @@
         "gameName": "Dragon Spirit"
     },
     {
-        "gameId": "PBCJ",
-        "gameName": "Wonder-Momo"
-    },
-    {
         "gameId": "PBDE",
         "gameName": "Double Dungeons"
     },
@@ -22648,10 +21065,6 @@
     {
         "gameId": "PBEP",
         "gameName": "Moto Roader"
-    },
-    {
-        "gameId": "PBFJ",
-        "gameName": "Fire ProWrestling - Combination Tag"
     },
     {
         "gameId": "PBHE",
@@ -22746,10 +21159,6 @@
         "gameName": "Chouzetsurinjin Bravoman"
     },
     {
-        "gameId": "PBVJ",
-        "gameName": "Benkei Gaiden"
-    },
-    {
         "gameId": "PBWE",
         "gameName": "Air Zonk"
     },
@@ -22774,10 +21183,6 @@
         "gameName": "Shockman"
     },
     {
-        "gameId": "PBYJ",
-        "gameName": "Out Live"
-    },
-    {
         "gameId": "PBZE",
         "gameName": "J.J. & Jeff"
     },
@@ -22796,34 +21201,6 @@
     {
         "gameId": "PC2P",
         "gameName": "Chase H.Q."
-    },
-    {
-        "gameId": "PC3J",
-        "gameName": "Darius Plus"
-    },
-    {
-        "gameId": "PC4J",
-        "gameName": "Space Invaders - Fukkatsu no Hi"
-    },
-    {
-        "gameId": "PC5J",
-        "gameName": "Dragon Saber"
-    },
-    {
-        "gameId": "PC6J",
-        "gameName": "Final Blaster"
-    },
-    {
-        "gameId": "PC7J",
-        "gameName": "Mizubaku Daibouken"
-    },
-    {
-        "gameId": "PC8J",
-        "gameName": "The Ninjawarriors"
-    },
-    {
-        "gameId": "PC9J",
-        "gameName": "The NewZealand Story"
     },
     {
         "gameId": "PCAE",
@@ -22850,14 +21227,6 @@
         "gameName": "Dead Moon"
     },
     {
-        "gameId": "PCCJ",
-        "gameName": "Makai Hakkenden Shada"
-    },
-    {
-        "gameId": "PCDJ",
-        "gameName": "Appare! Gateball"
-    },
-    {
         "gameId": "PCEE",
         "gameName": "Power Golf"
     },
@@ -22882,26 +21251,6 @@
         "gameName": "Drop Off"
     },
     {
-        "gameId": "PCJJ",
-        "gameName": "Override"
-    },
-    {
-        "gameId": "PCKJ",
-        "gameName": "Gai Flame"
-    },
-    {
-        "gameId": "PCMC",
-        "gameName": "Gokuraku! Chuuka Taisen"
-    },
-    {
-        "gameId": "PCMJ",
-        "gameName": "Mr. Heli no Daibouken"
-    },
-    {
-        "gameId": "PCNJ",
-        "gameName": "Winning Shot"
-    },
-    {
         "gameId": "PCOE",
         "gameName": "Psychosis"
     },
@@ -22912,14 +21261,6 @@
     {
         "gameId": "PCOP",
         "gameName": "Psychosis"
-    },
-    {
-        "gameId": "PCPJ",
-        "gameName": "Power Eleven"
-    },
-    {
-        "gameId": "PCQJ",
-        "gameName": "Psycho Chaser"
     },
     {
         "gameId": "PCRJ",
@@ -22946,64 +21287,12 @@
         "gameName": "Digital Champ Battle Boxing"
     },
     {
-        "gameId": "PCTJ",
-        "gameName": "Power Tennis"
-    },
-    {
-        "gameId": "PCUJ",
-        "gameName": "Fire ProWrestling 2nd Bout"
-    },
-    {
         "gameId": "PCVE",
         "gameName": "World Class Baseball"
     },
     {
         "gameId": "PCVP",
         "gameName": "World Class Baseball"
-    },
-    {
-        "gameId": "PCWJ",
-        "gameName": "Image Fight"
-    },
-    {
-        "gameId": "PCXJ",
-        "gameName": "Power League IV"
-    },
-    {
-        "gameId": "PCYJ",
-        "gameName": "Wallaby!! Usagi no Kuni no Kangaroo Race"
-    },
-    {
-        "gameId": "PDAJ",
-        "gameName": "Nekketsu Koukou Dodgeball Bu - PC Bangaihen"
-    },
-    {
-        "gameId": "PDCJ",
-        "gameName": "Dai Makaimura"
-    },
-    {
-        "gameId": "PDDJ",
-        "gameName": "Volfied"
-    },
-    {
-        "gameId": "PDEJ",
-        "gameName": "S.C.I. - Special Criminal Investigation"
-    },
-    {
-        "gameId": "PDFJ",
-        "gameName": "Jigoku Meguri"
-    },
-    {
-        "gameId": "PDGJ",
-        "gameName": "Fire ProWrestling 3 - Legend Bout"
-    },
-    {
-        "gameId": "PDHJ",
-        "gameName": "Rastan Saga II"
-    },
-    {
-        "gameId": "PDIJ",
-        "gameName": "Champion Wrestler"
     },
     {
         "gameId": "PDJJ",
@@ -23018,10 +21307,6 @@
         "gameName": "Street Fighter II - Champion Edition"
     },
     {
-        "gameId": "QA2J",
-        "gameName": "Nekketsu Koukou Dodgeball Bu - CD Soccer Hen"
-    },
-    {
         "gameId": "QA3E",
         "gameName": "SimEarth - The Living Planet"
     },
@@ -23032,30 +21317,6 @@
     {
         "gameId": "QA3P",
         "gameName": "SimEarth - The Living Planet"
-    },
-    {
-        "gameId": "QA4J",
-        "gameName": "Super Darius 2"
-    },
-    {
-        "gameId": "QA5J",
-        "gameName": "Space Invaders - The Original Game"
-    },
-    {
-        "gameId": "QA6J",
-        "gameName": "Super Darius"
-    },
-    {
-        "gameId": "QA7J",
-        "gameName": "Kaze no Densetsu Xanadu"
-    },
-    {
-        "gameId": "QA8J",
-        "gameName": "Spriggan Mark 2"
-    },
-    {
-        "gameId": "QA9J",
-        "gameName": "Kaze no Densetsu Xanadu II"
     },
     {
         "gameId": "QAAE",
@@ -23106,10 +21367,6 @@
         "gameName": "Gradius II - Gofer no Yabou"
     },
     {
-        "gameId": "QAEJ",
-        "gameName": "The Path of the Warrior - Art of Fighting 3"
-    },
-    {
         "gameId": "QAFE",
         "gameName": "The Dynastic Hero"
     },
@@ -23134,30 +21391,6 @@
         "gameName": "Gate of Thunder"
     },
     {
-        "gameId": "QAHJ",
-        "gameName": "Kawa no Nushi Tsuni Shizenha"
-    },
-    {
-        "gameId": "QAJJ",
-        "gameName": "Image Fight II"
-    },
-    {
-        "gameId": "QAKJ",
-        "gameName": "Ai Cho Aniki"
-    },
-    {
-        "gameId": "QALJ",
-        "gameName": "The Atlas - Renaissance Voyager"
-    },
-    {
-        "gameId": "QANJ",
-        "gameName": "Neo Nectaris"
-    },
-    {
-        "gameId": "QAOJ",
-        "gameName": "Dungeon Explorer II"
-    },
-    {
         "gameId": "QAPJ",
         "gameName": "Akumajou Dracula X - Chi no Rondo"
     },
@@ -23172,14 +21405,6 @@
     {
         "gameId": "QAPP",
         "gameName": "Castlevania: Rondo of Blood"
-    },
-    {
-        "gameId": "QAQJ",
-        "gameName": "Dragon Slayer - Eiyu Densetsu"
-    },
-    {
-        "gameId": "QARJ",
-        "gameName": "Blood Gear"
     },
     {
         "gameId": "QASE",
@@ -23218,10 +21443,6 @@
         "gameName": "Monster Lair"
     },
     {
-        "gameId": "QAVJ",
-        "gameName": "Bomberman - Panic Bomber"
-    },
-    {
         "gameId": "QAWJ",
         "gameName": "Star Parodier"
     },
@@ -23232,22 +21453,6 @@
     {
         "gameId": "QAWN",
         "gameName": "Star Parodier"
-    },
-    {
-        "gameId": "QAXJ",
-        "gameName": "Martial Champion"
-    },
-    {
-        "gameId": "QAYJ",
-        "gameName": "Seirei Senshi Spriggan"
-    },
-    {
-        "gameId": "QAZJ",
-        "gameName": "Eikan wa Kimi ni - Koko Yakyu Zenkoku Taikai"
-    },
-    {
-        "gameId": "QBAJ",
-        "gameName": "L-Dis"
     },
     {
         "gameId": "QBBE",
@@ -23262,10 +21467,6 @@
         "gameName": "Fighting Street"
     },
     {
-        "gameId": "SP4V",
-        "gameName": "Castlevania: Rondo of Blood"
-    },
-    {
         "gameId": "EA2E",
         "gameName": "Metal Slug 2"
     },
@@ -23276,10 +21477,6 @@
     {
         "gameId": "EA2P",
         "gameName": "Metal Slug 2"
-    },
-    {
-        "gameId": "EA3J",
-        "gameName": "Galaxy Fight - Universal Warriors"
     },
     {
         "gameId": "EA4E",
@@ -23340,10 +21537,6 @@
     {
         "gameId": "EA8M",
         "gameName": "Ironclad"
-    },
-    {
-        "gameId": "EA9J",
-        "gameName": "Waku Waku 7"
     },
     {
         "gameId": "EAAE",
@@ -23586,10 +21779,6 @@
         "gameName": "World Heroes 2 Jet"
     },
     {
-        "gameId": "EAUJ",
-        "gameName": "Twinkle Star Sprites"
-    },
-    {
         "gameId": "EAVE",
         "gameName": "The King of Fighters '95"
     },
@@ -23612,10 +21801,6 @@
     {
         "gameId": "EAWP",
         "gameName": "Fatal Fury Special"
-    },
-    {
-        "gameId": "EAYJ",
-        "gameName": "King of the Monsters 2 - The Next Thing"
     },
     {
         "gameId": "EAZE",
@@ -23642,14 +21827,6 @@
         "gameName": "Real Bout Fatal Fury Special"
     },
     {
-        "gameId": "EB3J",
-        "gameName": "Soccer Brawl"
-    },
-    {
-        "gameId": "EB4J",
-        "gameName": "ASO II - Last Guardian"
-    },
-    {
         "gameId": "EB5E",
         "gameName": "The Last Blade"
     },
@@ -23674,10 +21851,6 @@
         "gameName": "Metal Slug 3"
     },
     {
-        "gameId": "EB7J",
-        "gameName": "The Super Spy"
-    },
-    {
         "gameId": "EB8E",
         "gameName": "Shock Troopers"
     },
@@ -23688,10 +21861,6 @@
     {
         "gameId": "EB8P",
         "gameName": "Shock Troopers"
-    },
-    {
-        "gameId": "EB9J",
-        "gameName": "Pulstar"
     },
     {
         "gameId": "EBAE",
@@ -23716,10 +21885,6 @@
     {
         "gameId": "EBBP",
         "gameName": "Karnov's Revenge"
-    },
-    {
-        "gameId": "EBCJ",
-        "gameName": "Flying Power Disc"
     },
     {
         "gameId": "EBDE",
@@ -23770,30 +21935,6 @@
         "gameName": "The King of Fighters '97"
     },
     {
-        "gameId": "EBKJ",
-        "gameName": "Last Resort"
-    },
-    {
-        "gameId": "EBLJ",
-        "gameName": "Tsuukai GanGan Koushinkyoku"
-    },
-    {
-        "gameId": "EBMJ",
-        "gameName": "Fire Suplex"
-    },
-    {
-        "gameId": "EBNJ",
-        "gameName": "Fu'un Mokushiroku - Kakutou Sousei"
-    },
-    {
-        "gameId": "EBOJ",
-        "gameName": "Fu'un Super Tag Battle"
-    },
-    {
-        "gameId": "EBPJ",
-        "gameName": "League Bowling"
-    },
-    {
         "gameId": "EBQE",
         "gameName": "Ninja Masters"
     },
@@ -23804,10 +21945,6 @@
     {
         "gameId": "EBQP",
         "gameName": "Ninja Master's"
-    },
-    {
-        "gameId": "EBRJ",
-        "gameName": "Joy Joy Kid"
     },
     {
         "gameId": "EBSE",
@@ -23822,10 +21959,6 @@
         "gameName": "Art of Fighting 3"
     },
     {
-        "gameId": "EBTJ",
-        "gameName": "Crossed Swords"
-    },
-    {
         "gameId": "EBUE",
         "gameName": "2020 Super Baseball"
     },
@@ -23836,10 +21969,6 @@
     {
         "gameId": "EBUP",
         "gameName": "2020 Super Baseball"
-    },
-    {
-        "gameId": "EBVJ",
-        "gameName": "Shin-Oh-Ken"
     },
     {
         "gameId": "EBWE",
@@ -23902,10 +22031,6 @@
         "gameName": "Metal Slug X"
     },
     {
-        "gameId": "ECDJ",
-        "gameName": "Stakes Winner - G1 Kanzen Seihahe no Michi"
-    },
-    {
         "gameId": "ECEE",
         "gameName": "The Last Blade 2"
     },
@@ -23916,10 +22041,6 @@
     {
         "gameId": "ECEP",
         "gameName": "The Last Blade 2"
-    },
-    {
-        "gameId": "ECFJ",
-        "gameName": "Blazing Star"
     },
     {
         "gameId": "ECGE",
@@ -23980,14 +22101,6 @@
     {
         "gameId": "ECKP",
         "gameName": "NAM-1975"
-    },
-    {
-        "gameId": "ECLJ",
-        "gameName": "Stakes Winner 2"
-    },
-    {
-        "gameId": "ECMJ",
-        "gameName": "Tokuten Oh - Honoo no Libero"
     },
     {
         "gameId": "ECNE",
@@ -24074,26 +22187,6 @@
         "gameName": "Son Son"
     },
     {
-        "gameId": "E58J",
-        "gameName": "Mr. Do!"
-    },
-    {
-        "gameId": "E59J",
-        "gameName": "Karate Dou"
-    },
-    {
-        "gameId": "E5AJ",
-        "gameName": "Ikki"
-    },
-    {
-        "gameId": "E5BJ",
-        "gameName": "Shanghai"
-    },
-    {
-        "gameId": "E5VJ",
-        "gameName": "Nekketsu Kouha Kunio-kun"
-    },
-    {
         "gameId": "E5WE",
         "gameName": "Wonder Boy in Monster Land"
     },
@@ -24104,14 +22197,6 @@
     {
         "gameId": "E5WP",
         "gameName": "Wonder Boy in Monster Land"
-    },
-    {
-        "gameId": "E5XJ",
-        "gameName": "Puyo Puyo Tsu"
-    },
-    {
-        "gameId": "E5YJ",
-        "gameName": "Puyo Puyo"
     },
     {
         "gameId": "E5ZE",
@@ -24150,78 +22235,6 @@
         "gameName": "Shinobi"
     },
     {
-        "gameId": "E64J",
-        "gameName": "Rolling Thunder 2"
-    },
-    {
-        "gameId": "E65J",
-        "gameName": "Valkyrie no Densetsu"
-    },
-    {
-        "gameId": "E66J",
-        "gameName": "Ordyne"
-    },
-    {
-        "gameId": "E67J",
-        "gameName": "Dig Dug"
-    },
-    {
-        "gameId": "E68J",
-        "gameName": "Galaga"
-    },
-    {
-        "gameId": "E69J",
-        "gameName": "Baraduke"
-    },
-    {
-        "gameId": "E6AJ",
-        "gameName": "Moon Cresta"
-    },
-    {
-        "gameId": "E6BJ",
-        "gameName": "Crazy Climber"
-    },
-    {
-        "gameId": "E6CJ",
-        "gameName": "Rompers"
-    },
-    {
-        "gameId": "E6DJ",
-        "gameName": "Toy Pop"
-    },
-    {
-        "gameId": "E6EJ",
-        "gameName": "Libble Rabble"
-    },
-    {
-        "gameId": "E6FJ",
-        "gameName": "Galaxian"
-    },
-    {
-        "gameId": "E6GJ",
-        "gameName": "Namco Quester"
-    },
-    {
-        "gameId": "E6HJ",
-        "gameName": "Face Off"
-    },
-    {
-        "gameId": "E6IJ",
-        "gameName": "Tank Force"
-    },
-    {
-        "gameId": "E6JJ",
-        "gameName": "Bakutotsu Kijuutei - Baraduke II"
-    },
-    {
-        "gameId": "E6KJ",
-        "gameName": "Chouzetsu Rinjin - Berabow Man"
-    },
-    {
-        "gameId": "E6LJ",
-        "gameName": "Maerchen Maze"
-    },
-    {
         "gameId": "E6ME",
         "gameName": "Tecmo Bowl"
     },
@@ -24240,10 +22253,6 @@
     {
         "gameId": "E6NP",
         "gameName": "Solomon's Key"
-    },
-    {
-        "gameId": "E6OJ",
-        "gameName": "Bomb Jack"
     },
     {
         "gameId": "E6PE",
@@ -24268,10 +22277,6 @@
     {
         "gameId": "E6QP",
         "gameName": "Rygar"
-    },
-    {
-        "gameId": "E6SJ",
-        "gameName": "New Rally-X"
     },
     {
         "gameId": "E6VE",
@@ -24310,10 +22315,6 @@
         "gameName": "Altered Beast"
     },
     {
-        "gameId": "E6YJ",
-        "gameName": "Space Invaders"
-    },
-    {
         "gameId": "E6ZE",
         "gameName": "Star Force"
     },
@@ -24342,22 +22343,6 @@
         "gameName": "Mappy"
     },
     {
-        "gameId": "E74J",
-        "gameName": "Cosmo Gang - The Puzzle"
-    },
-    {
-        "gameId": "E75J",
-        "gameName": "Genpei Toumaden"
-    },
-    {
-        "gameId": "E76J",
-        "gameName": "Emeraldia"
-    },
-    {
-        "gameId": "E77J",
-        "gameName": "Ishtar no Fukkatsu"
-    },
-    {
         "gameId": "E78J",
         "gameName": "Solvalou"
     },
@@ -24374,22 +22359,6 @@
         "gameName": "Gaplus"
     },
     {
-        "gameId": "E7AJ",
-        "gameName": "Grobda"
-    },
-    {
-        "gameId": "E7BJ",
-        "gameName": "Dig Dug II"
-    },
-    {
-        "gameId": "E7CJ",
-        "gameName": "Bosconian"
-    },
-    {
-        "gameId": "E7EJ",
-        "gameName": "Dragon Buster"
-    },
-    {
         "gameId": "E7FJ",
         "gameName": "Dragon Saber"
     },
@@ -24398,76 +22367,8 @@
         "gameName": "Dragon Spirit"
     },
     {
-        "gameId": "E7HJ",
-        "gameName": "Xevious"
-    },
-    {
-        "gameId": "E7IJ",
-        "gameName": "Finest Hour"
-    },
-    {
-        "gameId": "E7JJ",
-        "gameName": "Knuckle Heads"
-    },
-    {
-        "gameId": "E7KJ",
-        "gameName": "Pac-Mania"
-    },
-    {
-        "gameId": "E7LJ",
-        "gameName": "Cosmo Gang - The Video"
-    },
-    {
-        "gameId": "E7MJ",
-        "gameName": "Phelios"
-    },
-    {
-        "gameId": "E7NJ",
-        "gameName": "Rolling Thunder"
-    },
-    {
-        "gameId": "E7OJ",
-        "gameName": "Burning Force"
-    },
-    {
-        "gameId": "E7PJ",
-        "gameName": "Marvel Land"
-    },
-    {
-        "gameId": "E7QJ",
-        "gameName": "Galaga '88"
-    },
-    {
-        "gameId": "E7RJ",
-        "gameName": "Wonder Momo"
-    },
-    {
-        "gameId": "E7SJ",
-        "gameName": "Assault"
-    },
-    {
-        "gameId": "E7TJ",
-        "gameName": "Hopping Mappy"
-    },
-    {
-        "gameId": "E7UJ",
-        "gameName": "Splatterhouse"
-    },
-    {
         "gameId": "E7VJ",
         "gameName": "Cyber Sled"
-    },
-    {
-        "gameId": "E7WJ",
-        "gameName": "Numan Athletics"
-    },
-    {
-        "gameId": "E7XJ",
-        "gameName": "Youkai Douchuuki"
-    },
-    {
-        "gameId": "E7YJ",
-        "gameName": "Sky Kid"
     },
     {
         "gameId": "E7ZE",
@@ -24606,68 +22507,8 @@
         "gameName": "World Games"
     },
     {
-        "gameId": "XAAJ",
-        "gameName": "Eggy"
-    },
-    {
-        "gameId": "XABJ",
-        "gameName": "Aleste"
-    },
-    {
         "gameId": "XADJ",
         "gameName": "Yie-Gah-koutei no Gyakush - Yie Ar Kung-Fu 2"
-    },
-    {
-        "gameId": "XAEJ",
-        "gameName": "Space Manbow"
-    },
-    {
-        "gameId": "XAFJ",
-        "gameName": "Metal Gear"
-    },
-    {
-        "gameId": "XAGJ",
-        "gameName": "Road Fighter"
-    },
-    {
-        "gameId": "XAHJ",
-        "gameName": "Yume Tairiku Adventure"
-    },
-    {
-        "gameId": "XAIJ",
-        "gameName": "Quarth"
-    },
-    {
-        "gameId": "XAKJ",
-        "gameName": "Parodius - Tako wa Chikyou wo Sukou"
-    },
-    {
-        "gameId": "XALJ",
-        "gameName": "Contra"
-    },
-    {
-        "gameId": "XAMJ",
-        "gameName": "Majou Densetsu"
-    },
-    {
-        "gameId": "XANJ",
-        "gameName": "Gradius 2"
-    },
-    {
-        "gameId": "XAOJ",
-        "gameName": "Gofer no Yabou - Episode II"
-    },
-    {
-        "gameId": "XAPJ",
-        "gameName": "Metal Gear 2 - Solid Snake"
-    },
-    {
-        "gameId": "XAQJ",
-        "gameName": "Salamander"
-    },
-    {
-        "gameId": "5NEA",
-        "gameName": "NWC24Editor"
     },
     {
         "gameId": "HAAA",
@@ -24678,19 +22519,7 @@
         "gameName": "Wii Shop Channel"
     },
     {
-        "gameId": "HABC",
-        "gameName": "Wii G\u00f2uw\u00f9 P\u00ednd\u00e0o"
-    },
-    {
-        "gameId": "HABK",
-        "gameName": "Wii Shopping Channel"
-    },
-    {
         "gameId": "HACA",
-        "gameName": "Mii Channel"
-    },
-    {
-        "gameId": "HACC",
         "gameName": "Mii Channel"
     },
     {
@@ -24708,18 +22537,6 @@
     {
         "gameId": "HADP",
         "gameName": "Internet Channel"
-    },
-    {
-        "gameId": "HAFA",
-        "gameName": "Forecast Channel"
-    },
-    {
-        "gameId": "HAFE",
-        "gameName": "Forecast Channel"
-    },
-    {
-        "gameId": "HAFJ",
-        "gameName": "Otenki Channel"
     },
     {
         "gameId": "HAFP",
@@ -24746,56 +22563,16 @@
         "gameName": "Everybody Votes Channel"
     },
     {
-        "gameId": "HAJJ",
-        "gameName": "Minna de Touhyou Channel"
-    },
-    {
         "gameId": "HAJP",
         "gameName": "Everybody Votes Channel"
-    },
-    {
-        "gameId": "HAKC",
-        "gameName": "Sh\u01d0y\u00f2ng Xi\u00e9y\u00ec"
     },
     {
         "gameId": "HAKE",
         "gameName": "User Agreements"
     },
     {
-        "gameId": "HAKJ",
-        "gameName": "Riyou Kiyaku"
-    },
-    {
-        "gameId": "HAKK",
-        "gameName": "Iyong Yaggwan"
-    },
-    {
         "gameId": "HAKP",
         "gameName": "Agreement/Contact"
-    },
-    {
-        "gameId": "HALE",
-        "gameName": "Region Select"
-    },
-    {
-        "gameId": "HALJ",
-        "gameName": "Region Select"
-    },
-    {
-        "gameId": "HALK",
-        "gameName": "Region Select"
-    },
-    {
-        "gameId": "HALP",
-        "gameName": "Region Select"
-    },
-    {
-        "gameId": "HAPE",
-        "gameName": "Check Mii Out Channel"
-    },
-    {
-        "gameId": "HAPJ",
-        "gameName": "Mii Contest Channel"
     },
     {
         "gameId": "HAPP",
@@ -24826,32 +22603,8 @@
         "gameName": "Today & Tomorrow Channel"
     },
     {
-        "gameId": "HAWE",
-        "gameName": "Metroid Prime 3 Preview Channel"
-    },
-    {
-        "gameId": "HAWP",
-        "gameName": "Metroid Prime 3 Preview Channel"
-    },
-    {
         "gameId": "HAYA",
         "gameName": "Photo Channel"
-    },
-    {
-        "gameId": "HAYC",
-        "gameName": "Zh\u00e0opi\u00e0n P\u00ednd\u00e0o"
-    },
-    {
-        "gameId": "HAYK",
-        "gameName": "Photo Channel"
-    },
-    {
-        "gameId": "HBNJ",
-        "gameName": "TV no Tomo Channel G Guide for Wii"
-    },
-    {
-        "gameId": "HC2D",
-        "gameName": "Watchever"
     },
     {
         "gameId": "HC3J",
@@ -24874,18 +22627,6 @@
         "gameName": "Jam with the Band Channel Live Channel"
     },
     {
-        "gameId": "HCBJ",
-        "gameName": "Photo Channel 1.0 Restore Program"
-    },
-    {
-        "gameId": "HCCJ",
-        "gameName": "Address Settings"
-    },
-    {
-        "gameId": "HCDJ",
-        "gameName": "Digital Camera Print Channel"
-    },
-    {
         "gameId": "HCFE",
         "gameName": "Wii Speak Channel"
     },
@@ -24900,10 +22641,6 @@
     {
         "gameId": "HCFP",
         "gameName": "Wii Speak Channel"
-    },
-    {
-        "gameId": "HCGE",
-        "gameName": "Wii + Internet"
     },
     {
         "gameId": "HCGJ",
@@ -24926,10 +22663,6 @@
         "gameName": "Wii no Ma"
     },
     {
-        "gameId": "HCJP",
-        "gameName": "BBC iPlayer"
-    },
-    {
         "gameId": "HCLE",
         "gameName": "Netflix"
     },
@@ -24950,24 +22683,8 @@
         "gameName": "Hulu"
     },
     {
-        "gameId": "HCRE",
-        "gameName": "The Legend of Zelda - Skyward Sword - Save Data Update Channel"
-    },
-    {
-        "gameId": "HCRJ",
-        "gameName": "Zelda Data Restoration Channel"
-    },
-    {
-        "gameId": "HCRK",
-        "gameName": "Data Boggu Channel"
-    },
-    {
         "gameId": "HCRP",
         "gameName": "The Legend of Zelda - Skyward Sword - Save Data Update Channel"
-    },
-    {
-        "gameId": "HCSE",
-        "gameName": "Wii U Transfer Tool"
     },
     {
         "gameId": "HCSJ",
@@ -24978,32 +22695,8 @@
         "gameName": "Wii U Transfer Tool"
     },
     {
-        "gameId": "HCTE",
-        "gameName": "Wii System Transfer"
-    },
-    {
-        "gameId": "HCTJ",
-        "gameName": "Wii System Transfer"
-    },
-    {
         "gameId": "HCTP",
         "gameName": "Wii System Transfer"
-    },
-    {
-        "gameId": "HCUE",
-        "gameName": "Wii Menu Electronic Manual"
-    },
-    {
-        "gameId": "HCUJ",
-        "gameName": "Wii Menu Electronic Manual"
-    },
-    {
-        "gameId": "HCUP",
-        "gameName": "Wii Menu Electronic Manual"
-    },
-    {
-        "gameId": "HCVA",
-        "gameName": "Wii U Menu"
     },
     {
         "gameId": "HCWE",
@@ -25026,20 +22719,8 @@
         "gameName": "YouTube"
     },
     {
-        "gameId": "HCYE",
-        "gameName": "Wii Menu Electronic Manual (Wii Mini)"
-    },
-    {
-        "gameId": "HCYJ",
-        "gameName": "Wii U Main Unit Update Repair Program"
-    },
-    {
         "gameId": "HCYP",
         "gameName": "Wii Menu Electronic Manual (Wii Mini)"
-    },
-    {
-        "gameId": "HFNJ",
-        "gameName": "Wii Fit Karada Check Channel"
     },
     {
         "gameId": "RFNE",
@@ -25070,32 +22751,12 @@
         "gameName": "Wii Fit Plus Channel"
     },
     {
-        "gameId": "RFPK",
-        "gameName": "Wii Fit Plus Channel"
-    },
-    {
         "gameId": "RFPP",
         "gameName": "Wii Fit Plus Channel"
     },
     {
         "gameId": "RFPW",
         "gameName": "Wii Fit Plus P\u00ednd\u00e0o"
-    },
-    {
-        "gameId": "RGWE",
-        "gameName": "Rabbids Channel"
-    },
-    {
-        "gameId": "RGWJ",
-        "gameName": "Rabbids Channel"
-    },
-    {
-        "gameId": "RGWP",
-        "gameName": "Rabbids Channel"
-    },
-    {
-        "gameId": "RGWX",
-        "gameName": "Rabbids Channel"
     },
     {
         "gameId": "RMCE",
@@ -25114,2827 +22775,7 @@
         "gameName": "Mario Kart Channel"
     },
     {
-        "gameId": "9XGX",
-        "gameName": "SNES9xGX"
-    },
-    {
-        "gameId": "D01A",
-        "gameName": "Wiimmfi Patcher"
-    },
-    {
-        "gameId": "D02A",
-        "gameName": "Engine02"
-    },
-    {
-        "gameId": "D03A",
-        "gameName": "BrainSlug Wii"
-    },
-    {
-        "gameId": "D05A",
-        "gameName": "Bash the Castle"
-    },
-    {
-        "gameId": "D06A",
-        "gameName": "Bit Streamer"
-    },
-    {
-        "gameId": "D07A",
-        "gameName": "BlisterBall"
-    },
-    {
-        "gameId": "D08A",
-        "gameName": "Blob Wars: Metal Blob Solid"
-    },
-    {
-        "gameId": "D09A",
-        "gameName": "Blobby Volley 2 Wii"
-    },
-    {
-        "gameId": "D0AA",
-        "gameName": "MPlayer Wii YouTube"
-    },
-    {
-        "gameId": "D0BA",
-        "gameName": "MPlayer Wii"
-    },
-    {
-        "gameId": "D0CA",
-        "gameName": "Ocarina"
-    },
-    {
-        "gameId": "D0DA",
-        "gameName": "MPlayer Dvdlib Edition"
-    },
-    {
-        "gameId": "D0EA",
-        "gameName": "MPlayer Wii by Rodries"
-    },
-    {
-        "gameId": "D0FA",
-        "gameName": "Signcheck"
-    },
-    {
-        "gameId": "D0GA",
-        "gameName": "GCBoot"
-    },
-    {
-        "gameId": "D0HA",
-        "gameName": "Memview"
-    },
-    {
-        "gameId": "D0IA",
-        "gameName": "IOS Check"
-    },
-    {
-        "gameId": "D0JA",
-        "gameName": "Open Sram Lang Modifier"
-    },
-    {
-        "gameId": "D0KA",
-        "gameName": "WiiBServer"
-    },
-    {
-        "gameId": "D0LA",
-        "gameName": "LibWiiGameLoad"
-    },
-    {
-        "gameId": "D0MA",
-        "gameName": "WiiReader"
-    },
-    {
-        "gameId": "D0NA",
-        "gameName": "lsusb"
-    },
-    {
-        "gameId": "D0OA",
-        "gameName": "Move the Pussy (Demo)"
-    },
-    {
-        "gameId": "D0PA",
-        "gameName": "Wiilax Minitro"
-    },
-    {
-        "gameId": "D0QA",
-        "gameName": "Fission Engine Project"
-    },
-    {
-        "gameId": "D0RA",
-        "gameName": "GRRLIB 4.0 (Demo)"
-    },
-    {
-        "gameId": "D0SA",
-        "gameName": "OSDM-BAR"
-    },
-    {
-        "gameId": "D0TA",
-        "gameName": "Homebrew Menu (Demo)"
-    },
-    {
-        "gameId": "D0UA",
-        "gameName": "LibMii Example"
-    },
-    {
-        "gameId": "D0VA",
-        "gameName": "The Scary (Demo)"
-    },
-    {
-        "gameId": "D0WA",
-        "gameName": "Starfield (Demo)"
-    },
-    {
-        "gameId": "D0XA",
-        "gameName": "Wire3D (Demo)"
-    },
-    {
-        "gameId": "D0YA",
-        "gameName": "Something"
-    },
-    {
-        "gameId": "D0ZA",
-        "gameName": "GRRLIB 4.3.0 Promote Intro"
-    },
-    {
-        "gameId": "D10A",
-        "gameName": "cIOSFix"
-    },
-    {
-        "gameId": "D11A",
-        "gameName": "ASCII Pong"
-    },
-    {
-        "gameId": "D12A",
-        "gameName": "BuscaWiinas"
-    },
-    {
-        "gameId": "D13A",
-        "gameName": "C-Dogs SDL"
-    },
-    {
-        "gameId": "D14A",
-        "gameName": "Castles of Dr. Creep"
-    },
-    {
-        "gameId": "D15A",
-        "gameName": "Wii Shop and IOS51 Installer"
-    },
-    {
-        "gameId": "D16A",
-        "gameName": "Centipede"
-    },
-    {
-        "gameId": "D17A",
-        "gameName": "Cobra Arcade"
-    },
-    {
-        "gameId": "D18A",
-        "gameName": "Dump Espresso OTP"
-    },
-    {
-        "gameId": "D1LA",
-        "gameName": "B.L.I.N.D."
-    },
-    {
-        "gameId": "D1PA",
-        "gameName": "1bit Invaders"
-    },
-    {
-        "gameId": "D1RA",
-        "gameName": "MinimaLauncher"
-    },
-    {
-        "gameId": "D21A",
-        "gameName": "Xroar"
-    },
-    {
-        "gameId": "D22A",
-        "gameName": "cIOS222 installer"
-    },
-    {
-        "gameId": "D24A",
-        "gameName": "24 Points"
-    },
-    {
-        "gameId": "D26A",
-        "gameName": "Wii2600"
-    },
-    {
-        "gameId": "D2AA",
-        "gameName": "Wii Deadly Cobra"
-    },
-    {
-        "gameId": "D2BA",
-        "gameName": "Jump N Bump"
-    },
-    {
-        "gameId": "D2CA",
-        "gameName": "WiiFlow Advanced"
-    },
-    {
-        "gameId": "D2DA",
-        "gameName": "Box2D Balls"
-    },
-    {
-        "gameId": "D2EA",
-        "gameName": "WiiFlow Start Configurator"
-    },
-    {
-        "gameId": "D2GA",
-        "gameName": "WAD Batch Installer"
-    },
-    {
-        "gameId": "D2QA",
-        "gameName": "Sqrxz 2"
-    },
-    {
-        "gameId": "D2ZA",
-        "gameName": "Console Shooter"
-    },
-    {
-        "gameId": "D33A",
-        "gameName": "Time Frack 2D"
-    },
-    {
-        "gameId": "D36A",
-        "gameName": "cIOS36 installer"
-    },
-    {
-        "gameId": "D37A",
-        "gameName": "WiiConnect"
-    },
-    {
-        "gameId": "D38A",
-        "gameName": "cIOS38 installer"
-    },
-    {
-        "gameId": "D39A",
-        "gameName": "Ctr Gts DacoTaco Edition"
-    },
-    {
-        "gameId": "D3DA",
-        "gameName": "Time Frack 3D"
-    },
-    {
-        "gameId": "D3JA",
-        "gameName": "NDSLoad"
-    },
-    {
-        "gameId": "D3KA",
-        "gameName": "Button Tester"
-    },
-    {
-        "gameId": "D3LA",
-        "gameName": "BootMii Booter"
-    },
-    {
-        "gameId": "D3MA",
-        "gameName": "Custom NAND Loader"
-    },
-    {
-        "gameId": "D3OA",
-        "gameName": "cIOS USB 2 Installer"
-    },
-    {
-        "gameId": "D3QA",
-        "gameName": "Sqrxz 3"
-    },
-    {
-        "gameId": "D3WA",
-        "gameName": "WarHeads: Scorched Earth"
-    },
-    {
-        "gameId": "D40A",
-        "gameName": "Luigi and the Island of Mystery"
-    },
-    {
-        "gameId": "D42A",
-        "gameName": "ArianeB"
-    },
-    {
-        "gameId": "D43A",
-        "gameName": "Wii Virtual Jaguar"
-    },
-    {
-        "gameId": "D46A",
-        "gameName": "Newo Escape"
-    },
-    {
-        "gameId": "D4KA",
-        "gameName": "Aleph WOne"
-    },
-    {
-        "gameId": "D4LA",
-        "gameName": "Yawnd"
-    },
-    {
-        "gameId": "D4NA",
-        "gameName": "Disc Dumper"
-    },
-    {
-        "gameId": "D4PA",
-        "gameName": "DVD Dumper"
-    },
-    {
-        "gameId": "D4QA",
-        "gameName": "Sqrxz 4"
-    },
-    {
-        "gameId": "D4SA",
-        "gameName": "USB Loader GUI FX"
-    },
-    {
-        "gameId": "D51A",
-        "gameName": "IOS51 Update"
-    },
-    {
-        "gameId": "D52A",
-        "gameName": "cboot252"
-    },
-    {
-        "gameId": "D54A",
-        "gameName": "cIOS PatchMii Installer"
-    },
-    {
-        "gameId": "D55A",
-        "gameName": "PID Extractor"
-    },
-    {
-        "gameId": "D56A",
-        "gameName": "Shopping Channel Fixer"
-    },
-    {
-        "gameId": "D57A",
-        "gameName": "Hijill GUI"
-    },
-    {
-        "gameId": "D58A",
-        "gameName": "Priiloader HacksDen Edition"
-    },
-    {
-        "gameId": "D59A",
-        "gameName": "TheUntitledProject"
-    },
-    {
-        "gameId": "D5AA",
-        "gameName": "Alarmii"
-    },
-    {
-        "gameId": "D5BA",
-        "gameName": "WiiFont"
-    },
-    {
-        "gameId": "D5CA",
-        "gameName": "cLoader"
-    },
-    {
-        "gameId": "D5FA",
-        "gameName": "Txted Mod"
-    },
-    {
-        "gameId": "D5HA",
-        "gameName": "Title Lister"
-    },
-    {
-        "gameId": "D5JA",
-        "gameName": "Tidy Up"
-    },
-    {
-        "gameId": "D5LA",
-        "gameName": "Switchtosneek"
-    },
-    {
-        "gameId": "D5RA",
-        "gameName": "Botoning"
-    },
-    {
-        "gameId": "D60A",
-        "gameName": "Ultimate USB Loader"
-    },
-    {
-        "gameId": "D61A",
-        "gameName": "Sand Traps Extra Levels"
-    },
-    {
-        "gameId": "D62A",
-        "gameName": "Newo Puzzle"
-    },
-    {
-        "gameId": "D63A",
-        "gameName": "3D Maze"
-    },
-    {
-        "gameId": "D64A",
-        "gameName": "Wii64 Emulator"
-    },
-    {
-        "gameId": "D65A",
-        "gameName": "Transitory Vectors"
-    },
-    {
-        "gameId": "D66A",
-        "gameName": "Secret Maryo Chronicles"
-    },
-    {
-        "gameId": "D68A",
-        "gameName": "TheyDoNotDie2"
-    },
-    {
-        "gameId": "D69A",
-        "gameName": "IOS60 Installer"
-    },
-    {
-        "gameId": "D6AA",
-        "gameName": "Pussieloader"
-    },
-    {
-        "gameId": "D6BA",
-        "gameName": "Updatersafe"
-    },
-    {
-        "gameId": "D6DA",
-        "gameName": "Savegame Manager Mod"
-    },
-    {
-        "gameId": "D6EA",
-        "gameName": "Sneek FS Dumper"
-    },
-    {
-        "gameId": "D6FA",
-        "gameName": "AnyTitle Deleter Mod"
-    },
-    {
-        "gameId": "D6HA",
-        "gameName": "AnyTitle Deleter Mod DB"
-    },
-    {
-        "gameId": "D6IA",
-        "gameName": "DVD Info"
-    },
-    {
-        "gameId": "D6KA",
-        "gameName": "AnyTitle Deleter DB"
-    },
-    {
-        "gameId": "D6MA",
-        "gameName": "Banana Saves"
-    },
-    {
-        "gameId": "D6OA",
-        "gameName": "DOP Shop"
-    },
-    {
-        "gameId": "D6QA",
-        "gameName": "BootMii Checker"
-    },
-    {
-        "gameId": "D6TA",
-        "gameName": "MiiPlayer"
-    },
-    {
-        "gameId": "D70A",
-        "gameName": "Dungeon Crawl Stone Soup"
-    },
-    {
-        "gameId": "D71A",
-        "gameName": "Panic in the Mushroom Kingdom"
-    },
-    {
-        "gameId": "D72A",
-        "gameName": "Bfi"
-    },
-    {
-        "gameId": "D78A",
-        "gameName": "Wii7800"
-    },
-    {
-        "gameId": "D79A",
-        "gameName": "Newo Defence"
-    },
-    {
-        "gameId": "D7AA",
-        "gameName": "Action Replay Loader"
-    },
-    {
-        "gameId": "D7DA",
-        "gameName": "Depanbrew"
-    },
-    {
-        "gameId": "D7GA",
-        "gameName": "Channel Loader"
-    },
-    {
-        "gameId": "D7KA",
-        "gameName": "RawkSD"
-    },
-    {
-        "gameId": "D7LA",
-        "gameName": "Rumbler"
-    },
-    {
-        "gameId": "D7MA",
-        "gameName": "IS Wad"
-    },
-    {
-        "gameId": "D7OA",
-        "gameName": "Recovery Manager"
-    },
-    {
-        "gameId": "D7QA",
-        "gameName": "Reboot"
-    },
-    {
-        "gameId": "D7SA",
-        "gameName": "Childproof USB Loader"
-    },
-    {
-        "gameId": "D7TA",
-        "gameName": "Power Mii Off"
-    },
-    {
-        "gameId": "D7VA",
-        "gameName": "Power Off"
-    },
-    {
-        "gameId": "D7WA",
-        "gameName": "Abbaye des Morts"
-    },
-    {
-        "gameId": "D7XA",
-        "gameName": "NuGaSa"
-    },
-    {
-        "gameId": "D7YA",
-        "gameName": "Resistor"
-    },
-    {
-        "gameId": "D81A",
-        "gameName": "Newo Asteroids"
-    },
-    {
-        "gameId": "D82A",
-        "gameName": "cIOS PatchMii Installer with Korean Disc Support"
-    },
-    {
-        "gameId": "D83A",
-        "gameName": "Wii MFE Port"
-    },
-    {
-        "gameId": "D84A",
-        "gameName": "Gambol"
-    },
-    {
-        "gameId": "D85A",
-        "gameName": "Wii EDuke32"
-    },
-    {
-        "gameId": "D86A",
-        "gameName": "Firewii"
-    },
-    {
-        "gameId": "D87A",
-        "gameName": "Tick Tock Boat Race"
-    },
-    {
-        "gameId": "D88A",
-        "gameName": "Quasi88"
-    },
-    {
-        "gameId": "D89A",
-        "gameName": "Wiimote LED Flasher"
-    },
-    {
-        "gameId": "D8AA",
-        "gameName": "Front SD ELF Loader"
-    },
-    {
-        "gameId": "D8BA",
-        "gameName": "GameCube Homebrew Launcher"
-    },
-    {
-        "gameId": "D8CA",
-        "gameName": "WiiSend"
-    },
-    {
-        "gameId": "D8DA",
-        "gameName": "Menu"
-    },
-    {
-        "gameId": "D8EA",
-        "gameName": "Gecko Loader"
-    },
-    {
-        "gameId": "D8FA",
-        "gameName": "Shell"
-    },
-    {
-        "gameId": "D8JA",
-        "gameName": "Calc"
-    },
-    {
-        "gameId": "D8QA",
-        "gameName": "Brick OS"
-    },
-    {
-        "gameId": "D8RA",
-        "gameName": "Lotto"
-    },
-    {
-        "gameId": "D8SA",
-        "gameName": "Brainf**k"
-    },
-    {
-        "gameId": "D8UA",
-        "gameName": "TCPLoader"
-    },
-    {
-        "gameId": "D8VA",
-        "gameName": "Snort48"
-    },
-    {
-        "gameId": "D8WA",
-        "gameName": "Wiisixty"
-    },
-    {
-        "gameId": "D8XA",
-        "gameName": "All In One Emuloader"
-    },
-    {
-        "gameId": "D8YA",
-        "gameName": "Swissloader"
-    },
-    {
-        "gameId": "D8ZA",
-        "gameName": "Tick Tock Zombie Shooter"
-    },
-    {
-        "gameId": "D91A",
-        "gameName": "Jenny Thinks"
-    },
-    {
-        "gameId": "D93A",
-        "gameName": "WiiRayTracer"
-    },
-    {
-        "gameId": "D94A",
-        "gameName": "Nowhere"
-    },
-    {
-        "gameId": "D95A",
-        "gameName": "RenderMii"
-    },
-    {
-        "gameId": "D96A",
-        "gameName": "WiiMotionDemo"
-    },
-    {
-        "gameId": "D97A",
-        "gameName": "Fire"
-    },
-    {
-        "gameId": "D98A",
-        "gameName": "InstallMii"
-    },
-    {
-        "gameId": "D99A",
-        "gameName": "System Channels Updater"
-    },
-    {
-        "gameId": "D9BA",
-        "gameName": "Info"
-    },
-    {
-        "gameId": "D9CA",
-        "gameName": "cIOS USB2 Installer"
-    },
-    {
-        "gameId": "D9FA",
-        "gameName": "Dump"
-    },
-    {
-        "gameId": "D9GA",
-        "gameName": "Wad Creator"
-    },
-    {
-        "gameId": "D9IA",
-        "gameName": "SNES9xGX Channel Installer"
-    },
-    {
-        "gameId": "D9KA",
-        "gameName": "Txtread"
-    },
-    {
-        "gameId": "D9LA",
-        "gameName": "Forwarder"
-    },
-    {
-        "gameId": "DA1A",
-        "gameName": "Radianwars"
-    },
-    {
-        "gameId": "DA2A",
-        "gameName": "Moonstone: A Hard Days Night"
-    },
-    {
-        "gameId": "DA3A",
-        "gameName": "Wiitch"
-    },
-    {
-        "gameId": "DA4A",
-        "gameName": "arCard+Wii"
-    },
-    {
-        "gameId": "DA6A",
-        "gameName": "Automatii"
-    },
-    {
-        "gameId": "DA7A",
-        "gameName": "Astronomy"
-    },
-    {
-        "gameId": "DA8A",
-        "gameName": "Beer Belly Bill 3 Grillieren"
-    },
-    {
-        "gameId": "DA9A",
-        "gameName": "Achtung Wii Kurve"
-    },
-    {
-        "gameId": "DAAA",
-        "gameName": "WiiNetPuzzle"
-    },
-    {
-        "gameId": "DAHA",
-        "gameName": "Accio Hacks"
-    },
-    {
-        "gameId": "DAMA",
-        "gameName": "MegaCodeDownloader"
-    },
-    {
-        "gameId": "DAPA",
-        "gameName": "Map Maker"
-    },
-    {
-        "gameId": "DARA",
-        "gameName": "Anyregion Changer"
-    },
-    {
-        "gameId": "DASA",
-        "gameName": "Aspirin"
-    },
-    {
-        "gameId": "DATA",
-        "gameName": "AnyTitle Deleter"
-    },
-    {
-        "gameId": "DATD",
-        "gameName": "AnyTitle Deleter"
-    },
-    {
-        "gameId": "DAVA",
-        "gameName": "Avoidance"
-    },
-    {
-        "gameId": "DAWA",
-        "gameName": "Abuse Wii"
-    },
-    {
-        "gameId": "DB0A",
-        "gameName": "Spitits"
-    },
-    {
-        "gameId": "DB2A",
-        "gameName": "Mad Bomber"
-    },
-    {
-        "gameId": "DB3A",
-        "gameName": "Squarez"
-    },
-    {
-        "gameId": "DB5A",
-        "gameName": "mapbf"
-    },
-    {
-        "gameId": "DB7A",
-        "gameName": "Blacks Dash"
-    },
-    {
-        "gameId": "DB9A",
-        "gameName": "Robi"
-    },
-    {
-        "gameId": "DBAA",
-        "gameName": "BowFishing Action"
-    },
-    {
-        "gameId": "DBBA",
-        "gameName": "Balance Board Tools"
-    },
-    {
-        "gameId": "DBCA",
-        "gameName": "BootMii Configuration Editor"
-    },
-    {
-        "gameId": "DBDA",
-        "gameName": "Bluedump"
-    },
-    {
-        "gameId": "DBEA",
-        "gameName": "Beebem Wii"
-    },
-    {
-        "gameId": "DBGA",
-        "gameName": "BlastGuy"
-    },
-    {
-        "gameId": "DBIA",
-        "gameName": "Boot It"
-    },
-    {
-        "gameId": "DBLA",
-        "gameName": "BlueMSX-wii"
-    },
-    {
-        "gameId": "DBMA",
-        "gameName": "BootIOS"
-    },
-    {
-        "gameId": "DBPA",
-        "gameName": "Balance Board Pro"
-    },
-    {
-        "gameId": "DBRA",
-        "gameName": "WiiBrowser"
-    },
-    {
-        "gameId": "DBSA",
-        "gameName": "BrawlStats"
-    },
-    {
-        "gameId": "DBTA",
-        "gameName": "Bolt Thrower"
-    },
-    {
-        "gameId": "DBUA",
-        "gameName": "Buttoncast"
-    },
-    {
-        "gameId": "DBWA",
-        "gameName": "Reversmii"
-    },
-    {
-        "gameId": "DBXA",
-        "gameName": "Biniax 2"
-    },
-    {
-        "gameId": "DC6A",
-        "gameName": "Frodo (C64-network.org)"
-    },
-    {
-        "gameId": "DC7A",
-        "gameName": "Calculate"
-    },
-    {
-        "gameId": "DCAA",
-        "gameName": "WiiCasino"
-    },
-    {
-        "gameId": "DCBA",
-        "gameName": "CascadeBeneath"
-    },
-    {
-        "gameId": "DCCA",
-        "gameName": "ChristmasCountdown"
-    },
-    {
-        "gameId": "DCDA",
-        "gameName": "cIOS Downgrader"
-    },
-    {
-        "gameId": "DCEA",
-        "gameName": "Cheat Manager"
-    },
-    {
-        "gameId": "DCFA",
-        "gameName": "Coverfloader"
-    },
-    {
-        "gameId": "DCGA",
-        "gameName": "Ctr-Gcs"
-    },
-    {
-        "gameId": "DCHA",
-        "gameName": "Wii Chatter"
-    },
-    {
-        "gameId": "DCIA",
-        "gameName": "cIOS Installer"
-    },
-    {
-        "gameId": "DCLA",
-        "gameName": "Configurable USB Loader"
-    },
-    {
-        "gameId": "DCMA",
-        "gameName": "Wiicm"
-    },
-    {
-        "gameId": "DCNA",
-        "gameName": "Nandclean"
-    },
-    {
-        "gameId": "DCOA",
-        "gameName": "ConnectMii"
-    },
-    {
-        "gameId": "DCPA",
-        "gameName": "Splatter Castle"
-    },
-    {
-        "gameId": "DCRA",
-        "gameName": "CosmoRaketti"
-    },
-    {
-        "gameId": "DCSA",
-        "gameName": "Cert.sys Extractor"
-    },
-    {
-        "gameId": "DCTA",
-        "gameName": "Christmas-Type Adventure Time"
-    },
-    {
-        "gameId": "DCUA",
-        "gameName": "cIOS Uninstaller"
-    },
-    {
-        "gameId": "DCVA",
-        "gameName": "WiiColEm"
-    },
-    {
-        "gameId": "DCWA",
-        "gameName": "WiiMC Channel Installer"
-    },
-    {
-        "gameId": "DCXA",
-        "gameName": "ComixChannel"
-    },
-    {
-        "gameId": "DCYA",
-        "gameName": "Cylinder Dodge"
-    },
-    {
-        "gameId": "DD2A",
-        "gameName": "Double Dash Wii"
-    },
-    {
-        "gameId": "DD3A",
-        "gameName": "Dario"
-    },
-    {
-        "gameId": "DD5A",
-        "gameName": "Dcvg5k"
-    },
-    {
-        "gameId": "DD9A",
-        "gameName": "Dungeons"
-    },
-    {
-        "gameId": "DDAA",
-        "gameName": "Darkcorp"
-    },
-    {
-        "gameId": "DDBA",
-        "gameName": "DOSBox Wii"
-    },
-    {
-        "gameId": "DDCA",
-        "gameName": "d2x cIOS Installer"
-    },
-    {
-        "gameId": "DDDA",
-        "gameName": "Disk Drive Lighter"
-    },
-    {
-        "gameId": "DDEA",
-        "gameName": "WiiModder"
-    },
-    {
-        "gameId": "DDFA",
-        "gameName": "Defendguin"
-    },
-    {
-        "gameId": "DDHA",
-        "gameName": "Homebrew Disc Launcher"
-    },
-    {
-        "gameId": "DDIA",
-        "gameName": "DiiLC"
-    },
-    {
-        "gameId": "DDLA",
-        "gameName": "Disc Loader"
-    },
-    {
-        "gameId": "DDMA",
-        "gameName": "DragonMedia Player"
-    },
-    {
-        "gameId": "DDOA",
-        "gameName": "DOP-Mii"
-    },
-    {
-        "gameId": "DDRA",
-        "gameName": "Wii Duplicated Channel Remover"
-    },
-    {
-        "gameId": "DDSA",
-        "gameName": "DeSmuME"
-    },
-    {
-        "gameId": "DDVA",
-        "gameName": "Devolution"
-    },
-    {
-        "gameId": "DDWA",
-        "gameName": "DOP-Mii WiiBrew Edition"
-    },
-    {
-        "gameId": "DE2A",
-        "gameName": "Doubledown"
-    },
-    {
-        "gameId": "DE5A",
-        "gameName": "Pictogrid"
-    },
-    {
-        "gameId": "DE7A",
-        "gameName": "Commander Keen"
-    },
-    {
-        "gameId": "DE9A",
-        "gameName": "Wii Bash"
-    },
-    {
-        "gameId": "DEAA",
-        "gameName": "Headtracking (Demo)"
-    },
-    {
-        "gameId": "DEBA",
-        "gameName": "Pong Breaker"
-    },
-    {
-        "gameId": "DEDA",
-        "gameName": "Txted"
-    },
-    {
-        "gameId": "DEEA",
-        "gameName": "Eeeek Eeeeek Hooooook"
-    },
-    {
-        "gameId": "DEFA",
-        "gameName": "Fuse"
-    },
-    {
-        "gameId": "DEHA",
-        "gameName": "Chess"
-    },
-    {
-        "gameId": "DEME",
-        "gameName": "PunEmu"
-    },
-    {
-        "gameId": "DEPA",
-        "gameName": "Pacman"
-    },
-    {
-        "gameId": "DERA",
-        "gameName": "Elongated Reptile"
-    },
-    {
-        "gameId": "DETA",
-        "gameName": "MPlayer TT"
-    },
-    {
-        "gameId": "DEWA",
-        "gameName": "Wii Exhibit"
-    },
-    {
-        "gameId": "DF0A",
-        "gameName": "Mini FSToolbox"
-    },
-    {
-        "gameId": "DF2A",
-        "gameName": "Da ShAmAn"
-    },
-    {
-        "gameId": "DF3A",
-        "gameName": "Briickout"
-    },
-    {
-        "gameId": "DF4A",
-        "gameName": "Star Catching"
-    },
-    {
-        "gameId": "DF5A",
-        "gameName": "Strobe Alarm Clock"
-    },
-    {
-        "gameId": "DF6A",
-        "gameName": "Wii Quizz"
-    },
-    {
-        "gameId": "DF7A",
-        "gameName": "Chatnoir"
-    },
-    {
-        "gameId": "DF8A",
-        "gameName": "Trinary"
-    },
-    {
-        "gameId": "DF9A",
-        "gameName": "Chunk Munch"
-    },
-    {
-        "gameId": "DFBA",
-        "gameName": "Fsbrowser"
-    },
-    {
-        "gameId": "DFEA",
-        "gameName": "FlipEm"
-    },
-    {
-        "gameId": "DFFA",
-        "gameName": "Simple FS Dumper"
-    },
-    {
-        "gameId": "DFGA",
-        "gameName": "Smashing!"
-    },
-    {
-        "gameId": "DFIA",
-        "gameName": "FCE Ultra GX Channel Installer"
-    },
-    {
-        "gameId": "DFLA",
-        "gameName": "Starfall"
-    },
-    {
-        "gameId": "DFMA",
-        "gameName": "FMyLife"
-    },
-    {
-        "gameId": "DFRA",
-        "gameName": "FridgeMagnets"
-    },
-    {
-        "gameId": "DFSA",
-        "gameName": "FSToolbox"
-    },
-    {
-        "gameId": "DFTA",
-        "gameName": "FTPii"
-    },
-    {
-        "gameId": "DFUA",
-        "gameName": "Fuse"
-    },
-    {
-        "gameId": "DG3A",
-        "gameName": "Giddy 3"
-    },
-    {
-        "gameId": "DG7A",
-        "gameName": "WiiPeng"
-    },
-    {
-        "gameId": "DG8A",
-        "gameName": "Abusimbel Deluxe"
-    },
-    {
-        "gameId": "DG9A",
-        "gameName": "Garnatron"
-    },
-    {
-        "gameId": "DGBA",
-        "gameName": "Geexbox"
-    },
-    {
-        "gameId": "DGCA",
-        "gameName": "GameCube Backup Launcher"
-    },
-    {
-        "gameId": "DGEA",
-        "gameName": "GeckoOS"
-    },
-    {
-        "gameId": "DGFA",
-        "gameName": "GuitarsOnFire"
-    },
-    {
-        "gameId": "DGGA",
-        "gameName": "Wii Rick Dangerous"
-    },
-    {
-        "gameId": "DGIA",
-        "gameName": "Gravitii"
-    },
-    {
-        "gameId": "DGKA",
-        "gameName": "ProjectGMC"
-    },
-    {
-        "gameId": "DGMA",
-        "gameName": "GCMM"
-    },
-    {
-        "gameId": "DGPA",
-        "gameName": "Genesis Plus"
-    },
-    {
-        "gameId": "DGSA",
-        "gameName": "Shooting Gallery"
-    },
-    {
-        "gameId": "DGWA",
-        "gameName": "Goodbye World"
-    },
-    {
-        "gameId": "DGXA",
-        "gameName": "GxGeo"
-    },
-    {
-        "gameId": "DH7A",
-        "gameName": "Harmony's Nightmare"
-    },
-    {
-        "gameId": "DH9A",
-        "gameName": "Prophecy"
-    },
-    {
-        "gameId": "DHBA",
-        "gameName": "Homebrew Browser"
-    },
-    {
-        "gameId": "DHCA",
-        "gameName": "Hero City"
-    },
-    {
-        "gameId": "DHDA",
-        "gameName": "Hidtest"
-    },
-    {
-        "gameId": "DHEA",
-        "gameName": "Helium Boy"
-    },
-    {
-        "gameId": "DHFA",
-        "gameName": "Homebrew Filter"
-    },
-    {
-        "gameId": "DHGA",
-        "gameName": "HuGo-GX"
-    },
-    {
-        "gameId": "DHHA",
-        "gameName": "HHexen"
-    },
-    {
-        "gameId": "DHIA",
-        "gameName": "HackMii Installer"
-    },
-    {
-        "gameId": "DHLA",
-        "gameName": "Heli"
-    },
-    {
-        "gameId": "DHMA",
-        "gameName": "CharioMan"
-    },
-    {
-        "gameId": "DHSA",
-        "gameName": "Homebrew Sorter"
-    },
-    {
-        "gameId": "DHTA",
-        "gameName": "Hatari"
-    },
-    {
-        "gameId": "DHWA",
-        "gameName": "We Are Nowhere"
-    },
-    {
-        "gameId": "DHXA",
-        "gameName": "Hex"
-    },
-    {
-        "gameId": "DI5A",
-        "gameName": "Tanks"
-    },
-    {
-        "gameId": "DI7A",
-        "gameName": "ExistenzE"
-    },
-    {
-        "gameId": "DI8A",
-        "gameName": "IOS58 Installer"
-    },
-    {
-        "gameId": "DI9A",
-        "gameName": "Barrage"
-    },
-    {
-        "gameId": "DIBA",
-        "gameName": "Revolt of the Binary Couriers"
-    },
-    {
-        "gameId": "DICA",
-        "gameName": "Cubic"
-    },
-    {
-        "gameId": "DIEA",
-        "gameName": "EasyIOS"
-    },
-    {
-        "gameId": "DIGA",
-        "gameName": "Categorii"
-    },
-    {
-        "gameId": "DIIA",
-        "gameName": "iiii"
-    },
-    {
-        "gameId": "DIMA",
-        "gameName": "InspectMii"
-    },
-    {
-        "gameId": "DINA",
-        "gameName": "Mii Installer"
-    },
-    {
-        "gameId": "DIRA",
-        "gameName": "Ironing Maiden"
-    },
-    {
-        "gameId": "DISA",
-        "gameName": "Wii Supersonic"
-    },
-    {
-        "gameId": "DITA",
-        "gameName": "IOS236 Installer"
-    },
-    {
-        "gameId": "DIXA",
-        "gameName": "cIOSx installer"
-    },
-    {
-        "gameId": "DJAA",
-        "gameName": "Arcade Jigsaw"
-    },
-    {
-        "gameId": "DJCA",
-        "gameName": "JellyCar Wii"
-    },
-    {
-        "gameId": "DJFA",
-        "gameName": "Joyflow"
-    },
-    {
-        "gameId": "DJJA",
-        "gameName": "Jumping Jack"
-    },
-    {
-        "gameId": "DJQA",
-        "gameName": "Jewel Quest"
-    },
-    {
-        "gameId": "DJWA",
-        "gameName": "Wii System Menu"
-    },
-    {
-        "gameId": "DJZA",
-        "gameName": "JzintvWii"
-    },
-    {
-        "gameId": "DK1A",
-        "gameName": "Karaokii"
-    },
-    {
-        "gameId": "DK3A",
-        "gameName": "Sketch Fight"
-    },
-    {
-        "gameId": "DK4A",
-        "gameName": "Drawingbox"
-    },
-    {
-        "gameId": "DK6A",
-        "gameName": "King of Fighters: Flames of Courage"
-    },
-    {
-        "gameId": "DK7A",
-        "gameName": "Uschtris"
-    },
-    {
-        "gameId": "DKBA",
-        "gameName": "RPG Baker"
-    },
-    {
-        "gameId": "DKCA",
-        "gameName": "Tick Tock Car Race"
-    },
-    {
-        "gameId": "DKDA",
-        "gameName": "Darkcube"
-    },
-    {
-        "gameId": "DKHA",
-        "gameName": "Katakana and Hiragana Practice"
-    },
-    {
-        "gameId": "DKKA",
-        "gameName": "KoreanKii"
-    },
-    {
-        "gameId": "DKOA",
-        "gameName": "Komopong"
-    },
-    {
-        "gameId": "DKPA",
-        "gameName": "Kidspaint"
-    },
-    {
-        "gameId": "DKSA",
-        "gameName": "Stppwii"
-    },
-    {
-        "gameId": "DKTA",
-        "gameName": "Taiko"
-    },
-    {
-        "gameId": "DKWA",
-        "gameName": "Kurushi"
-    },
-    {
-        "gameId": "DL3A",
-        "gameName": "Ballion"
-    },
-    {
-        "gameId": "DL4A",
-        "gameName": "LPairs"
-    },
-    {
-        "gameId": "DL5A",
-        "gameName": "Gameload"
-    },
-    {
-        "gameId": "DL7A",
-        "gameName": "LabClone"
-    },
-    {
-        "gameId": "DLBA",
-        "gameName": "My Little Ball"
-    },
-    {
-        "gameId": "DLCA",
-        "gameName": "Dance Clone"
-    },
-    {
-        "gameId": "DLDA",
-        "gameName": "Devilock"
-    },
-    {
-        "gameId": "DLEA",
-        "gameName": "Preloader"
-    },
-    {
-        "gameId": "DLFA",
-        "gameName": "LifeMii"
-    },
-    {
-        "gameId": "DLGA",
-        "gameName": "Gravity Glider"
-    },
-    {
-        "gameId": "DLIA",
-        "gameName": "Wii Mod Lite"
-    },
-    {
-        "gameId": "DLLA",
-        "gameName": "Lolicopocalypse"
-    },
-    {
-        "gameId": "DLMA",
-        "gameName": "LoadMii"
-    },
-    {
-        "gameId": "DLNA",
-        "gameName": "Lander"
-    },
-    {
-        "gameId": "DLOA",
-        "gameName": "Lightsout"
-    },
-    {
-        "gameId": "DLPA",
-        "gameName": "Lopan"
-    },
-    {
-        "gameId": "DLTA",
-        "gameName": "Leveltool"
-    },
-    {
-        "gameId": "DLUA",
-        "gameName": "WiiLauncher"
-    },
-    {
-        "gameId": "DLXA",
-        "gameName": "Linux Installer"
-    },
-    {
-        "gameId": "DM0A",
-        "gameName": "Pom"
-    },
-    {
-        "gameId": "DM5A",
-        "gameName": "Missle Command"
-    },
-    {
-        "gameId": "DM7A",
-        "gameName": "Matches"
-    },
-    {
-        "gameId": "DM9A",
-        "gameName": "CheckRegion"
-    },
-    {
-        "gameId": "DMAA",
-        "gameName": "Mame Wii"
-    },
-    {
-        "gameId": "DMBA",
-        "gameName": "Multiboot"
-    },
-    {
-        "gameId": "DMCA",
-        "gameName": "CleanRip Mod"
-    },
-    {
-        "gameId": "DMDA",
-        "gameName": "Wii Mod"
-    },
-    {
-        "gameId": "DMEA",
-        "gameName": "Mii Extractor"
-    },
-    {
-        "gameId": "DMFA",
-        "gameName": "WiiMednafen"
-    },
-    {
-        "gameId": "DMGA",
-        "gameName": "Mighty Channels"
-    },
-    {
-        "gameId": "DMHA",
-        "gameName": "NanoMechas"
-    },
-    {
-        "gameId": "DMIA",
-        "gameName": "DIOS MIOS Booter"
-    },
-    {
-        "gameId": "DMJA",
-        "gameName": "Mahjongg Wii"
-    },
-    {
-        "gameId": "DMLA",
-        "gameName": "Mighty Loader"
-    },
-    {
-        "gameId": "DMMA",
-        "gameName": "MyMenuify"
-    },
-    {
-        "gameId": "DMNA",
-        "gameName": "Magic Number"
-    },
-    {
-        "gameId": "DMOA",
-        "gameName": "cMIOS installer"
-    },
-    {
-        "gameId": "DMPA",
-        "gameName": "MPlayer CE"
-    },
-    {
-        "gameId": "DMRA",
-        "gameName": "MIOS Patcher"
-    },
-    {
-        "gameId": "DMSA",
-        "gameName": "ShutMiiReboot"
-    },
-    {
-        "gameId": "DMTA",
-        "gameName": "Metronome"
-    },
-    {
-        "gameId": "DMUA",
-        "gameName": "Multi Mod Manager"
-    },
-    {
-        "gameId": "DMWA",
-        "gameName": "WakeMiiUp"
-    },
-    {
-        "gameId": "DN0A",
-        "gameName": "Thatother"
-    },
-    {
-        "gameId": "DN6A",
-        "gameName": "Not64"
-    },
-    {
-        "gameId": "DN7A",
-        "gameName": "Alien Breed"
-    },
-    {
-        "gameId": "DN9A",
-        "gameName": "Point and No Click"
-    },
-    {
-        "gameId": "DNAA",
-        "gameName": "Ncard"
-    },
-    {
-        "gameId": "DNCA",
-        "gameName": "NeoCD-Wii"
-    },
-    {
-        "gameId": "DNDA",
-        "gameName": "Nintendont"
-    },
-    {
-        "gameId": "DNEA",
-        "gameName": "Gravity"
-    },
-    {
-        "gameId": "DNGA",
-        "gameName": "NeoGamma Launcher"
-    },
-    {
-        "gameId": "DNHA",
-        "gameName": "Headings"
-    },
-    {
-        "gameId": "DNIA",
-        "gameName": "Bugin"
-    },
-    {
-        "gameId": "DNKA",
-        "gameName": "Neko Project II"
-    },
-    {
-        "gameId": "DNMA",
-        "gameName": "Newo Model Viewer"
-    },
-    {
-        "gameId": "DNNA",
-        "gameName": "Save installer"
-    },
-    {
-        "gameId": "DNOA",
-        "gameName": "O.T.T.F."
-    },
-    {
-        "gameId": "DNPA",
-        "gameName": "NeoPopWii"
-    },
-    {
-        "gameId": "DNRA",
-        "gameName": "Newo Runner"
-    },
-    {
-        "gameId": "DNSA",
-        "gameName": "Newo Shooter"
-    },
-    {
-        "gameId": "DNTA",
-        "gameName": "NeoTanks"
-    },
-    {
-        "gameId": "DNUA",
-        "gameName": "Wii Donut"
-    },
-    {
-        "gameId": "DNWA",
-        "gameName": "Nowell"
-    },
-    {
-        "gameId": "DO2A",
-        "gameName": "O2EM"
-    },
-    {
-        "gameId": "DO3A",
-        "gameName": "Three Point O"
-    },
-    {
-        "gameId": "DO4A",
-        "gameName": "MTP"
-    },
-    {
-        "gameId": "DO5A",
-        "gameName": "Planet Hively"
-    },
-    {
-        "gameId": "DO6A",
-        "gameName": "Mini MP3 Player"
-    },
-    {
-        "gameId": "DOCA",
-        "gameName": "Code Downloader"
-    },
-    {
-        "gameId": "DOEA",
-        "gameName": "ShowTest"
-    },
-    {
-        "gameId": "DOGA",
-        "gameName": "MazeOfGaliousWii"
-    },
-    {
-        "gameId": "DOHA",
-        "gameName": "HighOctane"
-    },
-    {
-        "gameId": "DOIA",
-        "gameName": "Neogamma IOS Switcher"
-    },
-    {
-        "gameId": "DOMA",
-        "gameName": "Mole"
-    },
-    {
-        "gameId": "DONA",
-        "gameName": "Offline Network Enabler"
-    },
-    {
-        "gameId": "DOOA",
-        "gameName": "Doom"
-    },
-    {
-        "gameId": "DOPA",
-        "gameName": "PowerCheck"
-    },
-    {
-        "gameId": "DORA",
-        "gameName": "Rebooter"
-    },
-    {
-        "gameId": "DOTA",
-        "gameName": "OpenTTD"
-    },
-    {
-        "gameId": "DP0A",
-        "gameName": "Starplit"
-    },
-    {
-        "gameId": "DP1A",
-        "gameName": "Italian Parking"
-    },
-    {
-        "gameId": "DP2A",
-        "gameName": "Pong2"
-    },
-    {
-        "gameId": "DP3A",
-        "gameName": "Inkpoly"
-    },
-    {
-        "gameId": "DP4A",
-        "gameName": "Piirates"
-    },
-    {
-        "gameId": "DP5A",
-        "gameName": "Pix"
-    },
-    {
-        "gameId": "DP6A",
-        "gameName": "IOS36 Patcher"
-    },
-    {
-        "gameId": "DP7A",
-        "gameName": "Brawl+ Updatifier"
-    },
-    {
-        "gameId": "DP8A",
-        "gameName": "Timeless"
-    },
-    {
-        "gameId": "DP9A",
-        "gameName": "Alien Puzzle Wii"
-    },
-    {
-        "gameId": "DPAA",
-        "gameName": "WiiPaintBall"
-    },
-    {
-        "gameId": "DPBA",
-        "gameName": "Priibootergui"
-    },
-    {
-        "gameId": "DPCA",
-        "gameName": "Cherophobe"
-    },
-    {
-        "gameId": "DPEA",
-        "gameName": "PieChart"
-    },
-    {
-        "gameId": "DPFA",
-        "gameName": "Pwiictogrid"
-    },
-    {
-        "gameId": "DPGA",
-        "gameName": "Pingus"
-    },
-    {
-        "gameId": "DPIA",
-        "gameName": "Patched IOS 80 Installer for vWii"
-    },
-    {
-        "gameId": "DPJA",
-        "gameName": "Project M Launcher"
-    },
-    {
-        "gameId": "DPKA",
-        "gameName": "Physco"
-    },
-    {
-        "gameId": "DPLA",
-        "gameName": "Priiloader"
-    },
-    {
-        "gameId": "DPMA",
-        "gameName": "Music Painter"
-    },
-    {
-        "gameId": "DPNA",
-        "gameName": "RPG Pineapple Apocalypse"
-    },
-    {
-        "gameId": "DPOA",
-        "gameName": "Postloader"
-    },
-    {
-        "gameId": "DPPA",
-        "gameName": "Project Panic"
-    },
-    {
-        "gameId": "DPRA",
-        "gameName": "PlasmaRaketti"
-    },
-    {
-        "gameId": "DPSA",
-        "gameName": "Playstats"
-    },
-    {
-        "gameId": "DPTA",
-        "gameName": "Two Point Five"
-    },
-    {
-        "gameId": "DPVA",
-        "gameName": "PattView Wii"
-    },
-    {
-        "gameId": "DPWA",
-        "gameName": "Pimp my Wii"
-    },
-    {
-        "gameId": "DQ1A",
-        "gameName": "Q1rev"
-    },
-    {
-        "gameId": "DQ2A",
-        "gameName": "Q2rev"
-    },
-    {
-        "gameId": "DQ6A",
-        "gameName": "Light"
-    },
-    {
-        "gameId": "DQ7A",
-        "gameName": "Quake"
-    },
-    {
-        "gameId": "DQ8A",
-        "gameName": "LuaFWii"
-    },
-    {
-        "gameId": "DQ9A",
-        "gameName": "Wiihttpd"
-    },
-    {
-        "gameId": "DQBA",
-        "gameName": "Bible Quiz"
-    },
-    {
-        "gameId": "DQCA",
-        "gameName": "Q2ctfrev"
-    },
-    {
-        "gameId": "DQRA",
-        "gameName": "Qrevpak"
-    },
-    {
-        "gameId": "DQWA",
-        "gameName": "Quakegx"
-    },
-    {
-        "gameId": "DR0A",
-        "gameName": "Rokoban"
-    },
-    {
-        "gameId": "DR1A",
-        "gameName": "Wii Whiteboard"
-    },
-    {
-        "gameId": "DR3A",
-        "gameName": "Death Star Run"
-    },
-    {
-        "gameId": "DR4A",
-        "gameName": "Rock Paper Scissors"
-    },
-    {
-        "gameId": "DR5A",
-        "gameName": "Briicks"
-    },
-    {
-        "gameId": "DR6A",
-        "gameName": "Reader"
-    },
-    {
-        "gameId": "DR7A",
-        "gameName": "RockBlueMet"
-    },
-    {
-        "gameId": "DR8A",
-        "gameName": "Operation"
-    },
-    {
-        "gameId": "DR9A",
-        "gameName": "PixelPlot"
-    },
-    {
-        "gameId": "DRAA",
-        "gameName": "RetroArch-Wii"
-    },
-    {
-        "gameId": "DRBA",
-        "gameName": "Rock Band 2 WAD Installer"
-    },
-    {
-        "gameId": "DRCA",
-        "gameName": "Wiicross"
-    },
-    {
-        "gameId": "DRDA",
-        "gameName": "Drawmii"
-    },
-    {
-        "gameId": "DREA",
-        "gameName": "WiiRecipe"
-    },
-    {
-        "gameId": "DRFA",
-        "gameName": "Radiofeeds"
-    },
-    {
-        "gameId": "DRGA",
-        "gameName": "Reggie Dumper"
-    },
-    {
-        "gameId": "DRIA",
-        "gameName": "CleanRip"
-    },
-    {
-        "gameId": "DRKA",
-        "gameName": "Robotfindskitten"
-    },
-    {
-        "gameId": "DRMA",
-        "gameName": "Mr. Sitwell"
-    },
-    {
-        "gameId": "DROA",
-        "gameName": "SlimeRoll"
-    },
-    {
-        "gameId": "DRPA",
-        "gameName": "Marcos Lopez Part II"
-    },
-    {
-        "gameId": "DRRA",
-        "gameName": "Riiper"
-    },
-    {
-        "gameId": "DRSA",
-        "gameName": "RedSquare"
-    },
-    {
-        "gameId": "DRTA",
-        "gameName": "Tetris Custom"
-    },
-    {
-        "gameId": "DRUA",
-        "gameName": "Radiofeeds Updater"
-    },
-    {
-        "gameId": "DRVA",
-        "gameName": "Residualvm"
-    },
-    {
-        "gameId": "DRWA",
-        "gameName": "Winterman"
-    },
-    {
-        "gameId": "DRZA",
-        "gameName": "Zerace"
-    },
-    {
-        "gameId": "DS0A",
-        "gameName": "ShootMii"
-    },
-    {
-        "gameId": "DS1A",
-        "gameName": "Another Rock Paper Scissors"
-    },
-    {
-        "gameId": "DS2A",
-        "gameName": "Swingball2"
-    },
-    {
-        "gameId": "DS3A",
-        "gameName": "Senet"
-    },
-    {
-        "gameId": "DS4A",
-        "gameName": "Sar"
-    },
-    {
-        "gameId": "DS5A",
-        "gameName": "Snaketwo"
-    },
-    {
-        "gameId": "DS6A",
-        "gameName": "Scogger"
-    },
-    {
-        "gameId": "DS7A",
-        "gameName": "Swing Ball"
-    },
-    {
-        "gameId": "DS8A",
-        "gameName": "Scape"
-    },
-    {
-        "gameId": "DS9A",
-        "gameName": "Minesweeper"
-    },
-    {
-        "gameId": "DSAA",
-        "gameName": "Schism Tracker"
-    },
-    {
-        "gameId": "DSBA",
-        "gameName": "SpaceBubble"
-    },
-    {
-        "gameId": "DSCA",
-        "gameName": "Softchip"
-    },
-    {
-        "gameId": "DSDA",
-        "gameName": "Superdump"
-    },
-    {
-        "gameId": "DSEA",
-        "gameName": "Settings Editor GUI"
-    },
-    {
-        "gameId": "DSFA",
-        "gameName": "Sciifii"
-    },
-    {
-        "gameId": "DSGA",
-        "gameName": "SaveGame Manager"
-    },
-    {
-        "gameId": "DSHA",
-        "gameName": "SysCheck HacksDen Edition"
-    },
-    {
-        "gameId": "DSIA",
-        "gameName": "Simple IOS Patcher"
-    },
-    {
-        "gameId": "DSKA",
-        "gameName": "SockDreams"
-    },
-    {
-        "gameId": "DSLA",
-        "gameName": "Wii Stella"
-    },
-    {
-        "gameId": "DSMA",
-        "gameName": "Sega Master System Plus"
-    },
-    {
-        "gameId": "DSOA",
-        "gameName": "Bermuda Syndrome Wii"
-    },
-    {
-        "gameId": "DSPA",
-        "gameName": "Super Star Shooter"
-    },
-    {
-        "gameId": "DSQA",
-        "gameName": "Sqrxz"
-    },
-    {
-        "gameId": "DSRA",
-        "gameName": "WiiStrobe"
-    },
-    {
-        "gameId": "DSSA",
-        "gameName": "RSSMii"
-    },
-    {
-        "gameId": "DSTA",
-        "gameName": "Wii Solitaire"
-    },
-    {
-        "gameId": "DSUA",
-        "gameName": "Super Mario War"
-    },
-    {
-        "gameId": "DSVA",
-        "gameName": "ScummVM"
-    },
-    {
-        "gameId": "DSWA",
-        "gameName": "SuperTux Wii"
-    },
-    {
-        "gameId": "DSXA",
-        "gameName": "Super Pixel Jumper"
-    },
-    {
-        "gameId": "DSYA",
-        "gameName": "SysCheck"
-    },
-    {
-        "gameId": "DT0A",
-        "gameName": "Tower Defense"
-    },
-    {
-        "gameId": "DT1A",
-        "gameName": "Turnip"
-    },
-    {
-        "gameId": "DT2A",
-        "gameName": "Matching Cards"
-    },
-    {
-        "gameId": "DT3A",
-        "gameName": "Bichejos"
-    },
-    {
-        "gameId": "DT4A",
-        "gameName": "Soduku"
-    },
-    {
-        "gameId": "DT5A",
-        "gameName": "Poker"
-    },
-    {
-        "gameId": "DT6A",
-        "gameName": "Simon"
-    },
-    {
-        "gameId": "DT7A",
-        "gameName": "TheyDoNotDie"
-    },
-    {
-        "gameId": "DTAA",
-        "gameName": "Wii-Tac-Toe"
-    },
-    {
-        "gameId": "DTCA",
-        "gameName": "The Catachthonic"
-    },
-    {
-        "gameId": "DTDA",
-        "gameName": "Descent"
-    },
-    {
-        "gameId": "DTEA",
-        "gameName": "Topedit"
-    },
-    {
-        "gameId": "DTFA",
-        "gameName": "Triiforce"
-    },
-    {
-        "gameId": "DTGA",
-        "gameName": "RiiTag"
-    },
-    {
-        "gameId": "DTHA",
-        "gameName": "Heretic"
-    },
-    {
-        "gameId": "DTIA",
-        "gameName": "Wiitriis"
-    },
-    {
-        "gameId": "DTJA",
-        "gameName": "Trojan"
-    },
-    {
-        "gameId": "DTKA",
-        "gameName": "Tick Tock Tank Fight"
-    },
-    {
-        "gameId": "DTLA",
-        "gameName": "TailTale"
-    },
-    {
-        "gameId": "DTMA",
-        "gameName": "Tetrominos"
-    },
-    {
-        "gameId": "DTNA",
-        "gameName": "Tunnel"
-    },
-    {
-        "gameId": "DTOA",
-        "gameName": "Tong"
-    },
-    {
-        "gameId": "DTPA",
-        "gameName": "Paintown"
-    },
-    {
-        "gameId": "DTRA",
-        "gameName": "Trucha Bug Restorer"
-    },
-    {
-        "gameId": "DTSA",
-        "gameName": "Desert Bus"
-    },
-    {
-        "gameId": "DTTA",
-        "gameName": "Toddtris"
-    },
-    {
-        "gameId": "DTWA",
-        "gameName": "WiiTweet"
-    },
-    {
-        "gameId": "DTXA",
-        "gameName": "Texttris"
-    },
-    {
-        "gameId": "DU0A",
-        "gameName": "DumpMiiNAND"
-    },
-    {
-        "gameId": "DU7A",
-        "gameName": "Uno"
-    },
-    {
-        "gameId": "DU8A",
-        "gameName": "RealWnd"
-    },
-    {
-        "gameId": "DU9A",
-        "gameName": "Harmonium"
-    },
-    {
-        "gameId": "DUAA",
-        "gameName": "UAE Wii"
-    },
-    {
-        "gameId": "DUBA",
-        "gameName": "Multibu"
-    },
-    {
-        "gameId": "DUDA",
-        "gameName": "Duck Hunt"
-    },
-    {
-        "gameId": "DUGA",
-        "gameName": "Guitar Fun"
-    },
-    {
-        "gameId": "DUIA",
-        "gameName": "ChessUI"
-    },
-    {
-        "gameId": "DULA",
-        "gameName": "USB Loader GX"
-    },
-    {
-        "gameId": "DUNA",
-        "gameName": "Uname"
-    },
-    {
-        "gameId": "DUSA",
-        "gameName": "bootOperaModUSB"
-    },
-    {
-        "gameId": "DUTG",
-        "gameName": "DU Tag Channel"
-    },
-    {
-        "gameId": "DUWA",
-        "gameName": "Waninkoko's USB Loader"
-    },
-    {
-        "gameId": "DV0A",
-        "gameName": "Remove Preloader Hacks"
-    },
-    {
-        "gameId": "DV3A",
-        "gameName": "DVD Browser"
-    },
-    {
-        "gameId": "DV9A",
-        "gameName": "SensorMii"
-    },
-    {
-        "gameId": "DVDA",
-        "gameName": "cIOS DVD Dumper"
-    },
-    {
-        "gameId": "DVGA",
-        "gameName": "The Video Game"
-    },
-    {
-        "gameId": "DVHA",
-        "gameName": "Horror Vacui"
-    },
-    {
-        "gameId": "DVIA",
-        "gameName": "Vbagx Channel Installer"
-    },
-    {
-        "gameId": "DVLA",
-        "gameName": "Vigiroth le livreur"
-    },
-    {
-        "gameId": "DVNA",
-        "gameName": "WiiVNC"
-    },
-    {
-        "gameId": "DVOA",
-        "gameName": "Vectoroids"
-    },
-    {
-        "gameId": "DVPA",
-        "gameName": "Progressiveswitch"
-    },
-    {
-        "gameId": "DVSA",
-        "gameName": "GameCube Saver"
-    },
-    {
-        "gameId": "DVXA",
-        "gameName": "VectrexWii"
-    },
-    {
-        "gameId": "DW1A",
-        "gameName": "Intuitwars"
-    },
-    {
-        "gameId": "DW5A",
-        "gameName": "Marel"
-    },
-    {
-        "gameId": "DW6A",
-        "gameName": "Wiicraft"
-    },
-    {
-        "gameId": "DW7A",
-        "gameName": "Ravewild"
-    },
-    {
-        "gameId": "DWAA",
-        "gameName": "WiiApple"
-    },
-    {
-        "gameId": "DWBA",
-        "gameName": "WiirtualBoy"
-    },
-    {
-        "gameId": "DWCA",
-        "gameName": "WiiFlow Channel Installer"
-    },
-    {
-        "gameId": "DWDA",
-        "gameName": "WiiFlow Banner Downloader"
-    },
-    {
-        "gameId": "DWEA",
-        "gameName": "WiiEarth"
-    },
-    {
-        "gameId": "DWFA",
-        "gameName": "WiiFlow"
-    },
-    {
-        "gameId": "DWHA",
-        "gameName": "WiiHandySDL"
-    },
-    {
-        "gameId": "DWIA",
-        "gameName": "Wii Donut"
-    },
-    {
-        "gameId": "DWJA",
-        "gameName": "Jewel"
-    },
-    {
-        "gameId": "DWKA",
-        "gameName": "Wiibreaker"
-    },
-    {
-        "gameId": "DWLA",
-        "gameName": "Wii-Linux"
-    },
-    {
-        "gameId": "DWMA",
-        "gameName": "WAD Manager"
-    },
-    {
-        "gameId": "DWNA",
-        "gameName": "Nwancat"
-    },
-    {
-        "gameId": "DWPA",
-        "gameName": "WiiPhysics"
-    },
-    {
-        "gameId": "DWRA",
-        "gameName": "WiiRadio"
-    },
-    {
-        "gameId": "DWSA",
-        "gameName": "WiiSX"
-    },
-    {
-        "gameId": "DWTA",
-        "gameName": "Wiituka"
-    },
-    {
-        "gameId": "DWUA",
-        "gameName": "Wufe"
-    },
-    {
-        "gameId": "DWWA",
-        "gameName": "Winters End"
-    },
-    {
-        "gameId": "DWXA",
-        "gameName": "WiiXplorer"
-    },
-    {
-        "gameId": "DX3A",
-        "gameName": "Midway Space Invaders Emulator"
-    },
-    {
-        "gameId": "DX4A",
-        "gameName": "Brawl DX Launcher"
-    },
-    {
-        "gameId": "DX5A",
-        "gameName": "MP3+G Player"
-    },
-    {
-        "gameId": "DX6A",
-        "gameName": "Build Blocks"
-    },
-    {
-        "gameId": "DX7A",
-        "gameName": "Roxoptr2"
-    },
-    {
-        "gameId": "DX8A",
-        "gameName": "Hexen"
-    },
-    {
-        "gameId": "DX9A",
-        "gameName": "Sand Traps"
-    },
-    {
-        "gameId": "DXBA",
-        "gameName": "WiiX-Ball"
-    },
-    {
-        "gameId": "DXCA",
-        "gameName": "CorsixTH"
-    },
-    {
-        "gameId": "DXDA",
-        "gameName": "DVDX"
-    },
-    {
-        "gameId": "DXEA",
-        "gameName": "SDExplorer"
-    },
-    {
-        "gameId": "DXHA",
-        "gameName": "Texas Holdem Poker"
-    },
-    {
-        "gameId": "DXIA",
-        "gameName": "Piixelator"
-    },
-    {
-        "gameId": "DXLA",
-        "gameName": "WiiXL"
-    },
-    {
-        "gameId": "DXNA",
-        "gameName": "bootnetflix"
-    },
-    {
-        "gameId": "DXPA",
-        "gameName": "Xeempongwii"
-    },
-    {
-        "gameId": "DXQA",
-        "gameName": "Quadrax"
-    },
-    {
-        "gameId": "DXSA",
-        "gameName": "Save Extractor"
-    },
-    {
-        "gameId": "DXTA",
-        "gameName": "The Lone Pixel"
-    },
-    {
-        "gameId": "DXXA",
-        "gameName": "Hexxagon"
-    },
-    {
-        "gameId": "DXYA",
-        "gameName": "xyzzy"
-    },
-    {
-        "gameId": "DXZA",
-        "gameName": "Megazeux"
-    },
-    {
-        "gameId": "DY5A",
-        "gameName": "Darkcorp Lite"
-    },
-    {
-        "gameId": "DY6A",
-        "gameName": "Liqwiid Wars"
-    },
-    {
-        "gameId": "DY9A",
-        "gameName": "TetWiis"
-    },
-    {
-        "gameId": "DYAA",
-        "gameName": "Syasokoban"
-    },
-    {
-        "gameId": "DYBA",
-        "gameName": "Yabause"
-    },
-    {
-        "gameId": "DYCA",
-        "gameName": "Tetricycle"
-    },
-    {
-        "gameId": "DYEA",
-        "gameName": "Epilepsii"
-    },
-    {
-        "gameId": "DYGA",
-        "gameName": "Yog"
-    },
-    {
-        "gameId": "DYHA",
-        "gameName": "Hypno Blast"
-    },
-    {
-        "gameId": "DYIA",
-        "gameName": "Chippy"
-    },
-    {
-        "gameId": "DYMA",
-        "gameName": "YAWMM"
-    },
-    {
-        "gameId": "DYOA",
-        "gameName": "Toy Wars"
-    },
-    {
-        "gameId": "DYPA",
-        "gameName": "PongYourWii"
-    },
-    {
-        "gameId": "DYSA",
-        "gameName": "Shiny tank"
-    },
-    {
-        "gameId": "DYTA",
-        "gameName": "Newo Tokyo"
-    },
-    {
-        "gameId": "DYUA",
-        "gameName": "UFO Racer"
-    },
-    {
-        "gameId": "DYWA",
-        "gameName": "Yahtzwii"
-    },
-    {
-        "gameId": "DYYA",
-        "gameName": "System Setting Replace Tool"
-    },
-    {
-        "gameId": "DZ0A",
-        "gameName": "Eject"
-    },
-    {
-        "gameId": "DZ7A",
-        "gameName": "SameGame"
-    },
-    {
-        "gameId": "DZ8A",
-        "gameName": "WiiMPC"
-    },
-    {
-        "gameId": "DZ9A",
-        "gameName": "Teeter Torture"
-    },
-    {
-        "gameId": "DZIA",
-        "gameName": "Ziip"
-    },
-    {
-        "gameId": "DZPA",
-        "gameName": "Puzsion"
-    },
-    {
-        "gameId": "DZQA",
-        "gameName": "Quizz"
-    },
-    {
-        "gameId": "DZRA",
-        "gameName": "Rezerwar"
-    },
-    {
-        "gameId": "DZSA",
-        "gameName": "Szigoy"
-    },
-    {
-        "gameId": "DZXA",
-        "gameName": "FBZX Wii"
-    },
-    {
-        "gameId": "DZYA",
-        "gameName": "Snake Two"
-    },
-    {
-        "gameId": "DZZA",
-        "gameName": "OpenJazz"
-    },
-    {
-        "gameId": "FCEU",
-        "gameName": "FCE Ultra GX"
-    },
-    {
-        "gameId": "HACS",
-        "gameName": "Mii Channel Symbols"
-    },
-    {
-        "gameId": "HWFL",
-        "gameName": "HackWiiFlow"
-    },
-    {
-        "gameId": "JODI",
-        "gameName": "Homebrew Channel"
-    },
-    {
-        "gameId": "LULZ",
-        "gameName": "Homebrew Channel"
-    },
-    {
-        "gameId": "MAUI",
-        "gameName": "Backup Homebrew Channel"
-    },
-    {
-        "gameId": "NK2O",
-        "gameName": "Neek2o"
-    },
-    {
-        "gameId": "OHBC",
-        "gameName": "Homebrew Channel"
-    },
-    {
-        "gameId": "PLUS",
-        "gameName": "WiiMC+"
-    },
-    {
-        "gameId": "PXWE",
-        "gameName": "Project X:  Love Potion Disaster"
-    },
-    {
-        "gameId": "RIIV",
-        "gameName": "Riivolution"
-    },
-    {
-        "gameId": "RMCX",
-        "gameName": "CTGP Revolution Channel"
-    },
-    {
-        "gameId": "SEGA",
-        "gameName": "Genesis Plus GX"
-    },
-    {
-        "gameId": "SMGX",
-        "gameName": "SaveGame Manager GX"
-    },
-    {
-        "gameId": "SNTX",
-        "gameName": "Snes9x TX"
-    },
-    {
-        "gameId": "SOMA",
-        "gameName": "Sonic Mania"
-    },
-    {
-        "gameId": "STUX",
-        "gameName": "Super Tux Wii Edition"
-    },
-    {
-        "gameId": "ULFW",
-        "gameName": "uLoader"
-    },
-    {
-        "gameId": "UNEO",
-        "gameName": "USB Loader GX"
-    },
-    {
-        "gameId": "VBGX",
-        "gameName": "Visual Boy Advance GX"
-    },
-    {
-        "gameId": "WIMC",
-        "gameName": "WiiMC"
-    },
-    {
-        "gameId": "WMH1",
-        "gameName": "Mother 1+2+3"
-    },
-    {
-        "gameId": "WN64",
-        "gameName": "Wii64"
-    },
-    {
-        "gameId": "WPSX",
-        "gameName": "WiiSX"
-    },
-    {
-        "gameId": "301E01",
-        "gameName": "GameCube Service Disc"
-    },
-    {
-        "gameId": "D23J01",
-        "gameName": "Game Taikai Yuushou Kinen: Tokusei SmaBro DX Movie Disc"
-    },
-    {
-        "gameId": "D24J01",
-        "gameName": "SmaBro DX Event-you Disc"
-    },
-    {
-        "gameId": "D28J01",
-        "gameName": "Interactive Multi-Game Demo Disk - April 2002"
-    },
-    {
         "gameId": "D34J01",
         "gameName": "Gekkan Nintendo Tentou Demo 2002.7.10"
-    },
-    {
-        "gameId": "D38J01",
-        "gameName": "Gekkan Nintendo Tentou Demo 2002.9.1"
     }
 ]
