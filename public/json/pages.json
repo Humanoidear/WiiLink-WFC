@@ -368,8 +368,9 @@
         "gameName": "Let's Tap"
     },
     {
-        "gameId": "R2VE01",
-        "gameName": "Sin & Punishment: Star Successor"
+        "gameId": "sinpun2NAwii",
+        "gameName": "Sin & Punishment: Star Successor",
+        "GamespyId": "R2VE01"
     },
     {
         "gameId": "R2VJ01",
@@ -580,8 +581,9 @@
         "gameName": "Speed Racer: The Videogame"
     },
     {
-        "gameId": "R3RE8P",
-        "gameName": "Sonic & SEGA All-Stars Racing"
+        "gameId": "segaracingwii",
+        "gameName": "Sonic & SEGA All-Stars Racing",
+        "GamespyId": "R3RE8P"
     },
     {
         "gameId": "R3RP8P",
@@ -720,8 +722,9 @@
         "gameName": "Table Football"
     },
     {
-        "gameId": "R4CE69",
-        "gameName": "SimCity Creator"
+        "gameId": "simcitywii",
+        "gameName": "SimCity Creator",
+        "GamespyId": "R4CE69"
     },
     {
         "gameId": "R4CJ13",
@@ -796,8 +799,9 @@
         "gameName": "The Sims 2: Pets"
     },
     {
-        "gameId": "R4QE01",
-        "gameName": "Mario Strikers Charged"
+        "gameId": "mschargedwii",
+        "gameName": "Mario Strikers Charged",
+        "GamespyId": "R4QE01"
     },
     {
         "gameId": "R4QJ01",
@@ -1388,8 +1392,9 @@
         "gameName": "NiGHTS: Journey of Dreams"
     },
     {
-        "gameId": "R7FEGD",
-        "gameName": "Final Fantasy Fables: Chocobo's Dungeon"
+        "gameId": "chocotokiwii",
+        "gameName": "Final Fantasy Fables: Chocobo's Dungeon",
+        "GamespyId": "R7FEGD"
     },
     {
         "gameId": "R7FJGD",
@@ -1580,8 +1585,9 @@
         "gameName": "Anpanman Niko Niko Party"
     },
     {
-        "gameId": "R89JEL",
-        "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!"
+        "gameId": "tokyoparkwii",
+        "gameName": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!",
+        "GamespyId": "R89JEL"
     },
     {
         "gameId": "R8AE01",
@@ -2028,8 +2034,9 @@
         "gameName": "Brothers in Arms: Earned in Blood"
     },
     {
-        "gameId": "RB6J18",
-        "gameName": "Bomberman"
+        "gameId": "wiibombmanwii",
+        "gameName": "Bomberman",
+        "GamespyId": "RBBJ18"
     },
     {
         "gameId": "RB7E54",
@@ -4440,8 +4447,9 @@
         "gameName": "Marble Saga: Kororinpa"
     },
     {
-        "gameId": "RK6J18",
-        "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane"
+        "gameId": "kororinpa2wii",
+        "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane",
+        "GamespyId": "R2VE01"
     },
     {
         "gameId": "RK6P18",
@@ -5068,8 +5076,9 @@
         "gameName": "Super Mario Stadium: Family Baseball"
     },
     {
-        "gameId": "RMCE01",
-        "gameName": "Mario Kart Wii"
+        "gameId": "mariokartwii",
+        "gameName": "Mario Kart Wii",
+        "gamespyId": "RMCE01"
     },
     {
         "gameId": "RMCJ01",
@@ -5156,8 +5165,9 @@
         "gameName": "Mario Sports Mix"
     },
     {
-        "gameId": "RMKP01",
-        "gameName": "Mario Sports Mix"
+        "gameId": "mariosprtwii",
+        "gameName": "Mario Sports Mix",
+        "GamespyId": "RMKE01"
     },
     {
         "gameId": "RMLEH4",
@@ -5956,8 +5966,9 @@
         "gameName": "Pok\u00e9mon Battle Revolution"
     },
     {
-        "gameId": "RPBP01",
-        "gameName": "Pok\u00e9mon Battle Revolution"
+        "gameId": "pokebattlewii",
+        "gameName": "Pok\u00e9mon Battle Revolution",
+        "GamespyId": "RPBE01"
     },
     {
         "gameId": "RPCE20",
@@ -6788,8 +6799,9 @@
         "gameName": "M64 Project M"
     },
     {
-        "gameId": "RSBP01",
-        "gameName": "Super Smash Bros. Brawl"
+        "gameId": "smashbrosxwii",
+        "gameName": "Super Smash Bros. Brawl",
+        "GamespyId": "RSBE01"
     },
     {
         "gameId": "RSCD7D",
@@ -7372,8 +7384,9 @@
         "gameName": "TNA iMPACT!"
     },
     {
-        "gameId": "RTYP01",
-        "gameName": "Wii Chess"
+        "gameId": "chesswii",
+        "gameName": "Wii Chess",
+        "GamespyId": "RTYP01"
     },
     {
         "gameId": "RTZE08",
@@ -7672,8 +7685,9 @@
         "gameName": "Animal Crossing: City Folk"
     },
     {
-        "gameId": "RUUP01",
-        "gameName": "Animal Crossing: Let's Go to the City"
+        "gameId": "acrossingwii",
+        "gameName": "Animal Crossing: Let's Go to the City",
+        "GamespyId": "RUUP01"
     },
     {
         "gameId": "RUWJC8",
@@ -8164,8 +8178,9 @@
         "gameName": "Mariowa Sonic Beijing Olympic"
     },
     {
-        "gameId": "RWSP8P",
-        "gameName": "Mario & Sonic at the Olympic Games"
+        "gameId": "MSolympicwii",
+        "gameName": "Mario & Sonic at the Olympic Games",
+        "GamespyId": "RWSP8P"
     },
     {
         "gameId": "RWTEG9",
@@ -8512,8 +8527,9 @@
         "gameName": "Rayman - Raving Rabbids 2"
     },
     {
-        "gameId": "RY2P41",
-        "gameName": "Rayman Raving Rabbids 2"
+        "gameId": "raymanrr2wii",
+        "gameName": "Rayman Raving Rabbids 2",
+        "GamespyId": "RY2P41"
     },
     {
         "gameId": "RY2R41",
@@ -17228,8 +17244,9 @@
         "gameName": "Tetris Party"
     },
     {
-        "gameId": "WTPP",
-        "gameName": "Tetris Party"
+        "gameId": "tetpartywii",
+        "gameName": "Tetris Party",
+        "gamespyId": "WTPP"
     },
     {
         "gameId": "WTRE",
@@ -19952,8 +19969,9 @@
         "gameName": "Darius Twin"
     },
     {
-        "gameId": "JBOJ",
-        "gameName": "Panel de Pon"
+        "gameId": "pandeponds",
+        "gameName": "Panel de Pon",
+        "GamespyId": "JBOJ"
     },
     {
         "gameId": "JBOQ",
