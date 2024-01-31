@@ -45,7 +45,7 @@ function render(xml) {
                 extensionType = "0001";
               }
               document.getElementById("onlineload").style.display = "block";
-              document.getElementById("downloadPatchButton").innerHTML = "<a href='/patches/" + id.textContent.substring(0, 4) + patchType + extensionType + ".txt'><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + id.textContent.substring(0, 4) + patchType + extensionType + ".txt</button></a>";
+              document.getElementById("downloadPatchButton").innerHTML = "<a href='/patches/" + id.textContent.substring(0, 4) + patchType + extensionType + ".txt' download><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + id.textContent.substring(0, 4) + patchType + extensionType + ".txt</button></a>";
               onlineUpdater(data, j); // Fetch data on page load
               setInterval(() => {
                 onlineUpdater(data, j); // Fetch data on a 5 second interval
