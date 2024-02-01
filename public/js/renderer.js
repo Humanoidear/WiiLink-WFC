@@ -240,36 +240,6 @@ function render(xml) {
     }
   }
 
-  var sameGenreTitles = [];
-  for (var i = 0; i < x.length; i++) {
-    var genre = x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
-    genre = genre.split(",")[0].trim();
-
-    if (mainGenre == genre) {
-      var trueName = x[i].getAttribute("name") || "Unknown";
-      var tid =
-        x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
-      var disc = x[i].getElementsByTagName("disc")[0]?.textContent || "Unknown";
-      var publisher =
-        x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
-      var releaseYear =
-      x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
-      sameGenreTitles.push({
-        title: trueName,
-        tid,
-        disc,
-        publisher,
-        releaseYear,
-        genre,
-      });
-    }
-  }
-
-  shuffleArray(sameGenreTitles);
-  sameGenreTitles = sameGenreTitles.slice(0, 4);
-  document.getElementById("recommendedTitles").innerHTML = "";
-  var genreIconClass = getIconForGenre(mainGenre);
-  document.getElementById("genreSuggestion").innerHTML = '<i class="fas ' + genreIconClass + '" style="margin-right:5px;"></i> ' + mainGenre;
 
   function loadCoverImage(title) {
     switch (title.charAt(3)) {
@@ -311,23 +281,52 @@ function render(xml) {
         return "/img/disc_placeholder.png";
     }
   }
+  
+  const xArray = Array.from(x);
 
-  sameGenreTitles.forEach(function (game) {
-    document.getElementById("recommendedTitles").innerHTML +=
-      '<a style="text-decoration:none;" href="/online/' +
-      game.tid +
-      '" <div class="recommended-title"><img src="' + loadCoverImage(game.tid) + '" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' + loadDiscImage(game.tid) + '" width="70px">' +
-      "<div style='text-align:right;'><t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'> " +
-      game.title +
-      "</t><i>" +
-      game.tid +
-      "</i></div></div><div style='bottom:0; width:100%; padding:10px; display:flex; justify-content:space-between; position:relative;'><p style='margin-bottom:0px; text-align:left;'><i class='fa fa-code'></i> " +
-      game.publisher +
-      "</p>" +
-      "<p style='margin-bottom:0px; text-align:right;'>" +
-      game.releaseYear +
-      " <i class='fa fa-calendar'></i></p></div></div>";
-});
+  let sameGenreTitles = xArray.filter(item => {
+    let genre = item.getElementsByTagName("genre")[0]?.textContent || "Unknown";
+    genre = genre.split(",")[0].trim();
+    return mainGenre == genre;
+  }).map(item => {
+    const trueName = item.getAttribute("name") || "Unknown";
+    const tid = item.getElementsByTagName("id")[0]?.textContent || "Unknown";
+    const disc = item.getElementsByTagName("disc")[0]?.textContent || "Unknown";
+    const publisher = item.getElementsByTagName("publisher")[0]?.textContent || "Unknown";
+    const releaseYear = item.getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
+    const genre = item.getElementsByTagName("genre")[0]?.textContent.split(",")[0].trim() || "Unknown";
+    return { title: trueName, tid, disc, publisher, releaseYear, genre };
+  });
+  
+  shuffleArray(sameGenreTitles);
+  sameGenreTitles = sameGenreTitles.slice(0, 4);
+  document.getElementById("recommendedTitles").innerHTML = "";
+  const genreIconClass = getIconForGenre(mainGenre);
+  document.getElementById("genreSuggestion").innerHTML = `<i class="fas ${genreIconClass}" style="margin-right:5px;"></i> ${mainGenre}`;
+  
+  // ...
+  
+  let html = '';
+  sameGenreTitles.forEach(game => {
+    html += `
+      <a style="text-decoration:none;" href="/online/${game.tid}">
+        <div class="recommended-title">
+          <img src="${loadCoverImage(game.tid)}" class="img-bg" width="100%">
+          <div style="padding:10px; display:flex; align-items:center; justify-content:space-between;">
+            <img src="${loadDiscImage(game.tid)}" width="70px">
+            <div style='text-align:right;'>
+              <t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'>${game.title}</t>
+              <i>${game.tid}</i>
+            </div>
+          </div>
+          <div style='bottom:0; width:100%; padding:10px; display:flex; justify-content:space-between; position:relative;'>
+            <p style='margin-bottom:0px; text-align:left;'><i class='fa fa-code'></i> ${game.publisher}</p>
+            <p style='margin-bottom:0px; text-align:right;'>${game.releaseYear} <i class='fa fa-calendar'></i></p>
+          </div>
+        </div>
+      </a>`;
+  });
+  document.getElementById("recommendedTitles").innerHTML = html;
 }
 
 function onlineUpdater(data, j) {
