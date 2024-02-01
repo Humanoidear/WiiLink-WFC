@@ -240,6 +240,47 @@ window.saveSelections = function() {
   </div>
 
   <script is:inline>
+    function loadCoverImage(title) {
+    switch (title.charAt(3)) {
+      case "E":
+        return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
+      case "P":
+      case "D":
+      case "H":
+      case "X":
+      case "Y":
+      case "F":
+        return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
+      case "J":
+        return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
+      case "K":
+        return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
+      default:
+        return "/img/disc_placeholder.png";
+    }
+  }
+
+
+  function loadDiscImage(title) {
+    switch (title.charAt(3)) {
+      case "E":
+        return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
+      case "P":
+      case "D":
+      case "H":
+      case "X":
+      case "Y":
+      case "F":
+        return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
+      case "J":
+        return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
+      case "K":
+        return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
+      default:
+        return "/img/disc_placeholder.png";
+    }
+  }
+
     fetch("../../json/gamespy_titles.json")
       .then((response) => response.json())
       .then((gamespyTitles) => {
@@ -291,23 +332,7 @@ window.saveSelections = function() {
                   suggestion.innerHTML =
                     '<a href="/online/' +
                     games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
-                    discImage +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
-                    discImage +
-                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/cover/JA/" +
-                    discImage +
-                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/cover/KO/" +
-                    discImage +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
-                    discImage +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
-                    discImage +
-                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/disc/JA/" +
-                    discImage +
-                    ".png'; this.onerror=function(){this.src='https://art.gametdb.com/wii/disc/KO/" +
-                    discImage +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:500px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' + loadCoverImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' + loadDiscImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
                     games[i].gameName +
                     "<br><i>" +
                     onlineFeatures +
@@ -386,6 +411,7 @@ window.saveSelections = function() {
                   if (games[i].gamespyId) {
                     gamespyId = " | " + games[i].gamespyId;
                   }
+                  
                   var suggestion = document.createElement("div");
                   if (isFound) {
                     onlineFeatures +=
@@ -394,15 +420,7 @@ window.saveSelections = function() {
                   suggestion.innerHTML =
                     '<a href="/online/' +
                     games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="https://art.gametdb.com/wii/cover/US/' +
-                    discImage +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
-                    discImage +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="https://art.gametdb.com/wii/disc/US/' +
-                    discImage +
-                    '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
-                    discImage +
-                    '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' + loadCoverImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' + loadDiscImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
                     games[i].gameName +
                     "<br><i>" +
                     onlineFeatures +
