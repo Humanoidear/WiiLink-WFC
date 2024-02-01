@@ -271,28 +271,52 @@ function render(xml) {
   var genreIconClass = getIconForGenre(mainGenre);
   document.getElementById("genreSuggestion").innerHTML = '<i class="fas ' + genreIconClass + '" style="margin-right:5px;"></i> ' + mainGenre;
 
+  function loadCoverImage(title) {
+    switch (title.charAt(3)) {
+      case "E":
+        return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
+      case "P":
+      case "D":
+      case "H":
+      case "X":
+      case "Y":
+      case "F":
+        return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
+      case "J":
+        return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
+      case "K":
+        return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
+      default:
+        return "/img/disc_placeholder.png";
+    }
+  }
+
+
+  function loadDiscImage(title) {
+    switch (title.charAt(3)) {
+      case "E":
+        return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
+      case "P":
+      case "D":
+      case "H":
+      case "X":
+      case "Y":
+      case "F":
+        return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
+      case "J":
+        return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
+      case "K":
+        return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
+      default:
+        return "/img/disc_placeholder.png";
+    }
+  }
 
   sameGenreTitles.forEach(function (game) {
     document.getElementById("recommendedTitles").innerHTML +=
       '<a style="text-decoration:none;" href="/online/' +
       game.tid +
-      '" <div class="recommended-title"><img src="https://art.gametdb.com/wii/cover/US/' +
-      game.tid +
-      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/cover/EN/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/cover/JA/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/cover/KO/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="https://art.gametdb.com/wii/disc/US/' +
-      game.tid +
-      '.png" onerror="this.onerror=null; this.src=\'https://art.gametdb.com/wii/disc/EN/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/disc/JA/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'https://art.gametdb.com/wii/disc/KO/' +
-      game.tid +
-      '.png\'; this.onerror=function(){this.src=\'/img/disc_placeholder.png\';};};};" width="70px">' +
+      '" <div class="recommended-title"><img src="' + loadCoverImage(game.tid) + '" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' + loadDiscImage(game.tid) + '" width="70px">' +
       "<div style='text-align:right;'><t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'> " +
       game.title +
       "</t><i>" +
@@ -474,63 +498,63 @@ function getIconForGenre(genre) {
 function getRating(rating, classification) {
   switch (rating) {
     case "3":
-      return '<img src="/img/pegi3.jpg" alt="Pegi 3" style="margin-top:20px;" width="130px">';
+      return '<img src="/img/ratings/pegi3.jpg" alt="Pegi 3" style="margin-top:20px;" width="130px">';
 
     case "7":
-      return '<img src="/img/pegi7.jpg" alt="Pegi 7" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/pegi7.jpg" alt="Pegi 7" style="margin-top:20px;"width="130px">';
 
     case "12":
       if (classification == "PEGI") {
-        return '<img src="/img/pegi12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/pegi12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
       } else {
-        return '<img src="/img/grac-12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/grac-12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
       }
 
     case "16":
-      return '<img src="/img/pegi16.jpg" alt="Pegi 16" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/pegi16.jpg" alt="Pegi 16" style="margin-top:20px;"width="130px">';
 
     case "18":
       if (classification == "PEGI") {
-        return '<img src="/img/pegi18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/pegi18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
       } else {
-        return '<img src="/img/grac-18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/grac-18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
       }
 
     case "EC":
-      return '<img src="/img/esrb-ec.webp" alt="ESRB EC" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-ec.webp" alt="ESRB EC" style="margin-top:20px;"width="130px">';
 
     case "E":
-      return '<img src="/img/esrb-e.webp" alt="ESRB E" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-e.webp" alt="ESRB E" style="margin-top:20px;"width="130px">';
 
     case "E10+":
-      return '<img src="/img/esrb-e10.webp" alt="ESRB E10+" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-e10.webp" alt="ESRB E10+" style="margin-top:20px;"width="130px">';
 
     case "T":
-      return '<img src="/img/esrb-t.webp" alt="ESRB T" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-t.webp" alt="ESRB T" style="margin-top:20px;"width="130px">';
 
     case "M":
-      return '<img src="/img/esrb-m.webp" alt="ESRB M" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-m.webp" alt="ESRB M" style="margin-top:20px;"width="130px">';
 
     case "A":
-      return '<img src="/img/cero-a.png" alt="CERO A" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-a.png" alt="CERO A" style="margin-top:20px;"width="130px">';
 
     case "B":
-      return '<img src="/img/cero-b.png" alt="CERO B" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-b.png" alt="CERO B" style="margin-top:20px;"width="130px">';
 
     case "C":
-      return '<img src="/img/cero-c.png" alt="CERO C" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-c.png" alt="CERO C" style="margin-top:20px;"width="130px">';
 
     case "D":
-      return '<img src="/img/cero-d.png" alt="CERO D" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-d.png" alt="CERO D" style="margin-top:20px;"width="130px">';
 
     case "Z":
-      return '<img src="/img/cero-z.png" alt="CERO Z" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-z.png" alt="CERO Z" style="margin-top:20px;"width="130px">';
 
     case "ALL":
-      return '<img src="/img/grac-all.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/grac-all.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
 
     case "15":
-      return '<img src="/img/grac-15.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/grac-15.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
 
     default:
       return "<b>Oh snap!</b><br>This title does not have an age rating.";
@@ -556,100 +580,100 @@ function getController(xml, i) {
     switch (type) {
       case "wiimote":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/wiimote.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/wiimote.svg" style="margin-right:15px; filter:brightness(1000); transform:translate(-150%, 0px);" height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/wiimote.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/wiimote.svg" style="margin-right:15px; filter:brightness(1000); transform:translate(-150%, 0px);" height="60px">`;
         }
         break;
       case "motionplus":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/motionplus.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-80%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/motionplus.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-80%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/motionplus.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/motionplus.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "nunchuk":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/nunchuk.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/nunchuk.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/nunchuk.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/nunchuk.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "classiccontroller":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/classiccontroller.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/classiccontroller.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/classiccontroller.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/classiccontroller.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "wheel":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/wheel.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/wheel.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/wheel.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/wheel.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "gamecube":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/gamecube.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/gamecube.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "balanceboard":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/balanceboard.svg" style="margin-right:15px; filter:brightness(1000);"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/balanceboard.png" style="margin-right:15px;"height="50px">`;
+          controlTypes += `<img src="/img/controllers/balanceboard.svg" style="margin-right:15px; filter:brightness(1000);"height="50px">`;
         }
         break;
       case "zapper":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/zapper.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/zapper.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/zapper.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/zapper.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "guitar":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/guitar.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/guitar.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "keyboard":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/keyboard.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/keyboard.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/keyboard.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/keyboard.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "drums":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/drums.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/drums.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "nintendods":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/nintendods.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/nintendods.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/nintendods.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/nintendods.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "wiispeak":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="40px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/wiispeak.png" style="margin-right:15px; filter:brightness(1000);"height="40px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/wiispeak.png" style="margin-right:15px;"height="40px">`;
+          controlTypes += `<img src="/img/controllers/wiispeak.png" style="margin-right:15px; filter:brightness(1000);"height="40px">`;
         }
         break;
       case "udraw":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/udraw.png" style="margin-right:15px;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/udraw.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/udraw.png" style="margin-right:15px;"height="60px">`;
+          controlTypes += `<img src="/img/controllers/udraw.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
         }
         break;
       case "mii":

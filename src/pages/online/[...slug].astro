@@ -214,9 +214,26 @@ const { title, text, gamespyId } = Astro.props;
       box-shadow: 0px 0px 20px 0px #ffffff10;
       transition: 0.3s;
     }
+    #card-bg {
+      width:100%;
+      transform:translate(0, -50%);
+      filter:blur(8px) opacity(0.1) grayscale(0.7);
+      position:absolute;
+      transition: 0.3s;
+    }
+    .recommended-title:hover #card-bg{
+      filter:blur(8px) opacity(0.2) grayscale(0.3);
+      transition: 0.3s;
+    }
+    .tooltip {
+      backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    }
     .tooltip .tooltip-inner {
     background-color: #ffffff10;
     border: 1px solid #ffffff20;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 .tooltip .tooltip-arrow::before {
     filter:invert(1);
