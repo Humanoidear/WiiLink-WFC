@@ -48,7 +48,7 @@ const { title, text, gamespyId } = Astro.props;
           <p
             style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
           >
-            {title}
+            {title} {gamespyId ? '- ' + gamespyId.substring(0,3) : ''}
           </p>
         </div>
         <div class="data-holder" id="errnomatch">
@@ -70,7 +70,14 @@ const { title, text, gamespyId } = Astro.props;
           </div>
         </div>
         <div style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; position:relative;">
-        <div id="downloadPatchButton" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" data-bs-title="<b><i class='fa fa-triangle-exclamation'></i> Heads up!</b><br>This feature is experimental and may not always work!"></div>
+        <div id="dropup" class="btn-group dropup" style="display:none;" >
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class='fa fa-download' style='margin-right:5px;'></i> Download patches
+          </button>
+          <ul id="downloadPatchButton" style="z-index:100000; position:relative;" class="dropdown-menu">
+          </ul>
+        </div>
+        
         <p
           style="text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
         >
@@ -225,20 +232,6 @@ const { title, text, gamespyId } = Astro.props;
       filter:blur(8px) opacity(0.2) grayscale(0.3);
       transition: 0.3s;
     }
-    .tooltip {
-      backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    }
-    .tooltip .tooltip-inner {
-    background-color: #ffffff10;
-    border: 1px solid #ffffff20;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-.tooltip .tooltip-arrow::before {
-    filter:invert(1);
-    opacity: 0.2;
-}
     .recommended-title{
       color:white;
       background-color: #ffffff10;

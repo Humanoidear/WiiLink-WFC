@@ -38,20 +38,43 @@ function render(xml) {
               fetch("../../json/pages.json") // Check for patches
                 .then((response) => response.json())
                 .then((pages) => {
+                  var isFound = false;
                   for (let k = 0; k < pages.length; k++) {
-                    if (pages[k].gameId == id.textContent) {
+                    if ((pages[k].gameId == id.textContent || pages[k].gamespyId == id.textContent) && !isFound) {
                       document.getElementById("onlineload").style.display = "block";
                       console.log(pages[k].patchId);
                       for(let l = 0; l < pages[k].patchId.length; l++) {
+                        var patchRegion = "Unknown";
+                        var patchEmoji = "🌍";
+                        switch (pages[k].patchId[l].charAt(3)) {
+                          case "E":
+                            patchRegion = "NTSC";
+                            patchEmoji = "🇺🇸";
+                            break;
+                          case "P":
+                            patchRegion = "PAL";
+                            patchEmoji = "🇪🇺";
+                            break;
+                          case "J":
+                            patchRegion = "NTSC-J";
+                            patchEmoji = "🇯🇵";
+                            break;
+                          case "K":
+                            patchRegion = "NTSC-K";
+                            patchEmoji = "🇰🇷";
+                            break;
+                        }
                         console.log(pages[k].patchId[l]);
-                        document.getElementById("downloadPatchButton").innerHTML += "<a href='/patches/" + pages[k].patchId[l] + "' download><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + pages[k].patchId[l] + "</button></a>";
+                        document.getElementById("dropup").style.display = "block";
+                        document.getElementById("downloadPatchButton").innerHTML += "<li><a class='dropdown-item' href='/patches/" + pages[k].patchId[l] + "' download>" + patchEmoji + "  " + pages[k].patchId[l] + " (" + patchRegion + ")</a></li>";
                       }
+                      isFound = true;
                     }
                   }
                 });
 
               if (data[j].GameID.substring(0, 3) == "RMC") {
-                document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='margin-right:10px;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button>";
+                document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
               }
 
               onlineUpdater(data, j); // Fetch data on page load
@@ -618,9 +641,9 @@ function getController(xml, i) {
         break;
       case "gamecube":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000); scale:85%;" height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
+          controlTypes += `<img src="/img/controllers/gamecube.svg" style="margin-right:15px; filter:brightness(1000); scale:85%;" height="60px">`;
         }
         break;
       case "balanceboard":
@@ -660,9 +683,9 @@ function getController(xml, i) {
         break;
       case "nintendods":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/controllers/nintendods.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/nintendods.svg" style="margin-right:15px; filter: invert(1) brightness(1000); scale:80%;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/controllers/nintendods.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
+          controlTypes += `<img src="/img/controllers/nintendods.svg" style="margin-right:15px; filter:invert(1) brightness(1000); scale:80%;" height="60px">`;
         }
         break;
       case "wiispeak":
