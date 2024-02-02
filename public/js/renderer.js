@@ -68,6 +68,7 @@ function render(xml) {
                         document.getElementById("dropup").style.display = "block";
                         document.getElementById("downloadPatchButton").innerHTML += "<li><a class='dropdown-item' href='/patches/" + pages[k].patchId[l] + "' download>" + patchEmoji + "  " + pages[k].patchId[l] + " (" + patchRegion + ")</a></li>";
                       }
+                      document.getElementById("downloadPatchButton").innerHTML += "<li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u></li>";
                       isFound = true;
                     }
                   }
