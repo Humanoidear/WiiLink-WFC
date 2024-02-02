@@ -48,7 +48,7 @@ function render(xml) {
                         var patchEmoji = "🌍";
                         switch (pages[k].patchId[l].charAt(3)) {
                           case "E":
-                            patchRegion = "NTSC";
+                            patchRegion = "NTSC-U";
                             patchEmoji = "🇺🇸";
                             break;
                           case "P":
