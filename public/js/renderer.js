@@ -34,19 +34,22 @@ function render(xml) {
           for (let j = 0; j < data.length; j++) {
             var gameid = id.textContent.substring(0, 3);
             if (data[j].GameID == gameid) {
-              // Online support through gamespy found
-              var patchType = "D";
-              var extensionType = "00";
-              if (type.textContent == "") {
-                patchType = "D";
-                extensionType = "00";
-              } else {
-                patchType = "N";
-                extensionType = "0001";
-              }
-              document.getElementById("onlineload").style.display = "block";
-              document.getElementById("downloadPatchButton").innerHTML = "<a href='/patches/" + id.textContent.substring(0, 4) + patchType + extensionType + ".txt' download><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + id.textContent.substring(0, 4) + patchType + extensionType + ".txt</button></a>";
-              
+
+              fetch("../../json/pages.json") // Check for patches
+                .then((response) => response.json())
+                .then((pages) => {
+                  for (let k = 0; k < pages.length; k++) {
+                    if (pages[k].gameId == id.textContent) {
+                      document.getElementById("onlineload").style.display = "block";
+                      console.log(pages[k].patchId);
+                      for(let l = 0; l < pages[k].patchId.length; l++) {
+                        console.log(pages[k].patchId[l]);
+                        document.getElementById("downloadPatchButton").innerHTML += "<a href='/patches/" + pages[k].patchId[l] + "' download><button class='btn btn-success' style='margin-right:10px;'><i class='fa fa-download' style='margin-right:5px;'></i> <b>Download Patch</b> - " + pages[k].patchId[l] + "</button></a>";
+                      }
+                    }
+                  }
+                });
+
               if (data[j].GameID.substring(0, 3) == "RMC") {
                 document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='margin-right:10px;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button>";
               }
