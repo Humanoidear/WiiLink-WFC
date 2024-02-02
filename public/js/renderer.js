@@ -76,6 +76,7 @@ function render(xml) {
 
               if (data[j].GameID.substring(0, 3) == "RMC") {
                 document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
+                document.getElementById("downloadPatchButton").innerHTML += "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
               }
 
               onlineUpdater(data, j); // Fetch data on page load
