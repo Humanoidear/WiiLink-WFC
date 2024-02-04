@@ -42,7 +42,8 @@ function render(xml) {
                   for (let k = 0; k < pages.length; k++) {
                     if ((pages[k].gameId == id.textContent || pages[k].gamespyId == id.textContent) && !isFound) {
                       document.getElementById("onlineload").style.display = "block";
-                      console.log(pages[k].patchId);
+                     
+                      // Format data better
                       for(let l = 0; l < pages[k].patchId.length; l++) {
                         var patchRegion = "Unknown";
                         var patchEmoji = "🌍";
@@ -64,7 +65,7 @@ function render(xml) {
                             patchEmoji = "🇰🇷";
                             break;
                         }
-                        console.log(pages[k].patchId[l]);
+
                         document.getElementById("dropup").style.display = "block";
                         document.getElementById("downloadPatchButton").innerHTML += "<li><a class='dropdown-item' href='/patches/" + pages[k].patchId[l] + "' download>" + patchEmoji + "  " + pages[k].patchId[l] + " (" + patchRegion + ")</a></li>";
                       }
@@ -74,6 +75,7 @@ function render(xml) {
                   }
                 });
 
+              // MKW specific patches
               if (data[j].GameID.substring(0, 3) == "RMC") {
                 document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
                 document.getElementById("downloadPatchButton").innerHTML += "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
@@ -261,6 +263,9 @@ function render(xml) {
     }
   }
 
+
+  // Recommended titles
+  // Shuffle the array to get random titles
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -268,6 +273,7 @@ function render(xml) {
     }
   }
 
+  // Get all titles with the same genre on an array
   var sameGenreTitles = [];
   for (var i = 0; i < x.length; i++) {
     var genre = x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
@@ -293,58 +299,42 @@ function render(xml) {
     }
   }
 
+  // Shuffle the array
   shuffleArray(sameGenreTitles);
+
+  // Get the first 4 titles
   sameGenreTitles = sameGenreTitles.slice(0, 4);
   document.getElementById("recommendedTitles").innerHTML = "";
   var genreIconClass = getIconForGenre(mainGenre);
   document.getElementById("genreSuggestion").innerHTML = '<i class="fas ' + genreIconClass + '" style="margin-right:5px;"></i> ' + mainGenre;
 
-  function loadCoverImage(title) {
+  // Get the correct region for images based on ID
+  function loadImage(format, title) {
     switch (title.charAt(3)) {
       case "E":
-        return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
+        return "https://art.gametdb.com/wii/" + format + "/US/" + title + ".png";
       case "P":
       case "D":
       case "H":
       case "X":
       case "Y":
       case "F":
-        return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
+        return "https://art.gametdb.com/wii/" + format + "/EN/" + title + ".png";
       case "J":
-        return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
+        return "https://art.gametdb.com/wii/" + format + "/JA/" + title + ".png";
       case "K":
-        return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
+        return "https://art.gametdb.com/wii/" + format + "/KO/" + title + ".png";
       default:
         return "/img/disc_placeholder.png";
     }
   }
 
-
-  function loadDiscImage(title) {
-    switch (title.charAt(3)) {
-      case "E":
-        return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
-      case "P":
-      case "D":
-      case "H":
-      case "X":
-      case "Y":
-      case "F":
-        return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
-      case "J":
-        return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
-      case "K":
-        return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
-      default:
-        return "/img/disc_placeholder.png";
-    }
-  }
-
+  // Display recommended titles
   sameGenreTitles.forEach(function (game) {
     document.getElementById("recommendedTitles").innerHTML +=
       '<a style="text-decoration:none;" href="/online/' +
       game.tid +
-      '" <div class="recommended-title"><img src="' + loadCoverImage(game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' + loadDiscImage(game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" width="70px">' +
+      '" <div class="recommended-title"><img src="' + loadImage("cover", game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' + loadImage("disc", game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" width="70px">' +
       "<div style='text-align:right;'><t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'> " +
       game.title +
       "</t><i>" +
@@ -358,6 +348,7 @@ function render(xml) {
 });
 }
 
+// Update online data
 function onlineUpdater(data, j) {
   var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
   var apiStats = "https://api.wfc.wiilink24.com/api/stats";
@@ -441,13 +432,10 @@ function onlineUpdater(data, j) {
 
           document.getElementById(
             "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i> ${group[k].host}'s room</b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${group[k].host}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
           var playerData = "";
-          var numberOfPlayers = Object.keys(group[k].players).length;
           document.getElementById("onlinecontainer").style.display = "block";
-          if (numberOfPlayers == 0) {
-            document.getElementById("onlinecontainer").style.display = "none";
-          }
+
           for (let playerIndex in group[k].players) {
             var player = group[k].players[playerIndex];
             playerData += `
@@ -477,8 +465,7 @@ function onlineUpdater(data, j) {
     });
 }
 
-// Other functions
-
+// Other helper functions
 function getIconForGenre(genre) {
   switch (genre) {
     case "action":

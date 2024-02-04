@@ -81,7 +81,7 @@ const { title, text, gamespyId } = Astro.props;
         <p
           style="text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
         >
-          Data provided by <a href="https://www.gametdb.com/">GameTDB</a> and WiiLink
+          Data provided by <a href={`https://www.gametdb.com/wii/${gamespyId ? gamespyId : title}`}>GameTDB</a> and WiiLink
           Violet API.
         </p>
       </div>
