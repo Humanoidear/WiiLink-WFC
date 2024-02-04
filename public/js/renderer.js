@@ -429,10 +429,9 @@ function onlineUpdater(data, j) {
             group[k].suspend =
               'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
           }
-
           document.getElementById(
             "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${group[k].host}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(group[k].host)}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
           var playerData = "";
           document.getElementById("onlinecontainer").style.display = "block";
 
@@ -441,7 +440,7 @@ function onlineUpdater(data, j) {
             playerData += `
              <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
               <div>
-               <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${player.name}</div>
+               <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(player.name)}</div>
                <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
               </div>
               <div style="text-align:right;">
@@ -698,4 +697,16 @@ function getController(xml, i) {
     }
   }
   return controlTypes;
+}
+
+function sanitizeHTML(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
