@@ -244,6 +244,15 @@ const { title, text, gamespyId } = Astro.props;
       box-shadow: 0px 0px 20px 0px #ffffff10;
       transition: 0.3s;
     }
+    #mobileinner {
+      transform: scale(1);
+      transition: 0.2s;
+    }
+    #mobileinner:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 0px 20px 0px #ffffff05;
+      transition: 0.3s;
+    }
     #card-bg {
       width:100%;
       transform:translate(0, -50%);
@@ -442,8 +451,6 @@ const { title, text, gamespyId } = Astro.props;
         width: 100% !important;
         display: flex !important;
         overflow-y: scroll;
-      }
-      #mobileinner {
       }
       #data {
         width: 100%;
