@@ -306,7 +306,7 @@ function render(xml) {
             playIcon2.innerHTML +=
               '<i class="fa fa-user" style="margin-right:8px;"></i>';
           }
-          synopsis = document.getElementById("synopsis");
+          var synopsis = document.getElementById("synopsis");
           synopsis.innerHTML =
             locales[j].getElementsByTagName("synopsis")[0].textContent;
           marked.parse(synopsis.innerHTML);
