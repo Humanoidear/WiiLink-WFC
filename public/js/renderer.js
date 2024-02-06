@@ -271,7 +271,6 @@ function render(xml) {
               size2 = "grid-column: auto / span 9; grid-row: auto / span 2;";
               size3 = "grid-column: auto / span 2; grid-row: auto / span 1;";
               size4 = "grid-column: auto / span 10; grid-row: auto / span 1;";
-              document.getElementById("errhide").style.display = "none";
               sizeFix = "height:100%; margin-top:0px;";
               break;
             case "utilitarian":
