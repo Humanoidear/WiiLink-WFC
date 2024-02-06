@@ -50,6 +50,13 @@ const { title, text, gamespyId } = Astro.props;
           >
             {title} {gamespyId ? '- ' + gamespyId.substring(0,3) : ''}
           </p>
+          <div
+          id="customizeicon"
+          style="top:40px; right:40px; height:50px; color:white; font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; position:absolute;"
+          onclick="openCustomization();"
+        >
+          <i class="fa-solid fa-paint-roller customhover"></i>
+        </div>
         </div>
         <div class="data-holder" id="errnomatch">
           <div id="img"></div>
@@ -148,6 +155,22 @@ const { title, text, gamespyId } = Astro.props;
       background-image: url("/img/bg.png");
       background-size: cover;
       position: relative;
+    }
+
+    .customhover {
+      background: -webkit-linear-gradient(#fff, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: 0.3s;
+    }
+
+    .customhover:hover {
+      background: -webkit-linear-gradient(#6cb3ff, #d4e976);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      scale: 1.1;
+      transform: rotate(5deg);
+      transition: 0.3s;
     }
 
     #onlinecontainer {
@@ -300,9 +323,7 @@ const { title, text, gamespyId } = Astro.props;
       position: relative;
     }
     .bigdatapill {
-      margin-top: 15px;
       width: 100%;
-      height: 86%;
       justify-content: center;
       align-items: center;
       color: white;
@@ -400,7 +421,7 @@ const { title, text, gamespyId } = Astro.props;
         height: 100%;
       }
       .smalldatapill {
-        display: flex;
+        display: flex !important;
         flex-wrap: wrap;
       }
       .bigdatapill {

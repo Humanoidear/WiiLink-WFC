@@ -1,10 +1,10 @@
 ---
 interface Props {
-	hasSearch: string;
+  hasSearch: string;
   specialInstructions: string;
 }
 
-const {hasSearch, specialInstructions} = Astro.props;
+const { hasSearch, specialInstructions } = Astro.props;
 ---
 
 <!--
@@ -16,86 +16,197 @@ const {hasSearch, specialInstructions} = Astro.props;
   >
 </div>
 -->
-
 <script is:inline type="module" src="/js/options_panel.js"></script>
 
 <div class="background-fade" id="backblur">
   <div class="customization-container" id="customization">
-    <div style="display:flex; justify-content:space-between; align-items:center; height:50px; padding-top:20px; padding-left:20px; padding-right:20px;">
-      <div style="font-size:30px; color:white; font-family:system-ui; font-weight:600;">Customization</div>
-      <button type="button" class="btn btn-danger" onclick="closeCustomization();">Close</button>
-  </div>
-
-  <fieldset style="color:white;">
-    <legend>Display mode:</legend>
-  
-    <div>
-      <input type="radio" id="huey" name="display" value="complete" checked />
-      <label for="huey">Complete</label>
+    <div
+      style="display:flex; justify-content:space-between; background-color:#12121230; align-items:center; height:80px;padding-left:20px; padding-right:20px; margin-bottom:20px;"
+    >
+      <div
+        style="font-size:30px; color:white; font-family:system-ui; font-weight:800;"
+      >
+        Customization
+      </div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-danger"
+          onclick="closeCustomization();"><i class="fa fa-close"></i></button
+        >
+        <button
+          type="button"
+          id="savebtn"
+          class="btn btn-success"
+          onclick="saveSelections();"
+          ><i class="fa fa-save"></i> Save changes</button
+        >
+      </div>
     </div>
-  
-    <div>
-      <input type="radio" id="dewey" name="display" value="compact" />
-      <label for="dewey">Compact</label>
-    </div>
-  
-    <div>
-      <input type="radio" id="louie" name="display" value="utilitarian" />
-      <label for="louie">Utilitarian</label>
-    </div>
-  </fieldset>
-
-  <fieldset style="color:white;">
-    <legend>Online stats:</legend>
-  
-    <div>
-      <input type="radio" id="huey" name="statistics" value="big" checked />
-      <label for="huey">Big</label>
-    </div>
-  
-    <div>
-      <input type="radio" id="dewey" name="statistics" value="small" />
-      <label for="dewey">Small</label>
-    </div>
-    </fieldset>
 
     <fieldset style="color:white;">
-      <legend>Theme:</legend>
-    
+      <legend
+        ><div
+          style="width:200px; display:flex; flex-wrap:nowrap; align-items:center;"
+        >
+          <i class="fa-solid fa-desktop"></i> Display mode
+        </div><p style="font-size:17px; text-align:right; opacity:0.7;">
+          How much game info will get displayed.
+        </p></legend
+      >
+
       <div>
-        <input type="radio" id="huey" name="theme" value="dark" checked />
-        <label for="huey">Dark</label>
+        <img
+          src="../../img/settings/complete.png"
+          style="height:100px; margin-right:10px; border:4px solid white; border-radius:8px; padding:15px;"
+        />
+        <input type="radio" id="complete" name="display" value="complete" />
+        <label for="complete">Complete</label>
       </div>
-    
+
       <div>
-        <input type="radio" id="dewey" name="theme" value="light" />
-        <label for="dewey">Light</label>
+        <img
+          src="../../img/settings/compact.png"
+          style="height:100px; margin-right:10px; border:4px solid white; border-radius:8px; padding:15px;"
+        />
+        <input type="radio" id="compact" name="display" value="compact" />
+        <label for="compact">Compact</label>
       </div>
-    
+
       <div>
-        <input type="radio" id="louie" name="theme" value="midnight" />
-        <label for="louie">Midnight</label>
+        <img
+          src="../../img/settings/utilitarian.png"
+          style="height:100px; margin-right:10px; border:4px solid white; border-radius:8px; padding:15px;"
+        />
+        <input
+          type="radio"
+          id="utilitarian"
+          name="display"
+          value="utilitarian"
+        />
+        <label for="utilitzatian">Utilitarian</label>
       </div>
     </fieldset>
+    <hr />
+    <fieldset style="color:white;">
+      <legend
+        ><div
+          style="width:200px; display:flex; flex-wrap:nowrap; align-items:center;"
+        >
+          <i class="fa-solid fa-earth-americas"></i> Online stats
+        </div><p style="font-size:17px; text-align:right; opacity:0.7;">
+          Size of the online player chips.
+        </p></legend
+      >
 
-    <button type="button" class="btn btn-success" onclick="saveSelections();">Save</button>
+      <div>
+        <img
+          src="../../img/settings/big.png"
+          style="height:100px; margin-right:10px; border:4px solid white; border-radius:8px; padding:15px;"
+        />
+        <input type="radio" id="big" name="statistics" value="big" />
+        <label for="big">Big</label>
+      </div>
 
-</div>
+      <div>
+        <img
+          src="../../img/settings/small.png"
+          style="height:100px; margin-right:10px; border:4px solid white; border-radius:8px; padding:15px;"
+        />
+        <input type="radio" id="small" name="statistics" value="small" />
+        <label for="small">Small</label>
+      </div>
+    </fieldset>
+    <hr />
+    <fieldset style="color:white; font-size:40px; padding-bottom:30px;">
+      <legend
+        ><div
+          style="width:200px; display:flex; flex-wrap:nowrap; align-items:center;"
+        >
+          <i class="fa-solid fa-palette"></i> Theme
+        </div></legend
+      >
+
+      <div style="width:80px;">
+        <input type="radio" id="dark" name="theme" value="dark" />
+        <label for="dark"><i class="fa-solid fa-moon"></i></label>
+      </div>
+
+      <div style="width:80px;">
+        <input type="radio" id="light" name="theme" value="light" />
+        <label for="light"><i class="fa-solid fa-sun"></i></label>
+      </div>
+
+      <div style="width:80px;">
+        <input type="radio" id="midnight" name="theme" value="midnight" />
+        <label for="midnight"><i class="fa-brands fa-hashnode"></i></label>
+      </div>
+    </fieldset>
+    <span
+      class="badge bg-success"
+      style="left:50%; width:95%; padding:20px; transform:translate(-50%, -15px); font-size:15px; text-align:center; position:relative;"
+      ><i class="fa-solid fa-circle-info"></i> You will need to refresh the page
+      so the changes take full effect.</span
+    >
+  </div>
 </div>
 
 <script is:inline>
+  console.log(
+    localStorage.getItem("displayMode"),
+    localStorage.getItem("theme"),
+    localStorage.getItem("statistics"),
+  );
+  if (!localStorage.getItem("displayMode")) {
+    localStorage.setItem("displayMode", "complete");
+  }
+  if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "dark");
+  }
+  if (!localStorage.getItem("statistics")) {
+    localStorage.setItem("statistics", "big");
+  }
+  if (localStorage.getItem("displayMode")) {
+    document.querySelector(
+      'input[name="display"][value="' +
+        localStorage.getItem("displayMode") +
+        '"]',
+    ).checked = true;
+  }
+  if (localStorage.getItem("theme")) {
+    document.querySelector(
+      'input[name="theme"][value="' + localStorage.getItem("theme") + '"]',
+    ).checked = true;
+  }
+  if (localStorage.getItem("statistics")) {
+    document.querySelector(
+      'input[name="statistics"][value="' +
+        localStorage.getItem("statistics") +
+        '"]',
+    ).checked = true;
+  }
 
-window.saveSelections = function() {
-  var displayMode = document.querySelector('input[name="display"]:checked').value;
-  var theme = document.querySelector('input[name="theme"]:checked').value;
-  var statistics = document.querySelector('input[name="statistics"]:checked').value;
+  window.saveSelections = function () {
+    var displayMode = document.querySelector(
+      'input[name="display"]:checked',
+    ).value;
+    var theme = document.querySelector('input[name="theme"]:checked').value;
+    var statistics = document.querySelector(
+      'input[name="statistics"]:checked',
+    ).value;
 
-  localStorage.setItem('displayMode', displayMode);
-  localStorage.setItem('statistics', statistics);
-  localStorage.setItem('theme', theme);
+    localStorage.setItem("displayMode", displayMode);
+    localStorage.setItem("statistics", statistics);
+    localStorage.setItem("theme", theme);
 
-  console.log(displayMode, theme, statistics);
-}
+    document.getElementById("savebtn").innerHTML =
+      '<i class="fa fa-check"></i> Changes saved';
+    setTimeout(() => {
+      document.getElementById("savebtn").innerHTML =
+        '<i class="fa fa-save"></i> Save changes';
+    }, 2000);
+    console.log(displayMode, theme, statistics);
+  };
 </script>
 
 <div
@@ -156,6 +267,13 @@ window.saveSelections = function() {
             <i class="fa fa-server" style="margin-right:5px;"></i> Status
           </div></a
         >
+        <div
+        data-bs-dismiss="offcanvas"
+        style="height:50px; color:white; margin-bottom:30px; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
+        onclick="openCustomization();"
+      >
+        <i class="fa-solid fa-paint-roller customhover"></i>
+      </div>
         <button type="button" class="btn btn-success"
           ><i
             class="fa-solid fa-square-arrow-up-right"
@@ -216,11 +334,6 @@ window.saveSelections = function() {
               style="margin-right:5px;"></i> Visit WiiLink</a
           ></button
         >
-        <div
-          id="customizeicon" style="height:50px; color:white; font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;" onclick="openCustomization();"
-        >
-          <i class="fa-solid fa-paint-roller customhover"></i>
-        </div>
       </div>
       <button
         class="btn"
@@ -241,45 +354,44 @@ window.saveSelections = function() {
 
   <script is:inline>
     function loadCoverImage(title) {
-    switch (title.charAt(3)) {
-      case "E":
-        return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
-      case "P":
-      case "D":
-      case "H":
-      case "X":
-      case "Y":
-      case "F":
-        return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
-      case "J":
-        return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
-      case "K":
-        return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
-      default:
-        return "/img/disc_placeholder.png";
+      switch (title.charAt(3)) {
+        case "E":
+          return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
+        case "P":
+        case "D":
+        case "H":
+        case "X":
+        case "Y":
+        case "F":
+          return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
+        case "J":
+          return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
+        case "K":
+          return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
+        default:
+          return "/img/disc_placeholder.png";
+      }
     }
-  }
 
-
-  function loadDiscImage(title) {
-    switch (title.charAt(3)) {
-      case "E":
-        return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
-      case "P":
-      case "D":
-      case "H":
-      case "X":
-      case "Y":
-      case "F":
-        return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
-      case "J":
-        return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
-      case "K":
-        return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
-      default:
-        return "/img/disc_placeholder.png";
+    function loadDiscImage(title) {
+      switch (title.charAt(3)) {
+        case "E":
+          return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
+        case "P":
+        case "D":
+        case "H":
+        case "X":
+        case "Y":
+        case "F":
+          return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
+        case "J":
+          return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
+        case "K":
+          return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
+        default:
+          return "/img/disc_placeholder.png";
+      }
     }
-  }
 
     fetch("../../json/gamespy_titles.json")
       .then((response) => response.json())
@@ -332,7 +444,11 @@ window.saveSelections = function() {
                   suggestion.innerHTML =
                     '<a href="/online/' +
                     games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' + loadCoverImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' + loadDiscImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' +
+                    loadCoverImage(discImage) +
+                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' +
+                    loadDiscImage(discImage) +
+                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
                     games[i].gameName +
                     "<br><i>" +
                     onlineFeatures +
@@ -411,7 +527,7 @@ window.saveSelections = function() {
                   if (games[i].gamespyId) {
                     gamespyId = " | " + games[i].gamespyId;
                   }
-                  
+
                   var suggestion = document.createElement("div");
                   if (isFound) {
                     onlineFeatures +=
@@ -420,7 +536,11 @@ window.saveSelections = function() {
                   suggestion.innerHTML =
                     '<a href="/online/' +
                     games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' + loadCoverImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' + loadDiscImage(discImage) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
+                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' +
+                    loadCoverImage(discImage) +
+                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' +
+                    loadDiscImage(discImage) +
+                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
                     games[i].gameName +
                     "<br><i>" +
                     onlineFeatures +
@@ -495,18 +615,52 @@ window.saveSelections = function() {
       transition: 0.3s;
     }
 
-    #customization, #backblur {
-  transition: all 0.2s ease-out;
-}
+    hr {
+      color: white;
+      opacity: 0.1;
+      border-top: 2px solid;
+    }
 
-.fade-move {
-  transform: rotate(50deg);
-  opacity: 0;
-}
+    legend {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.fade-out {
-  opacity: 0;
-}
+    fieldset {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    fieldset div {
+      width: 150px;
+      display: flex;
+      flex-wrap: wrap;
+      transform: translate(0, -8px);
+      gap: 8px;
+    }
+
+    legend {
+      transform: translate(0, 8px);
+    }
+
+    #customization,
+    #backblur {
+      transition: all 0.2s ease-out;
+    }
+
+    .fade-move {
+      transform: rotate(50deg);
+      opacity: 0;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
 
     .background-fade {
       width: 100%;
@@ -516,35 +670,23 @@ window.saveSelections = function() {
       -webkit-backdrop-filter: grayscale(0.5) blur(8px);
       z-index: 1000000;
       position: fixed;
-      display:none;
+      display: none;
     }
 
     .customization-container {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 800px;
+      width: 100%;
+      max-height: 100%;
+      overflow-y: scroll;
+      max-width: 800px;
       background-color: #202020;
+      box-shadow: 0px 0px 28px #ffffff20;
       border-radius: 8px;
       border: 2px solid #ffffff10;
       z-index: 1000000;
       position: fixed;
-    }
-
-    .customhover {
-      background: -webkit-linear-gradient(#fff, #fff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: 0.3s;
-    }
-
-    .customhover:hover {
-      background: -webkit-linear-gradient(#6cb3ff, #d4e976);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      scale: 1.1;
-      transform: rotate(5deg);
-      transition: 0.3s;
     }
 
     #innerheader {

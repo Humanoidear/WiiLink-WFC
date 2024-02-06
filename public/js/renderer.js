@@ -34,17 +34,21 @@ function render(xml) {
           for (let j = 0; j < data.length; j++) {
             var gameid = id.textContent.substring(0, 3);
             if (data[j].GameID == gameid) {
-
               fetch("../../json/pages.json") // Check for patches
                 .then((response) => response.json())
                 .then((pages) => {
                   var isFound = false;
                   for (let k = 0; k < pages.length; k++) {
-                    if ((pages[k].gameId == id.textContent || pages[k].gamespyId == id.textContent) && !isFound) {
-                      document.getElementById("onlineload").style.display = "block";
-                     
+                    if (
+                      (pages[k].gameId == id.textContent ||
+                        pages[k].gamespyId == id.textContent) &&
+                      !isFound
+                    ) {
+                      document.getElementById("onlineload").style.display =
+                        "block";
+
                       // Format data better
-                      for(let l = 0; l < pages[k].patchId.length; l++) {
+                      for (let l = 0; l < pages[k].patchId.length; l++) {
                         var patchRegion = "Unknown";
                         var patchEmoji = "🌍";
                         switch (pages[k].patchId[l].charAt(3)) {
@@ -66,10 +70,25 @@ function render(xml) {
                             break;
                         }
 
-                        document.getElementById("dropup").style.display = "block";
-                        document.getElementById("downloadPatchButton").innerHTML += "<li><a class='dropdown-item' href='/patches/" + pages[k].patchId[l] + "' download>" + patchEmoji + "  " + pages[k].patchId[l] + " (" + patchRegion + ")</a></li>";
+                        document.getElementById("dropup").style.display =
+                          "block";
+                        document.getElementById(
+                          "downloadPatchButton"
+                        ).innerHTML +=
+                          "<li><a class='dropdown-item' href='/patches/" +
+                          pages[k].patchId[l] +
+                          "' download>" +
+                          patchEmoji +
+                          "  " +
+                          pages[k].patchId[l] +
+                          " (" +
+                          patchRegion +
+                          ")</a></li>";
                       }
-                      document.getElementById("downloadPatchButton").innerHTML += "<li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u></li>";
+                      document.getElementById(
+                        "downloadPatchButton"
+                      ).innerHTML +=
+                        "<li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u></li>";
                       isFound = true;
                     }
                   }
@@ -77,8 +96,10 @@ function render(xml) {
 
               // MKW specific patches
               if (data[j].GameID.substring(0, 3) == "RMC") {
-                document.getElementById("downloadPatchButton").innerHTML += "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
-                document.getElementById("downloadPatchButton").innerHTML += "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
+                document.getElementById("downloadPatchButton").innerHTML +=
+                  "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
+                document.getElementById("downloadPatchButton").innerHTML +=
+                  "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
               }
 
               onlineUpdater(data, j); // Fetch data on page load
@@ -130,21 +151,22 @@ function render(xml) {
               );
             })
             .join("<br>");
-            var rating = x[i]
-            .getElementsByTagName("rating")[0]
-            ?.getAttribute("value") || "Unknown";
-          var classification = x[i]
-            .getElementsByTagName("rating")[0]
-            ?.getAttribute("type") || "Unknown";
+          var rating =
+            x[i].getElementsByTagName("rating")[0]?.getAttribute("value") ||
+            "Unknown";
+          var classification =
+            x[i].getElementsByTagName("rating")[0]?.getAttribute("type") ||
+            "Unknown";
 
-            rating = getRating(rating, classification);
-          
-          var wifiPlayers = x[i]
-            .getElementsByTagName("wi-fi")[0]
-            ?.getAttribute("players") || "Unknown";
-          var onlineSupport = x[i]
-            .getElementsByTagName("wi-fi")[0]
-            ?.getElementsByTagName("feature") || [];
+          rating = getRating(rating, classification);
+
+          var wifiPlayers =
+            x[i].getElementsByTagName("wi-fi")[0]?.getAttribute("players") ||
+            "Unknown";
+          var onlineSupport =
+            x[i]
+              .getElementsByTagName("wi-fi")[0]
+              ?.getElementsByTagName("feature") || [];
           var isSupported = Array.from(onlineSupport)
             .map((feature) => feature.textContent)
             .join(" | ");
@@ -228,8 +250,42 @@ function render(xml) {
             ' Game Boxart" class="imginner"></div>';
 
           var data = document.getElementById("data");
-          data.innerHTML = `<div class="smalldatapill"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" id="publisher" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
-          data.innerHTML += `<div class="bigdatapill"><l class="genre"  style="border:2px solid #4287f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l class="rating"  style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2;"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; grid-column: auto / span 5; grid-row: auto / span 2; display:flex; justify-content:center; align-items:center; position:relative;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; grid-column: auto / span 6; display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; grid-column: auto / span 6; grid-row: auto / span 1;"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
+          // ternary operator checks localstorage for display preference
+          console.log(localStorage.getItem("displayMode"));
+          var displayMode = localStorage.getItem("displayMode");
+          var display = "display:grid;";
+          var extraDisplay = "display:flex;";
+          var sizeFix = "height:86%; margin-top:15px;";
+          var size1 = "grid-column: auto / span 5; grid-row: auto / span 2;";
+          var size2 = "grid-column: auto / span 5; grid-row: auto / span 2;";
+          var size3 = "grid-column: auto / span 6; grid-row: auto / span 1;";
+          var size4 = "grid-column: auto / span 6; grid-row: auto / span 1;";
+
+          
+          switch (displayMode) {
+            case complete:
+              break;
+            case "compact":
+              display = "display:none;";
+              size1 = "grid-column: auto / span 3; grid-row: auto / span 2;"
+              size2 = "grid-column: auto / span 9; grid-row: auto / span 2;";
+              size3 = "grid-column: auto / span 2; grid-row: auto / span 1;";
+              size4 = "grid-column: auto / span 10; grid-row: auto / span 1;";
+              document.getElementById("errhide").style.display = "none";
+              sizeFix = "height:100%; margin-top:0px;";
+              break;
+            case "utilitarian":
+              display = "display:none !important;";
+              extraDisplay = "display:none !important;";
+              sizeFix = "height:100%; margin-top:0px;";
+              size2 = "grid-column: auto / span 12; grid-row: auto / span 2;";
+              size3 = "grid-column: auto / span 2; grid-row: auto / span 1;";
+              size4 = "grid-column: auto / span 10; grid-row: auto / span 1;";
+              document.getElementById("errhide").style.display = "none";
+              break;
+          }
+          data.innerHTML = `<div class="smalldatapill" style="${display}"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" id="publisher" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
+          data.innerHTML += `<div class="bigdatapill" style="${sizeFix}"><l class="genre" style="border:2px solid #4287f520; ${size1} display:flex; flex-direction:column; align-items:center; justify-content:center; ${extraDisplay}"><div style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l class="rating"  style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2; ${display}"><div style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; ${size2} display:flex; justify-content:center; align-items:center; position:relative;"><div style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <b style="bottom:20px; position:absolute;">${isSupported}</b></l> <l style="border:2px solid #dd42f520; ${size3} display:flex; justify-content:center; align-items:center;"><div style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; ${size4}"><div style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
 
           var playIcon1 = document.getElementById("wifino");
           var playIcon2 = document.getElementById("onlineplaycontainer");
@@ -239,9 +295,9 @@ function render(xml) {
               '<i class="fa-solid fa-triangle-exclamation"></i> This title does not support online multiplayer.';
             playIcon2.style.top = "45%";
           } else if (wifiPlayers == 0) {
-            document.getElementById("onlineplayno").innerHTML = '0';
+            document.getElementById("onlineplayno").innerHTML = "0";
             playIcon1.innerHTML +=
-                '<i class="fa fa-user" style="margin-right:8px;"></i>';
+              '<i class="fa fa-user" style="margin-right:8px;"></i>';
           } else {
             for (var l = 0; l < wifiPlayers; l++) {
               playIcon1.innerHTML +=
@@ -263,7 +319,6 @@ function render(xml) {
     }
   }
 
-
   // Recommended titles
   // Shuffle the array to get random titles
   function shuffleArray(array) {
@@ -281,13 +336,12 @@ function render(xml) {
 
     if (mainGenre == genre) {
       var trueName = x[i].getAttribute("name") || "Unknown";
-      var tid =
-        x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
+      var tid = x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
       var disc = x[i].getElementsByTagName("disc")[0]?.textContent || "Unknown";
       var publisher =
         x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
       var releaseYear =
-      x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
+        x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
       sameGenreTitles.push({
         title: trueName,
         tid,
@@ -306,24 +360,36 @@ function render(xml) {
   sameGenreTitles = sameGenreTitles.slice(0, 4);
   document.getElementById("recommendedTitles").innerHTML = "";
   var genreIconClass = getIconForGenre(mainGenre);
-  document.getElementById("genreSuggestion").innerHTML = '<i class="fas ' + genreIconClass + '" style="margin-right:5px;"></i> ' + mainGenre;
+  document.getElementById("genreSuggestion").innerHTML =
+    '<i class="fas ' +
+    genreIconClass +
+    '" style="margin-right:5px;"></i> ' +
+    mainGenre;
 
   // Get the correct region for images based on ID
   function loadImage(format, title) {
     switch (title.charAt(3)) {
       case "E":
-        return "https://art.gametdb.com/wii/" + format + "/US/" + title + ".png";
+        return (
+          "https://art.gametdb.com/wii/" + format + "/US/" + title + ".png"
+        );
       case "P":
       case "D":
       case "H":
       case "X":
       case "Y":
       case "F":
-        return "https://art.gametdb.com/wii/" + format + "/EN/" + title + ".png";
+        return (
+          "https://art.gametdb.com/wii/" + format + "/EN/" + title + ".png"
+        );
       case "J":
-        return "https://art.gametdb.com/wii/" + format + "/JA/" + title + ".png";
+        return (
+          "https://art.gametdb.com/wii/" + format + "/JA/" + title + ".png"
+        );
       case "K":
-        return "https://art.gametdb.com/wii/" + format + "/KO/" + title + ".png";
+        return (
+          "https://art.gametdb.com/wii/" + format + "/KO/" + title + ".png"
+        );
       default:
         return "/img/disc_placeholder.png";
     }
@@ -334,7 +400,11 @@ function render(xml) {
     document.getElementById("recommendedTitles").innerHTML +=
       '<a style="text-decoration:none;" href="/online/' +
       game.tid +
-      '" <div class="recommended-title"><img src="' + loadImage("cover", game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' + loadImage("disc", game.tid) + '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" width="70px">' +
+      '" <div class="recommended-title"><img src="' +
+      loadImage("cover", game.tid) +
+      '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" class="img-bg" width="100%"><div style="padding:10px; display:flex; align-items:center; justify-content:space-between;"><img src="' +
+      loadImage("disc", game.tid) +
+      '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" width="70px">' +
       "<div style='text-align:right;'><t style='width:auto; font-family:Gilroy; font-size:20px; text-align:right; text-overflow:ellipsis; line-height:20px; display:block; overflow:hidden;'> " +
       game.title +
       "</t><i>" +
@@ -345,7 +415,7 @@ function render(xml) {
       "<p style='margin-bottom:0px; text-align:right;'>" +
       game.releaseYear +
       " <i class='fa fa-calendar'></i></p></div></div>";
-});
+  });
 }
 
 // Update online data
@@ -431,28 +501,77 @@ function onlineUpdater(data, j) {
           }
           document.getElementById(
             "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(group[k].host)}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+            group[k].host
+          )}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${
+            group[k].type
+          }</b> <b style="padding:8px; border-radius:4px; ${
+            group[k].suspend
+          }</b>  <b style="padding:8px; border-radius:4px; ${
+            group[k].rk
+          }</b></div></div></div>`;
           var playerData = "";
           document.getElementById("onlinecontainer").style.display = "block";
 
           for (let playerIndex in group[k].players) {
             var player = group[k].players[playerIndex];
-            playerData += `
+            if (localStorage.getItem("statistics") == "small") {
+              playerData += `
              <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
               <div>
-               <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(player.name)}</div>
-               <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
+               <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
+                 player.name
+               )}</div>
+               <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${
+                 player.fc
+               }</div>
               </div>
               <div style="text-align:right;">
-               <div style="font-size: 15px; font-family: Rubik; color:white;">${player.pid} <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
-               <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${player.eb} / VR:${player.ev} <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
-               <div style="font-size: 15px; font-family: Rubik; color:white;">${player.count} <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+               <div style="font-size: 13px; font-family: Rubik; color:white;">BR:${
+                 player.eb
+               } / VR:${
+              player.ev
+            } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+            <div style="font-size: 13px; font-family: Rubik; color:white;">${
+              player.count
+            } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
               </div>
              </div>
              `;
+           } else {
+              playerData += `
+             <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
+              <div>
+               <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
+                 player.name
+               )}</div>
+               <div style="font-size: 18px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${
+                 player.fc
+               }</div>
+              </div>
+              <div style="text-align:right;">
+               <div style="font-size: 15px; font-family: Rubik; color:white;">${
+                 player.pid
+               } <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
+               <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${
+                 player.eb
+               } / VR:${
+              player.ev
+            } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+               <div style="font-size: 15px; font-family: Rubik; color:white;">${
+                 player.count
+               } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+              </div>
+             </div>
+             `;
+            }
+          }
+          var gridSize = "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));"
+          if (localStorage.getItem("statistics") == "small") {
+            gridSize = "grid-template-columns: repeat(auto-fit,minmax(300px,1fr));"
           }
           document.getElementById("containerdata").innerHTML +=
-            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid; grid-template-columns: repeat(auto-fit,minmax(450px,1fr)); margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
+            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' + gridSize + 'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
             playerData +
             "</div><hr>";
         }
@@ -701,12 +820,14 @@ function getController(xml, i) {
 
 function sanitizeHTML(text) {
   const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
   };
 
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  return text.replace(/[&<>"']/g, function (m) {
+    return map[m];
+  });
 }
