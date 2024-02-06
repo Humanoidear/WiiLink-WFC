@@ -39,7 +39,7 @@ const { hasSearch, specialInstructions } = Astro.props;
           id="savebtn"
           class="btn btn-success"
           onclick="saveSelections();"
-          ><i class="fa fa-save"></i> Save changes</button
+          ><i class="fa fa-save"></i></button
         >
       </div>
     </div>
@@ -144,7 +144,7 @@ const { hasSearch, specialInstructions } = Astro.props;
     </fieldset>
     <span
       class="badge bg-success"
-      style="left:50%; width:95%; padding:20px; transform:translate(-50%, -15px); font-size:15px; text-align:center; position:relative;"
+      style="left:50%; width:95%; padding:20px; transform:translate(-50%, -15px); font-size:15px; text-align:center; overflow:scroll; position:relative;"
       ><i class="fa-solid fa-circle-info"></i> You will need to refresh the page
       so the changes take full effect.</span
     >
@@ -261,13 +261,15 @@ const { hasSearch, specialInstructions } = Astro.props;
             <i class="fa fa-server" style="margin-right:5px;"></i> Status
           </div></a
         >
+        <hr>
         <div
         data-bs-dismiss="offcanvas"
-        style="height:50px; color:white; margin-bottom:30px; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
+        style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
         onclick="openCustomization();"
       >
         <i class="fa-solid fa-paint-roller customhover"></i>
       </div>
+      <hr>
         <button type="button" class="btn btn-success"
           ><i
             class="fa-solid fa-square-arrow-up-right"
@@ -830,6 +832,10 @@ const { hasSearch, specialInstructions } = Astro.props;
       #suggestions {
         display: none;
       }
+      .customization-container {
+      border-radius: 0px !important;
+      border: 0px solid #ffffff10 !important;
+    }
     }
   </style>
 </div>
