@@ -428,6 +428,9 @@ function onlineUpdater(data, j) {
              <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
          `;
       } else {
+        if (isOnline[data[j].GamespyName].active == 0) {
+          document.getElementById("onlinecontainer").style.display = "none";
+        }
         document.getElementById("WFCdetails").innerHTML = `
              <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
                  <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
