@@ -617,16 +617,36 @@ const { hasSearch, specialInstructions } = Astro.props;
       padding-left:5px;
       padding-right:5px;
       border-radius: 8px;
+      position: relative;
+      overflow: hidden;
     }
 
     .header-link:hover {
       transform: scale(1.02);
       background-color: #ffffff10;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       padding-left:15px;
       padding-right:15px;
       border-radius: 8px;
       transition: 0.3s;
     }
+
+    .header-link:active {
+      transform: scale(0.97);
+      background-color: #ffffff40;
+      transition: 0.1s;
+    }
+
+    .header-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ffffff50;
+}
 
     hr {
       color: white;
