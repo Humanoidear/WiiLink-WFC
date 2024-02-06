@@ -296,14 +296,14 @@ const { hasSearch, specialInstructions } = Astro.props;
     <div id="suggestions"></div>
     <div>
       <div id="links">
-        <a href="/" style="text-decoration: none; color:white;"
+        <a href="/" class="header-link" style="text-decoration: none; color:white;"
           ><div
             style="height:50px; display:flex; justify-content:center; align-items:center;"
           >
             <i class="fa fa-home" style="margin-right:5px;"></i> Home
           </div></a
         >
-        <a href="/online" style="text-decoration: none; color:white;"
+        <a href="/online" class="header-link" style="text-decoration: none; color:white;"
           ><div
             style="height:50px; display:flex; justify-content:center; align-items:center;"
           >
@@ -312,6 +312,7 @@ const { hasSearch, specialInstructions } = Astro.props;
         >
         <a
           href="https://status.wiilink24.com"
+          class="header-link"
           style="text-decoration: none; color:white;"
           ><div
             style="height:50px; display:flex; justify-content:center; align-items:center;"
@@ -606,6 +607,22 @@ const { hasSearch, specialInstructions } = Astro.props;
       display: none;
       overflow-y: scroll;
       position: relative;
+      transition: 0.3s;
+    }
+
+    .header-link {
+      transition: 0.3s;
+      padding-left:5px;
+      padding-right:5px;
+      border-radius: 8px;
+    }
+
+    .header-link:hover {
+      transform: scale(1.02);
+      background-color: #ffffff10;
+      padding-left:15px;
+      padding-right:15px;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
