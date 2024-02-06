@@ -638,6 +638,17 @@ const { hasSearch, specialInstructions } = Astro.props;
       transition: 0.1s;
     }
 
+    .header-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ffffff50;
+  transition: 0.2s;
+}
+
     .header-link:hover::after {
   content: "";
   position: absolute;
@@ -646,6 +657,7 @@ const { hasSearch, specialInstructions } = Astro.props;
   right: 0;
   height: 4px;
   background: #ffffff50;
+  transition: 0.2s;
 }
 
     hr {
