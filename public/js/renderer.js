@@ -250,8 +250,7 @@ function render(xml) {
             ' Game Boxart" class="imginner"></div>';
 
           var data = document.getElementById("data");
-          // ternary operator checks localstorage for display preference
-          console.log(localStorage.getItem("displayMode"));
+          
           var displayMode = localStorage.getItem("displayMode");
           var display = "display:grid;";
           var extraDisplay = "display:flex;";
@@ -260,7 +259,6 @@ function render(xml) {
           var size2 = "grid-column: auto / span 5; grid-row: auto / span 2;";
           var size3 = "grid-column: auto / span 6; grid-row: auto / span 1;";
           var size4 = "grid-column: auto / span 6; grid-row: auto / span 1;";
-
           
           switch (displayMode) {
             case complete:
@@ -633,60 +631,60 @@ function getRating(rating, classification) {
       return '<img src="/img/ratings/pegi3.jpg" alt="Pegi 3" style="margin-top:20px;" width="130px">';
 
     case "7":
-      return '<img src="/img/ratings/pegi7.jpg" alt="Pegi 7" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/pegi7.jpg" alt="Pegi 7" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "12":
       if (classification == "PEGI") {
-        return '<img src="/img/ratings/pegi12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/pegi12.jpg" alt="Pegi 12" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
       } else {
-        return '<img src="/img/ratings/grac-12.jpg" alt="Pegi 12" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/grac-12.jpg" alt="Pegi 12" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
       }
 
     case "16":
-      return '<img src="/img/ratings/pegi16.jpg" alt="Pegi 16" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/pegi16.jpg" alt="Pegi 16" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "18":
       if (classification == "PEGI") {
-        return '<img src="/img/ratings/pegi18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/pegi18.jpg" alt="Pegi 18" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
       } else {
-        return '<img src="/img/ratings/grac-18.jpg" alt="Pegi 18" style="margin-top:20px;"width="130px">';
+        return '<img src="/img/ratings/grac-18.jpg" alt="Pegi 18" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
       }
 
     case "EC":
-      return '<img src="/img/ratings/esrb-ec.webp" alt="ESRB EC" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-ec.webp" alt="ESRB EC" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "E":
-      return '<img src="/img/ratings/esrb-e.webp" alt="ESRB E" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-e.webp" alt="ESRB E" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "E10+":
-      return '<img src="/img/ratings/esrb-e10.webp" alt="ESRB E10+" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-e10.webp" alt="ESRB E10+" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "T":
-      return '<img src="/img/ratings/esrb-t.webp" alt="ESRB T" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-t.webp" alt="ESRB T" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "M":
-      return '<img src="/img/ratings/esrb-m.webp" alt="ESRB M" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/esrb-m.webp" alt="ESRB M" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "A":
-      return '<img src="/img/ratings/cero-a.png" alt="CERO A" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-a.png" alt="CERO A" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "B":
-      return '<img src="/img/ratings/cero-b.png" alt="CERO B" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-b.png" alt="CERO B" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "C":
-      return '<img src="/img/ratings/cero-c.png" alt="CERO C" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-c.png" alt="CERO C" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "D":
-      return '<img src="/img/ratings/cero-d.png" alt="CERO D" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-d.png" alt="CERO D" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "Z":
-      return '<img src="/img/ratings/cero-z.png" alt="CERO Z" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/cero-z.png" alt="CERO Z" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "ALL":
-      return '<img src="/img/ratings/grac-all.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/grac-all.svg" alt="ALL AGES" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "15":
-      return '<img src="/img/ratings/grac-15.svg" alt="ALL AGES" style="margin-top:20px;"width="130px">';
+      return '<img src="/img/ratings/grac-15.svg" alt="ALL AGES" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     default:
       return "<b>Oh snap!</b><br>This title does not have an age rating.";

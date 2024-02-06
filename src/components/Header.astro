@@ -152,11 +152,6 @@ const { hasSearch, specialInstructions } = Astro.props;
 </div>
 
 <script is:inline>
-  console.log(
-    localStorage.getItem("displayMode"),
-    localStorage.getItem("theme"),
-    localStorage.getItem("statistics"),
-  );
   if (!localStorage.getItem("displayMode")) {
     localStorage.setItem("displayMode", "complete");
   }
@@ -205,7 +200,6 @@ const { hasSearch, specialInstructions } = Astro.props;
       document.getElementById("savebtn").innerHTML =
         '<i class="fa fa-save"></i> Save changes';
     }, 2000);
-    console.log(displayMode, theme, statistics);
   };
 </script>
 
