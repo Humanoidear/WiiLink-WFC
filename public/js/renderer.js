@@ -517,7 +517,7 @@ function onlineUpdater(data, j) {
             var player = group[k].players[playerIndex];
             if (localStorage.getItem("statistics") == "small") {
               playerData += `
-             <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
+             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${player.fc}');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
               <div>
                <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
                  player.name
@@ -540,7 +540,7 @@ function onlineUpdater(data, j) {
              `;
            } else {
               playerData += `
-             <div id="mobileinner" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); z-index:10; position:relative;">
+             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${player.fc}');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
               <div>
                <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
                  player.name

@@ -113,6 +113,16 @@ const { title, text, gamespyId } = Astro.props;
     </body>
   </html>
 
+  <script is:inline>
+function toClipboard(data) {
+  navigator.clipboard.writeText(data).then(function() {
+    alert("Copied the text: " + data);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+}
+  </script>
+
   <style>
     html body {
       background-color: rgb(11, 0, 0);
