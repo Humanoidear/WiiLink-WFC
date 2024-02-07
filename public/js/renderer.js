@@ -631,7 +631,7 @@ function getIconForGenre(genre) {
 function getRating(rating, classification) {
   switch (rating) {
     case "3":
-      return '<img src="/img/ratings/pegi3.jpg" alt="Pegi 3" style="margin-top:20px;" width="130px">';
+      return '<img src="/img/ratings/pegi3.jpg" alt="Pegi 3" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
 
     case "7":
       return '<img src="/img/ratings/pegi7.jpg" alt="Pegi 7" style="margin-top:20px; width:130px; left:50%; transform:translate(-50%, 0); position:relative;">';
