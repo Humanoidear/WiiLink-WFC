@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Welcome from "../components/welcome.astro";
 import Loading from "../components/Loading.astro";
+import Head from "../components/DefaultHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -38,6 +39,7 @@ import Footer from "../components/Footer.astro";
   <body>
     <div class="herobg"></div>
     <div class="topholder">
+      <Head />
       <div id="main">
         <h1
           style="color:white; font-family: Rubik; font-weight:800; font-size:58px; text-align:right; z-index:1; position:relative;"
@@ -64,7 +66,7 @@ import Footer from "../components/Footer.astro";
             type="button"
             style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"
             ><a href="https://www.github.com/WiiLink24" style="text-decoration:none; color:white;"><i class="fa-brands fa-github github"></i></a></button
-          ><a href="https://discord.gg/rc24"><button
+          ><a href="https://discord.gg/wiilink"><button
             type="button"
             class="btn btn-primary btn-lg"
             style="margin-top:15px; right:0; position:relative;"
@@ -100,8 +102,10 @@ import Footer from "../components/Footer.astro";
   <script is:inline>
     window.addEventListener("scroll", function () {
       const mainDiv = document.getElementById("main");
-      const scrollPos = document.documentElement.scrollTop / 1;
-      mainDiv.style.transform = `translateY(-${scrollPos}px)`;
+      const elevate = document.getElementById("elevate");
+      const scrollPos = document.documentElement.scrollTop;
+      mainDiv.style.transform = `translateY(-${scrollPos / 2.5}px)`;
+      elevate.style.transform = `translateY(calc(-50% - ${scrollPos / 4}px))`;
     });
   </script>
 
@@ -357,7 +361,8 @@ import Footer from "../components/Footer.astro";
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
-    height: 1000px;
+    height: 100%;
+    max-height: 1000px;
     max-width: 1500px;
     z-index: 100;
     position: absolute;
