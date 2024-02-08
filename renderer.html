@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mii Renderer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      async function Upload(inp) {
+        let formData = new FormData();
+        formData.append("platform", "wii");
+        formData.append("data", inp.files[0]);
+
+        var mii = "";
+
+        await fetch("https://miicontestp.wii.rc24.xyz/cgi-bin/studio.cgi", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            mii = data.mii;
+          });
+
+        var src =
+          "https://studio.mii.nintendo.com/miis/image.png?data=" +
+          mii +
+          "&type=face&expression=normal&width=270&bgColor=FFFFFF00";
+        document.getElementById("img").innerHTML =
+          "<img class='mii' src='" + src + "' />";
+        console.log(src);
+      }
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 150%;
+        text-align: center;
+        background-image: url("https://mii.rc24.xyz/images/background-plaza.png");
+        background-repeat: repeat;
+      }
+      .small {
+        font-size: 12px;
+      }
+      .mii {
+        border-radius: 5px;
+        max-width: calc(100vw - 32px);
+        border: 1px solid #808080;
+      }
+    </style>
+  <body>
+    
+    <label
+      >Input File:
+      <input
+        id="image-file"
+        type="file"
+        onchange="var dat = Upload(this)"
+        name="mii" /></label
+    ><br />
+   
+    <label>Image</label>
+    <div id="img"></div>
