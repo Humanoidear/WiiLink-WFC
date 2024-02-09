@@ -476,6 +476,7 @@ function onlineUpdater(data, j) {
           group[k].host = group[k].players[group[k].host].name;
           if (data[j].GamespyName == "mariokartwii") {
             // MKW exclusive data
+            group[k].rk = "Unknown";
             group[k].rk = group[k].rk.substring(0, 2);
             switch (group[k].rk) {
               case "vs":
@@ -488,7 +489,7 @@ function onlineUpdater(data, j) {
                 break;
               default:
                 group[k].rk =
-                  'background-color:#3cc761;"><i class="fa-solid fa-question"></i> Unknown';
+                  'background-color:#ffffff20;"><i class="fa-solid fa-earth-americas"></i> Finding oponents...';
                 break;
             }
           }
@@ -527,11 +528,11 @@ function onlineUpdater(data, j) {
                }</div>
               </div>
               <div style="text-align:right;">
-               <div style="font-size: 13px; font-family: Rubik; color:white;">VR:${
+               <div style="font-size: 13px; font-family: Rubik; color:white;"><span class="badge bg-primary" style="font-size:13px;">VR</span> ${
                  player.ev
-               } / BR:${
-              player.eb
-            } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+               } | <span class="badge bg-success" style="font-size:13px;">BR</span> ${
+              player.eb}
+             </div>
             <div style="font-size: 13px; font-family: Rubik; color:white;">${
               player.count
             } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
@@ -553,11 +554,11 @@ function onlineUpdater(data, j) {
                <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.pid
                } <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
-               <div style="font-size: 15px; font-family: Rubik; color:white;">VR:${
+               <div style="font-size: 15px; font-family: Rubik; color:white;"> <span class="badge bg-primary" style="font-size:13px;">VR</span> ${
                  player.ev
-               } / BR:${
+               } |  <span class="badge bg-success" style="font-size:13px;">BR</span> ${
               player.eb
-            } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
+            } </div>
                <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.count
                } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
