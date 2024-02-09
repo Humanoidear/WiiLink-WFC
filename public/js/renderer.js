@@ -476,7 +476,6 @@ function onlineUpdater(data, j) {
           group[k].host = group[k].players[group[k].host].name;
           if (data[j].GamespyName == "mariokartwii") {
             // MKW exclusive data
-            group[k].rk = "Unknown";
             group[k].rk = group[k].rk.substring(0, 2);
             switch (group[k].rk) {
               case "vs":
