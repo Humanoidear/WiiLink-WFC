@@ -10,9 +10,154 @@ import Footer from "../../components/Footer.astro";
   description="WiiLink Wi-Fi Connection (WWFC) is a brand new service that allows you to play online games with your friends on your Wii!"
   image="/img/banners/rules.png"
 >
-  <Loading msg="WWFC Rules"/>
-  <Header/>
+  <Loading msg="WWFC Rules" />
+  <Header />
+  <div class="herobg"></div>
+  <div class="holder">
+    <h1
+      style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:50px; position:relative;"
+    >
+      <img
+        src="/img/logo.png"
+        alt="Dolphin"
+        style="width:130px; left:50%; filter:invert(1); backdrop-filter: blur(0px); transform:translateX(-50%); position:relative;"
+      />
+      WiiLink's commitment to fun, fairness and safety. The rules.
+      <h3>
+        At WiiLink, we strive to offer the best experience possible, and that
+        includes how people interact on our service. These are the rules you,
+        the user, are expected to follow.
+      </h3>
+    </h1>
+    <h2 style="transform:rotate(-1deg);">Fun</h2>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i class="icon fas fa-bomb"></i>
+      </span> Games should be fun for everyone. Don't ruin the experience for others.
+      This includes, but is not limited to, cheating, hacking, or using exploits.
+    </p>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i class="icon fas fa-ban"></i>
+      </span> Don't use offensive language or harass other players. This includes,
+      but is not limited to, racism, sexism, homophobia, or any other form of discrimination.
+    </p>
+    <h2 style="transform:rotate(1deg);">Fariness</h2>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i
+          class="icon fas fa-balance-scale"
+          style="transform:translate(-2px, 0);"></i>
+      </span> Don't use cheats, hacks, or exploits. This includes, but is not limited
+      to, using codes that give you an unfair advantage, or using codes that make
+      the game unplayable for others.
+    </p>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i class="icon fas fa-motorcycle" style="transform:translate(-2px, 0);"
+        ></i>
+      </span> Don't use multiple accounts to gain an unfair advantage.
+    </p>
+    <h2 style="transform:rotate(-1deg);">Safety</h2>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i class="icon fas fa-shield-alt"></i>
+      </span> Don't share personal information. This includes, but is not limited
+      to, your real name, address, phone number, or any other information that could
+      be used to identify you.
+    </p>
+    <p style="margin-right:30px; display:flex;">
+      <span class="badge bg-success">
+        <i
+          class="icon fas fa-helmet-safety"
+          style="transform:translate(-2px, 0);"></i>
+      </span> Don't share inappropriate content. This includes, but is not limited
+      to explicit images, videos, or links to explicit content in any way, shape,
+      or form.
+    </p>
 
-<h1 style="top:200px; margin-bottom:800px; position:relative;">This page is a stub, check back later!</h1>
+    <br /><br />
+    <span
+      class="badge bg-danger"
+      style="width:100%; font-size:15px; height:auto; position:relative;"
+      >By using WiiLink
+      WFC, you agree to follow these rules. If you don't, you may be banned, temporarily
+      or permanently, from using our service.</span
+    >
+    <br><br>
+    <span class="badge bg-success" style="width:100%; overflow:scroll;"
+      ><i class="fa fa-circle-check" style="margin-right:8px;"></i> We hope you enjoy
+      playing on WiiLink WFC!</span
+    >
+  </div>
 
-    <Footer/>
+  <Footer />
+
+  <style>
+    body {
+      background-color: rgb(11, 0, 0);
+      margin: 0;
+    }
+    h1,
+    h2,
+    h3,
+    p {
+      color: white;
+    }
+    h1,
+    h2 {
+      font-weight: 800;
+    }
+    .icon {
+      height: 20px;
+      width: 20px;
+      position: relative;
+    }
+    .badge {
+      padding: 15px;
+      margin-right: 15px;
+      font-size: 20px;
+      white-space: normal; /* Add this line */
+    }
+    img {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .herobg {
+      background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 70%,
+          rgba(11, 0, 0, 1) 100%
+        ),
+        url("/img/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: changecolor 10s infinite;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+    }
+    .holder {
+      transform: translate(0, 130px);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      margin-bottom: 200px;
+    }
+    .badge {
+      padding: 15px;
+      margin-right: 15px;
+      font-size: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      margin-top: 50px;
+    }
+    p {
+      margin-top: 20px;
+    }
+  </style>
+</Layout>

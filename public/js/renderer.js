@@ -527,10 +527,10 @@ function onlineUpdater(data, j) {
                }</div>
               </div>
               <div style="text-align:right;">
-               <div style="font-size: 13px; font-family: Rubik; color:white;">BR:${
-                 player.eb
-               } / VR:${
-              player.ev
+               <div style="font-size: 13px; font-family: Rubik; color:white;">VR:${
+                 player.ev
+               } / BR:${
+              player.eb
             } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
             <div style="font-size: 13px; font-family: Rubik; color:white;">${
               player.count
@@ -553,10 +553,10 @@ function onlineUpdater(data, j) {
                <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.pid
                } <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
-               <div style="font-size: 15px; font-family: Rubik; color:white;">BR:${
-                 player.eb
-               } / VR:${
-              player.ev
+               <div style="font-size: 15px; font-family: Rubik; color:white;">VR:${
+                 player.ev
+               } / BR:${
+              player.eb
             } <i class="fa-solid fa-flag-checkered" style="margin-left:5px;"></i></div>
                <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.count

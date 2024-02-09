@@ -12,7 +12,83 @@ import Footer from "../../components/Footer.astro";
 >
   <Loading msg="Installation"/>
   <Header/>
+  <div class="herobg"></div>
+  <div class="holder">
+    <h1 style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:50px; position:relative;">
+      Step by step guide on how to install WWFC patches on Wii / Wii U!
+    </h1>
+    <h2 style="transform:rotate(-1deg);">Get the code ready!</h2>
+    <p>
+      Navigate to the title you want to patch using the <span class="badge bg" style="font-size:15px; padding:10px; background-color:#3a3a3a; margin-left:5px;"><i class="fa fa-search" style="margin-right:8px;"></i> searchbox</span>in this site
+      and <span class="badge bg-success" style="font-size:15px; padding:10px; margin-left:5px;"><i class="fa fa-download" style="margin-right:8px;"></i>download</span>the corresponding patch depending on your region.
+    </p>
+    <h2 style="transform:rotate(1deg);">Let's get patching!</h2>
+    <p style="margin-right:30px;"><span class="badge bg-danger">
+      <i class="icon fas fa-bomb"></i>
+    </span> Unfortunately, this still needs some work...</p>
+    <br><br>
+    <span class="badge bg-success" style="width:100%; overflow:scroll;"><i class="fa fa-circle-check" style="margin-right:8px;"></i> You are now connected to WiiLink WFC!</span>
+  </div>
 
-<h1 style="top:200px; margin-bottom:800px; position:relative;">This page is a stub, check back later!</h1>
+  <Footer />
 
-    <Footer/>
+  <style>
+    body {
+      background-color: rgb(11, 0, 0);
+      margin: 0;
+    }
+    h1,
+    h2,
+    p {
+      color: white;
+    }
+    h1,
+    h2 {
+      font-weight: 800;
+    }
+    .icon {
+      height:20px;
+      width:20px;
+      position: relative;
+    }
+    img {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .herobg {
+      background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 70%,
+          rgba(11, 0, 0, 1) 100%
+        ),
+        url("/img/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: changecolor 10s infinite;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+    }
+    .holder {
+      transform: translate(0, 130px);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      margin-bottom:200px;
+    }
+    .badge {
+      padding:15px;
+      margin-right:15px;
+      font-size:20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      margin-top: 50px;
+    }
+    p {
+      margin-top: 20px;
+    }
+  </style>
