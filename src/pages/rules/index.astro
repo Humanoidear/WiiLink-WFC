@@ -12,7 +12,7 @@ import Footer from "../../components/Footer.astro";
 >
   <Loading msg="WWFC Rules" />
   <Header />
-  <div class="herobg"></div>
+  <div class="herobg" id="herobg"></div>
   <div class="holder">
     <h1
       style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:50px; position:relative;"
@@ -92,6 +92,14 @@ import Footer from "../../components/Footer.astro";
   </div>
 
   <Footer />
+
+  <script is:inline>
+    window.addEventListener("scroll", function () {
+      const mainDiv = document.getElementById("herobg");
+      const scrollPos = document.documentElement.scrollTop;
+      mainDiv.style.transform = `translateY(${scrollPos/4}px)`;
+    });
+  </script>
 
   <style>
     body {
