@@ -37,7 +37,7 @@ const { title, text, gamespyId } = Astro.props;
       <Header />
       <DNSInstructions />
 
-      <div class="herobg"><div class="bginner"></div></div>
+      <div class="herobg" id="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
         <div
           style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px); position:relative;"
@@ -114,6 +114,14 @@ const { title, text, gamespyId } = Astro.props;
   </html>
 
   <script is:inline>
+    window.addEventListener("scroll", function () {
+      const mainDiv = document.getElementById("herobg");
+      const scrollPos = document.documentElement.scrollTop;
+      mainDiv.style.transform = `translateY(${scrollPos/4}px)`;
+    });
+  </script>
+
+  <script is:inline>
 function toClipboard(data) {
   navigator.clipboard.writeText(data).then(function() {
     alert("Copied the text: " + data);
@@ -147,7 +155,7 @@ function toClipboard(data) {
       animation: changecolor 10s infinite;
       width: 100%;
       height: 100vh;
-      transform: translate(0, -50px);
+      transform: translate(0, 0px);
       position: absolute;
       z-index: -10;
       overflow: hidden;

@@ -29,7 +29,7 @@ const { title, text, desc } = Astro.props;
     hasSearch="display:none;"
     specialInstructions="transform:translate(0, 30px); backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
   />
-  <div class="head herobg">
+  <div class="head herobg" id="herobg">
     <div id="noResultsHold" class="">
     <div id="main" class="searchbox">
       <h1
@@ -107,6 +107,14 @@ const { title, text, desc } = Astro.props;
 
     <script type="module" src="/js/online.js"></script>
   </div>
+
+  <script is:inline>
+    window.addEventListener("scroll", function () {
+      const mainDiv = document.getElementById("herobg");
+      const scrollPos = document.documentElement.scrollTop;
+      mainDiv.style.transform = `translateY(${scrollPos/4}px)`;
+    });
+  </script>
 
   <script is:inline>
     var gameSearchInput = document.getElementById("game-search-online");
