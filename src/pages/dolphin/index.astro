@@ -62,7 +62,7 @@ import Footer from "../../components/Footer.astro";
       <i class="icon fa-solid fa-check"></i>
     </span> Save!</p>
     <br><br>
-    <span class="badge bg-success" style="width:100%; overflow:scroll;"><i class="fa fa-circle-check" style="margin-right:8px;"></i> You are now connected to WiiLink WFC!</span>
+    <span class="badge bg-success" style="width:100%;"><i class="fa fa-circle-check" style="margin-right:8px;"></i> You are now connected to WiiLink WFC!</span>
   </div>
 
   <Footer />
@@ -89,6 +89,12 @@ import Footer from "../../components/Footer.astro";
     img {
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
+    }
+    .badge {
+      padding: 15px;
+      margin-right: 15px;
+      font-size: 20px;
+      white-space: normal; /* Add this line */
     }
     .herobg {
       background: linear-gradient(
