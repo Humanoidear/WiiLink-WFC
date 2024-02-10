@@ -277,6 +277,15 @@ const { hasSearch, specialInstructions } = Astro.props;
         <i class="fa-solid fa-paint-roller customhover"></i>
       </div>
       <hr>
+      <div class="dropdown" style="width:100%; position:relative;">
+        <button class="btn btn-primary dropdown-toggle" style="margin-bottom:8px; width:100%; position:relative;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-download"></i> Install now!
+        </button>
+        <ul class="dropdown-menu" style="width:100%; padding:10px; background-color:rgb(31, 31, 31);">
+          <li><a class="dropdown-item center" href="/setup"><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a></li>
+          <li><a class="dropdown-item center" href="/dolphin"><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a></li>
+        </ul>
+      </div>
         <button type="button" class="btn btn-success"
           ><i
             class="fa-solid fa-square-arrow-up-right"
@@ -284,6 +293,12 @@ const { hasSearch, specialInstructions } = Astro.props;
         >
       </div>
     </div>
+    <div class="mobileextralinks">
+    <a href="/rules"><i class="fa-solid fa-book"></i> Rules</a>
+    <a href="https://www.wiilink24.com/privacy-policy"><i class="fa-solid fa-shield"></i> Privacy Policy</a>
+    <a href="https://www.wiilink24.com/tos"><i class="fa-solid fa-feather"></i> Terms of Service</a>
+  </div>
+
   </div>
 </div>
 
@@ -329,7 +344,11 @@ const { hasSearch, specialInstructions } = Astro.props;
             <i class="fa fa-server" style="margin-right:5px;"></i> Status
           </div></a
         >
-        <button type="button" class="btn btn-success"
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" style="height:100%; border-top-right-radius:0px; border-bottom-right-radius:0px; transform:translate(3px, 0);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-download"></i> Install
+          </button>
+          <button type="button" style="height:100%; border-top-left-radius:0px; border-bottom-left-radius:0px;" class="btn btn-success"
           ><a
             href="https://www.wiilink24.com"
             style="text-decoration:none; color:white;"
@@ -338,6 +357,22 @@ const { hasSearch, specialInstructions } = Astro.props;
               style="margin-right:5px;"></i> Visit WiiLink</a
           ></button
         >
+          <ul class="dropdown-menu" style="width:100%; padding:10px; border-radius:8px; background-color:rgb(31, 31, 31);">
+            <li><a class="dropdown-item center" href="/setup"><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a></li>
+            <li><a class="dropdown-item center" href="/dolphin"><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn" style="height:100%;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical" style="color:white; font-size:18px;"></i>
+          </button>
+          <ul class="dropdown-menu" style="width:200px; padding:10px; border-radius:8px; background-color:rgb(31, 31, 31);">
+            <li><a class="dropdown-item" href="/rules"><i class="fa-solid fa-book"></i> Rules</a></li>
+            <li><a class="dropdown-item" href="https://wiilink24.com/privacy-policy"><i class="fa-solid fa-shield"></i> Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="https://wiilink24.com/tos"><i class="fa-solid fa-feather"></i> Terms of Service</a></li>
+            <li><a class="dropdown-item"><i class="fa-solid fa-dice"></i> Random game</a></li>
+          </ul>
+        </div>
       </div>
       <button
         class="btn"
@@ -619,6 +654,49 @@ const { hasSearch, specialInstructions } = Astro.props;
       transition: 0.3s;
     }
 
+    button {
+      border-radius: 8px;
+    }
+
+    .dropdown-toggle::after {
+    display: none;
+}
+
+  .center {
+    text-align: center;
+  }
+
+    .dropdown-item {
+      color:white;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .dropdown-item:hover {
+      background-color: #ffffff10;
+      color:white;
+      transition: 0.3s;
+    }
+
+    a {
+      text-decoration: none;
+      color:#ffffff20;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      color:#ffffff60;
+      transition: 0.2s;
+    }
+
+    .mobileextralinks {
+      display:flex;
+      flex-direction: column;
+      gap:5px;
+      transform: translate(0, 130px);
+      position:relative;
+    }
+
     input[type="radio"] + img {
   transition: 0.3s;
 }
@@ -832,7 +910,7 @@ const { hasSearch, specialInstructions } = Astro.props;
       top: 50%;
       transform: translate(0, -50%);
       display: flex;
-      gap: 18px;
+      gap: 15px;
       position: absolute;
     }
 
