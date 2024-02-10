@@ -23,6 +23,10 @@ import Footer from "../../components/Footer.astro";
       Navigate to the title you want to patch using the <span class="badge bg" style="font-size:15px; padding:10px; background-color:#3a3a3a; margin-left:5px;"><i class="fa fa-search" style="margin-right:8px;"></i> searchbox</span>in this site
       and <span class="badge bg-success" style="font-size:15px; padding:10px; margin-left:5px;"><i class="fa fa-download" style="margin-right:8px;"></i>download</span>the corresponding patch depending on your region and/or disc revision.
     </p>
+    <h2 style="transform:rotate(0.5deg);">Dump your NAND!</h2>
+    <p>
+      In order to use WiiLink WFC, you need to have a NAND dump from a real Wii. If you don't have one, you can follow this <a href="https://wii.hacks.guide/bootmii.html">guide</a> to dump your NAND, then install it on Dolphin by going to <b>Tools <i class="fa-solid fa-arrow-right"></i> Manage NAND <i class="fa-solid fa-arrow-right"></i> Import BootMii NAND Backup...</b>
+    </p>
     <h2 style="transform:rotate(1deg);">Let's get patching!</h2>
     <div style="display:flex; flex-wrap:wrap;">
     <p style="margin-right:30px;"><span class="badge bg-success">
@@ -84,6 +88,10 @@ import Footer from "../../components/Footer.astro";
     h2,
     p {
       color: white;
+    }
+    a {
+      color:rgb(62, 211, 62);
+      text-decoration: none;
     }
     h1,
     h2 {
