@@ -501,7 +501,7 @@ function onlineUpdater(data, j) {
           }
           document.getElementById(
             "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
             group[k].host
           )}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${
             group[k].type
@@ -526,15 +526,13 @@ function onlineUpdater(data, j) {
                  player.fc
                }</div>
               </div>
-              <div style="text-align:right;">
-               <div style="font-size: 13px; font-family: Rubik; color:white;"><span class="badge bg-primary" style="font-size:13px;">VR</span> ${
+              <div style="text-align:right; display:flex; flex-direction:column; gap:10px;">
+               <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.ev
-               } | <span class="badge bg-success" style="font-size:13px;">BR</span> ${
-              player.eb}
+               } <span class="badge bg-primary" style="font-size:13px;">VR</span>
              </div>
-            <div style="font-size: 13px; font-family: Rubik; color:white;">${
-              player.count
-            } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+            <div style="font-size: 15px; font-family: Rubik; color:white;">${
+              player.eb} <span class="badge bg-success" style="font-size:13px;">BR</span></div>
               </div>
              </div>
              `;
