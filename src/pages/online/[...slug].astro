@@ -98,7 +98,7 @@ const { title, text, gamespyId } = Astro.props;
             This title features no synopsis, why not add one yourself on
             gameTDB?
           </p>
-          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;">
+          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;" id="recommendedHeader">
             You may also like:
             <span style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;">Matches genre <i style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;" id="genreSuggestion"></i></span>
           </h1>
@@ -466,6 +466,11 @@ function toClipboard(data) {
         width: 100% !important;
         display: flex !important;
         flex-wrap: wrap;
+      }
+      #recommendedHeader,
+      #recommendedTitles {
+        opacity: 0;
+        display: none;
       }
       #mobileinner {
         width:100%;
