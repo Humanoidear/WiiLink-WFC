@@ -327,6 +327,7 @@ function render(xml) {
 
   // Get all titles with the same genre on an array
   var sameGenreTitles = [];
+  if (localStorage.getItem("displayMode") != "utilitarian") {
   for (var i = 0; i < x.length; i++) {
     var genre = x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
     genre = genre.split(",")[0].trim();
@@ -349,6 +350,7 @@ function render(xml) {
       });
     }
   }
+}
 
   // Shuffle the array
   shuffleArray(sameGenreTitles);
