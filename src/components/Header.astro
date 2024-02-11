@@ -302,7 +302,7 @@ const { hasSearch, specialInstructions } = Astro.props;
         <hr />
         <div
           data-bs-dismiss="offcanvas"
-          style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
+          style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; animation: huerotate 10s linear infinite;"
           onclick="openCustomization();"
         >
           <div class="customicon" style="backround-color:rgb(23,23,23); font-size:30px;"><i class="fa-solid fa-paint-roller customhover"></i></div>
@@ -458,7 +458,7 @@ const { hasSearch, specialInstructions } = Astro.props;
           >
             <li
               data-bs-dismiss="offcanvas"
-              style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
+              style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; animation:huerotate 10s linear infinite;"
               onclick="openCustomization();"
             >
               <div class="customicon">
@@ -467,6 +467,11 @@ const { hasSearch, specialInstructions } = Astro.props;
               </div>
             </li>
             <hr>
+            <li>
+              <a class="dropdown-item" href="/random"
+                ><i class="fa-solid fa-dice"></i> Random game</a
+              >
+            </li>
             <li>
               <a class="dropdown-item" href="/rules"
                 ><i class="fa-solid fa-book"></i> Rules</a
@@ -482,11 +487,6 @@ const { hasSearch, specialInstructions } = Astro.props;
             <li>
               <a class="dropdown-item" href="https://wiilink24.com/tos"
                 ><i class="fa-solid fa-feather"></i> Terms of Service</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="/random"
-                ><i class="fa-solid fa-dice"></i> Random game</a
               >
             </li>
           </ul>
@@ -1069,6 +1069,15 @@ const { hasSearch, specialInstructions } = Astro.props;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    @keyframes huerotate {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
     }
 
     @media only screen and (max-width: 1200px) {
