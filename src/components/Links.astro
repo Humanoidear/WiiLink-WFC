@@ -37,8 +37,10 @@
             <p>Tetris Party</p> 
         </div>
     </div>
-    <h2>Feeling lucky?</h2>
-    <p>Click <a href="/random">here</a> to get a random game from our collection!</p>
+    <div style="margin-top:20px; display:flex; align-items:center; justify-content:space-between;">
+    <h3>Feeling lucky?</h3>
+    <a href="/random"><button class="btn btn-success"><i class="fa fa-dice"></i> Random Game</button></a>
+</div>
 </div>
 
 
@@ -50,7 +52,7 @@
         width:95%;
         max-width: 1500px;
         color:white;
-        margin-top: 50px;
+        margin-top: 80px;
         text-align: left;
         position: relative;
     }
@@ -86,12 +88,22 @@
     .pill {
         margin: 10px;
         padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.357);
+        background-color: #121212;
+        border: 2px solid rgba(255, 255, 255, 0.357);
+        transform: translate(0, 0px);
+        box-shadow: 0px 0px 0px #ffffff20;
         border-radius: 10px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        transition: 0.3s;
+    }
+
+    .pill:hover {
+        transform: translate(0, -5px);
+        box-shadow: 0px 0px 20px #ffffff30;
+        transition: 0.3s;
     }
 
     .pill img {
