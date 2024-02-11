@@ -291,6 +291,12 @@ function render(xml) {
             playIcon1.innerHTML +=
               '<i class="fa-solid fa-triangle-exclamation"></i> This title does not support online multiplayer.';
             playIcon2.style.top = "45%";
+            for (var l = 0; l < wifiPlayers; l++) {
+              playIcon1.innerHTML +=
+                '<i class="fa fa-user" style="margin-right:8px;"></i>';
+            }
+            document.getElementById("WFCdetails").innerHTML = `
+            <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> Call of Duty is not supported by WiiLink WFC.`;
           } else if (wifiPlayers == 0) {
             document.getElementById("onlineplayno").innerHTML = "0";
             playIcon1.innerHTML +=
