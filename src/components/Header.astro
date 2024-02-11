@@ -154,7 +154,7 @@ const { hasSearch, specialInstructions } = Astro.props;
       </div>
     </fieldset>
     <hr />
-    <fieldset style="color:white; font-size:40px; padding-bottom:30px;">
+    <fieldset style="color:white; font-size:40px; padding-bottom:0px;">
       <legend
         ><div
           style="width:200px; display:flex; flex-wrap:nowrap; align-items:center;"
@@ -179,6 +179,27 @@ const { hasSearch, specialInstructions } = Astro.props;
         <input type="radio" id="midnight" name="theme" value="midnight" />
         <label for="midnight"><i class="fa-brands fa-hashnode"></i></label>
       </div>
+    </fieldset>
+    <hr />
+    <fieldset style="color:white; font-size:40px; padding-bottom:30px;">
+      <legend
+        ><div
+          style="width:300px; display:flex; flex-wrap:nowrap; align-items:center;"
+        >
+          <img src="/img/loading.gif" style="filter:brightness(10000); width:30px;"> Display loading screen
+        </div>
+        <div style="display:flex; gap:2px; flex-direction: row; flex-wrap: nowrap; transform:translate(50px, 8px);">
+      <div style="width:50px; height:30px;">
+        <input type="radio" id="yes" name="loading" value="1" style="display:none;"/>
+        <label for="yes" class="switch" style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left:8px; padding-right:4px;">Yes</label>
+      </div>
+      <div style="width:50px; height:30px;">
+        <input type="radio" id="no" name="loading" value="0" style="display:none;"/>
+        <label for="no" class="switch" style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left:4px; padding-right:8px;">No</label>
+      </div> 
+    </div>
+    </legend
+      >
     </fieldset>
     <span
       class="badge bg-success"
@@ -205,6 +226,9 @@ const { hasSearch, specialInstructions } = Astro.props;
         localStorage.getItem("displayMode") +
         '"]',
     ).checked = true;
+  if (!localStorage.getItem("displayLoading")) {
+    localStorage.setItem("displayLoading", "1");
+  }
   }
   if (localStorage.getItem("theme")) {
     document.querySelector(
@@ -218,6 +242,11 @@ const { hasSearch, specialInstructions } = Astro.props;
         '"]',
     ).checked = true;
   }
+  if (localStorage.getItem("displayLoading")) {
+    document.querySelector(
+      'input[name="loading"][value="' + localStorage.getItem("displayLoading") + '"]',
+    ).checked = true;
+  }
 
   window.saveSelections = function () {
     var displayMode = document.querySelector(
@@ -227,10 +256,12 @@ const { hasSearch, specialInstructions } = Astro.props;
     var statistics = document.querySelector(
       'input[name="statistics"]:checked',
     ).value;
+    var loading = document.querySelector('input[name="loading"]:checked').value;
 
     localStorage.setItem("displayMode", displayMode);
     localStorage.setItem("statistics", statistics);
     localStorage.setItem("theme", theme);
+    localStorage.setItem("displayLoading", loading);
 
     document.getElementById("savebtn").innerHTML =
       '<i class="fa fa-check"></i>';
@@ -781,6 +812,51 @@ const { hasSearch, specialInstructions } = Astro.props;
       transition: 0.3s;
     }
 
+    .switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+#no input:checked + label {
+	background-color: #a5dc86;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
     .customicon {
       width: calc(100% - 4px);
       height: calc(100% - 4px);
@@ -845,6 +921,21 @@ const { hasSearch, specialInstructions } = Astro.props;
     }
 
     input[type="radio"] + img {
+      transition: 0.3s;
+    }
+
+    input[type="radio"] + .switch {
+      background-color: #ffffff50 !important;
+      transition: 0.3s;
+    }
+
+    input[type="radio"]:hover + .switch {
+      background-color: #ffffff40 !important;
+      transition: 0.3s;
+    }
+
+    input[type="radio"]:checked + .switch {
+      background-color: #a0e04e60 !important;
       transition: 0.3s;
     }
 

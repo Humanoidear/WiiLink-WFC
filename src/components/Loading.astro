@@ -14,6 +14,10 @@ const { msg, img } = Astro.props;
 </div>
 
 <script is:inline>
+    if (localStorage.getItem("displayLoading") == 0) {
+        document.getElementById("cover").style.display = "none";
+        document.getElementById("cover").remove();
+    }
 
 function remove() {
     document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
@@ -40,6 +44,7 @@ window.addEventListener('load', function () {
 }, 300);
 setTimeout(() => {
         document.getElementById("cover").style.display = "none";
+        document.getElementById("cover").remove();
 }, 600);
     });
  </script>
