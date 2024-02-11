@@ -280,21 +280,25 @@
     background-size: cover;
     background-color: #121212;
     border: 2px solid rgb(228, 255, 169);
+    box-shadow: 0px 0px 40px rgba(228, 255, 169,0.2);
   }
   .tier-2 {
     background-size: cover;
     background-color: #121212;
     border: 2px solid rgb(148, 248, 255);
+    box-shadow: 0px 0px 40px rgba(148, 248, 255,0.2);
   }
   .tier-3 {
     background-size: cover;
     background-color: #121212;
     border: 2px solid rgb(238, 206, 252);
+    box-shadow: 0px 0px 40px rgba(238, 206, 252,0.2);
   }
   .tier-4 {
     background-size: cover;
     background-color: #121212;
     border: 2px solid rgb(205, 213, 204);
+    box-shadow: 0px 0px 40px rgba(205, 213, 204,0.2);
   }
   .tiers {
     left: 50%;
@@ -343,11 +347,17 @@
   }
 
   @media only screen and (max-width: 800px) {
-    .build-square {
-      left: 50%;
-      width: 95%;
-      max-width: 100%;
+    .title, .subtitle {
+      left:50%;
       transform: translate(-50%, 0);
+      width:95%;
+      position: relative;
+    }
+    .build-square {
+      left: 0;
+      width: 45%;
+      max-width: 100%;
+      transform: translate(0, 0);
       box-shadow: 0px 5px 10px #00000020;
       border-radius: 16px;
       perspective: 0px;
@@ -362,7 +372,7 @@
     }
 
     .build-square:hover {
-      transform: translate(-50%, -5px);
+      transform: scale(1.01);
       box-shadow: 0px 5px 15px #7d7d7d20;
       border-width: 4px;
       transition: 0.1s;
@@ -382,17 +392,10 @@
       left: 0;
       transform: translate(0, 0);
       width: 100%;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      gap:10px;
       position: relative;
-    }
-
-    .build-square:nth-child(4) .donate-image {
-      top: 50%;
-      right: 0px;
-      width: auto;
-      height: 130px;
-      transform: translate(70px, -50%) translateZ(0) scale(100%);
-      position: absolute;
     }
 
     .build-square h5 {
@@ -408,12 +411,7 @@
     }
 
     .donate-image {
-      top: 50%;
-      right: -30px;
-      width: auto;
-      height: 130px;
-      transform: translate(50px, -50%) translateZ(0) scale(80%);
-      position: absolute;
+      display:none;
     }
 
     .slider {
@@ -428,13 +426,10 @@
     }
 
     .tier-title {
-      top: 70%;
-      left: 20px;
-      width: auto;
       text-align: center;
-      transform: translate(0%, -50%);
       color: black;
       font-family: Gilroy;
+      transform: translate(-50%, -300%);
       position: absolute;
     }
 

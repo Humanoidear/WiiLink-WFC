@@ -26,18 +26,3 @@ window.closeCustomization = function() {
       backblur.classList.remove("fade-out");
     }, 0);
   }
-
-  document.addEventListener('click', function(event) {
-    var customization = document.getElementById("customization");
-    var backblur = document.getElementById("backblur");
-    var customizeIcon = document.getElementById("customizeicon");
-  
-    // Check if the click was outside the customization div and backblur is visible
-    // and the click was not on the customizeIcon or a child of it
-    if (!customization.contains(event.target) && 
-        !backblur.classList.contains("fade-out") && 
-        !customizeIcon.contains(event.target)) {
-      // Call the closeCustomization function
-      window.closeCustomization();
-    }
-  });

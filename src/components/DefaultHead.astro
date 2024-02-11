@@ -75,10 +75,8 @@
       fetch(apiStats) // Global stats for game
       .then((response) => response.json())
       .then((isOnline) => {
-        console.log(isOnline); // Log the entire object to the console
         let found = 0;
         for (var game in isOnline) {
-          console.log(game);
           if (game == id) {
             document.getElementById(destination).innerHTML = `
                <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
@@ -313,8 +311,8 @@
     }
 
     @media only screen and (max-width:1200px) {
-      .carouseltop {
-        display:none;
+      .carouseltop, .carousel, .carousellogos {
+        display:none !important;
       }
     }
   </style>

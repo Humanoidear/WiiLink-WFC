@@ -76,7 +76,7 @@ import Footer from "../components/Footer.astro";
   <Welcome />
   <Links />
   <Donate />
-  <div style="width:100%; height:100%; position:relative;">
+  <div class="jumpin" style="width:100%; height:100%; position:relative;">
     <div
       style="top:50%; left:50%; transform:translate(-50%, -50%); width:300px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; z-index: 1000000; position:absolute;"
     >
@@ -102,8 +102,11 @@ import Footer from "../components/Footer.astro";
       const mainDiv = document.getElementById("main");
       const elevate = document.getElementById("elevate");
       const scrollPos = document.documentElement.scrollTop;
-      mainDiv.style.transform = `translateY(-${scrollPos / 2.5}px)`;
+      // check that width is at least 600px
+      if (window.innerWidth > 600) {
+        mainDiv.style.transform = `translateY(-${scrollPos / 2.5}px)`;
       elevate.style.transform = `translateY(calc(-50% - ${scrollPos / 4}px))`;
+      }
     });
   </script>
 
@@ -381,21 +384,41 @@ import Footer from "../components/Footer.astro";
   }
 
   @media only screen and (max-width: 600px) {
+    h1,
+    h2 {
+      text-align: center !important;
+    }
     .topholder {
       top: 0;
       left: 0;
       transform: translate(0, 0);
+      display:flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
       position: absolute;
     }
+    .herobg {
+      height:400px !important;
+    }
     #main {
-      bottom: 50%;
-      right: 0;
-      width: 100%;
-      height: auto;
-      transform: translate(0, 50%) !important;
-      position: absolute;
+      bottom:48px;
+     width:80% !important;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #main div {
+      position: relative !important;
+    }
+    .jumpin {
+      top:0;
+      height: 400px !important;
+    }
+    #globeViz {
+      display: none;
     }
   }
 </style>

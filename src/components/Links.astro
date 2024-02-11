@@ -110,4 +110,20 @@
         width: 70px;
         height: 70px;
     }
+
+    @media only screen and (max-width:600px) {
+        .linkgrid {
+            height:300px;
+            border-radius: 8px;
+            display:flex;
+            flex-wrap:nowrap;
+            flex-direction: column;
+            justify-content:flex-start !important;
+            overflow-y:scroll;
+            overflow-x: hidden;
+        }
+        .pill {
+            width:100%;
+        }
+    }
 </style>
