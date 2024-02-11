@@ -1,0 +1,80 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+---
+<Layout />
+<Header />
+<div class="herobg"></div>
+<div class="holder">
+<h1><i class="fa fa-dice"></i> Random Game</h1>
+<p id="randomGame" style="color:white; text-align:center;"></p>
+<div style="display:flex; flex-direction:column; gap:10px;">
+<a href="/random" style="width:100%; position:relative;"><button class="btn btn-primary" style="width:100%; position:relative;">Choose another one</button></a>
+<a href="/" style="width:100%; position:relative;"><button class="btn btn-success" style="width:100%; position:relative;">Go back</button></a>
+</div>
+<p style="margin-top:20px; text-align:center; opacity:0.3;">You will be redirected in <i id="timeRemaining">5 seconds</i>. <b id="impatient"></b></p>
+</div>
+
+<script is:inline>
+    fetch('/json/pages.json')
+  .then(response => response.json())
+  .then(data => {
+    let randomIndex = Math.floor(Math.random() * data.length);
+    let randomGame = data[randomIndex];
+    document.getElementById('randomGame').innerHTML = "<b>" + randomGame.gameName + "</b> - " + randomGame.gameId; 
+    document.getElementById('impatient').innerHTML = "<a href='online/" + randomGame.gameId + "'>Impatient?</a>";
+    setTimeout(() => {
+      window.location.href = "online/" + randomGame.gameId;
+    }, 5000);
+  })
+  .catch(error => console.error('Error:', error));
+
+    let timeRemaining = 5;
+    let timeInterval = setInterval(() => {
+      timeRemaining--;
+      document.getElementById('timeRemaining').innerHTML = timeRemaining + " seconds";
+      if (timeRemaining === 1) {
+        document.getElementById('timeRemaining').innerHTML = timeRemaining + " second";
+      } else if (timeRemaining === 0) {
+        clearInterval(timeInterval);
+      }
+    }, 1000);
+</script>
+
+<style>
+    h1 {
+        text-align: center;
+        font-family: Gilroy;
+        color:white;
+    }
+
+    h2,
+    p {
+        color:white;
+    }
+
+    .herobg {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 70%,
+        rgba(11, 0, 0, 1) 100%
+      ),
+      url("/img/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: changecolor 10s infinite;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
+
+    .holder {
+        top: 300px;
+        left:50%;
+        width:95%;
+        max-width: 400px;
+        transform: translate(-50%, 0);
+        position: relative;
+    } 
+</style>

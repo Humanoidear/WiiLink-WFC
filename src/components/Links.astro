@@ -1,0 +1,101 @@
+<div class="links">
+    <h1 class="title">Quick links to some of our <b class="color">favorite games</b></h1>
+    <div class="linkgrid">
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/EN/RMCP01.png" alt="Mario Kart Wii">
+            <p>Mario Kart Wii</p>
+            
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/RSBE01.png" alt="Super Smash Bros. Brawl">
+            <p>Super Smash Bros. Brawl</p>
+            
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/RMKE01.png" alt="Mario Sports Mix">
+            <p>Mario Sports Mix</p>
+            
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/R3RE8P.png" alt="Sonic & SEGA All Stars Racing">
+            <p>Sonic & SEGA All Stars Racing</p> 
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/ST7E01.png" alt="Fortune Street">
+            <p>Fortune Street</p> 
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/R4QE01.png" alt="Mario Strikers Charged">
+            <p>Mario Strikers Charged</p> 
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/JA/S5SJHF.png" alt="Inazuma Eleven Go Strikers 2013<">
+            <p>Inazuma Eleven Go Strikers 2013</p> 
+        </div>
+        <div class="pill">
+            <img src="https://art.gametdb.com/wii/disc/US/STEETR.png" alt="Tetris Party">
+            <p>Tetris Party</p> 
+        </div>
+    </div>
+    <h2>Feeling lucky?</h2>
+    <p>Click <a href="/random">here</a> to get a random game from our collection!</p>
+</div>
+
+
+
+<style>
+    .links {
+        left:50%;
+        transform: translate(-50%, 0);
+        width:95%;
+        max-width: 1500px;
+        color:white;
+        margin-top: 50px;
+        text-align: left;
+        position: relative;
+    }
+
+    .linkgrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .color {
+    background: url(/img/header_bg.png) 0 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
+  }
+
+    .title {
+    text-align: left;
+    color:white;
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-family: Gilroy;
+    position: relative;
+  }
+
+    h1 {
+        font-family: Gilroy;
+    }
+
+    .pill {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.357);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .pill img {
+        width: 70px;
+        height: 70px;
+    }
+</style>
