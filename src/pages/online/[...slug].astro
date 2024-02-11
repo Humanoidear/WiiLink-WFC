@@ -50,14 +50,6 @@ const { title, text, gamespyId } = Astro.props;
           >
             {title} {gamespyId ? '- ' + gamespyId.substring(0,3) : ''}
           </p>
-          <div
-          id="customizeicon"
-          data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Customization"
-          style="top:40px; right:40px; height:50px; color:white; font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; position:absolute;"
-          onclick="openCustomization();"
-        >
-          <i class="fa-solid fa-paint-roller customhover"></i>
-        </div>
         </div>
         <div class="data-holder" id="errnomatch">
           <div id="img"></div>

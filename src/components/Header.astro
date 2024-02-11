@@ -305,7 +305,7 @@ const { hasSearch, specialInstructions } = Astro.props;
           style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
           onclick="openCustomization();"
         >
-          <i class="fa-solid fa-paint-roller customhover"></i>
+          <div class="customicon" style="backround-color:rgb(23,23,23); font-size:30px;"><i class="fa-solid fa-paint-roller customhover"></i></div>
         </div>
         <hr />
         <div class="dropdown" style="width:100%; position:relative;">
@@ -324,11 +324,13 @@ const { hasSearch, specialInstructions } = Astro.props;
           >
             <li>
               <a class="dropdown-item center" href="/setup"
-                ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a>
+                ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a
+              >
             </li>
             <li>
               <a class="dropdown-item center" href="/dolphin"
-                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a>
+                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
+              >
             </li>
           </ul>
         </div>
@@ -340,6 +342,7 @@ const { hasSearch, specialInstructions } = Astro.props;
       </div>
     </div>
     <div class="mobileextralinks">
+      <a href="/random"><i class="fa-solid fa-dice"></i> Random game</a>
       <a href="/rules"><i class="fa-solid fa-book"></i> Rules</a>
       <a href="https://www.wiilink24.com/privacy-policy"
         ><i class="fa-solid fa-shield"></i> Privacy Policy</a
@@ -427,11 +430,13 @@ const { hasSearch, specialInstructions } = Astro.props;
           >
             <li>
               <a class="dropdown-item center" href="/setup"
-                ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a>
+                ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a
+              >
             </li>
             <li>
               <a class="dropdown-item center" href="/dolphin"
-                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a>
+                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
+              >
             </li>
           </ul>
         </div>
@@ -451,23 +456,37 @@ const { hasSearch, specialInstructions } = Astro.props;
             class="dropdown-menu"
             style="width:200px; padding:10px; border-radius:8px; background-color:rgb(31, 31, 31);"
           >
+            <li
+              data-bs-dismiss="offcanvas"
+              style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center;"
+              onclick="openCustomization();"
+            >
+              <div class="customicon">
+                <i class="fa-solid fa-paint-roller" style="font-size:18px;"
+                ></i>Customization
+              </div>
+            </li>
             <li>
               <a class="dropdown-item" href="/rules"
-                ><i class="fa-solid fa-book"></i> Rules</a>
+                ><i class="fa-solid fa-book"></i> Rules</a
+              >
             </li>
             <li>
               <a
                 class="dropdown-item"
                 href="https://wiilink24.com/privacy-policy"
-                ><i class="fa-solid fa-shield"></i> Privacy Policy</a>
+                ><i class="fa-solid fa-shield"></i> Privacy Policy</a
+              >
             </li>
             <li>
               <a class="dropdown-item" href="https://wiilink24.com/tos"
-                ><i class="fa-solid fa-feather"></i> Terms of Service</a>
+                ><i class="fa-solid fa-feather"></i> Terms of Service</a
+              >
             </li>
             <li>
               <a class="dropdown-item" href="/random"
-                ><i class="fa-solid fa-dice"></i> Random game</a>
+                ><i class="fa-solid fa-dice"></i> Random game</a
+              >
             </li>
           </ul>
         </div>
@@ -752,6 +771,26 @@ const { hasSearch, specialInstructions } = Astro.props;
       transition: 0.3s;
     }
 
+    .customicon {
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background-color: rgb(31, 31, 31);
+      border-radius: 6px;
+      font-size: 15px;
+      align-items:center;
+      justify-content: center;
+      gap: 10px;
+      display: flex;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .customicon:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color:rgb(31,31,31);
+      transition: 0.2s;
+    }
+
     button {
       border-radius: 8px;
     }
@@ -1031,7 +1070,27 @@ const { hasSearch, specialInstructions } = Astro.props;
       align-items: center;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1200px) {
+      #game-search {
+       width:40px !important;
+       transition: 0.3s;
+      }
+      #game-search:focus {
+        width: 800px !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: 0.3s;
+      }
+      #suggestions {
+        display: none;
+      }
+      .customization-container {
+        border-radius: 0px !important;
+        border: 0px solid #ffffff10 !important;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
       #game-search {
         display: none;
       }

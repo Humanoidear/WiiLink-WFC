@@ -126,7 +126,7 @@ const { title, text, desc } = Astro.props;
       .addEventListener("change", function () {
         var icon = document.querySelector("#onlineOnly + label i");
         if (this.checked) {
-          icon.className = "fa-solid fa-check-circle"; // change to the icon you want when checked
+          icon.className = "fa-solid fa-check-circle";
           fetchQuery();
           setTimeout(function () {
             suggestionsDiv.style.visibility = "visible";
@@ -138,7 +138,7 @@ const { title, text, desc } = Astro.props;
             icon.className = "fa-solid fa-earth-americas";
           }, 500);
         } else {
-          icon.className = "fa-solid fa-circle-xmark"; // change to the icon you want when checked
+          icon.className = "fa-solid fa-circle-xmark";
           fetchQuery();
           setTimeout(function () {
             suggestionsDiv.style.visibility = "visible";
@@ -423,7 +423,7 @@ const { title, text, desc } = Astro.props;
       border-radius: 4px;
       font-size: 15px;
       margin-right: 18px;
-      background-color: #ffffff00; /* default background color */
+      background-color: #ffffff00;
       opacity: 0.5;
       transition: 0.3s;
     }
