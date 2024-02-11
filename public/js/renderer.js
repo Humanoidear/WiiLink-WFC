@@ -578,6 +578,9 @@ function onlineUpdater(data, j) {
         '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
         data[j].GamespyName +
         "</div>";
+        if (data[j].GamespyName == "mariokartwii") {
+          document.getElementById("mkwlink").style.display = "none";
+        }
     });
 }
 
