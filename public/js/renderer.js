@@ -790,9 +790,9 @@ function getController(xml, i) {
         break;
       case "guitar":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:invert(1);"height="70px"><span style="font-size:10px; transform:translate(-100%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
+          controlTypes += `<img src="/img/controllers/guitar.png" style="margin-right:15px; filter:invert(1);"height="70px">`;
         }
         break;
       case "keyboard":
@@ -804,11 +804,18 @@ function getController(xml, i) {
         break;
       case "drums":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:invert(1);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
+          controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:invert(1);"height="60px">`;
         }
         break;
+        case "microphone":
+          if (controls[k].getAttribute("required") == "true") {
+            controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          } else {
+            controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px">`;
+          }
+          break;
       case "nintendods":
         if (controls[k].getAttribute("required") == "true") {
           controlTypes += `<img src="/img/controllers/nintendods.svg" style="margin-right:15px; filter: invert(1) brightness(1000); scale:80%;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
@@ -825,9 +832,9 @@ function getController(xml, i) {
         break;
       case "udraw":
         if (controls[k].getAttribute("required") == "true") {
-          controlTypes += `<img src="/img/controllers/udraw.png" style="margin-right:15px; filter:brightness(1000);"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+          controlTypes += `<img src="/img/controllers/udraw.svg" style="margin-right:15px; filter:brightness(1000);"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
         } else {
-          controlTypes += `<img src="/img/controllers/udraw.png" style="margin-right:15px; filter:brightness(1000);"height="60px">`;
+          controlTypes += `<img src="/img/controllers/udraw.svg" style="margin-right:15px; filter:brightness(1000);"height="50px">`;
         }
         break;
       case "mii":
