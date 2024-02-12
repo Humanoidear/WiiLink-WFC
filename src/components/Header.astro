@@ -588,6 +588,7 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       </button>
     </div>
   </div>
+  <img id="loadingspinner" src="../../img/loading.gif" style="top:50%; right:30px; transform:translate(0, -50%); filter:brightness(10000); width:30px; position:absolute;" />
   <div class="loadingindicator" id="loadingindicator" style={loadingBarPosition}></div>
 
   <script is:inline>
@@ -816,9 +817,14 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
 <script is:inline>
   let loadingindicator = document.getElementById("loadingindicator");
   loadingindicator.style.width = "0%";
+  loadingspinner = document.getElementById("loadingspinner");
 
   if(localStorage.getItem("displayLoading") === "1") {
     loadingindicator.style.display = "none";
+    loadingspinner.style.display = "none";
+  } else {
+    loadingindicator.style.display = "block";
+    loadingspinner.style.display = "block";
   }
 
   let increaseWidth = setInterval(() => {
@@ -827,12 +833,14 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       loadingindicator.style.width = (currentWidth + 1) + "%";
     }
   }, 100);
+  
 
   window.addEventListener("load", () => {
     clearInterval(increaseWidth);
     loadingindicator.style.width = "100%";
     setTimeout(() => {
       loadingindicator.style.opacity = "0";
+      loadingspinner.style.display = "none";
     }, 500);
   });
 </script>
