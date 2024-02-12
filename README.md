@@ -18,7 +18,7 @@ WiiLink WFC Site is a comprehensive platform that provides game data, patches, o
 ## Features :sparkles:
 
 - **Game Data**: Access a vast database of game data at your fingertips.
-- **Patches**: Keep your games up-to-date with our latest patches.
+- **Patches**: Keep your games online with our latest patches.
 - **Online Statistics**: Track your gaming progress with our detailed online statistics.
 - **And much more**: We're constantly working on adding more features to improve your experience.
 
@@ -52,17 +52,10 @@ In the src folder you will find the components (used to be able to reuse code in
 
 We love hearing from our users! If you have any feedback or suggestions, please feel free to reach out to us.
 
-## Contributing :handshake:
-
-We welcome contributions! If you're interested in contributing, check out our contributing guidelines to get started.
 
 ## License :scroll:
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
-
-## Stay Connected :social_media_icons:
-
-Follow us on social media to stay updated with our latest news and releases.
 
 # That's about it, thanks for reading!!!
 
