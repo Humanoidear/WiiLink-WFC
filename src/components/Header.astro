@@ -4,9 +4,10 @@ import type { NodeNextRequest } from "next/dist/server/base-http/node";
 interface Props {
   hasSearch: string;
   specialInstructions: string;
+  loadingBarPosition: string;
 }
 
-const { hasSearch, specialInstructions } = Astro.props;
+const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
 ---
 
 <!--
@@ -587,6 +588,7 @@ const { hasSearch, specialInstructions } = Astro.props;
       </button>
     </div>
   </div>
+  <div class="loadingindicator" id="loadingindicator" style={loadingBarPosition}></div>
 
   <script is:inline>
     function loadCoverImage(title) {
@@ -811,6 +813,30 @@ const { hasSearch, specialInstructions } = Astro.props;
       });
   </script>
 
+<script is:inline>
+  let loadingindicator = document.getElementById("loadingindicator");
+  loadingindicator.style.width = "0%";
+
+  if(localStorage.getItem("displayLoading") === "1") {
+    loadingindicator.style.display = "none";
+  }
+
+  let increaseWidth = setInterval(() => {
+    let currentWidth = parseInt(loadingindicator.style.width);
+    if (currentWidth < 80) {
+      loadingindicator.style.width = (currentWidth + 1) + "%";
+    }
+  }, 100);
+
+  window.addEventListener("load", () => {
+    clearInterval(increaseWidth);
+    loadingindicator.style.width = "100%";
+    setTimeout(() => {
+      loadingindicator.style.opacity = "0";
+    }, 500);
+  });
+</script>
+
   <style>
     #suggestions {
       left: 110px;
@@ -849,6 +875,16 @@ const { hasSearch, specialInstructions } = Astro.props;
       overflow-y: scroll;
       position: relative;
       transition: 0.3s;
+    }
+
+    .loadingindicator {
+      bottom:0;
+      height:5px;
+      transform: translate(0, 5px);
+      background-color: rgb(103, 103, 216);
+      width:100%;
+      position:absolute;
+      transition: 0.5s;
     }
 
     .switch-field {
