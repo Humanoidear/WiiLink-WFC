@@ -4,11 +4,11 @@
 
 Welcome to the WiiLink WFC Site, the one-stop solution for all your Wii gaming needs. This project is currently in beta and we're working hard to make it even better.
 
-<img alt="GitHub Language Count" src="https://img.shields.io/badge/languages-10-blue" /> <img alt="Github Repo Size" src="https://img.shields.io/badge/repo_size-240_MB-blue" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
+<img alt="Github Repo Size" src="https://img.shields.io/badge/repo_size-240_MB-blue" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/Humanoidear/WiiLink-WFC" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/Humanoidear/WiiLink-WFC" /> <img alt="Github License" src="https://img.shields.io/github/license/Humanoidear/WiiLink-WFC" />
 
 ### The people who make it possible
-<a href = "https://github.com/WiiLink24/web/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=WiiLink24/web"/>
+<a href = "https://github.com/Humanoidear/WiiLink-WFC/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Humanoidear/WiiLink-WFC"/>
 </a>
 
 ## About :information_source:
