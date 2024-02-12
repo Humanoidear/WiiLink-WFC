@@ -501,6 +501,11 @@ function toClipboard(data) {
       .bigdatapill {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
       }
+      @supports (-webkit-appearance: none) {
+  #macremove {
+    display: none;
+  }
+}
     }
   </style>
 </Layout>
