@@ -88,7 +88,7 @@ import Footer from "../components/Footer.astro";
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <i class="fa fa-download"></i> Install now
+            <i class="fa fa-download"></i> <g>Install now</g>
           </button>
           <ul
             class="dropdown-menu"
@@ -512,6 +512,12 @@ import Footer from "../components/Footer.astro";
     h1,
     h2 {
       text-align: center !important;
+    }
+    #main h2 {
+      font-size: 25px !important;
+    }
+    button g {
+      display: none;
     }
     .topholder {
       top: 0;
