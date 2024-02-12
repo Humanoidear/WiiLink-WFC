@@ -19,3 +19,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# dummy data
+public/json/group.json
+public/json/stats.json
