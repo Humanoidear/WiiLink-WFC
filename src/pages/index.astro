@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro";
 <Loading />
 
 <Header
-  specialInstructions="transform:translate(0, 30px); backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
+  specialInstructions="transform:translate(0, 30px); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
 />
 
 <head>
@@ -115,7 +115,7 @@ import Footer from "../components/Footer.astro";
     // check that width is at least 600px
     if (window.innerWidth > 600) {
       mainDiv.style.transform = `translateY(-${scrollPos / 2.5}px)`;
-      elevate.style.transform = `translateY(calc(-50% - ${scrollPos / 4}px))`;
+      elevate.style.transform = `translateY(calc(-45% - ${scrollPos / 4}px))`;
     }
   });
 </script>

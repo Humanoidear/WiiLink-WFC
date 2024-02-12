@@ -139,8 +139,8 @@
             document.getElementById(destination).innerHTML =
               ` <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">⠀</div>
-                       <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-warning" style="margin-right:5px;"></i> There seems to be nobody online...</div>
+                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; opacity:0; color:white;">⠀</div>
+                       <div style="font-size: 15px; font-family: Rubik; opacity:0; color:white;">⠀</div>
                    </div>
                </div>`;
           }
@@ -293,7 +293,7 @@
       left: 50px;
       top: 50%;
       border-radius: 8px;
-      transform: translate(0, -50%);
+      transform: translate(0, -45%);
       z-index: 1;
       position: absolute;
     }
