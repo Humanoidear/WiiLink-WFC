@@ -1,6 +1,15 @@
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=wfc.wiilink24.com&fontSize=90&animation=fadeIn)
+
 # WiiLink WFC Site :video_game:
 
 Welcome to the WiiLink WFC Site, the one-stop solution for all your Wii gaming needs. This project is currently in beta and we're working hard to make it even better.
+
+<img alt="GitHub Language Count" src="https://img.shields.io/badge/languages-10-blue" /> <img alt="Github Repo Size" src="https://img.shields.io/badge/repo_size-240_MB-blue" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
+
+### The people who make it possible
+<a href = "https://github.com/WiiLink24/web/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=WiiLink24/web"/>
+</a>
 
 ## About :information_source:
 
@@ -21,6 +30,24 @@ To get started with WiiLink WFC Site, follow these steps:
 2. Browse through our vast collection of game data and patches.
 3. Start enhancing your gaming experience!
 
+## Want to self-host?
+Simply clone this repository and open a terminal in the folder:
+
+```sh
+npm i
+npm run dev
+```
+
+
+### You will see a live preview of your changes inside your default web browser!
+
+
+## Structure
+Inside the "public" folder you will see all static assets that astro will place at the root of the published site.
+Inside it, we store all the assets like images, locales, fonts, and discord integration.
+In the src folder you will find the components (used to be able to reuse code in different sites); the content, which includes all the markdown files used in the site; layouts, the design for our guide and news sections; and all of the pages in the site in all supported locales.
+
+
 ## Feedback :mailbox:
 
 We love hearing from our users! If you have any feedback or suggestions, please feel free to reach out to us.
@@ -37,4 +64,9 @@ This project is licensed under the terms of the MIT license. See the [LICENSE](L
 
 Follow us on social media to stay updated with our latest news and releases.
 
-Happy gaming! :joystick:
+# That's about it, thanks for reading!!!
+
+# Also check out:
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
