@@ -250,7 +250,7 @@ function render(xml) {
             ' Game Boxart" class="imginner"></div>';
 
           var data = document.getElementById("data");
-          
+
           var displayMode = localStorage.getItem("displayMode");
           var display = "display:grid;";
           var extraDisplay = "display:flex;";
@@ -259,13 +259,13 @@ function render(xml) {
           var size2 = "grid-column: auto / span 5; grid-row: auto / span 2;";
           var size3 = "grid-column: auto / span 6; grid-row: auto / span 1;";
           var size4 = "grid-column: auto / span 6; grid-row: auto / span 1;";
-          
+
           switch (displayMode) {
             case complete:
               break;
             case "compact":
               display = "display:none;";
-              size1 = "grid-column: auto / span 3; grid-row: auto / span 2;"
+              size1 = "grid-column: auto / span 3; grid-row: auto / span 2;";
               size2 = "grid-column: auto / span 9; grid-row: auto / span 2;";
               size3 = "grid-column: auto / span 2; grid-row: auto / span 1;";
               size4 = "grid-column: auto / span 10; grid-row: auto / span 1;";
@@ -335,29 +335,31 @@ function render(xml) {
   // Get all titles with the same genre on an array
   var sameGenreTitles = [];
   if (localStorage.getItem("displayMode") != "utilitarian") {
-  for (var i = 0; i < x.length; i++) {
-    var genre = x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
-    genre = genre.split(",")[0].trim();
+    for (var i = 0; i < x.length; i++) {
+      var genre =
+        x[i].getElementsByTagName("genre")[0]?.textContent || "Unknown";
+      genre = genre.split(",")[0].trim();
 
-    if (mainGenre == genre) {
-      var trueName = x[i].getAttribute("name") || "Unknown";
-      var tid = x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
-      var disc = x[i].getElementsByTagName("disc")[0]?.textContent || "Unknown";
-      var publisher =
-        x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
-      var releaseYear =
-        x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
-      sameGenreTitles.push({
-        title: trueName,
-        tid,
-        disc,
-        publisher,
-        releaseYear,
-        genre,
-      });
+      if (mainGenre == genre) {
+        var trueName = x[i].getAttribute("name") || "Unknown";
+        var tid = x[i].getElementsByTagName("id")[0]?.textContent || "Unknown";
+        var disc =
+          x[i].getElementsByTagName("disc")[0]?.textContent || "Unknown";
+        var publisher =
+          x[i].getElementsByTagName("publisher")[0]?.textContent || "Unknown";
+        var releaseYear =
+          x[i].getElementsByTagName("date")[0]?.getAttribute("year") || "YYYY";
+        sameGenreTitles.push({
+          title: trueName,
+          tid,
+          disc,
+          publisher,
+          releaseYear,
+          genre,
+        });
+      }
     }
   }
-}
 
   // Shuffle the array
   shuffleArray(sameGenreTitles);
@@ -526,7 +528,9 @@ function onlineUpdater(data, j) {
             var player = group[k].players[playerIndex];
             if (localStorage.getItem("statistics") == "small") {
               playerData += `
-             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${player.fc}');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
+                player.fc
+              }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
               <div>
                <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
                  player.name
@@ -541,13 +545,16 @@ function onlineUpdater(data, j) {
                } <span class="badge bg-primary" style="font-size:13px;">VR</span>
              </div>
             <div style="font-size: 15px; font-family: Rubik; color:white;">${
-              player.eb} <span class="badge bg-success" style="font-size:13px;">BR</span></div>
+              player.eb
+            } <span class="badge bg-success" style="font-size:13px;">BR</span></div>
               </div>
              </div>
              `;
-           } else {
+            } else {
               playerData += `
-             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${player.fc}');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
+                player.fc
+              }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
               <div>
                <div style="font-size: 30px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
                  player.name
@@ -563,8 +570,8 @@ function onlineUpdater(data, j) {
                <div style="font-size: 15px; font-family: Rubik; color:white;"> <span class="badge bg-primary" style="font-size:13px;">VR</span> ${
                  player.ev
                } |  <span class="badge bg-success" style="font-size:13px;">BR</span> ${
-              player.eb
-            } </div>
+                player.eb
+              } </div>
                <div style="font-size: 15px; font-family: Rubik; color:white;">${
                  player.count
                } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
@@ -573,12 +580,16 @@ function onlineUpdater(data, j) {
              `;
             }
           }
-          var gridSize = "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));"
+          var gridSize =
+            "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
           if (localStorage.getItem("statistics") == "small") {
-            gridSize = "grid-template-columns: repeat(auto-fit,minmax(300px,1fr));"
+            gridSize =
+              "grid-template-columns: repeat(auto-fit,minmax(300px,1fr));";
           }
           document.getElementById("containerdata").innerHTML +=
-            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' + gridSize + 'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
+            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' +
+            gridSize +
+            'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
             playerData +
             "</div><hr>";
         }
@@ -587,9 +598,9 @@ function onlineUpdater(data, j) {
         '<div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
         data[j].GamespyName +
         "</div>";
-        if (data[j].GamespyName == "mariokartwii") {
-          document.getElementById("mkwlink").style.display = "none";
-        }
+      if (data[j].GamespyName == "mariokartwii") {
+        document.getElementById("mkwlink").style.display = "none";
+      }
     });
 }
 

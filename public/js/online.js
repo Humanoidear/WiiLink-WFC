@@ -203,7 +203,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Create an array of promises to process each game in parallel
     const gamePromises = allGames.map(async (game) => {
-      if (onlineStats[game.GamespyName] && onlineStats[game.GamespyName].online > 0) {
+      if (
+        onlineStats[game.GamespyName] &&
+        onlineStats[game.GamespyName].online > 0
+      ) {
         const extraData = [
           onlineStats[game.GamespyName].online,
           onlineStats[game.GamespyName].active,
@@ -226,7 +229,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         var isBig = "";
         if (extraData[1] > 6) {
           isBig = "grid-column: auto / span 2; grid-row: auto / span 1;";
-        } else{
+        } else {
           isBig = "grid-column: auto / span 1; grid-row: auto / span 1";
         }
 
@@ -277,7 +280,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     await Promise.all(gamePromises);
 
     if (Object.keys(onlineStats).length < 2) {
-      document.getElementsByClassName("online-now-holder")[0].style.display = "none";
+      document.getElementsByClassName("online-now-holder")[0].style.display =
+        "none";
       document.getElementById("noResults").style.display = "block";
       document.getElementById("main").style.top = "45%";
       document.getElementById("noResultsHold").classList.add("active");
@@ -294,4 +298,3 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error(error);
   }
 });
-

@@ -186,20 +186,46 @@ const { hasSearch, specialInstructions } = Astro.props;
         ><div
           style="width:300px; display:flex; flex-wrap:nowrap; align-items:center;"
         >
-          <img src="/img/loading.gif" style="filter:brightness(10000); width:30px;"> Display loading screen
+          <img
+            src="/img/loading.gif"
+            style="filter:brightness(10000); width:30px;"
+          /> Display loading screen
         </div>
-        <div style="display:flex; gap:2px; flex-direction: row; flex-wrap: nowrap; transform:translate(50px, 8px);">
-      <div style="width:50px; height:30px;">
-        <input type="radio" id="yes" name="loading" value="1" style="display:none;"/>
-        <label for="yes" class="switch" style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left:8px; padding-right:4px;">Yes</label>
-      </div>
-      <div style="width:50px; height:30px;">
-        <input type="radio" id="no" name="loading" value="0" style="display:none;"/>
-        <label for="no" class="switch" style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left:4px; padding-right:8px;">No</label>
-      </div> 
-    </div>
-    </legend
-      >
+        <div
+          style="display:flex; gap:2px; flex-direction: row; flex-wrap: nowrap; transform:translate(50px, 8px);"
+        >
+          <div style="width:50px; height:30px;">
+            <input
+              type="radio"
+              id="yes"
+              name="loading"
+              value="1"
+              style="display:none;"
+            />
+            <label
+              for="yes"
+              class="switch"
+              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left:8px; padding-right:4px;"
+              >Yes</label
+            >
+          </div>
+          <div style="width:50px; height:30px;">
+            <input
+              type="radio"
+              id="no"
+              name="loading"
+              value="0"
+              style="display:none;"
+            />
+            <label
+              for="no"
+              class="switch"
+              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left:4px; padding-right:8px;"
+              >No</label
+            >
+          </div>
+        </div>
+      </legend>
     </fieldset>
     <span
       class="badge bg-success"
@@ -226,9 +252,9 @@ const { hasSearch, specialInstructions } = Astro.props;
         localStorage.getItem("displayMode") +
         '"]',
     ).checked = true;
-  if (!localStorage.getItem("displayLoading")) {
-    localStorage.setItem("displayLoading", "1");
-  }
+    if (!localStorage.getItem("displayLoading")) {
+      localStorage.setItem("displayLoading", "1");
+    }
   }
   if (localStorage.getItem("theme")) {
     document.querySelector(
@@ -244,7 +270,9 @@ const { hasSearch, specialInstructions } = Astro.props;
   }
   if (localStorage.getItem("displayLoading")) {
     document.querySelector(
-      'input[name="loading"][value="' + localStorage.getItem("displayLoading") + '"]',
+      'input[name="loading"][value="' +
+        localStorage.getItem("displayLoading") +
+        '"]',
     ).checked = true;
   }
 
@@ -336,7 +364,12 @@ const { hasSearch, specialInstructions } = Astro.props;
           style="height:50px; color:white; background: rgb(31,214,255); background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(131,255,0,1) 100%); border-radius:8px;  font-size:30px; cursor:pointer; display:flex; justify-content:center; align-items:center; animation: huerotate 10s linear infinite;"
           onclick="openCustomization();"
         >
-          <div class="customicon" style="backround-color:rgb(23,23,23); font-size:30px;"><i class="fa-solid fa-paint-roller customhover"></i></div>
+          <div
+            class="customicon"
+            style="backround-color:rgb(23,23,23); font-size:30px;"
+          >
+            <i class="fa-solid fa-paint-roller customhover"></i>
+          </div>
         </div>
         <hr />
         <div class="dropdown" style="width:100%; position:relative;">
@@ -498,15 +531,21 @@ const { hasSearch, specialInstructions } = Astro.props;
               </div>
             </li>
             <div id="mkwlink">
-            <hr style="margin-top:30px; width:45%; left:55%; position:relative;">
-            <p style="color:#ffffff20; font-size:15px; transform:translate(0, -30px); position:absolute;">Quick link to:</p>
-            <li>
-              <a class="dropdown-item" href="/online/mariokartwii"
-                ><i class="fa-solid fa-motorcycle"></i> Mario Kart Wii</a
+              <hr
+                style="margin-top:30px; width:45%; left:55%; position:relative;"
+              />
+              <p
+                style="color:#ffffff20; font-size:15px; transform:translate(0, -30px); position:absolute;"
               >
-            </li>
-          </div>
-            <hr>
+                Quick link to:
+              </p>
+              <li>
+                <a class="dropdown-item" href="/online/mariokartwii"
+                  ><i class="fa-solid fa-motorcycle"></i> Mario Kart Wii</a
+                >
+              </li>
+            </div>
+            <hr />
             <li>
               <a class="dropdown-item" href="/random"
                 ><i class="fa-solid fa-dice"></i> Random game</a
@@ -813,49 +852,51 @@ const { hasSearch, specialInstructions } = Astro.props;
     }
 
     .switch-field {
-	display: flex;
-	margin-bottom: 36px;
-	overflow: hidden;
-}
+      display: flex;
+      margin-bottom: 36px;
+      overflow: hidden;
+    }
 
-.switch-field input {
-	position: absolute !important;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
-}
+    .switch-field input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+    }
 
-.switch-field label {
-	background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
-	font-size: 14px;
-	line-height: 1;
-	text-align: center;
-	padding: 8px 16px;
-	margin-right: -1px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-	transition: all 0.1s ease-in-out;
-}
+    .switch-field label {
+      background-color: #e4e4e4;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      padding: 8px 16px;
+      margin-right: -1px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.1s ease-in-out;
+    }
 
-.switch-field label:hover {
-	cursor: pointer;
-}
+    .switch-field label:hover {
+      cursor: pointer;
+    }
 
-#no input:checked + label {
-	background-color: #a5dc86;
-	box-shadow: none;
-}
+    #no input:checked + label {
+      background-color: #a5dc86;
+      box-shadow: none;
+    }
 
-.switch-field label:first-of-type {
-	border-radius: 4px 0 0 4px;
-}
+    .switch-field label:first-of-type {
+      border-radius: 4px 0 0 4px;
+    }
 
-.switch-field label:last-of-type {
-	border-radius: 0 4px 4px 0;
-}
+    .switch-field label:last-of-type {
+      border-radius: 0 4px 4px 0;
+    }
 
     .customicon {
       width: calc(100% - 4px);
@@ -863,7 +904,7 @@ const { hasSearch, specialInstructions } = Astro.props;
       background-color: rgb(31, 31, 31);
       border-radius: 6px;
       font-size: 15px;
-      align-items:center;
+      align-items: center;
       justify-content: center;
       gap: 10px;
       display: flex;
@@ -873,7 +914,7 @@ const { hasSearch, specialInstructions } = Astro.props;
 
     .customicon:hover {
       background-color: rgba(255, 255, 255, 0.3);
-      color:rgb(31,31,31);
+      color: rgb(31, 31, 31);
       transition: 0.2s;
     }
 
@@ -1182,8 +1223,8 @@ const { hasSearch, specialInstructions } = Astro.props;
 
     @media only screen and (max-width: 1200px) {
       #game-search {
-       width:40px !important;
-       transition: 0.3s;
+        width: 40px !important;
+        transition: 0.3s;
       }
       #game-search:focus {
         width: 800px !important;

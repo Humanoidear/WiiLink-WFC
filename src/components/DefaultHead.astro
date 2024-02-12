@@ -1,21 +1,38 @@
 <div id="elevate" class="carouseltop">
-  <span class="badge" style="position: absolute; bottom: 50px; left: 50%; transform:translate(-50%, 0); background-color:#12121290; backdrop-filter:blur(8px); -webkit-backdrop-filter: blur(8px); padding:20px; padding-left:40px; padding-right:40px; z-index: 1000; pointer-events:none; font-size: 20px; font-weight: 600;"><i class="fa fa-heart" style="margin-right:8px;"></i> Our top picks</span>
+  <span
+    class="badge"
+    style="position: absolute; bottom: 50px; left: 50%; transform:translate(-50%, 0); background-color:#12121290; backdrop-filter:blur(8px); -webkit-backdrop-filter: blur(8px); padding:20px; padding-left:40px; padding-right:40px; z-index: 1000; pointer-events:none; font-size: 20px; font-weight: 600;"
+    ><i class="fa fa-heart" style="margin-right:8px;"></i> Our top picks</span
+  >
   <img class="shadow" src="/img/caroussel/mask.png" />
   <div class="carouselhold">
     <div
       id="carousel"
       class="carousel slide"
       data-bs-ride="carousel"
-      data-bs-pause="false">
+      data-bs-pause="false"
+    >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="img/caroussel/brawl.jpg" class="d-block blur h-100" alt="..." />
+          <img
+            src="img/caroussel/brawl.jpg"
+            class="d-block blur h-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
-          <img src="img/caroussel/mix.jpg" class="d-block blur h-100" alt="..." />
+          <img
+            src="img/caroussel/mix.jpg"
+            class="d-block blur h-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
-          <img src="img/caroussel/mkw.webp" class="d-block blur h-100" alt="..." />
+          <img
+            src="img/caroussel/mkw.webp"
+            class="d-block blur h-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
           <img
@@ -31,30 +48,51 @@
       id="carousel"
       class="carousellogos slide"
       data-bs-ride="carousel"
-      data-bs-pause="false">
+      data-bs-pause="false"
+    >
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div id="brawl"></div>
           <a href="/online/smashbrosxwii">
-          <img src="img/caroussel/brawllogo.png" class="d-block w-100" style="transform:translate(0, -80px);" alt="..." />
-        </a>
+            <img
+              src="img/caroussel/brawllogo.png"
+              class="d-block w-100"
+              style="transform:translate(0, -80px);"
+              alt="..."
+            />
+          </a>
         </div>
         <div class="carousel-item">
           <div id="mariosprt"></div>
           <a href="/online/mariosprtwii">
-          <img src="img/caroussel/mixlogo.png" class="d-block w-100" style="transform:translate(0, -80px);" alt="..." />
+            <img
+              src="img/caroussel/mixlogo.png"
+              class="d-block w-100"
+              style="transform:translate(0, -80px);"
+              alt="..."
+            />
           </a>
         </div>
         <div class="carousel-item">
           <div id="mariokart"></div>
           <a href="/online/mariokartwii">
-          <img src="img/caroussel/mkwlogo.png" class="d-block w-100" style="transform:translate(0, -80px);" alt="..." />
+            <img
+              src="img/caroussel/mkwlogo.png"
+              class="d-block w-100"
+              style="transform:translate(0, -80px);"
+              alt="..."
+            />
           </a>
         </div>
         <div class="carousel-item">
           <div id="segaracing"></div>
           <a href="/online/segaracingwii">
-          <img src="img/caroussel/allstarsracinglogo.png" class="d-block w-100" style="transform:translate(0, -80px);" alt="..." />
+            <img
+              src="img/caroussel/allstarsracinglogo.png"
+              class="d-block w-100"
+              style="transform:translate(0, -80px);"
+              alt="..."
+            />
           </a>
         </div>
       </div>
@@ -68,50 +106,45 @@
       onlineUpdater("mariokartwii", "mariokart");
       onlineUpdater("segaracingwii", "segaracing");
     });
-  
+
     function onlineUpdater(id, destination) {
       var apiStats = "https://api.wfc.wiilink24.com/api/stats";
-  
+
       fetch(apiStats) // Global stats for game
-      .then((response) => response.json())
-      .then((isOnline) => {
-        let found = 0;
-        for (var game in isOnline) {
-          if (game == id) {
-            document.getElementById(destination).innerHTML = `
+        .then((response) => response.json())
+        .then((isOnline) => {
+          let found = 0;
+          for (var game in isOnline) {
+            if (game == id) {
+              document.getElementById(destination).innerHTML = `
                <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                         isOnline[game].online
-                       }</div>
+                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${isOnline[game].online}</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> online</div>
                    </div>
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                         isOnline[game].active
-                       }</div>
+                       <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${isOnline[game].active}</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-gamepad" style="margin-right:5px;"></i> active</div>
                    </div>
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
-                     <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                       isOnline[game].groups
-                     }</div>
+                     <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${isOnline[game].groups}</div>
                      <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-users-rays" style="margin-right:5px;"></i> groups</div>
                  </div>
                </div>
            `;
-           found = 1;
+              found = 1;
+            }
           }
-        }
-        if (found == 0) {
-          document.getElementById(destination).innerHTML = ` <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
+          if (found == 0) {
+            document.getElementById(destination).innerHTML =
+              ` <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">⠀</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-warning" style="margin-right:5px;"></i> There seems to be nobody online...</div>
                    </div>
                </div>`;
-        }
-      });
+          }
+        });
     }
   </script>
 
@@ -128,26 +161,26 @@
       }
 
       create() {
-        document.querySelectorAll(this.id).forEach(element => {
+        document.querySelectorAll(this.id).forEach((element) => {
           const rectTransform = element.getBoundingClientRect();
           const perspective = "perspective(" + this.perspective + "px) ";
           element.style.setProperty("transform-style", "preserve-3d");
 
-          element.addEventListener("mouseenter", e => {
+          element.addEventListener("mouseenter", (e) => {
             element.style.setProperty(
               "transition",
-              "transform " + this.attack + "s"
+              "transform " + this.attack + "s",
             );
           });
 
           document.addEventListener("DOMContentLoaded", () => {
             element.style.setProperty(
               "transform",
-              perspective + "rotateX(0deg) rotateY(0deg)"
+              perspective + "rotateX(0deg) rotateY(0deg)",
             );
           });
 
-          element.addEventListener("mousemove", e => {
+          element.addEventListener("mousemove", (e) => {
             const rectTransform = element.getBoundingClientRect();
             let dy = e.clientY - rectTransform.top;
             let dx = e.clientX - rectTransform.left;
@@ -156,32 +189,32 @@
               0,
               rectTransform.width,
               -this.xOffset,
-              this.xOffset
+              this.xOffset,
             );
             let yRot = this.map(
               dy,
               0,
               rectTransform.height,
               this.yOffset,
-              -this.yOffset
+              -this.yOffset,
             );
             let propXRot = "rotateX(" + yRot + "deg) ";
             let propYRot = "rotateY(" + xRot + "deg) ";
 
             element.style.setProperty(
               "transform",
-              perspective + propXRot + propYRot
+              perspective + propXRot + propYRot,
             );
           });
 
-          element.addEventListener("mouseleave", e => {
+          element.addEventListener("mouseleave", (e) => {
             element.style.setProperty(
               "transition",
-              "transform " + this.release + "s"
+              "transform " + this.release + "s",
             );
             element.style.setProperty(
               "transform",
-              perspective + "rotateX(0deg) rotateY(0deg)"
+              perspective + "rotateX(0deg) rotateY(0deg)",
             );
           });
         });
@@ -244,7 +277,7 @@
     }
     .carousellogos {
       width: 350px;
-      height:300px;
+      height: 300px;
       filter: drop-shadow(-20px 20px 50px #ffffff60);
       left: 50%;
       top: 50%;
@@ -254,7 +287,7 @@
       position: absolute;
     }
     .carouseltop {
-      width:90%;
+      width: 90%;
       max-width: 600px;
       height: 650px;
       left: 50px;
@@ -310,9 +343,11 @@
       overflow: hidden;
     }
 
-    @media only screen and (max-width:1200px) {
-      .carouseltop, .carousel, .carousellogos {
-        display:none !important;
+    @media only screen and (max-width: 1200px) {
+      .carouseltop,
+      .carousel,
+      .carousellogos {
+        display: none !important;
       }
     }
   </style>

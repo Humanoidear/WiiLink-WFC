@@ -14,59 +14,93 @@ import Footer from "../../components/Footer.astro";
   <Header />
   <div class="herobg" id="herobg"></div>
   <div class="holder">
-    <h1 style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:50px; position:relative;">
-      <img src="/img/dolphin/dolphin.png" alt="Dolphin" style="width:100px; position:relative; left:50%; transform:translateX(-50%);"/>
+    <h1
+      style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:50px; position:relative;"
+    >
+      <img
+        src="/img/dolphin/dolphin.png"
+        alt="Dolphin"
+        style="width:100px; position:relative; left:50%; transform:translateX(-50%);"
+      />
       Step by step guide on how to install WWFC patches on Dolphin!
     </h1>
     <h2 style="transform:rotate(-1deg);">Get the code ready!</h2>
     <p>
-      Navigate to the title you want to patch using the <span class="badge bg" style="font-size:15px; padding:10px; background-color:#3a3a3a; margin-left:5px;"><i class="fa fa-search" style="margin-right:8px;"></i> searchbox</span>in this site
-      and <span class="badge bg-success" style="font-size:15px; padding:10px; margin-left:5px;"><i class="fa fa-download" style="margin-right:8px;"></i>download</span>the corresponding patch depending on your region and/or disc revision.
+      Navigate to the title you want to patch using the <span
+        class="badge bg"
+        style="font-size:15px; padding:10px; background-color:#3a3a3a; margin-left:5px;"
+        ><i class="fa fa-search" style="margin-right:8px;"></i> searchbox</span
+      >in this site and <span
+        class="badge bg-success"
+        style="font-size:15px; padding:10px; margin-left:5px;"
+        ><i class="fa fa-download" style="margin-right:8px;"></i>download</span
+      >the corresponding patch depending on your region and/or disc revision.
     </p>
     <h2 style="transform:rotate(0.5deg);">Dump your NAND!</h2>
     <p>
-      In order to use WiiLink WFC, you need to have a NAND dump from a real Wii. If you don't have one, you can follow this <a href="https://wii.hacks.guide/bootmii.html">guide</a> to dump your NAND, then install it on Dolphin by going to <b>Tools <i class="fa-solid fa-arrow-right"></i> Manage NAND <i class="fa-solid fa-arrow-right"></i> Import BootMii NAND Backup...</b>
+      In order to use WiiLink WFC, you need to have a NAND dump from a real Wii.
+      If you don't have one, you can follow this <a
+        href="https://wii.hacks.guide/bootmii.html">guide</a
+      > to dump your NAND, then install it on Dolphin by going to <b
+        >Tools <i class="fa-solid fa-arrow-right"></i> Manage NAND <i
+          class="fa-solid fa-arrow-right"></i> Import BootMii NAND Backup...</b
+      >
     </p>
     <h2 style="transform:rotate(1deg);">Let's get patching!</h2>
     <div style="display:flex; flex-wrap:wrap;">
-    <p style="margin-right:30px;"><span class="badge bg-success">
-      <i class="icon fas fa-arrow-pointer"></i>
-    </span> Right click the title you want to apply a patch to.</p>
-    <p><span class="badge bg-success">
-      <i class="icon fas fa-gear"></i>
-    </span> Click on "Properties".</p>
-  </div>
-    <img
-    src="/img/dolphin/1.png"
-    alt="Step 1"
-    style="width:100%; max-width:800px; margin-bottom:40px;"
-  />
-  <div style="display:flex; flex-wrap:wrap;">
-    <p style="margin-right:30px;"><span class="badge bg-primary">
-      <i class="icon fa fa-code" style="transform:translate(-3px, 0);"></i>
-    </span> Click on "Gecko Codes".</p>
-    <p><span class="badge bg-primary">
-      <i class="icon fa fa-plus"></i>
-    </span>Click on "Add new code".</p>
+      <p style="margin-right:30px;">
+        <span class="badge bg-success">
+          <i class="icon fas fa-arrow-pointer"></i>
+        </span> Right click the title you want to apply a patch to.
+      </p>
+      <p>
+        <span class="badge bg-success">
+          <i class="icon fas fa-gear"></i>
+        </span> Click on "Properties".
+      </p>
     </div>
     <img
-    src="/img/dolphin/2.png"
-    alt="Step 2"
-    style="width:100%; max-width:800px; margin-bottom:40px;"
-  />
-    <p><span class="badge bg-success">
-      <i class="icon fa-solid fa-clipboard"></i>
-    </span>Paste the code you want to use in the "Code" field.</p>
+      src="/img/dolphin/1.png"
+      alt="Step 1"
+      style="width:100%; max-width:800px; margin-bottom:40px;"
+    />
+    <div style="display:flex; flex-wrap:wrap;">
+      <p style="margin-right:30px;">
+        <span class="badge bg-primary">
+          <i class="icon fa fa-code" style="transform:translate(-3px, 0);"></i>
+        </span> Click on "Gecko Codes".
+      </p>
+      <p>
+        <span class="badge bg-primary">
+          <i class="icon fa fa-plus"></i>
+        </span>Click on "Add new code".
+      </p>
+    </div>
     <img
-    src="/img/dolphin/3.png"
-    alt="Step 3"
-    style="height:400px; max-width:800px; margin-bottom:40px;"
-  />
-    <p><span class="badge bg-success">
-      <i class="icon fa-solid fa-check"></i>
-    </span> Save!</p>
-    <br><br>
-    <span class="badge bg-success" style="width:100%;"><i class="fa fa-circle-check" style="margin-right:8px;"></i> You are now connected to WiiLink WFC!</span>
+      src="/img/dolphin/2.png"
+      alt="Step 2"
+      style="width:100%; max-width:800px; margin-bottom:40px;"
+    />
+    <p>
+      <span class="badge bg-success">
+        <i class="icon fa-solid fa-clipboard"></i>
+      </span>Paste the code you want to use in the "Code" field.
+    </p>
+    <img
+      src="/img/dolphin/3.png"
+      alt="Step 3"
+      style="height:400px; max-width:800px; margin-bottom:40px;"
+    />
+    <p>
+      <span class="badge bg-success">
+        <i class="icon fa-solid fa-check"></i>
+      </span> Save!
+    </p>
+    <br /><br />
+    <span class="badge bg-success" style="width:100%;"
+      ><i class="fa fa-circle-check" style="margin-right:8px;"></i> You are now connected
+      to WiiLink WFC!</span
+    >
   </div>
 
   <Footer />
@@ -75,7 +109,7 @@ import Footer from "../../components/Footer.astro";
     window.addEventListener("scroll", function () {
       const mainDiv = document.getElementById("herobg");
       const scrollPos = document.documentElement.scrollTop;
-      mainDiv.style.transform = `translateY(${scrollPos/4}px)`;
+      mainDiv.style.transform = `translateY(${scrollPos / 4}px)`;
     });
   </script>
 
@@ -90,7 +124,7 @@ import Footer from "../../components/Footer.astro";
       color: white;
     }
     a {
-      color:rgb(62, 211, 62);
+      color: rgb(62, 211, 62);
       text-decoration: none;
     }
     h1,
@@ -98,8 +132,8 @@ import Footer from "../../components/Footer.astro";
       font-weight: 800;
     }
     .icon {
-      height:20px;
-      width:20px;
+      height: 20px;
+      width: 20px;
       position: relative;
     }
     img {
@@ -132,12 +166,12 @@ import Footer from "../../components/Footer.astro";
       max-width: 800px;
       margin: 0 auto;
       padding: 0 20px;
-      margin-bottom:200px;
+      margin-bottom: 200px;
     }
     .badge {
-      padding:15px;
-      margin-right:15px;
-      font-size:20px;
+      padding: 15px;
+      margin-right: 15px;
+      font-size: 20px;
     }
     h1 {
       text-align: center;

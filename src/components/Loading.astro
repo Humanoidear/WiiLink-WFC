@@ -1,118 +1,144 @@
 ---
-import type { Code } from 'astro:components';
+import type { Code } from "astro:components";
 interface Props {
-	msg: string;
+  msg: string;
 }
 
 const { msg, img } = Astro.props;
 ---
 
 <div class="cover" id="cover">
-<img src="../../img/logo.png" id="imgLoadLogo" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 0.2s forwards; filter:invert(1); position:absolute;">
-<img src={img} id="imgLoadNews" style="left:50%; top:42%; border-radius:8px; width:350px; opacity:0; animation:fadeupload2 0.2s forwards; transform:translate(-50%, -50%); position:absolute;">
-<o id="imgLoadText" style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 200ms 0.2s forwards; filter:invert(1); display:flex; flex-wrap:wrap; align-items:center; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 0px); margin-right:8px;" width="30px" height="30px">{msg}</o>
+  <img
+    src="../../img/logo.png"
+    id="imgLoadLogo"
+    style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 0.2s forwards; filter:invert(1); position:absolute;"
+  />
+  <img
+    src={img}
+    id="imgLoadNews"
+    style="left:50%; top:42%; border-radius:8px; width:350px; opacity:0; animation:fadeupload2 0.2s forwards; transform:translate(-50%, -50%); position:absolute;"
+  />
+  <o
+    id="imgLoadText"
+    style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 200ms 0.2s forwards; filter:invert(1); display:flex; flex-wrap:wrap; align-items:center; justify-content:center; filter:brightness(1000%); position:absolute;"
+    ><img
+      class="spinner"
+      src="../../img/loading.gif"
+      style="transform:translate(0, 0px); margin-right:8px;"
+      width="30px"
+      height="30px"
+    />{msg}</o
+  >
 </div>
 
 <script is:inline>
-    if (localStorage.getItem("displayLoading") == 0) {
-        document.getElementById("cover").style.display = "none";
-        document.getElementById("cover").remove();
-    }
+  if (localStorage.getItem("displayLoading") == 0) {
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("cover").remove();
+  }
 
-function remove() {
-    document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
-    document.getElementById("imgLoadText").style.animation = "fadeoutload 0.2s forwards";
-    document.getElementById("imgLoadNews").style.animation = "fadeoutload 0.2s forwards";
+  function remove() {
+    document.getElementById("imgLoadLogo").style.animation =
+      "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadText").style.animation =
+      "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadNews").style.animation =
+      "fadeoutload 0.2s forwards";
     setTimeout(() => {
-        document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
-}, 300);
-setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
-}, 600);
-}
-
-setTimeout(() => {
-   remove();
-}, 3000);
-
-window.addEventListener('load', function () {
-    document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
-    document.getElementById("imgLoadText").style.animation = "fadeoutload 0.2s forwards";
-    document.getElementById("imgLoadNews").style.animation = "fadeoutload 0.2s forwards";
+      document.getElementById("cover").style.animation =
+        "fadeout2 0.3s linear forwards";
+    }, 300);
     setTimeout(() => {
-        document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
-}, 300);
-setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
-        document.getElementById("cover").remove();
-}, 600);
-    });
- </script>
+      document.getElementById("cover").style.display = "none";
+    }, 600);
+  }
+
+  setTimeout(() => {
+    remove();
+  }, 3000);
+
+  window.addEventListener("load", function () {
+    document.getElementById("imgLoadLogo").style.animation =
+      "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadText").style.animation =
+      "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadNews").style.animation =
+      "fadeoutload 0.2s forwards";
+    setTimeout(() => {
+      document.getElementById("cover").style.animation =
+        "fadeout2 0.3s linear forwards";
+    }, 300);
+    setTimeout(() => {
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("cover").remove();
+    }, 600);
+  });
+</script>
 
 <style>
-    .cover{
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:#00000090;
-        backdrop-filter:blur(38px);
-        -webkit-backdrop-filter: blur(38px);
-        z-index:100000000;
-        position:fixed;
-    }
+  .cover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+    z-index: 100000000;
+    position: fixed;
+  }
 
-    @keyframes fadeupload{
-        0%{
-            transform: translate(-50%, 5px);
-            opacity:0;
-        }
-        100%{
-            transform: translate(-50%, 0);
-            opacity:1;
-        }
+  @keyframes fadeupload {
+    0% {
+      transform: translate(-50%, 5px);
+      opacity: 0;
     }
+    100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
 
-    @keyframes fadeupload2{
-        0%{
-            transform: translate(-50%, 0%);
-            opacity:0;
-        }
-        100%{
-            transform: translate(-50%, -50%);
-            opacity:1;
-        }
+  @keyframes fadeupload2 {
+    0% {
+      transform: translate(-50%, 0%);
+      opacity: 0;
     }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
 
-    @keyframes fadeoutload{
-        0%{
-            transform: translate(-50%, -50%);
-            opacity:1;
-        }
-        100%{
-            transform: translate(-50%, -100%);
-            opacity:0;
-        }
+  @keyframes fadeoutload {
+    0% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
     }
+    100% {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+  }
 
-    @keyframes fadeout2{
-        0%{
-            opacity:1;
-        }
-        100%{
-            opacity:0;
-        }
+  @keyframes fadeout2 {
+    0% {
+      opacity: 1;
     }
+    100% {
+      opacity: 0;
+    }
+  }
 
-    o{
-        font-size:30px;
-    }
+  o {
+    font-size: 30px;
+  }
 
-    @media only screen and (max-width: 600px) {
-        o {
-            margin-top:20px;
-            font-size: 20px;
-            text-align:center;
-        }
+  @media only screen and (max-width: 600px) {
+    o {
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
     }
+  }
 </style>
