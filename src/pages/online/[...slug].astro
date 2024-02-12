@@ -157,6 +157,19 @@ const { title, text, gamespyId } = Astro.props;
     }
   </script>
 
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      var isWebKit = /WebKit/.test(navigator.userAgent);
+
+if (isWebKit) {
+  var macremove = document.getElementById("macremove");
+  if (macremove) {
+    macremove.style.display = "none";
+  }
+}
+    });
+  </script>
+
   <style>
     html body {
       background-color: rgb(11, 0, 0);
@@ -533,12 +546,6 @@ const { title, text, gamespyId } = Astro.props;
       }
       .bigdatapill {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-      }
-    }
-
-    @supports (-webkit-appearance: none) {
-      #macremove {
-        display: none;
       }
     }
   </style>
