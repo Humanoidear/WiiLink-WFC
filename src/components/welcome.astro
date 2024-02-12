@@ -7,6 +7,7 @@
     your friends on the Wii and Nintendo DS. Here you can see what people are
     playing, and up-to-date information about each and every game!
   </h2>
+  <a href="/online" style="text-decoration: none;"><div class="dummysearch grid-item"><i class="fa fa-search" style="margin-right:8px;"></i> Search for any Wii title...<span class="badge bg-primary">Go to <i class="fa fa-earth-americas" style="margin-left:8px;"></i> online</span><div class="blur"></div></div></a>
   <div class="grid">
     <div
       class="grid-item"
@@ -21,6 +22,7 @@
     </div>
     <div class="grid-item">
       <div class="explain">
+        <span class="badge bg-danger">Coming soon!</span>
         <b style="color:white;">Participate in worldwide tournaments</b> and fight
         for your place at the leaderboard!
       </div>
@@ -103,6 +105,22 @@
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       margin-top: 30px;
       gap: 10px;
+    }
+
+    .dummysearch {
+      width:100%;
+      height:80px;
+      margin-top: 30px;
+      border-radius:16px;
+      font-size: 25px;
+      color:white;
+      border:2px solid #ffffff10;
+      background-color: #ffffff05;
+      padding-left:30px;
+      align-items: center;
+      justify-content: space-between;
+      display:flex;
+      position: relative;
     }
 
     .grid-item:hover .games {
@@ -311,7 +329,6 @@
         width: 100%;
         display: flex !important;
         flex-wrap: wrap !important;
-        margin-top: 30px;
         gap: 10px;
       }
 

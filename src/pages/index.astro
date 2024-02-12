@@ -70,14 +70,53 @@ import Footer from "../components/Footer.astro";
             style="text-decoration:none; color:white;"
             ><i class="fa-brands fa-github github"></i></a
           ></button
-        ><a href="https://discord.gg/wiilink"
-          ><button
-            type="button"
-            class="btn btn-primary btn-lg"
-            style="margin-top:15px; right:0; position:relative;"
-            ><i class="fa-brands fa-discord"></i> Keep me posted!</button
-          ></a
+        ><button
+          type="button"
+          style="background-color:#ffffff00; border:0px; color:white; margin-top:15px; font-size:30px; right:0; position:relative;"
+          ><a
+            href="https://discord.gg/wiilink"
+            style="text-decoration:none; color:white;"
+            ><i class="fa-brands fa-discord discord"></i></a
+          ></button
         >
+        <div class="dropdown dropup" style="margin-top:15px;">
+          <button
+            class="btn btn-success dropdown-toggle"
+            style="font-size:20px;"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa fa-download"></i> Install now
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="width:160%; padding:10px; background-color:rgb(31, 31, 31);"
+          >
+            <li
+              style="margin-bottom:5px; color:white; font-weight:700; text-align:center;"
+            >
+              Where are you installing?
+            </li>
+            <li
+              style="border-radius:100000px !important; height:50px; margin-bottom:5px; background: linear-gradient(45deg, rgba(31,214,255,1) 0%, rgba(0,129,255,1) 100%); overflow:hidden;"
+            >
+              <a class="dropdown-item center herosearchprompt" href="/online"
+                ><i class="fa-solid fa-search"></i> Search for patches</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item center" href="/setup"
+                ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item center" href="/dolphin"
+                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -95,9 +134,34 @@ import Footer from "../components/Footer.astro";
     >
       Jump in!
     </h1>
-    <button class="btn btn-success"
-      ><i class="fa fa-book"></i> Download instructions</button
-    >
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div class="dropdown" style="width:100%; position:relative;">
+        <button
+          class="btn btn-success dropdown-toggle"
+          style="margin-bottom:8px; padding:10px; padding-left:20px; padding-right:20px; width:100%; position:relative;"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa fa-book"></i> Download instructions
+        </button>
+        <ul
+          class="dropdown-menu"
+          style="width:100%; padding:10px; background-color:rgb(31, 31, 31);"
+        >
+          <li>
+            <a class="dropdown-item center" href="/setup"
+              ><i class="fa-solid fa-gamepad"></i> Wii / Wii U (vWii)</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item center" href="/dolphin"
+              ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div
     id="globeViz"
@@ -339,6 +403,46 @@ import Footer from "../components/Footer.astro";
     height: 100vh;
     position: relative;
   }
+
+  .herosearchprompt {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left: 2px;
+    border-radius: 1000000px !important;
+    background-color: rgb(33, 33, 33);
+    position: relative;
+    transition: 0.3s;
+  }
+
+  .herosearchprompt:hover {
+    background-color: rgba(33, 33, 33, 0.6);
+    transition: 0.3s;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .dropup .dropdown-toggle::after {
+    display: none;
+}
+
+  .center {
+    text-align: center;
+  }
+
+  .dropdown-item {
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .dropdown-item:hover {
+    background-color: #ffffff10;
+    color: white;
+    transition: 0.3s;
+  }
   .heart  {
     text-decoration: none;
     color: white;
@@ -349,10 +453,23 @@ import Footer from "../components/Footer.astro";
     text-decoration: none;
     color: rgb(209, 77, 77);
     transform: rotate(5deg) scale(1.1);
+    filter: drop-shadow(0px 0px 100px red);
+    transition: 0.2s;
+  }
+  .github,
+  .discord,
+  .heart {
     transition: 0.2s;
   }
   .github:hover {
-    opacity: 0.7;
+    transform: translate(0, -3px);
+    filter: drop-shadow(0px 0px 100px white);
+    transition: 0.2s;
+  }
+  .discord:hover {
+    transform: translate(0, -3px);
+    transform: translate(0, -3px);
+    filter: drop-shadow(0px 0px 100px blue);
     transition: 0.2s;
   }
   .topholder {

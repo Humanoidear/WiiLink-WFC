@@ -205,7 +205,7 @@ const { hasSearch, specialInstructions } = Astro.props;
             <label
               for="yes"
               class="switch"
-              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left:8px; padding-right:4px;"
+              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left:8px; padding-right:4px;"
               >Yes</label
             >
           </div>
@@ -220,7 +220,7 @@ const { hasSearch, specialInstructions } = Astro.props;
             <label
               for="no"
               class="switch"
-              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; background-color:blue; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left:4px; padding-right:8px;"
+              style="width:100%; height:100%; text-align:center; font-size:15px; line-height:30px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left:4px; padding-right:8px;"
               >No</label
             >
           </div>
@@ -1153,6 +1153,8 @@ const { hasSearch, specialInstructions } = Astro.props;
       height: 50px;
       padding: 10px;
       border-radius: 8px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       color: white;
       border: 2px solid #ffffff10;
       background-color: rgba(23, 23, 23, 0.786);
