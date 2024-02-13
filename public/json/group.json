@@ -1,69 +1,44 @@
 [
   {
+    "id": "TXMXUO",
     "game": "mariokartwii",
     "type": "anybody",
-    "suspend": true,
-    "host": "6",
-    "rk": "vs",
-    "players": {
-      "17": {
-        "count": "1",
-        "eb": "5230",
-        "ev": "7367",
-        "fc": "2711-8524-4797",
-        "name": "Igel",
-        "pid": "602305149"
-      },
-      "21": {
-        "count": "1",
-        "eb": "9999",
-        "ev": "8908",
-        "fc": "0826-0437-8682",
-        "name": "●Z",
-        "pid": "1000000058"
-      },
-      "27": {
-        "count": "1",
-        "eb": "5000",
-        "ev": "4998",
-        "fc": "0181-7986-9239",
-        "name": "Skylar",
-        "pid": "1000000055"
-      },
-      "6": {
-        "count": "1",
-        "eb": "5599",
-        "ev": "7570",
-        "fc": "4642-4933-7191",
-        "name": "Palapeli",
-        "pid": "392869223"
-      }
-    }
-  },
-  {
-    "id": "MMPOSV",
-    "game": "mariokartwii",
-    "type": "private",
     "suspend": false,
-    "host": "17",
-    "rk": "bt",
-    "players": {
-      "17": {
-        "count": "1",
-        "eb": "5230",
-        "ev": "7367",
-        "fc": "2711-8524-4797",
-        "name": "Igel",
-        "pid": "602305149"
+    "host": "0",
+    "rk": "vs",
+    "players": [
+      {
+        "count": "2",
+        "pid": "124",
+        "name": "w",
+        "fc": "4252-0176-2428",
+        "ev": "5524",
+        "eb": "5075",
+        "mii": [
+          {
+            "data": "QAAAdwAAAAAAAAAAAAAAAAAAAAAAAEBAgAAAAAAAAAAABH5AAa4oogiMqEgUS7iNAIoAiiUEAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "name": "w"
+          },
+          {
+            "data": "AAAAbgBvACAAbgBhAG0AZQAAAAAAAEBAgAAAAuz/gtIEBEJAMa4oogiMCEgUS7iNAIoAiiUEAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "name": "Player"
+          }
+        ]
       },
-      "21": {
+      {
         "count": "1",
-        "eb": "9999",
-        "ev": "8908",
-        "fc": "0826-0437-8682",
-        "name": "●Z",
-        "pid": "1000000058"
+        "pid": "122",
+        "name": "no name",
+        "fc": "2233-3829-9514",
+        "ev": "4912",
+        "eb": "5000",
+        "mii": [
+          {
+            "data": "QA4AbgBvACAAbgBhAG0AZQAAAAAAAEBAgAAABez/gtIABBhAAYAoohBsCEAUSLiNAIoAiiUEAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "name": "Player"
+          }
+        ]
       }
-    }
+    ]
   }
 ]

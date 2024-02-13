@@ -527,29 +527,51 @@ function onlineUpdater(data, j) {
           for (let playerIndex in group[k].players) {
             var player = group[k].players[playerIndex];
             if (localStorage.getItem("statistics") == "small") {
+              for (let i = 0; i < player.count; i++) {
+                let miiData = player.mii[i].data;
+                let miiName = player.mii[i].name; 
+                let miiImgId = "miiImg" + playerIndex + i;
+                renderMii(miiData).then((miiImg) => {
+                  document.getElementById(miiImgId).innerHTML =
+                    "<img src='" + miiImg + "' style='left:50%; top:50%; height:60px; width:60px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
+                });
+                if (i == 0) {
               playerData += `
-             <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
+      <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
                 player.fc
               }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
-              <div>
-               <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
-                 player.name
-               )}</div>
-               <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${
-                 player.fc
-               }</div>
-              </div>
-              <div style="text-align:right; display:flex; flex-direction:column; gap:10px;">
-               <div style="font-size: 15px; font-family: Rubik; color:white;">${
-                 player.ev
-               } <span class="badge bg-primary" style="font-size:13px;">VR</span>
-             </div>
-            <div style="font-size: 15px; font-family: Rubik; color:white;">${
-              player.eb
-            } <span class="badge bg-success" style="font-size:13px;">BR</span></div>
-              </div>
-             </div>
-             `;
+        <div style="display:flex; flex-direction:row; align-items:center; gap:20px;">
+          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden;"></div>
+          <div>
+          <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white; display:flex; align-items:center; gap:5px;">${sanitizeHTML(miiName)}</div>
+          <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
+          </div>
+        </div>
+        <div style="text-align:right; display:flex; flex-direction:column; gap:10px;">
+          <div style="font-size: 15px; font-family: Rubik; color:white;">${
+            player.ev
+          } <span class="badge bg-primary" style="font-size:13px;">VR</span>
+        </div>
+        <div style="font-size: 15px; font-family: Rubik; color:white;">${
+          player.eb
+        } <span class="badge bg-success" style="font-size:13px;">BR</span></div>
+        </div>
+      </div>
+    `; } else {
+      playerData += `
+      <div id="mobileinner" onclick="toClipboard('${player.miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+      <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
+        <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;">
+          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden;"></div>
+          <div>
+            <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(miiName)}</div>
+            <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-person-circle-plus" style="font-size:15px; margin-right:5px;"></i> ${player.name}'s guest</div>
+          </div>
+          </div>
+      </div>
+    `;
+    }
+  }
             } else {
               playerData += `
              <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
@@ -605,6 +627,49 @@ function onlineUpdater(data, j) {
 }
 
 // Other helper functions
+function renderMii(base64String) {
+  // Decode base64 string
+  let binaryString = atob(base64String);
+  let binaryLen = binaryString.length;
+  // Create binary array from base64 decoded string
+  let bytes = new Uint8Array(binaryLen);
+  // Fill the binary array
+  for (let i = 0; i < binaryLen; i++) {
+    let ascii = binaryString.charCodeAt(i);
+    bytes[i] = ascii;
+  }
+
+  // Create a blob object
+  let blob = new Blob([bytes], { type: "application/octet-stream" });
+
+  // Create a file object from the blob
+  let file = new File([blob], "file.miigx");
+
+  // Send the file to the server
+  let formData = new FormData();
+  formData.append("platform", "wii");
+  formData.append("data", file);
+
+  // Use larsen's funky studio.cgi to get the data needed to render the mii
+  return fetch("https://miicontestp.wii.rc24.xyz/cgi-bin/studio.cgi", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let mii = data.mii;
+
+      // Render the mii using Nintendo's servers
+      var src =
+        "https://studio.mii.nintendo.com/miis/image.png?data=" +
+        mii +
+        "&type=face_only&expression=normal&width=270&bgColor=FFFFFF00";
+
+      // Return the mii image
+      return src;
+    });
+}
+
 function getIconForGenre(genre) {
   switch (genre) {
     case "action":
@@ -809,13 +874,13 @@ function getController(xml, i) {
           controlTypes += `<img src="/img/controllers/drums.png" style="margin-right:15px; filter:invert(1);"height="60px">`;
         }
         break;
-        case "microphone":
-          if (controls[k].getAttribute("required") == "true") {
-            controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
-          } else {
-            controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px">`;
-          }
-          break;
+      case "microphone":
+        if (controls[k].getAttribute("required") == "true") {
+          controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
+        } else {
+          controlTypes += `<img src="/img/controllers/microphone.png" style="margin-right:15px; filter:invert(1);"height="50px">`;
+        }
+        break;
       case "nintendods":
         if (controls[k].getAttribute("required") == "true") {
           controlTypes += `<img src="/img/controllers/nintendods.svg" style="margin-right:15px; filter: invert(1) brightness(1000); scale:80%;"height="60px"><span style="font-size:10px; transform:translate(-125%, 40px); position:absolute;" class="badge text-bg-danger">Required</span></img>`;
