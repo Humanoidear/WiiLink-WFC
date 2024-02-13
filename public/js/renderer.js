@@ -528,23 +528,35 @@ function onlineUpdater(data, j) {
             var player = group[k].players[playerIndex];
             if (localStorage.getItem("statistics") == "small") {
               for (let i = 0; i < player.count; i++) {
-                let miiData = player.mii[i].data;
-                let miiName = player.mii[i].name; 
+                let miiData = "0000000000000000";
+                let miiName = "Fetching data...";
+                let isDisplayed = "display:none;";
+                if (player.mii) {
+                  miiData = player.mii[i].data || miiData;
+                  miiName = player.mii[i].name || miiName;
+                  isDisplayed = "display:block;";
+                }
                 let miiImgId = "miiImg" + playerIndex + i;
                 renderMii(miiData).then((miiImg) => {
                   document.getElementById(miiImgId).innerHTML =
-                    "<img src='" + miiImg + "' style='left:50%; top:50%; height:60px; width:60px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
+                    "<img src='" +
+                    miiImg +
+                    "' style='left:50%; top:50%; height:60px; width:60px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
                 if (i == 0) {
-              playerData += `
+                  playerData += `
       <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
-                player.fc
-              }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+                    player.fc
+                  }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
         <div style="display:flex; flex-direction:row; align-items:center; gap:20px;">
-          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden;"></div>
+          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden; ${isDisplayed}"></div>
           <div>
-          <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white; display:flex; align-items:center; gap:5px;">${sanitizeHTML(miiName)}</div>
-          <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${player.fc}</div>
+          <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white; display:flex; align-items:center; gap:5px;">${sanitizeHTML(
+            player.name
+          )}</div>
+          <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-user-group" style="margin-right:5px;"></i> ${
+            player.fc
+          }</div>
           </div>
         </div>
         <div style="text-align:right; display:flex; flex-direction:column; gap:10px;">
@@ -557,21 +569,26 @@ function onlineUpdater(data, j) {
         } <span class="badge bg-success" style="font-size:13px;">BR</span></div>
         </div>
       </div>
-    `; } else {
-      playerData += `
+    `;
+                } else {
+                  playerData += `
       <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
       <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
         <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;">
-          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden;"></div>
+          <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden; ${isDisplayed}"></div>
           <div>
-            <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(miiName)}</div>
-            <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-person-circle-plus" style="font-size:15px; margin-right:5px;"></i> ${player.name}'s guest</div>
+            <div style="font-size: 20px; font-family: miifont, Rubik; font-weight:800; color:white;">${sanitizeHTML(
+              miiName
+            )}</div>
+            <div style="font-size: 13px; font-family: Rubik; opacity:0.7; color:white;"><i class="fa-solid fa-person-circle-plus" style="font-size:15px; margin-right:5px;"></i> ${
+              player.name
+            }'s guest</div>
           </div>
           </div>
       </div>
     `;
-    }
-  }
+                }
+              }
             } else {
               playerData += `
              <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
