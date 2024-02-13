@@ -559,7 +559,7 @@ function onlineUpdater(data, j) {
       </div>
     `; } else {
       playerData += `
-      <div id="mobileinner" onclick="toClipboard('${player.miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+      <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
       <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
         <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;">
           <div id="${miiImgId}" style="height:60px; width:60px; overflow:hidden;"></div>
