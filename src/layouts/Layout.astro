@@ -120,6 +120,41 @@ const { title, description, image } = Astro.props;
     margin: 0;
   }
 
+  .herobg {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 70%,
+        rgba(11, 0, 0, 1) 100%
+      ),
+      url("/img/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: changecolor 10s infinite;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  @keyframes changeColor {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+    
+  }
+    
+  @keyframes changecolorinverse {
+    0% {
+      filter: hue-rotate(360deg);
+    }
+    100% {
+      filter: hue-rotate(0deg);
+    }
+  }
+
   @font-face {
     font-family: Rubik;
     src: url(/fonts/Rubik.ttf);

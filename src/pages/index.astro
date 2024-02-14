@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Welcome from "../components/welcome.astro";
+import Welcome from "../components/Welcome.astro";
 import Links from "../components/Links.astro";
 import Donate from "../components/Donate.astro";
 import Loading from "../components/Loading.astro";
@@ -17,6 +17,7 @@ import Footer from "../components/Footer.astro";
 <Loading />
 
 <Header
+  hasSearch = {true}
   specialInstructions="padding-top:30px;  backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
   loadingBarPosition="top:-5px;"
 />

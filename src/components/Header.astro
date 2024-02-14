@@ -1,8 +1,9 @@
 ---
 import type { NodeNextRequest } from "next/dist/server/base-http/node";
+import Search from "./Search.astro";
 
 interface Props {
-  hasSearch: string;
+  hasSearch: boolean;
   specialInstructions: string;
   loadingBarPosition: string;
 }
@@ -228,62 +229,6 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
   </div>
 </div>
 
-<script is:inline>
-  if (!localStorage.getItem("displayMode") || !localStorage.getItem("theme") || !localStorage.getItem("statistics") || !localStorage.getItem("displayLoading")) {
-    localStorage.setItem("displayMode", "complete");
-    localStorage.setItem("theme", "dark");
-    document.querySelector(
-      'input[name="display"][value="' +
-        localStorage.getItem("displayMode") +
-        '"]',
-    ).checked = true;
-    localStorage.setItem("displayLoading", "0");
-  }
-
-  if (localStorage.getItem("theme")) {
-    document.querySelector(
-      'input[name="theme"][value="' + localStorage.getItem("theme") + '"]',
-    ).checked = true;
-  }
-  if (localStorage.getItem("statistics")) {
-    document.querySelector(
-      'input[name="statistics"][value="' +
-        localStorage.getItem("statistics") +
-        '"]',
-    ).checked = true;
-  }
-  if (localStorage.getItem("displayLoading")) {
-    document.querySelector(
-      'input[name="loading"][value="' +
-        localStorage.getItem("displayLoading") +
-        '"]',
-    ).checked = true;
-  }
-
-  window.saveSelections = function () {
-    var displayMode = document.querySelector(
-      'input[name="display"]:checked',
-    ).value;
-    var theme = document.querySelector('input[name="theme"]:checked').value;
-    var statistics = document.querySelector(
-      'input[name="statistics"]:checked',
-    ).value;
-    var loading = document.querySelector('input[name="loading"]:checked').value;
-
-    localStorage.setItem("displayMode", displayMode);
-    localStorage.setItem("statistics", statistics);
-    localStorage.setItem("theme", theme);
-    localStorage.setItem("displayLoading", loading);
-
-    document.getElementById("savebtn").innerHTML =
-      '<i class="fa fa-check"></i>';
-    setTimeout(() => {
-      document.getElementById("savebtn").innerHTML =
-        '<i class="fa fa-save"></i>';
-    }, 2000);
-  };
-</script>
-
 <div
   class="offcanvas offcanvas-start"
   tabindex="-1"
@@ -303,14 +248,8 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       aria-label="Close"
       style="filter:invert(1);"></button>
   </div>
-  <div class="offcanvas-body">
-    <input
-      type="text"
-      id="game-search-mobile"
-      placeholder="   Search for any Wii title..."
-      style="font-family:system-ui, FontAwesome;"
-    />
-    <div id="suggestions-mobile"></div>
+  <div class="offcanvas-body" style="overflow-x:hidden;">
+    <div id="game-search-mobile"></div>
     <div>
       <div
         style="margin-top:18px; display:flex; flex-direction:column; gap:8px;"
@@ -410,14 +349,13 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
         style="top:50%; transform: translate(0, -50%); height: 60px; filter:invert(1); position:absolute;"
       />
     </a>
-    <input
-      type="text"
-      id="game-search"
-      placeholder="   Search for any Wii title..."
-      style={hasSearch}
-      style="font-family:system-ui, FontAwesome"
-    />
-    <div id="suggestions"></div>
+    {
+      hasSearch && (
+        <div id="game-search">
+          <Search />
+        </div>
+      )
+    }
     <div>
       <div id="links">
         <a
@@ -571,310 +509,142 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       </button>
     </div>
   </div>
-  <img id="loadingspinner" src="../../img/loading.gif" style="top:50%; right:30px; transform:translate(0, -50%); filter:brightness(10000); width:30px; position:absolute;" />
-  <div class="loadingindicator" id="loadingindicator" style={loadingBarPosition}></div>
+  <img
+    id="loadingspinner"
+    src="../../img/loading.gif"
+    style="top:50%; right:30px; transform:translate(0, -50%); filter:brightness(10000); width:30px; position:absolute;"
+  />
+  <div
+    class="loadingindicator"
+    id="loadingindicator"
+    style={loadingBarPosition}
+  >
+  </div>
 
   <script is:inline>
-    function loadCoverImage(title) {
-      switch (title.charAt(3)) {
-        case "E":
-          return "https://art.gametdb.com/wii/cover/US/" + title + ".png";
-        case "P":
-        case "D":
-        case "H":
-        case "X":
-        case "Y":
-        case "F":
-          return "https://art.gametdb.com/wii/cover/EN/" + title + ".png";
-        case "J":
-          return "https://art.gametdb.com/wii/cover/JA/" + title + ".png";
-        case "K":
-          return "https://art.gametdb.com/wii/cover/KO/" + title + ".png";
-        default:
-          return "/img/disc_placeholder.png";
-      }
+    if (
+      !localStorage.getItem("displayMode") ||
+      !localStorage.getItem("theme") ||
+      !localStorage.getItem("statistics") ||
+      !localStorage.getItem("displayLoading")
+    ) {
+      localStorage.setItem("displayMode", "complete");
+      localStorage.setItem("theme", "dark");
+      document.querySelector(
+        'input[name="display"][value="' +
+          localStorage.getItem("displayMode") +
+          '"]',
+      ).checked = true;
+      localStorage.setItem("displayLoading", "0");
     }
 
-    function loadDiscImage(title) {
-      switch (title.charAt(3)) {
-        case "E":
-          return "https://art.gametdb.com/wii/disc/US/" + title + ".png";
-        case "P":
-        case "D":
-        case "H":
-        case "X":
-        case "Y":
-        case "F":
-          return "https://art.gametdb.com/wii/disc/EN/" + title + ".png";
-        case "J":
-          return "https://art.gametdb.com/wii/disc/JA/" + title + ".png";
-        case "K":
-          return "https://art.gametdb.com/wii/disc/KO/" + title + ".png";
-        default:
-          return "/img/disc_placeholder.png";
-      }
+    if (localStorage.getItem("theme")) {
+      document.querySelector(
+        'input[name="theme"][value="' + localStorage.getItem("theme") + '"]',
+      ).checked = true;
+    }
+    if (localStorage.getItem("statistics")) {
+      document.querySelector(
+        'input[name="statistics"][value="' +
+          localStorage.getItem("statistics") +
+          '"]',
+      ).checked = true;
+    }
+    if (localStorage.getItem("displayLoading")) {
+      document.querySelector(
+        'input[name="loading"][value="' +
+          localStorage.getItem("displayLoading") +
+          '"]',
+      ).checked = true;
     }
 
-    fetch("../../json/gamespy_titles.json")
-      .then((response) => response.json())
-      .then((gamespyTitles) => {
-        fetch("../../json/pages.json")
-          .then((response) => response.json())
-          .then((games) => {
-            var gameSearchInput = document.getElementById("game-search");
-            var suggestionsDiv = document.getElementById("suggestions");
+    window.saveSelections = function () {
+      var displayMode = document.querySelector(
+        'input[name="display"]:checked',
+      ).value;
+      var theme = document.querySelector('input[name="theme"]:checked').value;
+      var statistics = document.querySelector(
+        'input[name="statistics"]:checked',
+      ).value;
+      var loading = document.querySelector(
+        'input[name="loading"]:checked',
+      ).value;
 
-            gameSearchInput.addEventListener("focus", function (e) {
-              suggestionsDiv.style.display = "block";
-            });
+      localStorage.setItem("displayMode", displayMode);
+      localStorage.setItem("statistics", statistics);
+      localStorage.setItem("theme", theme);
+      localStorage.setItem("displayLoading", loading);
 
-            gameSearchInput.addEventListener("blur", function (e) {
-              if (suggestionsDiv.contains(e.relatedTarget)) {
-                return;
-              }
-              suggestionsDiv.style.display = "none";
-            });
-
-            gameSearchInput.addEventListener("input", function (e) {
-              suggestionsDiv.innerHTML =
-                '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
-              var inputText = gameSearchInput.value.toLowerCase();
-              var counter = 0;
-              for (var i = 0; i < games.length; i++) {
-                if (games[i].gameName.toLowerCase().startsWith(inputText)) {
-                  var discImage = "";
-                  if (games[i].gamespyId) {
-                    discImage = games[i].gamespyId;
-                  } else {
-                    discImage = games[i].gameId;
-                  }
-                  const gameIdPrefix = games[i].gameId.substring(0, 3);
-                  const isFound =
-                    gamespyTitles.some(
-                      (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
-                    ) || games[i].gamespyId;
-                  var onlineFeatures = "";
-                  var gamespyId = "";
-                  if (games[i].gamespyId) {
-                    gamespyId = " | " + games[i].gamespyId;
-                  }
-                  var suggestion = document.createElement("div");
-                  if (isFound) {
-                    onlineFeatures +=
-                      '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
-                  }
-                  suggestion.innerHTML =
-                    '<a href="/online/' +
-                    games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' +
-                    loadCoverImage(discImage) +
-                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' +
-                    loadDiscImage(discImage) +
-                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
-                    games[i].gameName +
-                    "<br><i>" +
-                    onlineFeatures +
-                    '</i><i style="font-size:20px; opacity:0.7;">' +
-                    games[i].gameId +
-                    "" +
-                    gamespyId +
-                    "</i></div></a>";
-                  suggestionsDiv.appendChild(suggestion);
-                  counter++;
-                }
-                if (counter >= 5) {
-                  break;
-                }
-              }
-              if (counter === 0) {
-                suggestionsDiv.innerHTML =
-                  "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
-              }
-            });
-            gameSearchInput.addEventListener("keydown", function (e) {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                const firstSuggestion =
-                  document.querySelector("#suggestionitem");
-                if (firstSuggestion) {
-                  window.location.href = firstSuggestion.getAttribute("href");
-                }
-              }
-            });
-          });
-      });
+      document.getElementById("savebtn").innerHTML =
+        '<i class="fa fa-check"></i>';
+      setTimeout(() => {
+        document.getElementById("savebtn").innerHTML =
+          '<i class="fa fa-save"></i>';
+      }, 2000);
+    };
   </script>
 
   <script is:inline>
-    fetch("../../json/gamespy_titles.json")
-      .then((response) => response.json())
-      .then((gamespyTitles) => {
-        fetch("../../json/pages.json")
-          .then((response) => response.json())
-          .then((games) => {
-            var gameSearchInput = document.getElementById("game-search-mobile");
-            var suggestionsDiv = document.getElementById("suggestions-mobile");
+    let loadingindicator = document.getElementById("loadingindicator");
+    loadingindicator.style.width = "0%";
+    loadingspinner = document.getElementById("loadingspinner");
 
-            gameSearchInput.addEventListener("focus", function (e) {
-              suggestionsDiv.style.display = "block";
-            });
-
-            gameSearchInput.addEventListener("blur", function (e) {
-              if (suggestionsDiv.contains(e.relatedTarget)) {
-                return;
-              }
-              suggestionsDiv.style.display = "none";
-            });
-
-            gameSearchInput.addEventListener("input", function (e) {
-              suggestionsDiv.innerHTML =
-                '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
-              var inputText = gameSearchInput.value.toLowerCase();
-              var counter = 0;
-              for (var i = 0; i < games.length; i++) {
-                if (games[i].gameName.toLowerCase().startsWith(inputText)) {
-                  var discImage = "";
-                  if (games[i].gamespyId) {
-                    discImage = games[i].gamespyId;
-                  } else {
-                    discImage = games[i].gameId;
-                  }
-                  const gameIdPrefix = games[i].gameId.substring(0, 3);
-                  const isFound =
-                    gamespyTitles.some(
-                      (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
-                    ) || games[i].gamespyId;
-                  var onlineFeatures = "";
-                  var gamespyId = "";
-                  if (games[i].gamespyId) {
-                    gamespyId = " | " + games[i].gamespyId;
-                  }
-
-                  var suggestion = document.createElement("div");
-                  if (isFound) {
-                    onlineFeatures +=
-                      '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
-                  }
-                  suggestion.innerHTML =
-                    '<a href="/online/' +
-                    games[i].gameId +
-                    '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' +
-                    loadCoverImage(discImage) +
-                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"> <img src="' +
-                    loadDiscImage(discImage) +
-                    '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
-                    games[i].gameName +
-                    "<br><i>" +
-                    onlineFeatures +
-                    '</i><i style="font-size:20px; opacity:0.7;">' +
-                    games[i].gameId +
-                    "" +
-                    gamespyId +
-                    "</i></div></a>";
-                  suggestionsDiv.appendChild(suggestion);
-                  counter++;
-                }
-                if (counter >= 5) {
-                  break;
-                }
-              }
-              if (counter === 0) {
-                suggestionsDiv.innerHTML =
-                  "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
-              }
-            });
-            gameSearchInput.addEventListener("keydown", function (e) {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                const firstSuggestion =
-                  document.querySelector("#suggestionitem");
-                if (firstSuggestion) {
-                  window.location.href = firstSuggestion.getAttribute("href");
-                }
-              }
-            });
-          });
-      });
-  </script>
-
-<script is:inline>
-  let loadingindicator = document.getElementById("loadingindicator");
-  loadingindicator.style.width = "0%";
-  loadingspinner = document.getElementById("loadingspinner");
-
-  if(localStorage.getItem("displayLoading") === "1") {
-    loadingindicator.style.display = "none";
-    loadingspinner.style.display = "none";
-  } else {
-    loadingindicator.style.display = "block";
-    loadingspinner.style.display = "block";
-  }
-
-  let increaseWidth = setInterval(() => {
-    let currentWidth = parseInt(loadingindicator.style.width);
-    if (currentWidth < 80) {
-      loadingindicator.style.width = (currentWidth + 1) + "%";
-    }
-  }, 100);
-  
-
-  window.addEventListener("load", () => {
-    clearInterval(increaseWidth);
-    loadingindicator.style.width = "100%";
-    setTimeout(() => {
-      loadingindicator.style.opacity = "0";
+    if (localStorage.getItem("displayLoading") === "1") {
+      loadingindicator.style.display = "none";
       loadingspinner.style.display = "none";
-    }, 500);
-  });
-</script>
+    } else {
+      loadingindicator.style.display = "block";
+      loadingspinner.style.display = "block";
+    }
+
+    let increaseWidth = setInterval(() => {
+      let currentWidth = parseInt(loadingindicator.style.width);
+      if (currentWidth < 80) {
+        loadingindicator.style.width = currentWidth + 1 + "%";
+      }
+    }, 100);
+
+    window.addEventListener("load", () => {
+      clearInterval(increaseWidth);
+      loadingindicator.style.width = "100%";
+      setTimeout(() => {
+        loadingindicator.style.opacity = "0";
+        loadingspinner.style.display = "none";
+      }, 500);
+    });
+
+    moveSearch();
+    window.addEventListener("resize", function () {
+      moveSearch();
+    });
+    function moveSearch() {
+      var gameSearch = document.getElementById("game-search");
+      var gameSearchMobile = document.getElementById("game-search-mobile");
+
+      if (window.innerWidth < 800) {
+        if (gameSearch.children.length > 0) {
+          while (gameSearch.firstChild) {
+            gameSearchMobile.appendChild(gameSearch.firstChild);
+          }
+        }
+      } else {
+        if (gameSearchMobile.children.length > 0) {
+          while (gameSearchMobile.firstChild) {
+            gameSearch.appendChild(gameSearchMobile.firstChild);
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    #suggestions {
-      left: 110px;
-      width: 600px;
-      max-height: 618px;
-      transform: translate(0, 8px);
-      resize: vertical;
-      padding-top: 5px;
-      background-color: rgba(23, 23, 23, 0.965);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      border-radius: 8px;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border: 2px solid #ffffff10;
-      border-top: 0px;
-      z-index: 10000;
-      display: none;
-      overflow-y: scroll;
-      position: relative;
-      transition: 0s;
-    }
-
-    #suggestions-mobile {
-      width: 100%;
-      transform: translate(0, -10px);
-      padding-top: 5px;
-      background-color: rgb(23, 23, 23);
-      border-radius: 8px;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border: 2px solid #ffffff10;
-      border-top: 0px;
-      z-index: 10000;
-      display: none;
-      overflow-y: scroll;
-      position: relative;
-      transition: 0.3s;
-    }
-
     .loadingindicator {
-      bottom:0;
-      height:5px;
+      bottom: 0;
+      height: 5px;
       transform: translate(0, 5px);
       background-color: rgb(103, 103, 216);
-      width:100%;
-      position:absolute;
+      width: 100%;
+      position: absolute;
       transition: 0.5s;
     }
 
@@ -1152,11 +922,6 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       position: relative;
     }
 
-    textarea:focus,
-    input:focus {
-      outline: none;
-    }
-
     .header {
       width: 100%;
       height: 80px;
@@ -1178,13 +943,6 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       width: 40%;
       max-width: 600px;
       height: 50px;
-      padding: 10px;
-      border-radius: 8px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: white;
-      border: 2px solid #ffffff10;
-      background-color: rgba(23, 23, 23, 0.786);
       z-index: 10000;
       position: relative;
     }
@@ -1192,11 +950,6 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
     #game-search-mobile {
       width: 100%;
       height: 50px;
-      padding: 10px;
-      border-radius: 8px;
-      color: white;
-      border: 2px solid #ffffff10;
-      background-color: rgb(23, 23, 23);
       position: relative;
     }
   </style>
@@ -1222,57 +975,10 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       position: absolute;
     }
 
-    #betamobile {
-      bottom: 20px;
-      right: 20px;
-      width: auto;
-      height: 40px;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 8px;
-      color: white;
-      box-shadow: 0px 0px 10px 0px #00000080;
-      border: 2px solid #ffffff10;
-      background-color: rgb(26, 26, 26);
-      z-index: 10;
-      position: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    @keyframes huerotate {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-      100% {
-        filter: hue-rotate(360deg);
-      }
-    }
-
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1250px) {
       #game-search {
-        width: 40px !important;
-        transition: 0.3s;
-      }
-      #game-search:focus {
-        width: 800px !important;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        transition: 0.3s;
-      }
-      #suggestions {
-        display: none;
-      }
-      .customization-container {
-        border-radius: 0px !important;
-        border: 0px solid #ffffff10 !important;
-      }
-    }
-
-    @media only screen and (max-width: 800px) {
-      #game-search {
-        display: none;
+        width: 100% !important;
+        max-width: calc(100% - 170px) !important;
       }
       #suggestions {
         display: none;
@@ -1294,19 +1000,6 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
         left: 50% !important;
         width: calc(100% - 20px) !important;
         transform: translate(-50%, 0) !important;
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      #game-search {
-        display: none;
-      }
-      #suggestions {
-        display: none;
-      }
-      .customization-container {
-        border-radius: 0px !important;
-        border: 0px solid #ffffff10 !important;
       }
     }
   </style>
