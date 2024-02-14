@@ -121,7 +121,10 @@
             game.gameName.toLowerCase().includes(inputWord),
           );
 
-          if (matches && (!onlineOnly || isFound)) {
+          // Check if the input matches the gameId
+          const matchesGameId = game.gameId.toLowerCase().includes(inputText);
+
+          if ((matches || matchesGameId) && (!onlineOnly || isFound)) {
             const discImage = game.gamespyId ? game.gamespyId : game.gameId;
             let onlineFeatures = "";
             let gamespyId = "";
@@ -133,10 +136,9 @@
             }
 
             suggestionsHTML += `
-                    <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
-                        <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
-                        <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/
-                        img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i>${onlineFeatures}</i><i style="font-size:20px; opacity:0.7;">${game.gameId}${gamespyId}</i></div></a>`;
+                        <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
+                            <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
+                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i>${onlineFeatures}</i><i style="font-size:20px; opacity:0.7;">${game.gameId}${gamespyId}</i></div></a>`;
             counter++;
           }
           if (counter >= 5) {
