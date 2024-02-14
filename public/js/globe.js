@@ -134,7 +134,7 @@
         size +
         ");  width:330px; display:flex; gap:0px; z-index:" +
         zIndex +
-        " position:relative;'><img style='transform:translate(-10px, 0); filter:drop-shadow(0px 0px 30px #ffffff60);' src='img/miis/" +
+        " position:relative;'><img style='transform:translate(-10px, 0); filter:drop-shadow(0px 0px 30px #ffffff60);' src='/img/miis/" +
         d.faces +
         "' alt='Team member' height='70px'><div style='display:" +
         isOpened +
@@ -146,7 +146,7 @@
         d.game +
         "</b></div><img style='top:0; right:0; transform:translate(-15px, -15px); display:" +
         isClosed +
-        "; postion:absolute;' src='img/games/" +
+        "; postion:absolute;' src='/img/games/" +
         d.icons +
         "' alt='Game icon' width='40px' height='40px'></div>";
       el.style.width = `${size2}px`;
