@@ -45,7 +45,7 @@
     </div>
 
     <div
-      id="carousel"
+      id="carousellogos"
       class="carousellogos slide"
       data-bs-ride="carousel"
       data-bs-pause="false"
@@ -136,6 +136,7 @@
             }
           }
           if (found == 0) {
+            document.getElementById("carousellogos").style.top = "60%";
             document.getElementById(destination).innerHTML =
               ` <div style="bottom:0; left:50%; display:flex; flex-direction:row; gap:30px; width:100%; transform: translate(-50%,210px); position:relative;">
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
