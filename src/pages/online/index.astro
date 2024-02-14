@@ -104,13 +104,6 @@ const { title, text, desc } = Astro.props;
 
     <Footer />
 
-    <script is:inline>
-      window.addEventListener("scroll", function () {
-        const mainDiv = document.getElementById("herobg");
-        const scrollPos = document.documentElement.scrollTop;
-        mainDiv.style.transform = `translateY(${scrollPos/2}px)`;
-      });
-    </script>
     <script type="module" src="/js/online.js"></script>
     
   </div>
