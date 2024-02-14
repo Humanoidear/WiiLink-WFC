@@ -130,7 +130,7 @@ export function onlineUpdater(data, j) {
                 miiName = player.mii[i].name || miiName;
                 isDisplayed = "display:block;";
               }
-              let miiImgId = "miiImg" + playerIndex + i;
+              let miiImgId = "miiImg" + Math.random();
               renderMii(miiData).then((miiImg) => {
                 document.getElementById(miiImgId).innerHTML =
                   "<img src='" +

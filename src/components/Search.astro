@@ -100,11 +100,23 @@
       .then(([games, gamespyTitles]) => {
         const gameSearchInput = document.getElementById("game-search-online");
         const suggestionsDiv = document.getElementById("suggestions-online");
-        const inputText = gameSearchInput.value.toLowerCase();
+        const inputText = gameSearchInput.value.trim().toLowerCase();
         const onlineOnly = document.getElementById("onlineOnly").checked;
         let counter = 0;
         let suggestionsHTML =
           '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>';
+
+        // Check if the input starts and ends with double quotes
+        const isExactPhraseSearch =
+          inputText.startsWith('"') && inputText.endsWith('"');
+        let exactPhrase = "";
+
+        // If it's an exact phrase search, extract the phrase without the quotes
+        if (isExactPhraseSearch) {
+          console.log("Exact match active");
+          exactPhrase = inputText.slice(1, -1);
+          console.log(exactPhrase);
+        }
 
         // Split input text into individual words
         const inputWords = inputText.split(/\s+/);
@@ -124,21 +136,91 @@
           // Check if the input matches the gameId
           const matchesGameId = game.gameId.toLowerCase().includes(inputText);
 
-          if ((matches || matchesGameId) && (!onlineOnly || isFound)) {
+          // Check if the input matches the exact phrase
+          const matchesExactPhrase =
+            game.gameName.toLowerCase() === exactPhrase;
+
+          if (isExactPhraseSearch) {
+            if (matchesExactPhrase) {
+              const discImage = game.gamespyId ? game.gamespyId : game.gameId;
+              let onlineFeatures = "";
+              let gamespyId = "";
+              let region = game.gameId.substring(3, 4).toUpperCase();
+              switch (region) {
+                case "E":
+                  region =
+                    "<span class='badge bg-primary' style='font-style: normal;'>NTSC</span> ";
+                  break;
+                case "P":
+                  region =
+                    "<span class='badge bg-success' style='font-style: normal;'>PAL</span> ";
+                  break;
+                case "J":
+                  region =
+                    "<span class='badge bg-danger' style='font-style: normal;'>NTSC-J</span> ";
+                  break;
+                case "K":
+                  region =
+                    "<span class='badge bg-warning' style='font-style: normal;'>NTSC-K</span> ";
+                  break;
+                default:
+                  region = "";
+                  break;
+              }
+              console.log(region);
+
+              if (game.gamespyId) {
+                onlineFeatures +=
+                  '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px;"></i>';
+                gamespyId = " | " + game.gamespyId;
+              }
+
+              suggestionsHTML += `
+                        <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
+                            <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
+                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7; position:relative;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
+              counter++;
+            }
+          } else if (
+            (matches || matchesGameId || matchesExactPhrase) &&
+            (!onlineOnly || isFound)
+          ) {
             const discImage = game.gamespyId ? game.gamespyId : game.gameId;
             let onlineFeatures = "";
             let gamespyId = "";
+            let region = game.gameId.substring(3, 4).toUpperCase();
+            switch (region) {
+              case "E":
+                region =
+                  "<span class='badge bg-primary' style='font-style: normal;'>NTSC</span> ";
+                break;
+              case "P":
+                region =
+                  "<span class='badge bg-success' style='font-style: normal;'>PAL</span> ";
+                break;
+              case "J":
+                region =
+                  "<span class='badge bg-danger' style='font-style: normal;'>NTSC-J</span> ";
+                break;
+              case "K":
+                region =
+                  "<span class='badge bg-warning' style='font-style: normal;'>NTSC-K</span> ";
+                break;
+              default:
+                region = "";
+                break;
+            }
 
             if (game.gamespyId) {
               onlineFeatures +=
-                '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+                '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px;"></i>';
               gamespyId = " | " + game.gamespyId;
             }
 
             suggestionsHTML += `
                         <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
                             <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
-                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i>${onlineFeatures}</i><i style="font-size:20px; opacity:0.7;">${game.gameId}${gamespyId}</i></div></a>`;
+                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
             counter++;
           }
           if (counter >= 5) {
