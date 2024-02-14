@@ -140,7 +140,7 @@
         isOpened +
         "; background-color:ffffff40; color:white; padding:13px; border:1.8px solid #ffffff20; backdrop-filter:blur(8px); --webkit-backdrop-filter:blur(8px); font-family:system-ui; border-radius:8px; transition:0.5s; position:relative;'><b>" +
         d.name +
-        "</b> is playing </br><img style='top:0; right:0; transform:translate(0, -1px); postion:absolute;' src='img/games/" +
+        "</b> is playing </br><img style='top:0; right:0; transform:translate(0, -1px); postion:absolute;' src='/img/games/" +
         d.icons +
         "' alt='Game icon' width='20px' height='20px'> <b>" +
         d.game +
