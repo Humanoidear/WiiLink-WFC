@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Fetch the list of all games and the list of online games in parallel
     const [allGamesResponse, onlineStatsResponse] = await Promise.all([
       fetch("../json/gamespy_titles.json"),
-      fetch("https://api.wiilink24.com/api/stats"),
+      fetch("https://api.wfc.wiilink24.com/api/stats"),
     ]);
 
     const allGames = await allGamesResponse.json();
