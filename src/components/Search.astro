@@ -17,7 +17,9 @@
 </div>
 <div id="suggestions-online"></div>
 
-<script is:inline>
+<script type="module" src="/js/helper_functions.js"></script>
+<script type="module" is:inline>
+  import { loadImage } from "/js/helper_functions.js";
   var gameSearchInput = document.getElementById("game-search-online");
   var suggestionsDiv = document.getElementById("suggestions-online");
   var onlineFilterButton = document.getElementById("onlineOnly");
@@ -87,130 +89,69 @@
   });
 
   function fetchQuery() {
-    fetch("../../json/gamespy_titles.json")
-      .then((response) => response.json())
-      .then((gamespyTitles) => {
-        fetch("../../json/pages.json")
-          .then((response) => response.json())
-          .then((games) => {
-            var gameSearchInput = document.getElementById("game-search-online");
-            var suggestionsDiv = document.getElementById("suggestions-online");
-            suggestionsDiv.innerHTML =
-              '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>'; // clear previous suggestions
-            var inputText = gameSearchInput.value.toLowerCase();
-            var onlineOnly = document.getElementById("onlineOnly").checked;
-            var counter = 0;
-            for (var i = 0; i < games.length; i++) {
-              const gameIdPrefix = games[i].gameId.substring(0, 3);
-              const isFound =
-                gamespyTitles.some(
-                  (gamespyTitle) => gamespyTitle.GameID === gameIdPrefix,
-                ) || games[i].gamespyId;
-              if (
-                games[i].gameName.toLowerCase().startsWith(inputText) &&
-                (!onlineOnly || isFound)
-              ) {
-                var discImage = "";
-                if (games[i].gamespyId) {
-                  discImage = games[i].gamespyId;
-                } else {
-                  discImage = games[i].gameId;
-                }
-                var onlineFeatures = "";
-                var gamespyId = "";
-                if (games[i].gamespyId) {
-                  gamespyId = " | " + games[i].gamespyId;
-                }
-                var suggestion = document.createElement("div");
-                if (isFound) {
-                  onlineFeatures +=
-                    '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
-                }
+    const gamesPromise = fetch("../../json/pages.json").then((response) =>
+      response.json(),
+    );
+    const gamespyTitlesPromise = fetch("../../json/gamespy_titles.json").then(
+      (response) => response.json(),
+    );
 
-                function loadCoverImage(title) {
-                  switch (title.charAt(3)) {
-                    case "E":
-                      return (
-                        "https://art.gametdb.com/wii/cover/US/" + title + ".png"
-                      );
-                    case "P":
-                    case "D":
-                    case "H":
-                    case "X":
-                    case "Y":
-                    case "F":
-                      return (
-                        "https://art.gametdb.com/wii/cover/EN/" + title + ".png"
-                      );
-                    case "J":
-                      return (
-                        "https://art.gametdb.com/wii/cover/JA/" + title + ".png"
-                      );
-                    case "K":
-                      return (
-                        "https://art.gametdb.com/wii/cover/KO/" + title + ".png"
-                      );
-                    default:
-                      return "/img/disc_placeholder.png";
-                  }
-                }
+    Promise.all([gamesPromise, gamespyTitlesPromise])
+      .then(([games, gamespyTitles]) => {
+        const gameSearchInput = document.getElementById("game-search-online");
+        const suggestionsDiv = document.getElementById("suggestions-online");
+        const inputText = gameSearchInput.value.toLowerCase();
+        const onlineOnly = document.getElementById("onlineOnly").checked;
+        let counter = 0;
+        let suggestionsHTML =
+          '<p style="margin-left:20px; font-family:Gilroy; font-size:20px; transform:translate(0, 5px); color:white;">Suggestions:</p>';
 
-                function loadDiscImage(title) {
-                  switch (title.charAt(3)) {
-                    case "E":
-                      return (
-                        "https://art.gametdb.com/wii/disc/US/" + title + ".png"
-                      );
-                    case "P":
-                    case "D":
-                    case "H":
-                    case "X":
-                    case "Y":
-                    case "F":
-                      return (
-                        "https://art.gametdb.com/wii/disc/EN/" + title + ".png"
-                      );
-                    case "J":
-                      return (
-                        "https://art.gametdb.com/wii/disc/JA/" + title + ".png"
-                      );
-                    case "K":
-                      return (
-                        "https://art.gametdb.com/wii/disc/KO/" + title + ".png"
-                      );
-                    default:
-                      return "/img/disc_placeholder.png";
-                  }
-                }
+        // Split input text into individual words
+        const inputWords = inputText.split(/\s+/);
 
-                suggestion.innerHTML =
-                  '<a href="/online/' +
-                  games[i].gameId +
-                  '" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;"><img src="' +
-                  loadCoverImage(discImage) +
-                  '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%"><img src="' +
-                  loadDiscImage(discImage) +
-                  '" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">' +
-                  games[i].gameName +
-                  "<br><i>" +
-                  onlineFeatures +
-                  '</i><i style="font-size:20px; opacity:0.7;">' +
-                  games[i].gameId +
-                  "" +
-                  gamespyId +
-                  "</i></div></a>";
-                suggestionsDiv.appendChild(suggestion);
-                counter++;
-              }
-              if (counter >= 5) {
-                break;
-              }
+        for (const game of games) {
+          const gameIdPrefix = game.gameId.substring(0, 3).toLowerCase();
+          const isFound = gamespyTitles.some(
+            (gamespyTitle) =>
+              gamespyTitle.GameID === gameIdPrefix || game.gamespyId,
+          );
+
+          // Check if any word in the game name starts with any input word
+          const matches = inputWords.some((inputWord) =>
+            game.gameName.toLowerCase().includes(inputWord),
+          );
+
+          if (matches && (!onlineOnly || isFound)) {
+            const discImage = game.gamespyId ? game.gamespyId : game.gameId;
+            let onlineFeatures = "";
+            let gamespyId = "";
+
+            if (game.gamespyId) {
+              onlineFeatures +=
+                '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px; margin-right:18px;"></i>';
+              gamespyId = " | " + game.gamespyId;
             }
-            if (counter === 0) {
-              suggestionsDiv.innerHTML =
-                "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
-            }
-          });
+
+            suggestionsHTML += `
+                    <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
+                        <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
+                        <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/
+                        img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i>${onlineFeatures}</i><i style="font-size:20px; opacity:0.7;">${game.gameId}${gamespyId}</i></div></a>`;
+            counter++;
+          }
+          if (counter >= 5) {
+            break;
+          }
+        }
+        if (counter === 0) {
+          suggestionsHTML =
+            "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+        }
+
+        suggestionsDiv.innerHTML = suggestionsHTML;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   }
 </script>

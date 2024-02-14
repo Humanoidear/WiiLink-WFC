@@ -273,7 +273,7 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
           </div></a
         >
         <a
-          href="/settings"
+          href="https://status.wiilink24.com"
           style="text-decoration: none; color:white; padding-bottom:8px; border-radius:8px;"
           ><div
             style="height:50px; background-color: #121212; border-radius:8px; display:flex; justify-content:center; align-items:center;"
@@ -594,7 +594,11 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       loadingspinner.style.display = "none";
     } else {
       loadingindicator.style.display = "block";
-      loadingspinner.style.display = "block";
+      if (window.width > 800) {
+        loadingspinner.style.display = "block";
+      } else {
+        loadingspinner.style.display = "none";
+      }
     }
 
     let increaseWidth = setInterval(() => {
@@ -644,6 +648,7 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       transform: translate(0, 5px);
       background-color: rgb(103, 103, 216);
       width: 100%;
+      display: ;
       position: absolute;
       transition: 0.5s;
     }
