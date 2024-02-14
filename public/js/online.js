@@ -1,3 +1,5 @@
+import {loadImage} from '/js/helper_functions.js';
+
 var onlineNow = document.getElementById("online-now");
 var trueName = "Unknown";
 var developer = "Unknown";
@@ -23,31 +25,6 @@ var hash2 = "Unknown";
 var hash3 = "Unknown";
 var imgLang = "Unknown";
 var id = "Unknown";
-
-const coverUrls = [
-  "https://art.gametdb.com/wii/cover/US/",
-  "https://art.gametdb.com/wii/cover/EN/",
-  "https://art.gametdb.com/wii/cover/JA/",
-  "https://art.gametdb.com/wii/cover/KO/",
-  "/img/disc_placeholder.png",
-];
-
-const discUrls = [
-  "https://art.gametdb.com/wii/disc/US/",
-  "https://art.gametdb.com/wii/disc/EN/",
-  "https://art.gametdb.com/wii/disc/JA/",
-  "https://art.gametdb.com/wii/disc/KO/",
-  "/img/disc_placeholder.png",
-];
-
-var totalPlayers = 0;
-var totalGames = 0;
-
-function loadImage(element, urls, title) {
-  if (urls.length === 0) return;
-  element.src = urls[0] + title + ".png";
-  element.onerror = () => loadImage(element, urls.slice(1), title);
-}
 
 function render(xml, GameID) {
   var xmlDoc = xml.responseXML;
@@ -192,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Fetch the list of all games and the list of online games in parallel
     const [allGamesResponse, onlineStatsResponse] = await Promise.all([
       fetch("../json/gamespy_titles.json"),
-      fetch("https://api.wfc.wiilink24.com/api/stats"),
+      fetch("https://api.wiilink24.com/api/stats"),
     ]);
 
     const allGames = await allGamesResponse.json();
@@ -215,16 +192,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const titleDataReturn = await displayTitleData(game.GameID);
 
-        // Create the image elements
-        const coverImgElement = document.createElement("img");
-        coverImgElement.id = "card-bg";
-        const discImgElement = document.createElement("img");
-        discImgElement.style.marginRight = "20px";
-        discImgElement.setAttribute("width", "70px");
-
-        // Use the loadImage function to load the images
-        loadImage(coverImgElement, coverUrls, titleDataReturn[22]);
-        loadImage(discImgElement, discUrls, titleDataReturn[22]);
+        console.log(loadImage("disc", titleDataReturn[22]));
 
         var isBig = "";
         if (extraData[1] > 6) {
@@ -239,11 +207,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           titleDataReturn[22] +
           '" class="card-online" style="' +
           isBig +
-          ' ">' +
-          coverImgElement.outerHTML +
-          '<div style="display:flex; align-items:center; justify-content:space-between;">' +
-          discImgElement.outerHTML +
-          '<div><h5 style="font-weight:800; text-align:right;">' +
+          ' "><img src="' + loadImage("cover", titleDataReturn[22]) + '" style=" width:100%; top:50%; transform:translate(0, -50%) scale(1.3); opacity:0.1; filter:blur(8px) grayscale(0.6); position:absolute;"><div style="display:flex; align-items:center; justify-content:space-between;"><img src="' + loadImage("disc", titleDataReturn[22]) + '" style="width:70px; height:70px;"><div><h5 style="font-weight:800; text-align:right;">' +
           titleDataReturn[0] +
           "</h5><h6 style='text-align:right; opacity:0.5;'>" +
           titleDataReturn[1] +

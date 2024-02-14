@@ -10,15 +10,6 @@ interface Props {
 const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
 ---
 
-<!--
-<div id="betamobile">
-  This service is still in beta, please report your issues on our <a
-    href="https://discord.gg/wiilink-750581992223146074"
-    style="text-decoration:none;"
-    ><i class="fa-brands fa-discord" style="margin-left:8px;"></i> Discord server!</a
-  >
-</div>
--->
 <script is:inline type="module" src="/js/options_panel.js"></script>
 
 <div class="background-fade" id="backblur">
@@ -238,25 +229,17 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
 </div>
 
 <script is:inline>
-  if (!localStorage.getItem("displayMode")) {
+  if (!localStorage.getItem("displayMode") || !localStorage.getItem("theme") || !localStorage.getItem("statistics") || !localStorage.getItem("displayLoading")) {
     localStorage.setItem("displayMode", "complete");
-  }
-  if (!localStorage.getItem("theme")) {
     localStorage.setItem("theme", "dark");
-  }
-  if (!localStorage.getItem("statistics")) {
-    localStorage.setItem("statistics", "big");
-  }
-  if (localStorage.getItem("displayMode")) {
     document.querySelector(
       'input[name="display"][value="' +
         localStorage.getItem("displayMode") +
         '"]',
     ).checked = true;
-    if (!localStorage.getItem("displayLoading")) {
-      localStorage.setItem("displayLoading", "0");
-    }
+    localStorage.setItem("displayLoading", "0");
   }
+
   if (localStorage.getItem("theme")) {
     document.querySelector(
       'input[name="theme"][value="' + localStorage.getItem("theme") + '"]',

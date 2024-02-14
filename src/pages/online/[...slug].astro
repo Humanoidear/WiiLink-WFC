@@ -29,6 +29,7 @@ const { title, text, gamespyId } = Astro.props;
 
   <!-- Grab gameTDB data and insert into the site -->
   <script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="/js/helper_functions.js"></script>
   <script type="module" src="/js/renderer.js"></script>
 
   <html>
@@ -111,9 +112,7 @@ const { title, text, gamespyId } = Astro.props;
       const scrollPos = document.documentElement.scrollTop;
       mainDiv.style.transform = `translateY(${scrollPos/2}px)`;
     });
-  </script>
 
-  <script is:inline>
 function toClipboard(data) {
   navigator.clipboard.writeText(data).then(function() {
     alert("Copied the text: " + data);
@@ -121,9 +120,7 @@ function toClipboard(data) {
     console.error('Could not copy text: ', err);
   });
 }
-  </script>
 
-<script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
   var isSafari = /WebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
@@ -136,6 +133,54 @@ function toClipboard(data) {
     }, 300);
   }
 });
+
+// Convert .txt to .gct (Gecko Code) file, code provided in great part by the Mario Kart Wii Wiki
+function downloadGCT(gameId, fileUrl) {
+    fetch(fileUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(code => {
+            var gctArray = [0x00, 0xD0, 0xC0, 0xDE, 0x00, 0xD0, 0xC0, 0xDE];
+            var byteCode = codeToHex(code);
+            if (!byteCode) return;
+
+            gctArray = gctArray.concat(byteCode);
+            gctArray.push(0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+            var byteArray = new Uint8Array(gctArray);
+            var blob = new Blob([byteArray], { type: 'application/octet-stream' });
+            var url = window.URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = gameId + '.gct';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        })
+        .catch(error => {
+            console.error('Error fetching the file:', error);
+        });
+}
+
+function codeToHex(code) {
+    var curatedCode = code.replace(/\s+/g, '');
+    if (curatedCode.length === 0 || !/^[0-9A-Fa-f]*$/.test(curatedCode) || curatedCode.length % 16 !== 0) {
+        alert("Invalid code format.");
+        return false;
+    }
+    var byte_array = [];
+    for (var i = 0; i < curatedCode.length; i += 2) {
+        var byte = parseInt(curatedCode.substring(i, i + 2), 16);
+        byte_array.push(byte);
+    }
+    return byte_array;
+}
+
+
 </script>
 
   <style>
