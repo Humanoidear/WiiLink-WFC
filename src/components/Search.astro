@@ -129,8 +129,10 @@
           );
 
           // Check if any word in the game name starts with any input word
+          const gameWords = game.gameName.toLowerCase().split(" ");
+
           const matches = inputWords.some((inputWord) =>
-            game.gameName.toLowerCase().includes(inputWord),
+            gameWords.includes(inputWord),
           );
 
           // Check if the input matches the gameId
@@ -178,7 +180,7 @@
               suggestionsHTML += `
                         <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
                             <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
-                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7; position:relative;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
+                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:70%; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7; position:relative;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
               counter++;
             }
           } else if (
@@ -213,14 +215,14 @@
 
             if (game.gamespyId) {
               onlineFeatures +=
-                '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px;"></i>';
+                '<i class="fa-solid fa-earth-americas" style=" padding:5px; padding-left:10px; padding-right:10px; background-color:#3c86c7; border-radius:4px; font-size:15px;º"></i>';
               gamespyId = " | " + game.gamespyId;
             }
 
             suggestionsHTML += `
                         <a href="/online/${game.gameId}" id="suggestionitem" style="width:95%; height:100px; margin:10px; border-radius:8px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:space-between; flex-direction:row; overflow:hidden; position:relative;">
                             <img src="${loadImage("cover", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="filter:blur(8px) opacity(0.1); position:absolute;" width="100%">
-                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:300px; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
+                            <img src="${loadImage("disc", discImage)}" onerror="this.onerror=null; this.src='/img/disc_placeholder.png';" style="margin-left:20px; margin-right:15px;" width="70px"><div style="width:70%; margin-right:20px; font-size:30px; white-space:nowrap; text-overflow:ellipsis; line-height:30px; text-align:right; overflow:hidden;">${game.gameName}<br><i style="display:flex; align-items:center; justify-content:end; gap:10px; font-size:20px; opacity:0.7;">${onlineFeatures}${region}${game.gameId}${gamespyId}</i></div></a>`;
             counter++;
           }
           if (counter >= 5) {
@@ -229,7 +231,7 @@
         }
         if (counter === 0) {
           suggestionsHTML =
-            "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p></center>";
+            "<center style='margin-top:18px; font-size:48px; color:white;'><i class='fa fa-heart-broken'></i><br><p style='font-size:28px;'>No results found</p><p style='width:70%; font-size:18px; transform:translate(0, -10px); opacity:0.7;'>Try making an exact search quoting (&quot; &quot;) your query, or searching by gameID.</p></center>";
         }
 
         suggestionsDiv.innerHTML = suggestionsHTML;
