@@ -4,7 +4,8 @@
     "gameName": "Sonic & SEGA All-Stars Racing",
     "gamespyId": "R3RE8P",
     "patchId": [
-      "R3RED00"
+      "R3RED00",
+      "R3RPD00"
     ]
   },
   {
@@ -12,7 +13,11 @@
     "gameName": "SimCity Creator",
     "gamespyId": "R4CE69",
     "patchId": [
-      "R4CED00"
+      "R4CED00",
+      "R4CJD00",
+      "R4CPD00",
+      "R4CPD01",
+      "R4CKD00"
     ]
   },
   {
@@ -20,7 +25,11 @@
     "gameName": "Mario Strikers Charged",
     "gamespyId": "R4QE01",
     "patchId": [
-      "R4QED01"
+      "R4QED01",
+      "R4QKD00",
+      "R4QJD00",
+      "R4QPD01",
+      "R4QPD02"
     ]
   },
   {
@@ -28,7 +37,9 @@
     "gameName": "Final Fantasy Fables: Chocobo's Dungeon",
     "gamespyId": "R7FEGD",
     "patchId": [
-      "R7FED00"
+      "R7FED00",
+      "R7FJD00",
+      "R7FPD00"
     ]
   },
   {
@@ -49,7 +60,9 @@
     "gameName": "Kororinpa 2: Anthony to Kin'iro Himawari no Tane",
     "gamespyId": "R2VE01",
     "patchId": [
-      "R2VED00"
+      "R2VED00",
+      "R2VPD00",
+      "R2VJD00"
     ]
   },
   {
@@ -68,7 +81,9 @@
     "gameName": "Mario Sports Mix",
     "gamespyId": "RMKE01",
     "patchId": [
-      "RMKED00"
+      "RMKED00",
+      "RMKJD00",
+      "RMKPD00"
     ]
   },
   {
@@ -76,7 +91,11 @@
     "gameName": "Pok\u00e9mon Battle Revolution",
     "gamespyId": "RPBE01",
     "patchId": [
-      "RPBED00"
+      "RPBED00",
+      "RPBJD01",
+      "RPBJD00",
+      "RPBJD02",
+      "RPBPD00"
     ]
   },
   {
@@ -85,7 +104,11 @@
     "gamespyId": "RSBE01",
     "patchId": [
       "RSBED02",
-      "RSBED01"
+      "RSBED01",
+      "RSBPD00",
+      "RSBPD01",
+      "RSBJD01",
+      "RSBJD00"
     ]
   },
   {
@@ -107,7 +130,10 @@
     "gamespyId": "RUUP01",
     "patchId": [
       "RUUPD00",
-      "RUUPD01"
+      "RUUPD01",
+      "RUUJD01",
+      "RUUED00",
+      "RUUED01"
     ]
   },
   {
@@ -115,7 +141,10 @@
     "gameName": "Mario & Sonic at the Olympic Games",
     "gamespyId": "RWSP8P",
     "patchId": [
-      "RWSPD00"
+      "RWSPD00",
+      "RWSJD00",
+      "RWSED00",
+      "RWSKD00"
     ]
   },
   {
@@ -125,7 +154,12 @@
     "patchId": [
       "RY2PD02",
       "RY2PD01",
-      "RY2PD00"
+      "RY2PD00",
+      "RY2JD00",
+      "RY2RD00",
+      "RY2ED01",
+      "RY2ED00",
+      "RY2KD00"
     ]
   },
   {
@@ -133,7 +167,9 @@
     "gameName": "Tetris Party",
     "gamespyId": "WTPP",
     "patchId": [
-      "WTPPN0002"
+      "WTPPN0002",
+      "WTPJN0001",
+      "WTPEN0001"
     ]
   },
   {
