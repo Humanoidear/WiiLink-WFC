@@ -113,9 +113,7 @@
 
         // If it's an exact phrase search, extract the phrase without the quotes
         if (isExactPhraseSearch) {
-          console.log("Exact match active");
           exactPhrase = inputText.slice(1, -1);
-          console.log(exactPhrase);
         }
 
         // Split input text into individual words
@@ -169,7 +167,6 @@
                   region = "";
                   break;
               }
-              console.log(region);
 
               if (game.gamespyId) {
                 onlineFeatures +=
@@ -184,8 +181,10 @@
               counter++;
             }
           } else if (
-            (matches || matchesGameId || matchesExactPhrase) &&
-            (!onlineOnly || isFound)
+            inputText == game.gameId.toLowerCase() ||
+            inputText == game.gameName.toLowerCase() ||
+            ((matches || matchesGameId || matchesExactPhrase) &&
+              (!onlineOnly || isFound))
           ) {
             const discImage = game.gamespyId ? game.gamespyId : game.gameId;
             let onlineFeatures = "";
