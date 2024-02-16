@@ -63,7 +63,7 @@ const { title, text, gamespyId } = Astro.props;
         </div>
         <div
           id="fetchData"
-          style="left:50%; top:50%; transform:translate(-50%, -50%); font-size:20px; color:white; opacity:0; animation:fadein 200ms linear forwards; position:absolute;"
+          style="left:50%; top:50%; transform:translate(-50%, -50%); font-size:20px; color:white; opacity:0; animation:fadein 0.5s 200ms linear forwards; position:absolute;"
         >
           <img
             src="/img/loading.gif"
@@ -266,7 +266,7 @@ const { title, text, gamespyId } = Astro.props;
       width: 100%;
       height: 100vh;
       transform: translate(0, 0px);
-      animation: fadein 2000ms ease-in-out forwards;
+      animation: fadeinopaque 2000ms ease-in-out forwards;
       position: absolute;
       z-index: -10;
       overflow: hidden;
