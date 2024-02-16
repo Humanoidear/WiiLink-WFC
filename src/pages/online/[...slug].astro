@@ -63,7 +63,7 @@ const { title, text, gamespyId } = Astro.props;
         </div>
         <div
           id="fetchData"
-          style="left:50%; top:50%; transform:translate(-50%, -50%); font-size:20px; color:white; position:absolute;"
+          style="left:50%; top:50%; transform:translate(-50%, -50%); font-size:20px; color:white; opacity:0; animation:fadein 100ms 1s linear forwards; position:absolute;"
         >
           <img
             src="/img/loading.gif"
@@ -112,7 +112,8 @@ const { title, text, gamespyId } = Astro.props;
           </div>
 
           <p
-            id="powered" style="text-align: right; filter:opacity(0.3) brightness(10000); display:none; position:relative;"
+            id="powered"
+            style="text-align: right; filter:opacity(0.3) brightness(10000); display:none; position:relative;"
           >
             Data provided by <a
               href={`https://www.gametdb.com/wii/${gamespyId ? gamespyId : title}`}
