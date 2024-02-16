@@ -75,7 +75,9 @@
   });
 
   gameSearchInput.addEventListener("input", function (e) {
-    fetchQuery();
+    setTimeout(function () {
+      fetchQuery();
+    }, 500);
   });
 
   gameSearchInput.addEventListener("keydown", function (e) {
