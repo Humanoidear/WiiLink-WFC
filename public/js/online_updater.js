@@ -14,7 +14,10 @@ export function onlineUpdater(data, j) {
                <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
            `;
       } else {
-        if (isOnline[data[j].GamespyName].active < 2 || isOnline[data[j].GamespyName].online == undefined) {
+        if (
+          isOnline[data[j].GamespyName].active < 2 ||
+          isOnline[data[j].GamespyName].online == undefined
+        ) {
           document.getElementById("onlinecontainer").style.display = "none";
         }
         document.getElementById("WFCdetails").innerHTML = `
@@ -64,7 +67,9 @@ export function onlineUpdater(data, j) {
 
           if (data[j].GamespyName == "mariokartwii") {
             // MKW exclusive data
-            group[k].rk = group[k].rk.substring(0, 2);
+            // Add fallback in case server does not return rk data
+            group[k].rk = group[k].rk || "unknown";
+            group[k].rk = group[k]?.rk.substring(0, 2);
             switch (group[k].rk) {
               case "vs":
                 group[k].rk =
@@ -89,9 +94,11 @@ export function onlineUpdater(data, j) {
           }
           document.getElementById(
             "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
             group[k].host
-          )}'s room</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${
+          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -10px); margin-left:30px; position:absolute;">(${
+            group[k].id
+          })</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${
             group[k].type
           }</b> <b style="padding:8px; border-radius:4px; ${
             group[k].suspend
@@ -141,6 +148,8 @@ export function onlineUpdater(data, j) {
                   fontSize * 2.5 +
                   "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
               });
+              player.ev = player.ev || "????";
+              player.eb = player.eb || "????";
 
               if (i == 0) {
                 playerData += `
