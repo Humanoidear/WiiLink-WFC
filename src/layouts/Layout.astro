@@ -175,3 +175,36 @@ const { title, description, image } = Astro.props;
     src: url(/fonts/miifont.woff);
   }
 </style>
+
+<style is:global>
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeleft {
+    0% {
+      opacity: 0;
+      transform: translate(calc(-50% - 10px), 28px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 28px);
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

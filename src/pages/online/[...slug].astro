@@ -28,31 +28,56 @@ const { title, text, gamespyId } = Astro.props;
   <Loading msg={`${text} - ${title}`} />
 
   <!-- Grab gameTDB data and insert into the site -->
-  <script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+  ></script>
   <script type="module" src="/js/helper_functions.js"></script>
   <script type="module" src="/js/renderer.js"></script>
 
   <html>
     <body>
-      <script>0</script>
-      <Header 
-        hasSearch = {true}
-      />
+      <script>
+        0;
+      </script>
+      <Header hasSearch={true} />
       <DNSInstructions />
 
       <div class="herobg" id="herobg"><div class="bginner"></div></div>
       <div style="transform:translate(0, 60px);">
         <div
-          style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px); position:relative;"
+          style="left:50%; width:90%; max-width: 1500px; padding:20px; transform:translate(-50%, 28px);  animation:fadeleft 300ms 0.1s linear forwards; opacity:0; position:relative; display:none;"
           id="mobilehide"
         >
-          <h1 id="gameId" style="width:900px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">{title}</h1>
-          <p id="gamespyId" style="display:none;">{gamespyId}</p>
+          <h1
+            id="gameId"
+            style="width:900px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"
+          >
+            {title}
+          </h1>
+          <p id="gamespyId" style="display:none">{gamespyId}</p>
           <p
             style="width:500px; transform:translate(86px, -30px); opacity:0.5;"
           >
-            {title} {gamespyId ? '- ' + gamespyId.substring(0,3) : ''}
+            {title}
+            {gamespyId ? "- " + gamespyId.substring(0, 3) : ""}
           </p>
+        </div>
+        <div
+          id="fetchData"
+          style="left:50%; top:50%; transform:translate(-50%, -50%); font-size:20px; color:white; position:absolute;"
+        >
+          <img
+            src="/img/loading.gif"
+            style="margin-right:8px; filter:brightness(100000);"
+            height="30px"
+          /> Fetching game data for <b>{text}</b>...
+          <a href="https://discord.gg/wiilink">
+            <br /><button
+              class="btn btn-primary"
+              style="left:50%; transform:translate(-50%, 20px); position:relative;"
+            >
+              <i class="fa-brands fa-discord"></i> Join our Discord
+            </button>
+          </a>
         </div>
         <div class="data-holder" id="errnomatch">
           <div id="img"></div>
@@ -66,24 +91,37 @@ const { title, text, gamespyId } = Astro.props;
             Statistics
           </div>
         </div>
-        <div style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; z-index:1000; position:relative;">
-        <div id="dropup" class="btn-group dropup" style="display:none;" >
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class='fa fa-download' style='margin-right:5px;'></i> Download patches
-          </button>
-          <ul id="downloadPatchButton" style="z-index:100000; position:relative;" class="dropdown-menu">
-          </ul>
-        </div>
-        
-        <p
-          style="text-align: right; filter:opacity(0.3) brightness(10000); position:relative;"
-        >
-          Data provided by <a href={`https://www.gametdb.com/wii/${gamespyId ? gamespyId : title}`}>GameTDB</a> and WiiLink
-          Violet API.
-        </p>
-      </div>
         <div
-          style="width:90%; max-width:1500px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; position:relative;"
+          style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; z-index:1000; position:relative;"
+        >
+          <div id="dropup" class="btn-group dropup" style="display:none;">
+            <button
+              type="button"
+              class="btn btn-success dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-download" style="margin-right:5px;"></i> Download patches
+            </button>
+            <ul
+              id="downloadPatchButton"
+              style="z-index:100000; position:relative;"
+              class="dropdown-menu"
+            >
+            </ul>
+          </div>
+
+          <p
+            id="powered" style="text-align: right; filter:opacity(0.3) brightness(10000); display:none; position:relative;"
+          >
+            Data provided by <a
+              href={`https://www.gametdb.com/wii/${gamespyId ? gamespyId : title}`}
+              >GameTDB</a
+            > and WiiLink Violet API.
+          </p>
+        </div>
+        <div
+          style="width:90%; max-width:1500px; left:50%; transform:translate(-50%, 0); margin-bottom:200px; animation:fadein 800ms 0.1s linear forwards; opacity:0; display:none; position:relative;"
           id="errhide"
         >
           <h1 style="font-family:Gilroy; margin-top:50px; margin-bottom:20px;">
@@ -93,9 +131,17 @@ const { title, text, gamespyId } = Astro.props;
             This title features no synopsis, why not add one yourself on
             gameTDB?
           </p>
-          <h1 style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;" id="recommendedHeader">
+          <h1
+            style="font-family:Gilroy;margin-top:50px; margin-bottom:20px; display:flex; fex-wrap:wrap; justify-content:space-between;"
+            id="recommendedHeader"
+          >
             You may also like:
-            <span style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;">Matches genre <i style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;" id="genreSuggestion"></i></span>
+            <span
+              style="color:white; font-family:system-ui; font-size:18px; opacity:0.3; display:flex; align-items:center; position:relative;"
+              >Matches genre <i
+                style="margin-left:8px; padding:5px; padding-left:10px; padding-right:10px; background-color:#ffffff20; border-radius:4px; position:relative;"
+                id="genreSuggestion"></i></span
+            >
           </h1>
           <div id="recommendedTitles">
             <i style="color:white;"
@@ -112,78 +158,87 @@ const { title, text, gamespyId } = Astro.props;
     window.addEventListener("scroll", function () {
       const mainDiv = document.getElementById("herobg");
       const scrollPos = document.documentElement.scrollTop;
-      mainDiv.style.transform = `translateY(${scrollPos/2}px)`;
+      mainDiv.style.transform = `translateY(${scrollPos / 2}px)`;
     });
 
-function toClipboard(data) {
-  navigator.clipboard.writeText(data).then(function() {
-    alert("Copied the text: " + data);
-  }, function(err) {
-    console.error('Could not copy text: ', err);
-  });
-}
+    function toClipboard(data) {
+      navigator.clipboard.writeText(data).then(
+        function () {
+          alert("Copied the text: " + data);
+        },
+        function (err) {
+          console.error("Could not copy text: ", err);
+        },
+      );
+    }
 
-  document.addEventListener("DOMContentLoaded", function () {
-  var isSafari = /WebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+    document.addEventListener("DOMContentLoaded", function () {
+      var isSafari =
+        /WebKit/.test(navigator.userAgent) &&
+        !/Chrome/.test(navigator.userAgent);
 
-  if (isSafari) {
-    setTimeout(function () {
-      var elements = document.getElementsByClassName("macremove");
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = "";
+      if (isSafari) {
+        setTimeout(function () {
+          var elements = document.getElementsByClassName("macremove");
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = "";
+          }
+        }, 300);
       }
-    }, 300);
-  }
-});
+    });
 
-// Convert .txt to .gct (Gecko Code) file, code provided in great part by the Mario Kart Wii Wiki
-function downloadGCT(gameId, fileUrl) {
-    fetch(fileUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
+    // Convert .txt to .gct (Gecko Code) file, code provided in great part by the Mario Kart Wii Wiki
+    function downloadGCT(gameId, fileUrl) {
+      fetch(fileUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
         })
-        .then(code => {
-            var gctArray = [0x00, 0xD0, 0xC0, 0xDE, 0x00, 0xD0, 0xC0, 0xDE];
-            var byteCode = codeToHex(code);
-            if (!byteCode) return;
+        .then((code) => {
+          var gctArray = [0x00, 0xd0, 0xc0, 0xde, 0x00, 0xd0, 0xc0, 0xde];
+          var byteCode = codeToHex(code);
+          if (!byteCode) return;
 
-            gctArray = gctArray.concat(byteCode);
-            gctArray.push(0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+          gctArray = gctArray.concat(byteCode);
+          gctArray.push(0xf0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 
-            var byteArray = new Uint8Array(gctArray);
-            var blob = new Blob([byteArray], { type: 'application/octet-stream' });
-            var url = window.URL.createObjectURL(blob);
-            var link = document.createElement('a');
-            link.href = url;
-            link.download = gameId + '.gct';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+          var byteArray = new Uint8Array(gctArray);
+          var blob = new Blob([byteArray], {
+            type: "application/octet-stream",
+          });
+          var url = window.URL.createObjectURL(blob);
+          var link = document.createElement("a");
+          link.href = url;
+          link.download = gameId + ".gct";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
         })
-        .catch(error => {
-            console.error('Error fetching the file:', error);
+        .catch((error) => {
+          console.error("Error fetching the file:", error);
         });
-}
+    }
 
-function codeToHex(code) {
-    var curatedCode = code.replace(/\s+/g, '');
-    if (curatedCode.length === 0 || !/^[0-9A-Fa-f]*$/.test(curatedCode) || curatedCode.length % 16 !== 0) {
+    function codeToHex(code) {
+      var curatedCode = code.replace(/\s+/g, "");
+      if (
+        curatedCode.length === 0 ||
+        !/^[0-9A-Fa-f]*$/.test(curatedCode) ||
+        curatedCode.length % 16 !== 0
+      ) {
         alert("Invalid code format.");
         return false;
-    }
-    var byte_array = [];
-    for (var i = 0; i < curatedCode.length; i += 2) {
+      }
+      var byte_array = [];
+      for (var i = 0; i < curatedCode.length; i += 2) {
         var byte = parseInt(curatedCode.substring(i, i + 2), 16);
         byte_array.push(byte);
+      }
+      return byte_array;
     }
-    return byte_array;
-}
-
-
-</script>
+  </script>
 
   <style>
     html body {
@@ -321,39 +376,39 @@ function codeToHex(code) {
       transition: 0.3s;
     }
     #card-bg {
-      width:100%;
-      transform:translate(0, -50%);
-      filter:blur(8px) opacity(0.1) grayscale(0.7);
-      position:absolute;
+      width: 100%;
+      transform: translate(0, -50%);
+      filter: blur(8px) opacity(0.1) grayscale(0.7);
+      position: absolute;
       transition: 0.3s;
     }
-    .recommended-title:hover #card-bg{
-      filter:blur(8px) opacity(0.2) grayscale(0.3);
+    .recommended-title:hover #card-bg {
+      filter: blur(8px) opacity(0.2) grayscale(0.3);
       transition: 0.3s;
     }
-    .recommended-title{
-      color:white;
+    .recommended-title {
+      color: white;
       background-color: #ffffff10;
-      border:2px solid #ffffff20;
+      border: 2px solid #ffffff20;
       border-radius: 8px;
       overflow: hidden;
       position: relative;
       transition: 0.3s;
     }
-    .recommended-title:hover{
+    .recommended-title:hover {
       transform: scale(1.03);
       box-shadow: 0px 0px 20px 0px #ffffff10;
       border: 2px solid #ffffff60;
       transition: 0.3s;
     }
     .img-bg {
-      transform:scale(110%);
-      filter:blur(8px) opacity(0.1) grayscale(0.7);
-      position:absolute;
+      transform: scale(110%);
+      filter: blur(8px) opacity(0.1) grayscale(0.7);
+      position: absolute;
       transition: 0.3s;
     }
-    .recommended-title:hover .img-bg{
-      filter:blur(8px) opacity(0.2) grayscale(0.3);
+    .recommended-title:hover .img-bg {
+      filter: blur(8px) opacity(0.2) grayscale(0.3);
       transition: 0.3s;
     }
     #recommendedTitles {
@@ -413,7 +468,7 @@ function codeToHex(code) {
       left: 0;
       width: 100%;
       filter: blur(16px) grayscale(0);
-      opacity: .3;
+      opacity: 0.3;
       position: absolute;
       transform: scale(1.3);
     }
@@ -423,16 +478,15 @@ function codeToHex(code) {
     }
 
     @media only screen and (max-width: 1500px) {
-      .genre{
+      .genre {
         grid-column: auto / span 6 !important;
       }
-      .rating{
+      .rating {
         grid-column: auto / span 5 !important;
       }
     }
 
     @media only screen and (max-width: 1390px) {
-
       .data-holder {
         width: 95% !important;
         flex-direction: column;
@@ -462,10 +516,10 @@ function codeToHex(code) {
     }
 
     @media only screen and (max-width: 1264px) {
-      #extradata{
+      #extradata {
         grid-column: auto / span 14 !important;
       }
-      #publisher{
+      #publisher {
         grid-column: auto / span 6 !important;
       }
     }
@@ -516,7 +570,7 @@ function codeToHex(code) {
         position: relative;
       }
       #mobilestats {
-        transform:translate(0, 20px);
+        transform: translate(0, 20px);
         width: 100% !important;
         display: flex !important;
         flex-wrap: wrap;
@@ -527,7 +581,7 @@ function codeToHex(code) {
         display: none;
       }
       #mobileinner {
-        width:100%;
+        width: 100%;
       }
       #data {
         width: 100%;
