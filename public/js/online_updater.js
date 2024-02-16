@@ -96,9 +96,9 @@ export function onlineUpdater(data, j) {
             "containerdata"
           ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
             group[k].host
-          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -10px); margin-left:30px; position:absolute;">(${
+          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
             group[k].id
-          })</d></b> <div style="transform:translate(0, 10px);"> <b style="padding:8px; border-radius:4px; ${
+          })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
             group[k].type
           }</b> <b style="padding:8px; border-radius:4px; ${
             group[k].suspend
