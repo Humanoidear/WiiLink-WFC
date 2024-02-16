@@ -14,7 +14,7 @@ export function onlineUpdater(data, j) {
                <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
            `;
       } else {
-        if (isOnline[data[j].GamespyName].active < 2) {
+        if (isOnline[data[j].GamespyName].active < 2 || isOnline[data[j].GamespyName].online == undefined) {
           document.getElementById("onlinecontainer").style.display = "none";
         }
         document.getElementById("WFCdetails").innerHTML = `
