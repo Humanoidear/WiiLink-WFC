@@ -30,10 +30,9 @@ function render(xml) {
     var type = x[i].getElementsByTagName("type")[0];
     var titleCheck = document.getElementById("gameId").textContent;
     var gamespyCheck = document.getElementById("gamespyId").textContent;
-    if (
-      (id && id.childNodes[0].nodeValue === titleCheck) ||
-      (id && id.childNodes[0].nodeValue === gamespyCheck)
-    ) {
+    titleCheck = titleCheck.replace(/ /g, "");
+    gamespyCheck = gamespyCheck.replace(/ /g, "");
+    if (id.textContent === titleCheck || id.textContent === gamespyCheck) {
       // Check if the titleid of the query matches the titleid of the gameTDB entry
       var locales = x[i].getElementsByTagName("locale");
 
@@ -81,11 +80,13 @@ function render(xml) {
 
                         document.getElementById("dropup").style.display =
                           "block";
-                          document.getElementById("downloadPatchButton").innerHTML +=
-                          "<li style='cursor:pointer;'><a class='dropdown-item' onclick='downloadGCT(\"" + 
-                          pages[k].patchId[l] + 
-                          "\", \"/patches/" + 
-                          pages[k].patchId[l] + 
+                        document.getElementById(
+                          "downloadPatchButton"
+                        ).innerHTML +=
+                          "<li style='cursor:pointer;'><a class='dropdown-item' onclick='downloadGCT(\"" +
+                          pages[k].patchId[l] +
+                          '", "/patches/' +
+                          pages[k].patchId[l] +
                           ".txt\")'>" +
                           patchEmoji +
                           "  " +
@@ -212,7 +213,9 @@ function render(xml) {
             discImage = titleCheck;
           }
           title.innerHTML =
-            '<img src="' + loadImage("disc", discImage) + '" alt="' +
+            '<img src="' +
+            loadImage("disc", discImage) +
+            '" alt="' +
             locales[j].getElementsByTagName("title")[0].textContent +
             ' Game Disc" style="margin-right:15px;" width="70px" onerror="this.onerror=null; this.src=\'/img/disc_placeholder.png\';"><b>' +
             locales[j].getElementsByTagName("title")[0].textContent +
@@ -220,7 +223,9 @@ function render(xml) {
 
           var bg = document.getElementsByClassName("bginner");
           bg[0].innerHTML =
-            '<img src="' + loadImage("coverfullHQ", discImage) + '" alt="' +
+            '<img src="' +
+            loadImage("coverfullHQ", discImage) +
+            '" alt="' +
             locales[j].getElementsByTagName("title")[0].textContent +
             ' Background" style="margin-right:15px;" width="100%">';
 
@@ -228,7 +233,9 @@ function render(xml) {
           img.style.animation = "fadein 200ms ease-in-out forwards";
           img.style.opacity = "0";
           img.innerHTML =
-            '<div class="coverimg"><img src="' + loadImage("coverfullHQ", discImage) + '" alt="' +
+            '<div class="coverimg"><img src="' +
+            loadImage("coverfullHQ", discImage) +
+            '" alt="' +
             locales[j].getElementsByTagName("title")[0].textContent +
             ' Game Boxart" class="imginner"></div>';
 
@@ -264,14 +271,13 @@ function render(xml) {
               document.getElementById("errhide").style.display = "none";
               break;
           }
-          
+
           document.getElementById("fetchData").style.display = "none";
           document.getElementById("mobilehide").style.display = "block";
           document.getElementById("powered").style.display = "block";
-      document.getElementById("errhide").style.display = "block";
-      data.innerHTML = `<div class="smalldatapill" style="${display}; animation: fadein 200ms ease-in-out forwards; opacity:0;"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" id="publisher" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
-      data.innerHTML += `<div class="bigdatapill" style="${sizeFix}; animation: fadein 200ms ease-in-out forwards; opacity:0;"><l class="genre" style="border:2px solid #4287f520; ${size1} display:flex; flex-direction:column; align-items:center; justify-content:center; ${extraDisplay}"><div class="macremove" style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l class="rating"  style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2; ${display}"><div class="macremove" style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; ${size2} display:flex; justify-content:center; align-items:center; position:relative;"><div class="macremove" style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <d style="bottom:20px; lext-align:left; position:absolute;">${isSupported}</d></l> <l style="border:2px solid #dd42f520; ${size3} display:flex; justify-content:center; align-items:center;"><div class="macremove" style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; ${size4}"><div class="macremove" style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
-
+          document.getElementById("errhide").style.display = "block";
+          data.innerHTML = `<div class="smalldatapill" style="${display}; animation: fadein 200ms ease-in-out forwards; opacity:0;"><l id="extradata" title="${extraDataTitle}" style="grid-column: auto / span 5; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;"><i class="fa-solid fa-compact-disc"></i> ${trueName}</l> <l title="${developer} | ${publisher}" id="publisher" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-file-code"></i> ${developer} | ${publisher}</l> <l style="grid-column: auto / span 2;"><i class="fa-solid fa-earth-americas"></i> ${region}</l> <l title="${languages}" style="grid-column: auto / span 3; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative;"><i class="fa-solid fa-language"></i> ${languages}</l> <l style="grid-column: auto / span 3;"><i class="fa-solid fa-calendar"></i> ${day}/${month}/${date}</l></div>`;
+          data.innerHTML += `<div class="bigdatapill" style="${sizeFix}; animation: fadein 200ms ease-in-out forwards; opacity:0;"><l class="genre" style="border:2px solid #4287f520; ${size1} display:flex; flex-direction:column; align-items:center; justify-content:center; ${extraDisplay}"><div class="macremove" style="color:#4287f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Genre</div> ${genre}</l> <l class="rating"  style="border:2px solid #42f55d20; grid-column: auto / span 2; grid-row: auto / span 2; ${display}"><div class="macremove" style="color:#42f55d; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">${classification}</div> ${rating}</l> <l id="onlinemobile" style="min-height:250px; border:2px solid #dd42f520; ${size2} display:flex; justify-content:center; align-items:center; position:relative;"><div class="macremove" style="color:#dd42f5; bottom:-50px; left:-20px; opacity:0.1; text-transform:uppercase; font-family:Gilroy; font-size:100px; position:absolute;">WI-FI</div><b id="WFCdetails" style="width:100%; max-width:330px;"><img src="/img/loading.gif" id="onlineload" style="left:50%; transform:translate(-50%, 0); filter:brightness(100000000); display:none; position:relative;" width="30px"></b> <div id="onlineplaycontainer" style="top:20px; display:flex; align-items:center; justify-content:center; position:absolute;"><b id="onlineplayno" style="font-size:30px; margin-right:18px;">${wifiPlayers}</b><b id="wifino"></b></div> <d style="bottom:20px; lext-align:left; position:absolute;">${isSupported}</d></l> <l style="border:2px solid #dd42f520; ${size3} display:flex; justify-content:center; align-items:center;"><div class="macremove" style="color:#dd42f560; bottom:-50px; left:-20px; opacity:0.2; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Players</div> <b style="font-size:30px; margin-right:18px;">${inputPlayers}</b> <b id="playerno"></b></l> <l style="border:2px solid #ffffff20; ${size4}"><div class="macremove" style="bottom:-50px; left:-20px; opacity:0.03; text-transform:uppercase; font-family:Gilroy; font-size:100px;position:absolute;">Controllers</div> <br>${controlTypes}</l></div>`;
 
           var playIcon1 = document.getElementById("wifino");
           var playIcon2 = document.getElementById("onlineplaycontainer");
