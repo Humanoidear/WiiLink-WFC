@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           titleDataReturn[22] +
           '" class="card-online" style="' +
           isBig +
-          ' "><img src="' + loadImage("cover", titleDataReturn[22]) + '" style=" width:100%; top:50%; transform:translate(0, -50%) scale(1.3); opacity:0.1; filter:blur(8px) grayscale(0.6); position:absolute;"><div style="display:flex; align-items:center; justify-content:space-between;"><img src="' + loadImage("disc", titleDataReturn[22]) + '" style="width:70px; height:70px;"><div><h5 style="font-weight:800; text-align:right;">' +
+          ' "><img src="' + loadImage("cover", titleDataReturn[22]) + '" id="card-bg"><div style="display:flex; align-items:center; justify-content:space-between;"><img src="' + loadImage("disc", titleDataReturn[22]) + '" style="width:70px; height:70px;"><div><h5 style="font-weight:800; text-align:right;">' +
           titleDataReturn[0] +
           "</h5><h6 style='text-align:right; opacity:0.5;'>" +
           titleDataReturn[1] +
