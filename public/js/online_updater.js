@@ -155,7 +155,7 @@ export function onlineUpdater(data, j) {
                 playerData += `
       <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
                   player.fc
-                }');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+                }');" style="border-radius:8px; padding:18px; display:flex; align-items:center; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
         <div style="display:flex; flex-direction:row; align-items:center; gap:20px;">
           <div id="${miiImgId}" style="height:${fontSize * 2.5}px; width:${
                   fontSize * 2.5
@@ -192,7 +192,7 @@ export function onlineUpdater(data, j) {
     `;
               } else {
                 playerData += `
-      <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
+      <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; align-items:center; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
       <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
         <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;">
           <div id="${miiImgId}" style="height:${fontSize * 2.5}px; width:${
