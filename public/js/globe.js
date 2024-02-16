@@ -1,4 +1,6 @@
-  const N = 10;
+import * as THREE from '/js/three.js';
+
+const N = 10;
 
   let cities = [
     { name: "New York", lat: 40.7128, lng: -74.006 },

@@ -1,5 +1,16 @@
 [
   {
+    "gameId": "mariokartwii",
+    "gameName": "Mario Kart Wii",
+    "gamespyId": "RMCE01",
+    "patchId": [
+      "RMCED00",
+      "RMCJD00",
+      "RMCPD00",
+      "RMCKD00"
+    ]
+  },
+  {
     "gameId": "segaracingwii",
     "gameName": "Sonic & SEGA All-Stars Racing",
     "gamespyId": "R3RE8P",
@@ -63,17 +74,6 @@
       "R2VED00",
       "R2VPD00",
       "R2VJD00"
-    ]
-  },
-  {
-    "gameId": "mariokartwii",
-    "gameName": "Mario Kart Wii",
-    "gamespyId": "RMCE01",
-    "patchId": [
-      "RMCED00",
-      "RMCJD00",
-      "RMCPD00",
-      "RMCKD00"
     ]
   },
   {
