@@ -84,17 +84,18 @@ function render(xml) {
                         document.getElementById(
                           "downloadPatchButton"
                         ).innerHTML +=
-                          "<li style='cursor:pointer;'><a class='dropdown-item' onclick='downloadGCT(\"" +
-                          pages[k].patchId[l] +
-                          '", "/patches/' +
-                          pages[k].patchId[l] +
-                          ".txt\")'>" +
-                          patchEmoji +
-                          "  " +
-                          pages[k].patchId[l] +
-                          ".gct (" +
-                          patchRegion +
-                          ")</a></li>";
+                        "<li style='cursor:pointer; display:flex; flex-direction:row; align-items:center;'>" +
+                        "<div class='dropdown-item' style='display:flex; gap:8px; flex-direction:row; justify-content:space-between;' onclick='downloadGCT(\"" +
+                        pages[k].patchId[l] +
+                        '", "/patches/' +
+                        pages[k].patchId[l] +
+                        ".txt\")'>" +
+                        patchEmoji +
+                        "  " +
+                        pages[k].patchId[l] +
+                        "(" +
+                        patchRegion +
+                        ") <div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.gct</span><a href='/patches/" + pages[k].patchId[l] + ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";
                       }
                       document.getElementById(
                         "downloadPatchButton"
