@@ -221,11 +221,14 @@ export function onlineUpdater(data, j) {
             gridSize +
             'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
             playerData +
-            '</div><hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
-            data[j].GamespyName +
-            "</div>";
+            '</div>';
         }
       }
+      document.getElementById("containerdata").innerHTML +=
+      '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
+            data[j].GamespyName +
+            '</div>';
+        
 
       // Hide the MKW link if the game is MKW
       if (data[j].GamespyName == "mariokartwii") {
