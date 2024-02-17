@@ -92,7 +92,7 @@ function render(xml) {
                         ".txt\")'>" +
                         patchEmoji +
                         "  " +
-                        pages[k].patchId[l] +
+                        pages[k].patchId[l].slice(0, 4) + pages[k].patchId[l].slice(5) +
                         "(" +
                         patchRegion +
                         ") <div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.gct</span><a href='/patches/" + pages[k].patchId[l] + ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";

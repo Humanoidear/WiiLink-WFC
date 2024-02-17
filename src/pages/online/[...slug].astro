@@ -239,6 +239,8 @@ const { title, text, gamespyId } = Astro.props;
           var url = window.URL.createObjectURL(blob);
           var link = document.createElement("a");
           link.href = url;
+          // Remove 5th letter from gameId
+          gameId = gameId.slice(0, 4) + gameId.slice(5);
           link.download = gameId + ".gct";
           document.body.appendChild(link);
           link.click();
