@@ -42,6 +42,40 @@ export function renderMii(base64String) {
     });
 }
 
+const spreadsheetId = "1KeRbKQ2UwlysHSTtfkiZneLNRq4yDXs2Y-vXt8jHAro";
+const ranges = ["B:B", "E:E", "F:F"];
+const key = "AIzaSyA3ni8rP12zKhLKb96ZE92grnJGgUcCwfM";
+
+// Function to compatibility data for certain title
+export async function fetchCompatData(id) {
+  try {
+    const data = await Promise.all(
+      ranges.map((range) =>
+        fetch(
+          `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${key}`
+        ).then((response) => response.json())
+      )
+    );
+
+    // We receive an array with 3 objects, each containing the values of the range, we format it into an array with the values combined
+    let combined = data[0].values.map((value, i) => [
+      value[0],
+      data[1].values[i][0],
+      data[2].values[i][0],
+    ]);
+
+    // Remove the header row (the first one)
+    combined.shift();
+
+    // Filter the data based on the three-letter ID passed as argument
+    let filtered = combined.filter((value) => value[0] === id);
+
+    return filtered;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
 // Loads the correct GameTDB URL image depending on the region of the game
 export function loadImage(format, title) {
   switch (title.charAt(3)) {

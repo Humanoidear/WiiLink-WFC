@@ -3,6 +3,7 @@ import {
   getRating,
   getController,
   loadImage,
+  fetchCompatData,
 } from "/js/helper_functions.js";
 import { onlineUpdater } from "/js/online_updater.js";
 import { getRecommendedTitles } from "/js/recommended_titles.js";
@@ -78,7 +79,7 @@ function render(xml) {
                             break;
                         }
 
-                        document.getElementById("dropup").style.display =
+                        document.getElementById("onlineSpecialInfo").style.display =
                           "block";
                         document.getElementById(
                           "downloadPatchButton"
@@ -98,7 +99,7 @@ function render(xml) {
                       document.getElementById(
                         "downloadPatchButton"
                       ).innerHTML +=
-                        "<li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u></li>";
+                        "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
                       isFound = true;
                     }
                   }
@@ -112,6 +113,27 @@ function render(xml) {
                   "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
               }
 
+              fetchCompatData(gameid).then(data => {
+                switch (data[0][1]) {
+                    case 'Not tested':
+                      data[0][1] = "<i class='fa fa-circle-question' style='color:gray;'></i> " + data[0][1];
+                        break;
+                    case 'Gameplay works':
+                      data[0][1] = "<i class='fa fa-circle-check' style='color:green;'></i> " + data[0][1];
+                        break;
+                    case 'Login fail':
+                      data[0][1] = "<i class='fa fa-circle-exclamation' style='color:red;'></i> " + data[0][1];
+                        break;
+                    case 'Error 20910':
+                      data[0][1] = "<i class='fa fa-circle-exclamation' style='color:red;'></i> " + data[0][1];
+                        break;
+                    default:
+                      data[0][1] = "<i class='fa fa-circle-question' style='color:gray;'></i> " + data[0][1];
+                        break;
+                }
+            
+                document.getElementById('compat').innerHTML += "<center>" + data[0][1] + "</center><li><div style='width:100%; margin-top:8px; padding:8px; background-color:#00000020; border-radius:4px; position:relative;'>" + data[0][2] + "</div></li>";
+            });
               onlineUpdater(data, j); // Fetch data on page load
               setInterval(() => {
                 onlineUpdater(data, j); // Fetch data on a 5 second interval

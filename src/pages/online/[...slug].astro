@@ -94,23 +94,50 @@ const { title, text, gamespyId } = Astro.props;
         <div
           style="width:90%;  max-width:1500px; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; z-index:1000; position:relative;"
         >
-          <div id="dropup" class="btn-group dropup" style="display:none;">
-            <button
-              type="button"
-              class="btn btn-success dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+          <div
+            id="onlineSpecialInfo"
+            style="display:flex; flex-direction: row; align-items: center; gap:8px; display:none;"
+          >
+            <div
+              id="dropupcompat"
+              class="btn-group dropup"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="Compatibility information"
             >
-              <i class="fa fa-download" style="margin-right:5px;"></i> Download patches
-            </button>
-            <ul
-              id="downloadPatchButton"
-              style="z-index:100000; position:relative;"
-              class="dropdown-menu"
-            >
-            </ul>
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa fa-circle-question"></i>
+              </button>
+              <ul
+                id="compat"
+                style="width:240px; padding:8px; z-index:100000; position:relative;"
+                class="dropdown-menu"
+              >
+              </ul>
+            </div>
+            <div id="dropup" class="btn-group dropup">
+              <button
+                type="button"
+                class="btn btn-success dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa fa-download" style="margin-right:5px;"></i> Download
+                patches
+              </button>
+              <ul
+                id="downloadPatchButton"
+                style="z-index:100000; position:relative;"
+                class="dropdown-menu"
+              >
+              </ul>
+            </div>
           </div>
-
           <p
             id="powered"
             style="text-align: right; filter:opacity(0.3) brightness(10000); display:none; position:relative;"
@@ -338,6 +365,10 @@ const { title, text, gamespyId } = Astro.props;
         rgba(11, 0, 0, 1) 80%
       );
       pointer-events: none;
+    }
+
+    .dropup .dropdown-toggle::after {
+      display: none;
     }
 
     #imgCaroussel {
