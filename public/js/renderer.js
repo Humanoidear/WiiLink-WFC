@@ -34,7 +34,6 @@ function render(xml) {
     titleCheck = titleCheck.replace(/ /g, "");
     gamespyCheck = gamespyCheck.replace(/ /g, "");
     if (id.textContent === titleCheck || id.textContent === gamespyCheck) {
-      console.log("Game found, " + id.textContent + " == " + titleCheck);
       // Check if the titleid of the query matches the titleid of the gameTDB entry
       var locales = x[i].getElementsByTagName("locale");
 
@@ -146,7 +145,6 @@ function render(xml) {
                     "</div></li>";
                 }
               );
-              console.log(data[j]);
               onlineUpdater(data[j]); // Fetch data on page load
               setInterval(() => {
                 onlineUpdater(data[j]); // Fetch data on a 5 second interval

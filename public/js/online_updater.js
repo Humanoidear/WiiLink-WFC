@@ -3,7 +3,6 @@ import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
 var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
-var tempRoomStats = "";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
 export function onlineUpdater(data) {
@@ -51,6 +50,8 @@ export function onlineUpdater(data) {
   fetch(apiGroups)
     .then((response) => response.json())
     .then((group) => {
+      var playerData = "";
+      var roomStats = "";
       for (let k = 0; k < group.length; k++) {
         if (group[k].game == data.gameId) {
           // Check for online groups in the specific game
@@ -93,28 +94,45 @@ export function onlineUpdater(data) {
             group[k].suspend =
               'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
           }
-          var playerData = "";
-          var roomStats = "";
           document.getElementById("onlinecontainer").style.display = "block";
 
-          // Get the players in the groups
+          var fontSize = "";
+          var extraDisplay = "";
+          var gridSize = "";
+
+          if (localStorage.getItem("statistics") == "small") {
+            fontSize = 23;
+            extraDisplay = "display:none;";
+            gridSize =
+              "grid-template-columns: repeat(auto-fit,minmax(300px,1fr));";
+          } else {
+            fontSize = 30;
+            extraDisplay = "display:block;";
+            gridSize =
+              "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
+          }
+
+          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+            group[k].host
+          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
+            group[k].id
+          })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
+            group[k].type
+          }</b> <b style="padding:8px; border-radius:4px; ${
+            group[k].suspend
+          }</b>  <b style="padding:8px; border-radius:4px; ${
+            group[k].rk
+          }</b></div></div></div>`;
+
+
+          // Get the players in the groups 
+          playerData += roomStats;
+            playerData += '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' +
+            gridSize +
+            'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">';
+
           for (let playerIndex in group[k].players) {
             var player = group[k].players[playerIndex];
-            var fontSize = "";
-            var extraDisplay = "";
-            var gridSize = "";
-
-            if (localStorage.getItem("statistics") == "small") {
-              fontSize = 23;
-              extraDisplay = "display:none;";
-              gridSize =
-                "grid-template-columns: repeat(auto-fit,minmax(300px,1fr));";
-            } else {
-              fontSize = 30;
-              extraDisplay = "display:block;";
-              gridSize =
-                "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
-            }
 
             // Loop through each player and fetch its corresponding data depening on wether they are a guest or not, and the user personalization preferences
             for (let i = 0; i < player.count; i++) {
@@ -140,21 +158,8 @@ export function onlineUpdater(data) {
               player.ev = player.ev || "????";
               player.eb = player.eb || "????";
 
-              roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
-                group[k].host
-              )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
-                group[k].id
-              })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
-                group[k].type
-              }</b> <b style="padding:8px; border-radius:4px; ${
-                group[k].suspend
-              }</b>  <b style="padding:8px; border-radius:4px; ${
-                group[k].rk
-              }</b></div></div></div>`;
-
               if (i == 0) {
-                playerData += `
-      <div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
+                playerData += `<div id="mobileinner" onclick="toClipboard('${player.name} | FC:${
                   player.fc
                 }');" style="border-radius:8px; padding:18px; display:flex; align-items:center; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
         <div style="display:flex; flex-direction:row; align-items:center; gap:20px;">
@@ -215,31 +220,18 @@ export function onlineUpdater(data) {
               }
             }
           }
-
-          // Add the data into the container
-          if (playerData == tempPlayerData && roomStats == tempRoomStats) {
-            return;
-          } else {
-            tempPlayerData = playerData;
-            tempRoomStats = roomStats;
-
-            document.getElementById("containerdata").innerHTML = ` `;
-            document.getElementById(
-              "containerdata"
-            ).innerHTML += tempRoomStats;
-            document.getElementById("containerdata").innerHTML +=
-            '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' +
-            gridSize +
-            'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
-            playerData +
-            "</div>";
-            document.getElementById("containerdata").innerHTML +=
-        '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
-        data.gameId +
-        "</div>";
-
           }
+          playerData += '</div>';
         }
+        if (playerData == tempPlayerData) {
+          return;
+        } else {
+          tempPlayerData = playerData;
+          document.getElementById("containerdata").innerHTML = playerData;
+          document.getElementById("containerdata").innerHTML +=
+      '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
+      data.gameId +
+      "</div>";
       }
       // Hide the MKW link if the game is MKW
       if (data.gameId == "mariokartwii") {
