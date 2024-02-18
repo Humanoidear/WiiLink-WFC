@@ -529,11 +529,7 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
     ) {
       localStorage.setItem("displayMode", "complete");
       localStorage.setItem("theme", "dark");
-      document.querySelector(
-        'input[name="display"][value="' +
-          localStorage.getItem("displayMode") +
-          '"]',
-      ).checked = true;
+      localStorage.setItem("statistics", "small");
       localStorage.setItem("displayLoading", "0");
     }
 
