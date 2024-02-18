@@ -2,6 +2,8 @@ import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
 
 var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
+var tempPlayerData = "";
+var tempRoomStats = "";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
 export function onlineUpdater(data) {
@@ -49,7 +51,6 @@ export function onlineUpdater(data) {
   fetch(apiGroups)
     .then((response) => response.json())
     .then((group) => {
-      document.getElementById("containerdata").innerHTML = ` `;
       for (let k = 0; k < group.length; k++) {
         if (group[k].game == data.gameId) {
           // Check for online groups in the specific game
@@ -92,20 +93,8 @@ export function onlineUpdater(data) {
             group[k].suspend =
               'background-color:#3cc761;"><i class="fa-solid fa-door-open"></i> Joinable';
           }
-          document.getElementById(
-            "containerdata"
-          ).innerHTML += ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
-            group[k].host
-          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
-            group[k].id
-          })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
-            group[k].type
-          }</b> <b style="padding:8px; border-radius:4px; ${
-            group[k].suspend
-          }</b>  <b style="padding:8px; border-radius:4px; ${
-            group[k].rk
-          }</b></div></div></div>`;
           var playerData = "";
+          var roomStats = "";
           document.getElementById("onlinecontainer").style.display = "block";
 
           // Get the players in the groups
@@ -137,7 +126,7 @@ export function onlineUpdater(data) {
                 miiName = player.mii[i].name || miiName;
                 isDisplayed = "display:block;";
               }
-              let miiImgId = "miiImg" + Math.random();
+              let miiImgId = "miiImg" + (playerIndex + (12*k));
               renderMii(miiData).then((miiImg) => {
                 document.getElementById(miiImgId).innerHTML =
                   "<img src='" +
@@ -150,6 +139,18 @@ export function onlineUpdater(data) {
               });
               player.ev = player.ev || "????";
               player.eb = player.eb || "????";
+
+              roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+                group[k].host
+              )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
+                group[k].id
+              })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
+                group[k].type
+              }</b> <b style="padding:8px; border-radius:4px; ${
+                group[k].suspend
+              }</b>  <b style="padding:8px; border-radius:4px; ${
+                group[k].rk
+              }</b></div></div></div>`;
 
               if (i == 0) {
                 playerData += `
@@ -216,19 +217,30 @@ export function onlineUpdater(data) {
           }
 
           // Add the data into the container
-          document.getElementById("containerdata").innerHTML +=
+          if (playerData == tempPlayerData && roomStats == tempRoomStats) {
+            return;
+          } else {
+            tempPlayerData = playerData;
+            tempRoomStats = roomStats;
+
+            document.getElementById("containerdata").innerHTML = ` `;
+            document.getElementById(
+              "containerdata"
+            ).innerHTML += tempRoomStats;
+            document.getElementById("containerdata").innerHTML +=
             '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' +
             gridSize +
             'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
             playerData +
             "</div>";
-        }
-      }
-      document.getElementById("containerdata").innerHTML +=
+            document.getElementById("containerdata").innerHTML +=
         '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
         data.gameId +
         "</div>";
 
+          }
+        }
+      }
       // Hide the MKW link if the game is MKW
       if (data.gameId == "mariokartwii") {
         document.getElementById("mkwlink").style.display = "none";
