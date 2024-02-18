@@ -94,12 +94,9 @@
     const gamesPromise = fetch("../../json/pages.json").then((response) =>
       response.json(),
     );
-    const gamespyTitlesPromise = fetch("../../json/gamespy_titles.json").then(
-      (response) => response.json(),
-    );
 
-    Promise.all([gamesPromise, gamespyTitlesPromise])
-      .then(([games, gamespyTitles]) => {
+    Promise.all([gamesPromise])
+      .then(([games]) => {
         const gameSearchInput = document.getElementById("game-search-online");
         const suggestionsDiv = document.getElementById("suggestions-online");
         const inputText = gameSearchInput.value.trim().toLowerCase();
@@ -121,11 +118,7 @@
         const inputWords = inputText.split(/\s+/);
 
         for (const game of games) {
-          const gameIdPrefix = game.gameId.substring(0, 3).toLowerCase();
-          const isFound = gamespyTitles.some(
-            (gamespyTitle) =>
-              gamespyTitle.GameID === gameIdPrefix || game.gamespyId,
-          );
+          const isFound = game.gamespyId;
 
           // Check if any word in the game name starts with any input word
           const gameWords = game.gameName.toLowerCase().split(" ");

@@ -34,110 +34,122 @@ function render(xml) {
     titleCheck = titleCheck.replace(/ /g, "");
     gamespyCheck = gamespyCheck.replace(/ /g, "");
     if (id.textContent === titleCheck || id.textContent === gamespyCheck) {
+      console.log("Game found, " + id.textContent + " == " + titleCheck);
       // Check if the titleid of the query matches the titleid of the gameTDB entry
       var locales = x[i].getElementsByTagName("locale");
 
-      fetch("../../json/gamespy_titles.json") // Check for gamespy support
+      fetch("../../json/pages.json") // Check for gamespy support
         .then((response) => response.json())
         .then((data) => {
           for (let j = 0; j < data.length; j++) {
-            var gameid = id.textContent.substring(0, 3);
-            if (data[j].GameID == gameid) {
-              fetch("../../json/pages.json") // Check for patches
-                .then((response) => response.json())
-                .then((pages) => {
-                  var isFound = false;
-                  for (let k = 0; k < pages.length; k++) {
-                    if (
-                      (pages[k].gameId == id.textContent ||
-                        pages[k].gamespyId == id.textContent) &&
-                      !isFound
-                    ) {
-                      document.getElementById("onlineload").style.display =
-                        "block";
+            if (data[j].gamespyId == id.textContent) {
+              var isFound = false;
+              for (let k = 0; k < data.length; k++) {
+                if (
+                  (data[k].gameId == id.textContent ||
+                    data[k].gamespyId == id.textContent) &&
+                  !isFound
+                ) {
+                  document.getElementById("onlineload").style.display = "block";
 
-                      // Format data better
-                      for (let l = 0; l < pages[k].patchId.length; l++) {
-                        var patchRegion = "Unknown";
-                        var patchEmoji = "🌍";
-                        switch (pages[k].patchId[l].charAt(3)) {
-                          case "E":
-                            patchRegion = "NTSC-U";
-                            patchEmoji = "🇺🇸";
-                            break;
-                          case "P":
-                            patchRegion = "PAL";
-                            patchEmoji = "🇪🇺";
-                            break;
-                          case "J":
-                            patchRegion = "NTSC-J";
-                            patchEmoji = "🇯🇵";
-                            break;
-                          case "K":
-                            patchRegion = "NTSC-K";
-                            patchEmoji = "🇰🇷";
-                            break;
-                        }
-
-                        document.getElementById("onlineSpecialInfo").style.display =
-                          "block";
-                        document.getElementById(
-                          "downloadPatchButton"
-                        ).innerHTML +=
-                        "<li style='cursor:pointer; display:flex; flex-direction:row; align-items:center;'>" +
-                        "<div class='dropdown-item' style='display:flex; gap:8px; flex-direction:row; justify-content:space-between;' onclick='downloadGCT(\"" +
-                        pages[k].patchId[l] +
-                        '", "/patches/' +
-                        pages[k].patchId[l] +
-                        ".txt\")'>" +
-                        patchEmoji +
-                        "  " +
-                        pages[k].patchId[l].slice(0, 4) + pages[k].patchId[l].slice(5) +
-                        "(" +
-                        patchRegion +
-                        ") <div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.gct</span><a href='/patches/" + pages[k].patchId[l] + ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";
-                      }
-                      document.getElementById(
-                        "downloadPatchButton"
-                      ).innerHTML +=
-                        "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
-                      isFound = true;
-                    }
+                  // MKW specific patches
+                  if (data[j].gamespyId.substring(0, 3) == "RMC") {
+                    document.getElementById("downloadPatchButton").innerHTML +=
+                      "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
+                    document.getElementById("downloadPatchButton").innerHTML +=
+                      "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
                   }
-                });
 
-              // MKW specific patches
-              if (data[j].GameID.substring(0, 3) == "RMC") {
-                document.getElementById("downloadPatchButton").innerHTML +=
-                  "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
-                document.getElementById("downloadPatchButton").innerHTML +=
-                  "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
+                  // Format data better
+                  for (let l = 0; l < data[k].patchId.length; l++) {
+                    var patchRegion = "Unknown";
+                    var patchEmoji = "🌍";
+                    switch (data[k].patchId[l].charAt(3)) {
+                      case "E":
+                        patchRegion = "NTSC-U";
+                        patchEmoji = "🇺🇸";
+                        break;
+                      case "P":
+                        patchRegion = "PAL";
+                        patchEmoji = "🇪🇺";
+                        break;
+                      case "J":
+                        patchRegion = "NTSC-J";
+                        patchEmoji = "🇯🇵";
+                        break;
+                      case "K":
+                        patchRegion = "NTSC-K";
+                        patchEmoji = "🇰🇷";
+                        break;
+                    }
+
+                    document.getElementById("onlineSpecialInfo").style.display =
+                      "block";
+                    document.getElementById("downloadPatchButton").innerHTML +=
+                      "<li style='cursor:pointer; display:flex; flex-direction:row; align-items:center;'>" +
+                      "<div class='dropdown-item' style='display:flex; gap:8px; flex-direction:row; justify-content:space-between;' onclick='downloadGCT(\"" +
+                      data[k].patchId[l] +
+                      '", "/patches/' +
+                      data[k].patchId[l] +
+                      ".txt\")'>" +
+                      patchEmoji +
+                      "  " +
+                      data[k].patchId[l].slice(0, 4) +
+                      data[k].patchId[l].slice(5) +
+                      "(" +
+                      patchRegion +
+                      ") <div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.gct</span><a href='/patches/" +
+                      data[k].patchId[l] +
+                      ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";
+                  }
+                  document.getElementById("downloadPatchButton").innerHTML +=
+                    "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
+                  isFound = true;
+                }
               }
 
-              fetchCompatData(gameid).then(data => {
-                switch (data[0][1]) {
-                    case 'Not tested':
-                      data[0][1] = "<i class='fa fa-circle-question' style='color:gray;'></i> " + data[0][1];
-                        break;
-                    case 'Gameplay works':
-                      data[0][1] = "<i class='fa fa-circle-check' style='color:green;'></i> " + data[0][1];
-                        break;
-                    case 'Login fail':
-                      data[0][1] = "<i class='fa fa-circle-exclamation' style='color:red;'></i> " + data[0][1];
-                        break;
-                    case 'Error 20910':
-                      data[0][1] = "<i class='fa fa-circle-exclamation' style='color:red;'></i> " + data[0][1];
-                        break;
+              fetchCompatData(data[j].gamespyId.substring(0, 3)).then(
+                (data) => {
+                  switch (data[0][1]) {
+                    case "Not tested":
+                      data[0][1] =
+                        "<i class='fa fa-circle-question' style='color:gray;'></i> " +
+                        data[0][1];
+                      break;
+                    case "Gameplay works":
+                      data[0][1] =
+                        "<i class='fa fa-circle-check' style='color:green;'></i> " +
+                        data[0][1];
+                      break;
+                    case "Login fail":
+                      data[0][1] =
+                        "<i class='fa fa-circle-exclamation' style='color:red;'></i> " +
+                        data[0][1];
+                      break;
+                    case "Error 20910":
+                      data[0][1] =
+                        "<i class='fa fa-circle-exclamation' style='color:red;'></i> " +
+                        data[0][1];
+                      break;
                     default:
-                      data[0][1] = "<i class='fa fa-circle-question' style='color:gray;'></i> " + data[0][1];
-                        break;
+                      data[0][1] =
+                        "<i class='fa fa-circle-question' style='color:gray;'></i> " +
+                        data[0][1];
+                      break;
+                  }
+
+                  document.getElementById("compat").innerHTML +=
+                    "<center>" +
+                    data[0][1] +
+                    "</center><li><div style='width:100%; margin-top:8px; padding:8px; background-color:#00000020; border-radius:4px; position:relative;'>" +
+                    data[0][2] +
+                    "</div></li>";
                 }
-            
-                document.getElementById('compat').innerHTML += "<center>" + data[0][1] + "</center><li><div style='width:100%; margin-top:8px; padding:8px; background-color:#00000020; border-radius:4px; position:relative;'>" + data[0][2] + "</div></li>";
-            });
-              onlineUpdater(data, j); // Fetch data on page load
+              );
+              console.log(data[j]);
+              onlineUpdater(data[j]); // Fetch data on page load
               setInterval(() => {
-                onlineUpdater(data, j); // Fetch data on a 5 second interval
+                onlineUpdater(data[j]); // Fetch data on a 5 second interval
               }, 5000);
             }
           }

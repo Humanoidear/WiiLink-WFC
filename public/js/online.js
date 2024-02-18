@@ -33,7 +33,7 @@ function render(xml, GameID) {
   for (var i = 0; i < x.length; i++) {
     // Loop through gamelist of gameTDB
     var tid = x[i].getElementsByTagName("id")[0];
-    if (tid.childNodes[0].nodeValue.substring(0, 3) === GameID) {
+    if (tid.childNodes[0].nodeValue === GameID) {
       // Check if the titleid of the query matches the titleid of the gameTDB entry
       var locales = x[i].getElementsByTagName("locale");
       for (var j = 0; j < locales.length; j++) {
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   try {
     // Fetch the list of all games and the list of online games in parallel
     const [allGamesResponse, onlineStatsResponse] = await Promise.all([
-      fetch("../json/gamespy_titles.json"),
+      fetch("../json/pages.json"),
       fetch("https://api.wfc.wiilink24.com/api/stats"),
     ]);
 
@@ -181,18 +181,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Create an array of promises to process each game in parallel
     const gamePromises = allGames.map(async (game) => {
       if (
-        onlineStats[game.GamespyName] &&
-        onlineStats[game.GamespyName].online > 0
+        onlineStats[game.gameId] &&
+        onlineStats[game.gameId].online > 0
       ) {
         const extraData = [
-          onlineStats[game.GamespyName].online,
-          onlineStats[game.GamespyName].active,
-          onlineStats[game.GamespyName].groups,
+          onlineStats[game.gameId].online,
+          onlineStats[game.gameId].active,
+          onlineStats[game.gameId].groups,
         ];
 
-        const titleDataReturn = await displayTitleData(game.GameID);
-
-        console.log(loadImage("disc", titleDataReturn[22]));
+        const titleDataReturn = await displayTitleData(game.gamespyId);
 
         var isBig = "";
         if (extraData[1] > 6) {

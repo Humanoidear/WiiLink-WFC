@@ -4,19 +4,19 @@ var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
-export function onlineUpdater(data, j) {
+export function onlineUpdater(data) {
   fetch(apiStats)
     .then((response) => response.json())
     .then((isOnline) => {
       // Check if the game has people online
-      if (isOnline[data[j].GamespyName] == undefined) {
+      if (isOnline[data.gameId] == undefined) {
         document.getElementById("WFCdetails").innerHTML = `
                <i class="fa fa-triangle-exclamation" style="margin-right:5px;"></i> There seems to be nobody around...
            `;
       } else {
         if (
-          isOnline[data[j].GamespyName].active < 2 ||
-          isOnline[data[j].GamespyName].online == undefined
+          isOnline[data.gameId].active < 2 ||
+          isOnline[data.gameId].online == undefined
         ) {
           document.getElementById("onlinecontainer").style.display = "none";
         }
@@ -24,19 +24,19 @@ export function onlineUpdater(data, j) {
                <div style="display:flex; flex-direction:row; gap:30px; width:100%;">
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                         isOnline[data[j].GamespyName].online
+                         isOnline[data.gameId].online
                        }</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-user" style="margin-right:5px;"></i> online</div>
                    </div>
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                         isOnline[data[j].GamespyName].active
+                         isOnline[data.gameId].active
                        }</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-gamepad" style="margin-right:5px;"></i> active</div>
                    </div>
                    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%;">
                        <div style="font-size: 40px; font-family: Rubik; font-weight:800; color:white;">${
-                         isOnline[data[j].GamespyName].groups
+                         isOnline[data.gameId].groups
                        }</div>
                        <div style="font-size: 15px; font-family: Rubik; color:white;"><i class="fa-solid fa-users-rays" style="margin-right:5px;"></i> groups</div>
                    </div>
@@ -51,7 +51,7 @@ export function onlineUpdater(data, j) {
     .then((group) => {
       document.getElementById("containerdata").innerHTML = ` `;
       for (let k = 0; k < group.length; k++) {
-        if (group[k].game == data[j].GamespyName) {
+        if (group[k].game == data.gameId) {
           // Check for online groups in the specific game
           switch (group[k].type) {
             case "anybody":
@@ -65,7 +65,7 @@ export function onlineUpdater(data, j) {
           }
           group[k].host = group[k].players[group[k].host].name;
 
-          if (data[j].GamespyName == "mariokartwii") {
+          if (data.gameId == "mariokartwii") {
             // MKW exclusive data
             // Add fallback in case server does not return rk data
             group[k].rk = group[k].rk || "unknown";
@@ -221,17 +221,16 @@ export function onlineUpdater(data, j) {
             gridSize +
             'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">' +
             playerData +
-            '</div>';
+            "</div>";
         }
       }
       document.getElementById("containerdata").innerHTML +=
-      '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
-            data[j].GamespyName +
-            '</div>';
-        
+        '<hr><div style="text-align:right;"><i class="fa fa-fingerprint" style="margin-right:5px;"></i>' +
+        data.gameId +
+        "</div>";
 
       // Hide the MKW link if the game is MKW
-      if (data[j].GamespyName == "mariokartwii") {
+      if (data.gameId == "mariokartwii") {
         document.getElementById("mkwlink").style.display = "none";
       }
     });
