@@ -40,74 +40,73 @@ function render(xml) {
       fetch("../../json/pages.json") // Check for gamespy support
         .then((response) => response.json())
         .then((data) => {
+          var isFound = false;
           for (let j = 0; j < data.length; j++) {
-            if (data[j].gamespyId == id.textContent) {
-              var isFound = false;
-              for (let k = 0; k < data.length; k++) {
-                if (
-                  (data[k].gameId == id.textContent ||
-                    data[k].gamespyId == id.textContent) &&
-                  !isFound
-                ) {
-                  document.getElementById("onlineload").style.display = "block";
+            if (
+              !isFound &&
+              data[j]?.patchId &&
+              data[j]?.patchId[0].substring(0, 4) === id.textContent.substring(0, 4)
+            ) {
+              isFound = true;
+              document.getElementById("onlineload").style.display = "block";
 
-                  // MKW specific patches
-                  if (data[j].gamespyId.substring(0, 3) == "RMC") {
-                    document.getElementById("downloadPatchButton").innerHTML +=
-                      "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
-                    document.getElementById("downloadPatchButton").innerHTML +=
-                      "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
-                  }
-
-                  // Format data better
-                  for (let l = 0; l < data[k].patchId.length; l++) {
-                    var patchRegion = "Unknown";
-                    var patchEmoji = "🌍";
-                    switch (data[k].patchId[l].charAt(3)) {
-                      case "E":
-                        patchRegion = "NTSC-U";
-                        patchEmoji = "🇺🇸";
-                        break;
-                      case "P":
-                        patchRegion = "PAL";
-                        patchEmoji = "🇪🇺";
-                        break;
-                      case "J":
-                        patchRegion = "NTSC-J";
-                        patchEmoji = "🇯🇵";
-                        break;
-                      case "K":
-                        patchRegion = "NTSC-K";
-                        patchEmoji = "🇰🇷";
-                        break;
-                    }
-
-                    document.getElementById("onlineSpecialInfo").style.display =
-                      "block";
-                    document.getElementById("downloadPatchButton").innerHTML +=
-                      "<li style='cursor:pointer; display:flex; flex-direction:row; align-items:center;'>" +
-                      "<div class='dropdown-item' style='display:flex; gap:8px; flex-direction:row; justify-content:space-between;' onclick='downloadGCT(\"" +
-                      data[k].patchId[l] +
-                      '", "/patches/' +
-                      data[k].patchId[l] +
-                      ".txt\")'>" +
-                      patchEmoji +
-                      "  " +
-                      data[k].patchId[l].slice(0, 4) +
-                      data[k].patchId[l].slice(5) +
-                      "(" +
-                      patchRegion +
-                      ") <div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.gct</span><a href='/patches/" +
-                      data[k].patchId[l] +
-                      ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";
-                  }
-                  document.getElementById("downloadPatchButton").innerHTML +=
-                    "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
-                  isFound = true;
-                }
+              // MKW specific patches
+              if (data[j]?.patchId[0].substring(0, 3) == "RMC") {
+                document.getElementById("downloadPatchButton").innerHTML +=
+                  "<button class='btn btn-primary' onclick='openDNSInstructions();' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-wifi' style='margin-right:5px;'></i> <b>DNS Patch</b></button><li><hr class='dropdown-divider'></li>";
+                document.getElementById("downloadPatchButton").innerHTML +=
+                  "<a href='/patches/wiilink-wfc-mkw-geckoos.zip'><button class='btn btn-secondary' style='left:50%; transform:translate(-50%, 0); width:95%; margin-right:10px; position:relative;'><i class='fa fa-gamepad' style='margin-right:5px;'></i> <b>Gecko helper for Wii</b></button></a><li></a><hr class='dropdown-divider'></li>";
               }
 
-              fetchCompatData(data[j].gamespyId.substring(0, 3)).then(
+              // Format data better
+              for (let l = 0; l < data[j].patchId.length; l++) {
+                var patchRegion = "Unknown";
+                var patchEmoji = "🌍";
+                switch (data[j].patchId[l].charAt(3)) {
+                  case "E":
+                    patchRegion = "NTSC-U";
+                    patchEmoji = "🇺🇸";
+                    break;
+                  case "P":
+                    patchRegion = "PAL";
+                    patchEmoji = "🇪🇺";
+                    break;
+                  case "J":
+                    patchRegion = "NTSC-J";
+                    patchEmoji = "🇯🇵";
+                    break;
+                  case "K":
+                    patchRegion = "NTSC-K";
+                    patchEmoji = "🇰🇷";
+                    break;
+                }
+
+                document.getElementById("onlineSpecialInfo").style.display =
+                  "block";
+                document.getElementById("downloadPatchButton").innerHTML +=
+                  "<li style='cursor:pointer; display:flex; flex-direction:row; align-items:center;'>" +
+                  "<div class='dropdown-item' style='display:flex; gap:8px; flex-direction:row; justify-content:space-between;'><p style='margin-bottom:0;' onclick='downloadGCT(\"" +
+                  data[j].patchId[l] +
+                  '", "/patches/' +
+                  data[j].patchId[l] +
+                  ".txt\")'>" + patchEmoji +
+                  "  " +
+                  data[j].patchId[l].slice(0, 4) +
+                  data[j].patchId[l].slice(5) +
+                  "(" +
+                  patchRegion +
+                  ")</p><div><span class='badge' style='font-size:15px; color:black; background-color:#00000010; font-weight:normal; transition:0.1s;' onclick='downloadGCT(\"" +
+                  data[j].patchId[l] +
+                  '", "/patches/' +
+                  data[j].patchId[l] +
+                  ".txt\")'>.gct</span><a href='/patches/" +
+                  data[j].patchId[l] +
+                  ".txt' style='text-decoration:none;' download> <span class='badge' style='font-size:15px;  color:black; background-color:#00000010; font-weight:normal; transition:0.1s;'>.txt</span></a></div></div></li>";
+              }
+              document.getElementById("downloadPatchButton").innerHTML +=
+                "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
+
+              fetchCompatData(data[j].patchId[0].substring(0, 3)).then(
                 (data) => {
                   switch (data[0][1]) {
                     case "Not tested":
@@ -145,6 +144,8 @@ function render(xml) {
                     "</div></li>";
                 }
               );
+
+              console.log(data[j]);
               onlineUpdater(data[j]); // Fetch data on page load
               setInterval(() => {
                 onlineUpdater(data[j]); // Fetch data on a 5 second interval
