@@ -1,7 +1,7 @@
 import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
 
-var apiGroups = "../../public/json/group.json";
-var apiStats = "../../public/json/stats.json";
+var apiGroups = "https://wfc.wiilink24.com/api/groups";
+var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
