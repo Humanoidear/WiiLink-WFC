@@ -1,7 +1,7 @@
 import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
 
-var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
-var apiStats = "https://api.wfc.wiilink24.com/api/stats";
+var apiGroups = "../../public/json/group.json";
+var apiStats = "../../public/json/stats.json";
 var tempPlayerData = "";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
@@ -65,7 +65,14 @@ export function onlineUpdater(data) {
                 'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
               break;
           }
-          group[k].host = group[k].players[group[k].host].name;
+          
+          if (group[k].host && group[k].players[group[k].host]) {
+            var hostName = `<i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
+              group[k].players[group[k].host].name
+            )}'s room</d>`;
+        } else {
+            var hostName = `<i class='fa fa-circle-question' style='margin-bottom:18px;'></i> Awaiting host...`;
+        }  
 
           if (data.gameId == "mariokartwii") {
             // MKW exclusive data
@@ -112,9 +119,7 @@ export function onlineUpdater(data) {
               "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
           }
 
-          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;"><i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
-            group[k].host
-          )}'s room</d><br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
+          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;">${hostName}<br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
             group[k].id
           })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
             group[k].type
