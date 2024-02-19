@@ -212,7 +212,7 @@ export function onlineUpdater(data) {
                     fontSize * 2.5 +
                     "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
-                
+
                 playerData += `
       <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; align-items:center; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
       <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
@@ -240,11 +240,8 @@ export function onlineUpdater(data) {
         playerData += "</div>";
       }
       if (playerData == tempPlayerData) {
-        console.log("Same data, not updating");
         return;
       } else {
-        console.log("Updating data");
-
         tempPlayerData = playerData;
         document.getElementById("containerdata").innerHTML = playerData;
         document.getElementById("containerdata").innerHTML +=

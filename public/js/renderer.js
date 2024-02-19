@@ -23,7 +23,6 @@ function render(xml) {
   var xmlDoc = xml.responseXML;
   var x = xmlDoc.getElementsByTagName("game");
   var desiredLang = "EN"; // Replace with the desired language
-  var imgLang = "US";
 
   for (var i = 0; i < x.length; i++) {
     // Loop through gamelist of gameTDB
@@ -241,7 +240,6 @@ function render(xml) {
             ) {
               isFound = true;
               document.getElementById("onlineload").style.display = "block";
-
               // MKW specific patches
               if (data[j]?.patchId[0].substring(0, 3) == "RMC") {
                 document.getElementById("downloadPatchButton").innerHTML +=
@@ -297,7 +295,6 @@ function render(xml) {
               }
               document.getElementById("downloadPatchButton").innerHTML +=
                 "<hr style='margin:8px 0;'><li style='transform:translate(15px, 0); margin-top:5px; font-size:15px; opacity:0.5;'><i class='fa fa-circle-info'></i> These patches are <u>gecko codes</u><br style='margin-bottom:8px;'><a href='/setup' style='text-decoration:none;'><i class='fa fa-circle-question'></i> How do I install?</a></li>";
-
               fetchCompatData(data[j].patchId[0].substring(0, 3)).then(
                 (data) => {
                   switch (data[0][1]) {
@@ -336,11 +333,18 @@ function render(xml) {
                     "</div></li>";
                 }
               );
-              
-              onlineUpdater(data[j]); // Fetch data on page load
+
+              for (let l = 0; l < data.length; l++) {
+                if (
+                  data[l]?.gamespyId &&
+                  data[l]?.gamespyId.substring(0,3) == id.textContent.substring(0,3)
+                ) {
+                  onlineUpdater(data[l]); // Fetch data on page load
               setInterval(() => {
-                onlineUpdater(data[j]); // Fetch data on a 5 second interval
+                onlineUpdater(data[l]); // Fetch data on a 5 second interval
               }, 5000);
+                }
+              }
             }
           }
         });
@@ -353,3 +357,4 @@ function render(xml) {
     getRecommendedTitles(mainGenre, x);
   }
 }
+
