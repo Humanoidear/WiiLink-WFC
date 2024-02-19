@@ -1,6 +1,6 @@
 import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
 
-var apiGroups = "https://wfc.wiilink24.com/api/groups";
+var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
 
