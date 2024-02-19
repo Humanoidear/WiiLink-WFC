@@ -31,7 +31,7 @@ const { title, text, desc } = Astro.props;
     specialInstructions="padding-top:30px; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: #12121200; box-shadow:0px 0px 0px #ffffff00; position:absolute;"
     loadingBarPosition="top:-5px;"
   />
-  <div class="head herobg" id="herobg"></div>
+  <div class="head herobg" id="herobg">
     <div id="noResultsHold" class="">
       <div id="main" class="searchbox">
         <h1
@@ -105,6 +105,7 @@ const { title, text, desc } = Astro.props;
     <Footer />
 
     <script type="module" src="/js/online.js"></script>
+  </div>
 
   <style is:global>
     .bg-translucent {
@@ -186,10 +187,10 @@ const { title, text, desc } = Astro.props;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      animation: changecolor 10s infinite;
+      animation: none;
       width: 100%;
       height: 100vh;
-      position: absolute;
+      position: relative;
     }
     .heart  {
       text-decoration: none;
