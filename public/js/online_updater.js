@@ -65,14 +65,14 @@ export function onlineUpdater(data) {
                 'background-color:#c7403c;"><i class="fa-solid fa-user-group"></i> Friends';
               break;
           }
-          
+
           if (group[k].host && group[k].players[group[k].host]) {
             var hostName = `<i class="fa fa-crown" style="margin-right:5px; margin-bottom:18px;"></i><d style="font-family: miifont, system-ui;"> ${sanitizeHTML(
               group[k].players[group[k].host].name
             )}'s room</d>`;
-        } else {
+          } else {
             var hostName = `<i class='fa fa-circle-question' style='margin-bottom:18px;'></i> Awaiting host...`;
-        }  
+          }
 
           if (data.gameId == "mariokartwii") {
             // MKW exclusive data
@@ -119,15 +119,7 @@ export function onlineUpdater(data) {
               "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
           }
 
-          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;">${hostName}<br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${
-            group[k].id
-          })</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${
-            group[k].type
-          }</b> <b style="padding:8px; border-radius:4px; ${
-            group[k].suspend
-          }</b>  <b style="padding:8px; border-radius:4px; ${
-            group[k].rk
-          }</b></div></div></div>`;
+          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;">${hostName}<br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${group[k].id})</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
 
           // Get the players in the groups
           playerData += roomStats;
@@ -149,7 +141,7 @@ export function onlineUpdater(data) {
                 miiName = player.mii[i].name || miiName;
                 isDisplayed = "display:block;";
               }
-            
+
               player.ev = player.ev || "????";
               player.eb = player.eb || "????";
 
@@ -165,7 +157,7 @@ export function onlineUpdater(data) {
                     fontSize * 2.5 +
                     "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
-                
+
                 playerData += `<div id="mobileinner" onclick="toClipboard('${
                   player.name
                 } | FC:${
