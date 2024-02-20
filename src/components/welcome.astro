@@ -7,7 +7,16 @@
     your friends on the Wii and Nintendo DS. Here you can see what people are
     playing, and up-to-date information about each and every game!
   </h2>
-  <a href="/online" style="text-decoration: none;"><div class="dummysearch grid-item"><i class="fa fa-search" style="margin-right:8px;"></i> <p style="transform:translate(0, 8px);">Search for any Wii title...</p><span class="badge bg-primary">Go to <i class="fa fa-earth-americas" style="margin-left:8px;"></i> online</span><div class="blur"></div></div></a>
+  <a href="/online" style="text-decoration: none;"
+    ><div class="dummysearch grid-item">
+      <i class="fa fa-search" style="margin-right:8px;"></i>
+      <p style="transform:translate(0, 8px);">
+        Search for any Wii title...
+      </p><span class="badge bg-primary"
+        >Go to <i class="fa fa-earth-americas" style="margin-left:8px;"></i> online</span
+      ><div class="blur"></div>
+    </div></a
+  >
   <div class="grid">
     <div
       class="grid-item"
@@ -57,9 +66,28 @@
       "smash2.png",
     ];
 
-    for (let i = 0; i <= 15; i++) {
+    let links = [
+      "sdamigowii",
+      "unowii",
+      "tetpartywii",
+      "inazumawii",
+      "mariokartwii",
+      "chesswii",
+      "smashbrosxwii",
+      "sdamigowii",
+      "unowii",
+      "tetpartywii",
+      "inazumawii",
+      "mariokartwii",
+      "chesswii",
+      "smashbrosxwii",
+    ];
+
+    for (let i = 0; i < 15; i++) {
       games.innerHTML +=
-        "<div class='game'><img loading='lazy' src='/img/games/" +
+        "<div class='game' onclick='window.location.href = `online/" +
+        links[i] +
+        "`;'><img loading='lazy' src='/img/games/" +
         icons[i] +
         "' style='background-size:cover; background-attachment: fixed; background-position:center; position:relative;'height='100%;'></div>";
     }
@@ -108,18 +136,18 @@
     }
 
     .dummysearch {
-      width:100%;
-      height:80px;
+      width: 100%;
+      height: 80px;
       margin-top: 30px;
-      border-radius:16px;
+      border-radius: 16px;
       font-size: 25px;
-      color:white;
-      border:2px solid #ffffff10;
+      color: white;
+      border: 2px solid #ffffff10;
       background-color: #ffffff05;
-      padding-left:30px;
+      padding-left: 30px;
       align-items: center;
       justify-content: space-between;
-      display:flex;
+      display: flex;
       position: relative;
     }
 
