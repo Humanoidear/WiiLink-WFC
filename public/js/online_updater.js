@@ -254,9 +254,5 @@ export function onlineUpdater(data) {
           data.gameId +
           "</div>";
       }
-      // Hide the MKW link if the game is MKW
-      if (data.gameId == "mariokartwii") {
-        document.getElementById("mkwlink").style.display = "none";
-      }
     });
 }
