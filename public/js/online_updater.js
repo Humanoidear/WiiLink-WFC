@@ -5,7 +5,7 @@ import {
   getConnMatrix,
 } from "/js/helper_functions.js";
 
-var apiGroups = "../../json/group.json";
+var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
 var connMatrix = "";
