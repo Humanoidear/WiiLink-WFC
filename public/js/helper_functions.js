@@ -42,6 +42,68 @@ export function renderMii(base64String) {
     });
 }
 
+export function prettifyDateTime(timestamp) {
+  const dateObj = new Date(timestamp);
+
+  const hour = dateObj.getHours();
+  const minute = dateObj.getMinutes();
+  const second = dateObj.getSeconds();
+
+  return (`${hour < 10 ? "0" : ""}${hour}:${minute < 10 ? "0" : ""}${minute}:${
+    second < 10 ? "0" : ""
+  }${second}`);
+}
+
+export function getConnMatrix(connMatrix) {
+  const arr = connMatrix.split("&&");
+  console.log(arr);
+  const names = [];
+  connMatrix = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 === 0) {
+      names.push(arr[i]);
+    } else {
+      connMatrix.push(arr[i]);
+    }
+  }
+  console.log(names);
+  console.log(connMatrix);
+
+  for (let i = 0; i < connMatrix.length; i++) {
+    connMatrix[i] = connMatrix[i].split("");
+    connMatrix[i].splice(i, 0, "\\");
+  }
+
+  function emojify (value) {
+    switch (value) {
+      case "0": 
+        return " ⬜️ ";
+      case "1":
+        return " 🟨 ";
+      case "2":
+        return " 🟩 ";
+      case "3":
+        return " 🟥 ";
+      case "\\":
+        return " <b>╲</b> ";
+    }
+  }
+
+ // display the matrix in a div
+ let connMatrixHtml = "<div class='conn-matrix' style='width:280px; padding:20px;'>";
+  for (let i = 0; i < connMatrix.length; i++) {
+    connMatrixHtml += "<div class='conn-row' style='display:flex; align-items:center; justify-content:space-between;'><div style='font-family:miifont, system-ui;'>" + names[i] + "</div><div style='background-color:#00000010; padding-left:5px; padding-right:5px; border-radius:4px;'>";
+    for (let j = 0; j < connMatrix[i].length; j++) {
+      connMatrixHtml += emojify(connMatrix[i][j]);
+    }
+    connMatrixHtml += "</div></div>";
+  }
+  connMatrixHtml += "</div>";
+
+  return connMatrixHtml;
+}
+
 const spreadsheetId = "1KeRbKQ2UwlysHSTtfkiZneLNRq4yDXs2Y-vXt8jHAro";
 const ranges = ["B:B", "E:E", "F:F"];
 const key = "AIzaSyA3ni8rP12zKhLKb96ZE92grnJGgUcCwfM";

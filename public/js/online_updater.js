@@ -1,8 +1,14 @@
-import { renderMii, sanitizeHTML } from "/js/helper_functions.js";
+import {
+  renderMii,
+  sanitizeHTML,
+  prettifyDateTime,
+  getConnMatrix,
+} from "/js/helper_functions.js";
 
 var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
+var connMatrix = "";
 
 // Function to update the online stats of a game, this function gets called assuming the game is supported
 export function onlineUpdater(data) {
@@ -119,18 +125,16 @@ export function onlineUpdater(data) {
               "grid-template-columns: repeat(auto-fit,minmax(450px,1fr));";
           }
 
-          roomStats = ` <div style="color:white; display:flex; align-items:center; justify-content:center; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;">${hostName}<br><d style="font-size:15px; opacity:0.3; transform:translate(0, -17px); margin-left:30px; position:absolute;">(${group[k].id})</d></b> <div style="transform:translate(0, 20px);"> <b style="padding:8px; border-radius:4px; ${group[k].type}</b> <b style="padding:8px; border-radius:4px; ${group[k].suspend}</b>  <b style="padding:8px; border-radius:4px; ${group[k].rk}</b></div></div></div>`;
-
           // Get the players in the groups
-          playerData += roomStats;
-          playerData +=
+          var innerPlayerData = "";
+          innerPlayerData +=
             '<div id="mobilestats" style="width:100%; margin-bottom:30px; display:grid;' +
             gridSize +
             'margin-top:20px; margin-bottom: 30px; gap:15px; position: relative;">';
+          connMatrix = "";
 
           for (let playerIndex in group[k].players) {
             var player = group[k].players[playerIndex];
-
             // Loop through each player and fetch its corresponding data depening on wether they are a guest or not, and the user personalization preferences
             for (let i = 0; i < player.count; i++) {
               let miiData = "0000000000000000";
@@ -158,7 +162,8 @@ export function onlineUpdater(data) {
                     "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
 
-                playerData += `<div id="mobileinner" onclick="toClipboard('${
+                connMatrix += player.name + "&&" + player.conn_map + "&&";
+                innerPlayerData += `<div id="mobileinner" onclick="toClipboard('${
                   player.name
                 } | FC:${
                   player.fc
@@ -190,9 +195,11 @@ export function onlineUpdater(data) {
         <div style="font-size: 15px; font-family: Rubik; color:white;">${
           player.pid
         } <i class="fa-solid fa-fingerprint" style="margin-left:5px;"></i></div>
-        <div style="font-size: 15px; font-family: Rubik; color:white;">${
+        <div style="font-size: 15px; margin-top:5px; font-family: Rubik; color:white;">${
           player.count
-        } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i></div>
+        } <i class="fa-solid fa-user-plus" style="margin-left:5px;"></i> | ${
+                  player.conn_fail
+                }<i class="fa-solid fa-bomb" style="margin-left:5px;"></i></div>
         </div>
         </div>
       </div>
@@ -210,7 +217,7 @@ export function onlineUpdater(data) {
                     "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
 
-                playerData += `
+                innerPlayerData += `
       <div id="mobileinner" onclick="toClipboard('${miiName} | Guest');" style="border-radius:8px; padding:18px; display:flex; align-items:center; justify-content:space-between; border:2px solid #ffffff10; background-color:rgb(26, 25, 25); cursor:pointer; z-index:10; position:relative;">
       <span class="badge bg-primary" style="right:15px; font-size:13px; position:absolute;">Guest</span>
         <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;">
@@ -233,8 +240,35 @@ export function onlineUpdater(data) {
               }
             }
           }
+          playerData +=
+            ` <div style="color:white; display:flex; align-items:center; justify-content:center; z-index:1000; position:relative;"><div style="width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; position:relative;"><b style="padding:8px; border-radius:4px; font-size:20px;">${hostName}<br><d style="font-size:15px; opacity:0.3; transform:translate(0, -15px); margin-left:30px; position:absolute;">(${
+              group[k].id
+            }) - ${prettifyDateTime(
+              group[k].created
+            )}</d></b> <div style="display:flex; align-items:center; justify-content:center; gap:5px; transform:translate(0, 20px); height:40px;"><b style="padding:8px; border-radius:4px; ${
+              group[k].type
+            }</b> <b style="padding:8px; border-radius:4px; ${
+              group[k].suspend
+            }</b>  <b style="padding:8px; border-radius:4px; ${
+              group[k].rk
+            }</b><div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" style="border-radius:5px; height:41px; type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-circle-nodes"></i>
+          </button>
+          <ul class="dropdown-menu">
+          <li><center><b><i class="fa-solid fa-circle-nodes"></i> Connection matrix</b></center></li>
+          <hr style='margin:10px; margin-bottom:0px;'>
+            <li><center id="connMatrix">${getConnMatrix(
+              connMatrix
+            )}</center></li>
+            <hr style='width:calc(100% - 50px) !important; left:25px !important; margin:0px; margin-left:10px; margin-right:10px; margin-bottom:0px; position:relative;'>
+            <i class="fa-solid fa-circle-info" style='opacity:0.4; transform:translate(10px, -10px); position:absolute;'></i>
+            <li style='font-size:15px; padding:10px; opacity:0.7;'>🟥 - Failure ⬜️ - Not connected <br> 🟩 - Connected 🟨 - Connecting <br> ╲ - User</li>
+          </ul>
+        </div></div></div></div>` +
+            innerPlayerData +
+            "</div>";
         }
-        playerData += "</div>";
       }
       if (playerData == tempPlayerData) {
         return;
