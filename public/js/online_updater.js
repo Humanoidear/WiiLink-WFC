@@ -5,7 +5,7 @@ import {
   getConnMatrix,
 } from "/js/helper_functions.js";
 
-var apiGroups = "https://api.wfc.wiilink24.com/api/groups";
+var apiGroups = "../../json/group.json";
 var apiStats = "https://api.wfc.wiilink24.com/api/stats";
 var tempPlayerData = "";
 var connMatrix = "";
@@ -162,7 +162,7 @@ export function onlineUpdater(data) {
                     "px; transform: translate(-50%, -50%) scale(1.3); position:relative;'>";
                 });
 
-                connMatrix += player.name + "&&" + player.conn_map + "&&";
+                connMatrix += "<b style='color:red;'>" + player.conn_fail + "</b> - " + player.name + "&&" + player.conn_map + "&&";
                 innerPlayerData += `<div id="mobileinner" onclick="toClipboard('${
                   player.name
                 } | FC:${
