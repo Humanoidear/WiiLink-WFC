@@ -318,6 +318,14 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
                 ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
               >
             </li>
+            <hr />
+            <li>
+              <a
+                class="dropdown-item center"
+                href="/public/patcher/WiiLink WFC Patcher.zip"
+                ><i class="fa-solid fa-download"></i> Download auto-patcher</a
+              >
+            </li>
           </ul>
         </div>
         <button type="button" class="btn btn-success"
@@ -419,9 +427,22 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
               >
             </li>
             <li>
-              <a class="dropdown-item center" href="/dolphin"
-                ><i class="fa-solid fa-desktop"></i> Dolphin Emulator</a
+              <a class="dropdown-item center" href="/dolphin">
+                <i class="fa-solid fa-desktop"></i> Dolphin Emulator
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a
+                class="dropdown-item center"
+                href="/public/patcher/WiiLink WFC Patcher.zip"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="This is a tool that will automatically patch whichever game is inserted in the Wii's disc drive to work with WiiLink WFC"
               >
+                <i class="fa-solid fa-download"></i>
+                Download auto-patcher
+              </a>
             </li>
           </ul>
         </div>
@@ -535,34 +556,34 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
 
     if (localStorage.getItem("theme")) {
       document.querySelector(
-        'input[name="theme"][value="' + localStorage.getItem("theme") + '"]',
+        'input[name="theme"][value="' + localStorage.getItem("theme") + '"]'
       ).checked = true;
     }
     if (localStorage.getItem("statistics")) {
       document.querySelector(
         'input[name="statistics"][value="' +
           localStorage.getItem("statistics") +
-          '"]',
+          '"]'
       ).checked = true;
     }
     if (localStorage.getItem("displayLoading")) {
       document.querySelector(
         'input[name="loading"][value="' +
           localStorage.getItem("displayLoading") +
-          '"]',
+          '"]'
       ).checked = true;
     }
 
     window.saveSelections = function () {
       var displayMode = document.querySelector(
-        'input[name="display"]:checked',
+        'input[name="display"]:checked'
       ).value;
       var theme = document.querySelector('input[name="theme"]:checked').value;
       var statistics = document.querySelector(
-        'input[name="statistics"]:checked',
+        'input[name="statistics"]:checked'
       ).value;
       var loading = document.querySelector(
-        'input[name="loading"]:checked',
+        'input[name="loading"]:checked'
       ).value;
 
       localStorage.setItem("displayMode", displayMode);
@@ -643,7 +664,7 @@ const { hasSearch, specialInstructions, loadingBarPosition } = Astro.props;
       transform: translate(0, 5px);
       background-color: rgb(103, 103, 216);
       width: 100%;
-      display: ;
+      display:;
       position: absolute;
       transition: 0.5s;
     }
