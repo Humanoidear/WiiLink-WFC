@@ -336,10 +336,7 @@ function render(xml) {
               // Hide the MKW link if the game is MKW
               if (
                 data[j].gameId == "mariokartwii" ||
-                data[j].gameId == "RMCE01" ||
-                data[j].gameId == "RMCP01" ||
-                data[j].gameId == "RMCJ01" ||
-                data[j].gameId == "RMCK01"
+                data[j].gameId.startsWith("RMC")
               ) {
                 document.getElementById("mkwlink").style.display = "none";
               }

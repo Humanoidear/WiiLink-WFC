@@ -65,8 +65,8 @@ const N = 10;
         "palapeli.png",
         "nova.png",
         "kouacc.png",
-        "idk.png",
-        "idk.png",
+        "alexv.png",
+        "alexv.png",
         "matthe.png",
       ][i % 14],
       icons: [
